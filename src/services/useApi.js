@@ -206,7 +206,7 @@ function useApi() {
         console.log(movieRecommendationArr)
         
 
-    return {movieTrending, personTrending, tvTrending, fetchSearchResults, searchResults}
+    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying}
 }
 
 

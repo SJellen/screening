@@ -8,7 +8,9 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
 
-    const {searchResults} = useApi()
+    const {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying} = useApi()
+
+    
 
     
     
