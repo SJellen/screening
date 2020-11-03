@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react'
 
 
-
-
 function useApi() {
     const apiKEY = process.env.REACT_APP_TMDB_API_KEY
     const [tvTrending, setTvTrending] = useState([])
@@ -16,6 +14,7 @@ function useApi() {
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [topRatedMovies, setTopRatedMovies] = useState([])
     const [popularMovies, setPopularMovies] = useState([])
+    const [popularPerson, setPopularPerson] = useState([])
     const [nowPlaying, setNowPlaying] = useState([])
     const [tvRecommendationID, setTvRecommendationID] = useState('82856')
     const [tvRecommendationArr, setTvRecommendationArr] = useState([])
@@ -23,10 +22,6 @@ function useApi() {
     const [movieRecommendationArr, setMovieRecommendationArr] = useState([])
 
 
-
-    
-
-    
 
     const fetchTrending = async () => {
         await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKEY}`)
@@ -181,6 +176,17 @@ function useApi() {
         )
         .catch(error => console.log(error))
         } 
+
+    const fetchPopularPerson = async () => {
+        await fetch(`https://api.themoviedb.org/3/person/popular?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setPopularPerson(data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }     
             
 
 
@@ -198,15 +204,15 @@ function useApi() {
             fetchNowPlaying()
             fetchTvRecommend()
             fetchMovieRecommend()
-    
+            fetchPopularPerson()
         },[])
 
         
        
-        console.log(movieRecommendationArr)
+       console.log(popularMovies)
         
 
-    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying}
+    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying, popularPerson}
 }
 
 

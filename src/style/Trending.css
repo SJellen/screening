@@ -1,0 +1,56 @@
+.trending-container {
+    background-color: rgb(18, 18, 18);
+    max-width: 90vw;
+    padding: 1rem;
+    margin: 3rem auto 0 auto;
+    color: white;
+}
+
+.trending-label {
+    display: flex;
+    font-size: 2rem;
+    margin-left: 2rem;
+    padding: 2rem 0;
+
+}
+
+.trending-sub-container {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: row;
+    overflow:scroll;
+}
+
+.trending-card {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #1B1B1B;
+    margin: 0 1rem;
+}
+
+.trending-score {
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.trending-title {
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.trending-name {
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+
+
+.im-star {
+    font-size: smaller;
+    color: gold;
+    margin-right: .5rem;
+}
+

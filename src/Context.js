@@ -8,20 +8,20 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
 
-    const {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying} = useApi()
+    const {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying, popularPerson} = useApi()
 
-    
+    const posterPath = 'https://image.tmdb.org/t/p/w200/'
 
     
     
    
-
+    
    
 
 
 
     return (
-        <Context.Provider value={{}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson}}>
             {children}
         </Context.Provider>
     )
