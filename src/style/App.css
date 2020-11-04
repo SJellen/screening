@@ -17,7 +17,7 @@ html {
 .slider-container {
   background-color: rgb(18, 18, 18);
   max-width: 90vw;
-  padding: 1rem;
+  padding: 2rem;
   margin: 3rem auto 0 auto;
   color: white;
 }
@@ -53,6 +53,7 @@ html {
 
 .slider-title {
   text-align: left;
+  margin-top: .5rem;
   font-size: 1.5rem;
 }
 
@@ -60,6 +61,7 @@ html {
   padding-top: 1rem;
   text-align: left;
   font-size: 1.5rem;
+  margin-top: .5rem;
 }
 
 

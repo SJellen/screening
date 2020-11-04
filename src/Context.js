@@ -21,7 +21,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying}}>
             {children}
         </Context.Provider>
     )

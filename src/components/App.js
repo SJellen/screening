@@ -3,6 +3,8 @@ import Header from '../components/Header'
 import Trending from '../components/Trending'
 import Popular from '../components/Popular'
 import TopRated from './TopRated'
+import Current from './Current'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       <Trending />
       <Popular />
       <TopRated />
-
+      <Current />
+      <Footer />
       
     </div>
   );

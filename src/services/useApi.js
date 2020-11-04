@@ -209,7 +209,7 @@ function useApi() {
 
         
        
-       console.log(popularMovies)
+       console.log(upcomingMovies)
         
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv}
