@@ -1,12 +1,14 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
 
+
 function useMovieTrending() {
-    const {movieTrending, posterPath}  = useContext(Context)
+    const {movieTrending, posterPath, setItemBoxOpen}  = useContext(Context)
 
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id
         console.log(selection)
+        setItemBoxOpen(prevState => !prevState)
     }
     
 

@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTopRatedTv() {
-    const {topRatedTv, posterPath}  = useContext(Context)
+    const {topRatedTv, posterPath, setItemBoxOpen}  = useContext(Context)
 
     function handlePopularTvClick(e) {
         let selection = topRatedTv[e].id
         console.log(selection)
+        setItemBoxOpen(prevState => !prevState)
     }
  
     const topRatedTvTile = topRatedTv.map((show, index) => 

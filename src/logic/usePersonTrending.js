@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonTrending() {
-    const {personTrending, posterPath}  = useContext(Context)
+    const {personTrending, posterPath, setItemBoxOpen}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
         console.log(selection)
+        setItemBoxOpen(prevState => !prevState)
     }
  
     const personTrendingTile = personTrending.map((person, index) => 

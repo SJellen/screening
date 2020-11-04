@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTvPopular() {
-    const {posterPath, popularTv}  = useContext(Context)
+    const {posterPath, popularTv, setItemBoxOpen}  = useContext(Context)
 
     function handlePopularTvClick(e) {
         let selection = popularTv[e].id
         console.log(selection)
+        setItemBoxOpen(prevState => !prevState)
     }
     
 

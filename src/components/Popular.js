@@ -1,17 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import useTvPopular from '../logic/useTvPopular'
 import usePersonPopular from '../logic/usePersonPopular'
 import useMoviePopular from '../logic/useMoviePopular'
+import {Context} from '../Context'
 
 function Popular() {
     
     const {popularMoviesTile} = useMoviePopular()
     const {popularTvTile} = useTvPopular()
     const {popularPersonTile} = usePersonPopular()
+    const {itemPageOpen}  = useContext(Context)
     
 
     return (
-        
+        <div>
+        {
+            itemPageOpen ? <div></div> :
         <div className="slider-container">
         <span className="slider-label">Popular: Movies</span>
         <div className="slider-sub-container">
@@ -28,7 +32,16 @@ function Popular() {
         </div>
 
             
+        </div> 
+        }
+
+
+
+
+
         </div>
+        
+       
     )
 }
 

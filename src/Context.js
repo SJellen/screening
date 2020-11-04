@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import useApi from './services/useApi'
 
 const Context = React.createContext()
@@ -12,6 +12,8 @@ function ContextProvider({children}) {
 
     const posterPath = 'https://image.tmdb.org/t/p/w200/'
 
+    const [itemPageOpen, setItemBoxOpen] = useState(false)
+
     
 
     
@@ -23,7 +25,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemBoxOpen}}>
             {children}
         </Context.Provider>
     )

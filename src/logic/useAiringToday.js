@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useAiringToday() {
-    const {posterPath, airingToday}  = useContext(Context)
+    const {posterPath, airingToday, setItemBoxOpen}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
         console.log(selection)
+        setItemBoxOpen(prevState => !prevState)
     }
 
     const airingTodayTile = airingToday.map((show, index) => 
