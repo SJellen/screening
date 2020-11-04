@@ -3,12 +3,17 @@ import {Context} from '../Context'
 
 function useTopRatedMovies() {
     const {topRatedMovies, posterPath}  = useContext(Context)
+
+    function handleMovieTopRatedClick(e) {
+        let selection = topRatedMovies[e].id
+        console.log(selection)
+    }
  
-    const topRatedMoviesTile = topRatedMovies.map(movie => 
+    const topRatedMoviesTile = topRatedMovies.map((movie, index) => 
         
         
         <div className="slider-card" key={movie.id}> 
-        <img  src={`${posterPath}${movie.poster_path}`} alt="poster"/>
+        <img  src={`${posterPath}${movie.poster_path}`} alt="poster" onClick={() => handleMovieTopRatedClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
         <span className="slider-title">{movie.title}</span>
         </div>

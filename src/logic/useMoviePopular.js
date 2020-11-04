@@ -4,10 +4,16 @@ import {Context} from '../Context'
 function useMoviePopular() {
     const {posterPath, popularMovies}  = useContext(Context)
 
-    const popularMoviesTile = popularMovies.map(movie => 
+
+    function handleMoviePopularClick(e) {
+        let selection = popularMovies[e].id
+        console.log(selection)
+    }
+
+    const popularMoviesTile = popularMovies.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 
-        <img  src={`${posterPath}${movie.poster_path}`} alt="poster"/>
+        <img  src={`${posterPath}${movie.poster_path}`} alt="poster" onClick={() => handleMoviePopularClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
         <span className="slider-title">{movie.title}</span>
         </div>

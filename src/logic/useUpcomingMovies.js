@@ -4,10 +4,15 @@ import {Context} from '../Context'
 function useUpcomingMovies() {
     const {posterPath, upcomingMovies}  = useContext(Context)
 
-    const upcomingMoviesTile = upcomingMovies.map(movie => 
+    function handleUpcomingMoviesClick(e) {
+        let selection = upcomingMovies[e].id
+        console.log(selection)
+    }
+
+    const upcomingMoviesTile = upcomingMovies.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 
-        <img  src={`${posterPath}${movie.poster_path}`} alt="poster"/>
+        <img  src={`${posterPath}${movie.poster_path}`} alt="poster" onClick={() => handleUpcomingMoviesClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
         <span className="slider-title">{movie.title}</span>
         </div>

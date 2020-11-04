@@ -5,6 +5,7 @@ import Popular from '../components/Popular'
 import TopRated from './TopRated'
 import Current from './Current'
 import Footer from './Footer'
+import ItemPage from './ItemPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Popular />
       <TopRated />
       <Current />
+      <ItemPage />
       <Footer />
       
     </div>

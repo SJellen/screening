@@ -3,11 +3,16 @@ import {Context} from '../Context'
 
 function useTvTrending() {
     const {tvTrending, posterPath}  = useContext(Context)
+
+    function handleTvTrendingClick(e) {
+        let selection = tvTrending[e].id
+        console.log(selection)
+    }
  
-    const tvTrendingTile = tvTrending.map(show => 
+    const tvTrendingTile = tvTrending.map((show, index) => 
         
         <div className="slider-card" key={show.id}> 
-        <img  src={`${posterPath}${show.poster_path}`} alt="poster"/>
+        <img  src={`${posterPath}${show.poster_path}`} alt="poster" onClick={() => handleTvTrendingClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
         <span className="slider-title">{show.name}</span>
         </div>
