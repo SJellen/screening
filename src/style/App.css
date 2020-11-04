@@ -35,7 +35,16 @@ html {
   display: flex;
   flex-direction: row;
   overflow:scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+.slider-sub-container::-webkit-scrollbar {
+   display: none;
+  }
+
+
 
 .slider-card {
   padding: 2rem;
@@ -55,7 +64,10 @@ html {
   text-align: left;
   margin-top: .5rem;
   font-size: 1.5rem;
+  
 }
+
+
 
 .slider-name {
   padding-top: 1rem;
