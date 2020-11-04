@@ -4,13 +4,12 @@ import {Context} from '../Context'
 function usePersonPopular() {
     const {posterPath, popularPerson}  = useContext(Context)
     
-
+    console.log(popularPerson)
     const popularPersonTile = popularPerson.map(person => 
-        
-        <div className="popular-card" key={person.id}> 
+        <div className="slider-card" key={person.id}> 
         <img  src={`${posterPath}${person.profile_path}`} alt="poster"/>
-        <span className="popular-name">{person.name}</span>
-        </div>
+        <span className="slider-name">{person.name}</span>
+       </div> 
         )
 
         return {popularPersonTile}

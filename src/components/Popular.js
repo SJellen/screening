@@ -1,7 +1,4 @@
-import React, { useContext } from 'react'
-import '../style/Popular.css'
-import {Context} from '../Context'
-
+import React from 'react'
 import useTvPopular from '../logic/useTvPopular'
 import usePersonPopular from '../logic/usePersonPopular'
 import useMoviePopular from '../logic/useMoviePopular'
@@ -15,18 +12,18 @@ function Popular() {
 
     return (
         
-        <div className="popular-container">
-        <span className="popular-label">Popular: Movies</span>
-        <div className="popular-sub-container">
+        <div className="slider-container">
+        <span className="slider-label">Popular: Movies</span>
+        <div className="slider-sub-container">
             {popularMoviesTile}
         </div>
-        <span className="popular-label">Popular: TV</span>
-        <div className="popular-sub-container">
+        <span className="slider-label">Popular: TV</span>
+        <div className="slider-sub-container">
             {popularTvTile}
         </div>
 
-        <span className="popular-label">Popular: People</span>
-        <div className="popular-sub-container">
+        <span className="slider-label">Popular: People</span>
+        <div className="slider-sub-container">
             {popularPersonTile}
         </div>
 

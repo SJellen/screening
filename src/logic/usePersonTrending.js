@@ -6,9 +6,10 @@ function usePersonTrending() {
  
     const personTrendingTile = personTrending.map(person => 
         
-        <div className="trending-card" key={person.id}> 
+        
+        <div className="slider-card" key={person.id}> 
         <img  src={`${posterPath}${person.profile_path}`} alt="poster"/>
-        <span className="trending-name">{person.name}</span>
+        <span className="slider-name">{person.name}</span>
         </div>
         )
 

@@ -6,10 +6,10 @@ function useMoviePopular() {
 
     const popularMoviesTile = popularMovies.map(movie => 
         
-        <div className="popular-card" key={movie.id}> 
+        <div className="slider-card" key={movie.id}> 
         <img  src={`${posterPath}${movie.poster_path}`} alt="poster"/>
-        <span className="popular-score"><i className="im im-star"></i>{movie.vote_average}</span>
-        <span className="popular-title">{movie.title}</span>
+        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        <span className="slider-title">{movie.title}</span>
         </div>
         )
 

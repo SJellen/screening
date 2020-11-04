@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
-import '../style/Trending.css'
-import {Context} from '../Context'
+import React from 'react'
 import useMovieTrending from '../logic/useMovieTrending'
 import useTvTrending from '../logic/useTvTrending'
 import usePersonTrending from '../logic/usePersonTrending'
@@ -14,18 +12,18 @@ function Trending() {
 
     return (
         
-        <div className="trending-container">
-        <span className="trending-label">Trending: Movies</span>
-        <div className="trending-sub-container">
+        <div className="slider-container">
+        <span className="slider-label">Trending: Movies</span>
+        <div className="slider-sub-container">
             {movieTrendingTile}
         </div>
-        <span className="trending-label">Trending: TV</span>
-        <div className="trending-sub-container">
+        <span className="slider-label">Trending: TV</span>
+        <div className="slider-sub-container">
             {tvTrendingTile}
         </div>
 
-        <span className="trending-label">Trending: People</span>
-        <div className="trending-sub-container">
+        <span className="slider-label">Trending: People</span>
+        <div className="slider-sub-container">
             {personTrendingTile}
         </div>
 

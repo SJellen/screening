@@ -7,10 +7,10 @@ function useMovieTrending() {
 
     const movieTrendingTile = movieTrending.map(movie => 
         
-        <div className="trending-card" key={movie.id}> 
+        <div className="slider-card" key={movie.id}> 
         <img  src={`${posterPath}${movie.poster_path}`} alt="poster"/>
-        <span className="trending-score"><i className="im im-star"></i>{movie.vote_average}</span>
-        <span className="trending-title">{movie.title}</span>
+        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        <span className="slider-title">{movie.title}</span>
         </div>
         )
 

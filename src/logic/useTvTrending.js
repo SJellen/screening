@@ -6,10 +6,10 @@ function useTvTrending() {
  
     const tvTrendingTile = tvTrending.map(show => 
         
-        <div className="trending-card" key={show.id}> 
+        <div className="slider-card" key={show.id}> 
         <img  src={`${posterPath}${show.poster_path}`} alt="poster"/>
-        <span className="trending-score"><i className="im im-star"></i>{show.vote_average}</span>
-        <span className="trending-title">{show.name}</span>
+        <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+        <span className="slider-title">{show.name}</span>
         </div>
         )
 
