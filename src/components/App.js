@@ -2,6 +2,7 @@ import '../style/App.css';
 import Header from '../components/Header'
 import Trending from '../components/Trending'
 import Popular from '../components/Popular'
+import TopRated from './TopRated'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Trending />
       <Popular />
+      <TopRated />
 
       
     </div>
