@@ -2,12 +2,11 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useNowPlaying() {
-    const {posterPath, nowPlaying, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {posterPath, nowPlaying, setItemBoxOpen, setMovieId}  = useContext(Context)
 
     function handleNowPlayingClick(e) {
         let selection = nowPlaying[e].id
-        let mediaType = "movie"
-        console.log(selection, mediaType)
+        setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
 

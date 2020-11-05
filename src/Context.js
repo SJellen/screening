@@ -19,7 +19,7 @@ function ContextProvider({children}) {
     
     
    
-    
+    console.log(movieId, tvId, personId)
    
 
 

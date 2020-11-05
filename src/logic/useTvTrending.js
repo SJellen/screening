@@ -2,12 +2,11 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTvTrending() {
-    const {tvTrending, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {tvTrending, posterPath, setItemBoxOpen, setTvId}  = useContext(Context)
 
     function handleTvTrendingClick(e) {
         let selection = tvTrending[e].id
-        let mediaType = tvTrending[e].media_type
-        console.log(selection, mediaType)
+        setTvId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
  

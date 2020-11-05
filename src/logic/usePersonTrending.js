@@ -2,12 +2,11 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonTrending() {
-    const {personTrending, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {personTrending, posterPath, setItemBoxOpen, setPersonId}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
-        let mediaType = personTrending[e].media_type
-        console.log(selection, mediaType)
+        setPersonId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
  

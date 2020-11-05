@@ -7,8 +7,7 @@ function usePersonPopular() {
 
     function handlePersonTrendingClick(e) {
         let selection = popularPerson[e].id
-        let mediaType = "person"
-        console.log(selection, mediaType)
+        setPersonId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
     

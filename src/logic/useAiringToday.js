@@ -2,12 +2,11 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useAiringToday() {
-    const {posterPath, airingToday, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {posterPath, airingToday, setItemBoxOpen, setTvId}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
-        let mediaType = "tv"
-        console.log(selection, mediaType)
+        setTvId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
 

@@ -3,12 +3,11 @@ import {Context} from '../Context'
 
 
 function useMovieTrending() {
-    const {movieTrending, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {movieTrending, posterPath, setItemBoxOpen, setMovieId}  = useContext(Context)
 
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id
-        let mediaType = movieTrending[e].media_type
-        console.log(selection, mediaType)
+        setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
     }
     
