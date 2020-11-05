@@ -7,7 +7,8 @@ function useMoviePopular() {
 
     function handleMoviePopularClick(e) {
         let selection = popularMovies[e].id
-        console.log(selection)
+        let mediaType = "movie"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
 

@@ -6,7 +6,8 @@ function useAiringToday() {
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
-        console.log(selection)
+        let mediaType = "tv"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
 

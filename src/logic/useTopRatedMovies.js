@@ -6,7 +6,8 @@ function useTopRatedMovies() {
 
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
-        console.log(selection)
+        let mediaType = "movie"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
  

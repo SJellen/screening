@@ -6,7 +6,8 @@ function useTvPopular() {
 
     function handlePopularTvClick(e) {
         let selection = popularTv[e].id
-        console.log(selection)
+        let mediaType = "tv"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
     

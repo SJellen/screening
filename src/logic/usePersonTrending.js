@@ -6,7 +6,8 @@ function usePersonTrending() {
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
-        console.log(selection)
+        let mediaType = personTrending[e].media_type
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
  

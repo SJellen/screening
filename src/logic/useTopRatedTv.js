@@ -6,7 +6,8 @@ function useTopRatedTv() {
 
     function handlePopularTvClick(e) {
         let selection = topRatedTv[e].id
-        console.log(selection)
+        let mediaType = "tv"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
  

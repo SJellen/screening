@@ -6,7 +6,8 @@ function useUpcomingMovies() {
 
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
-        console.log(selection)
+        let mediaType = "movie"
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
 

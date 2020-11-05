@@ -6,7 +6,8 @@ function useTvTrending() {
 
     function handleTvTrendingClick(e) {
         let selection = tvTrending[e].id
-        console.log(selection)
+        let mediaType = tvTrending[e].media_type
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
  

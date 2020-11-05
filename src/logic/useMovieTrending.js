@@ -7,7 +7,8 @@ function useMovieTrending() {
 
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id
-        console.log(selection)
+        let mediaType = movieTrending[e].media_type
+        console.log(selection, mediaType)
         setItemBoxOpen(prevState => !prevState)
     }
     
