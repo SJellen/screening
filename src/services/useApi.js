@@ -1,7 +1,10 @@
-import {useState, useEffect} from 'react'
-
+import {useState, useEffect, useContext} from 'react'
+import {Context} from '../Context'
 
 function useApi() {
+    
+
+
     const apiKEY = process.env.REACT_APP_TMDB_API_KEY
     const [tvTrending, setTvTrending] = useState([])
     const [movieTrending, setMovieTrending] = useState([])
@@ -23,8 +26,9 @@ function useApi() {
     const [movieId, setMovieId] = useState()
     const [tvId, setTvId] = useState()
     const [personId, setPersonId] = useState()
+    const [movieDetails, setMovieDetails] = useState([])
 
-
+    
 
     const fetchTrending = async () => {
         await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKEY}`)
@@ -211,13 +215,35 @@ function useApi() {
         },[])
 
         
+console.log(movieId)
+
+    const fetchMovieDetails = async (x) => {
+        
+        await fetch(`https://api.themoviedb.org/3/movie/${x}?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setMovieDetails(data)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }     
+
+
+        
+
+
+
+
+
+        
        
       
         
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, apiKEY}
 }
 
 

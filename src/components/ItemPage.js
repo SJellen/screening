@@ -5,13 +5,14 @@ import {Context} from '../Context'
 
 function ItemPage() {
 
-    const {itemPageOpen}  = useContext(Context)
+    const {itemPageOpen, movieDetails}  = useContext(Context)
+    console.log(movieDetails)
 
     return (
         <div>
           { itemPageOpen ? 
         <div className="item-page-container">
-            <h1>page</h1>
+            <h1></h1>
 
         </div> : <div></div>
         

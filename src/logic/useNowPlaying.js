@@ -2,12 +2,13 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useNowPlaying() {
-    const {posterPath, nowPlaying, setItemBoxOpen, setMovieId}  = useContext(Context)
+    const {posterPath, nowPlaying, setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
 
     function handleNowPlayingClick(e) {
         let selection = nowPlaying[e].id
         setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
+        fetchMovieDetails(selection)
     }
 
     const nowPlayingTile = nowPlaying.map((movie, index) => 

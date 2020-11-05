@@ -2,12 +2,13 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useUpcomingMovies() {
-    const {posterPath, upcomingMovies, setItemBoxOpen, setMovieId}  = useContext(Context)
+    const {posterPath, upcomingMovies, setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
 
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
         setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
+        fetchMovieDetails(selection)
     }
 
     const upcomingMoviesTile = upcomingMovies.map((movie, index) => 

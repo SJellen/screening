@@ -2,13 +2,14 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useMoviePopular() {
-    const {posterPath, popularMovies, setItemBoxOpen, setMovieId}  = useContext(Context)
+    const {posterPath, popularMovies, setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
 
 
     function handleMoviePopularClick(e) {
         let selection = popularMovies[e].id
         setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
+        fetchMovieDetails(selection)
     }
 
     const popularMoviesTile = popularMovies.map((movie, index) => 

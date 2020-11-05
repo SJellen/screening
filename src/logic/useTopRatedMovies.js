@@ -2,12 +2,13 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTopRatedMovies() {
-    const {topRatedMovies, posterPath,setItemBoxOpen, setMovieId}  = useContext(Context)
+    const {topRatedMovies, posterPath,setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
 
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
         setMovieId(selection)
         setItemBoxOpen(prevState => !prevState)
+        fetchMovieDetails(selection)
     }
  
     const topRatedMoviesTile = topRatedMovies.map((movie, index) => 
