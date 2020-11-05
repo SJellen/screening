@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useMoviePopular() {
-    const {posterPath, popularMovies, setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
+    const {posterPath, popularMovies, setItemBoxOpen, setMovieId, fetchMovieDetails, setMediaType}  = useContext(Context)
 
 
     function handleMoviePopularClick(e) {
         let selection = popularMovies[e].id
+        setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
         setItemBoxOpen(prevState => !prevState)

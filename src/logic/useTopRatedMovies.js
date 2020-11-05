@@ -2,10 +2,11 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTopRatedMovies() {
-    const {topRatedMovies, posterPath,setItemBoxOpen, setMovieId, fetchMovieDetails}  = useContext(Context)
+    const {topRatedMovies, posterPath,setItemBoxOpen, setMovieId, fetchMovieDetails, setMediaType}  = useContext(Context)
 
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
+        setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
         setItemBoxOpen(prevState => !prevState)
