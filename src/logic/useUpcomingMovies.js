@@ -7,8 +7,9 @@ function useUpcomingMovies() {
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
         setMovieId(selection)
-        setItemBoxOpen(prevState => !prevState)
         fetchMovieDetails(selection)
+        setItemBoxOpen(prevState => !prevState)
+        
     }
 
     const upcomingMoviesTile = upcomingMovies.map((movie, index) => 

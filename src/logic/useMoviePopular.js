@@ -8,8 +8,9 @@ function useMoviePopular() {
     function handleMoviePopularClick(e) {
         let selection = popularMovies[e].id
         setMovieId(selection)
-        setItemBoxOpen(prevState => !prevState)
         fetchMovieDetails(selection)
+        setItemBoxOpen(prevState => !prevState)
+        
     }
 
     const popularMoviesTile = popularMovies.map((movie, index) => 

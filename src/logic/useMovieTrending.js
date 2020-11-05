@@ -8,9 +8,10 @@ function useMovieTrending() {
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id
         setMovieId(selection)
-        setItemBoxOpen(prevState => !prevState)
-        console.log(selection)
         fetchMovieDetails(selection)
+        setItemBoxOpen(prevState => !prevState)
+        
+        
         
         
     }

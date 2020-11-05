@@ -7,8 +7,9 @@ function useNowPlaying() {
     function handleNowPlayingClick(e) {
         let selection = nowPlaying[e].id
         setMovieId(selection)
-        setItemBoxOpen(prevState => !prevState)
         fetchMovieDetails(selection)
+        setItemBoxOpen(prevState => !prevState)
+        
     }
 
     const nowPlayingTile = nowPlaying.map((movie, index) => 

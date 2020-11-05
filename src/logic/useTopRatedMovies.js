@@ -7,8 +7,9 @@ function useTopRatedMovies() {
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
         setMovieId(selection)
-        setItemBoxOpen(prevState => !prevState)
         fetchMovieDetails(selection)
+        setItemBoxOpen(prevState => !prevState)
+        
     }
  
     const topRatedMoviesTile = topRatedMovies.map((movie, index) => 

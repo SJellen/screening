@@ -27,6 +27,8 @@ function useApi() {
     const [tvId, setTvId] = useState()
     const [personId, setPersonId] = useState()
     const [movieDetails, setMovieDetails] = useState([])
+    const [tvDetails, setTvDetails] = useState([])
+    const [personDetails, setPersonDetails] = useState([])
 
     
 
@@ -215,7 +217,7 @@ function useApi() {
         },[])
 
         
-console.log(movieId)
+
 
     const fetchMovieDetails = async (x) => {
         
@@ -227,11 +229,38 @@ console.log(movieId)
 
         )
         .catch(error => console.log(error))
+        }    
+        
+    const fetchTvDetails = async (x) => {
+    
+        await fetch(`https://api.themoviedb.org/3/tv/${x}?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setTvDetails(data)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }  
+        
+        
+    const fetchPersonDetails = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/person/${x}?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setPersonDetails(data)
+        }
+
+        )
+        .catch(error => console.log(error))
         }     
 
 
-        
 
+
+
+        
 
 
 
@@ -243,7 +272,7 @@ console.log(movieId)
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, apiKEY}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails}
 }
 
 

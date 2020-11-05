@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useAiringToday() {
-    const {posterPath, airingToday, setItemBoxOpen, setTvId}  = useContext(Context)
+    const {posterPath, airingToday, setItemBoxOpen, setTvId, fetchTvDetails}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
         setTvId(selection)
+        fetchTvDetails(selection)
         setItemBoxOpen(prevState => !prevState)
     }
 

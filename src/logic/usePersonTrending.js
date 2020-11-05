@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonTrending() {
-    const {personTrending, posterPath, setItemBoxOpen, setPersonId}  = useContext(Context)
+    const {personTrending, posterPath, setItemBoxOpen, setPersonId, fetchPersonDetails}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
         setPersonId(selection)
+        fetchPersonDetails(selection)
         setItemBoxOpen(prevState => !prevState)
     }
  

@@ -2,12 +2,13 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonPopular() {
-    const {posterPath, popularPerson, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
+    const {posterPath, popularPerson, setItemBoxOpen,  setPersonId, fetchPersonDetails}  = useContext(Context)
 
 
     function handlePersonTrendingClick(e) {
         let selection = popularPerson[e].id
         setPersonId(selection)
+        fetchPersonDetails(selection)
         setItemBoxOpen(prevState => !prevState)
     }
     
