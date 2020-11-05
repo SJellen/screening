@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useMoviePopular() {
-    const {posterPath, popularMovies, setItemBoxOpen}  = useContext(Context)
+    const {posterPath, popularMovies, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
 
     function handleMoviePopularClick(e) {

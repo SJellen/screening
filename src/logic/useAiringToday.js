@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useAiringToday() {
-    const {posterPath, airingToday, setItemBoxOpen}  = useContext(Context)
+    const {posterPath, airingToday, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id

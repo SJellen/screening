@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonTrending() {
-    const {personTrending, posterPath, setItemBoxOpen}  = useContext(Context)
+    const {personTrending, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id

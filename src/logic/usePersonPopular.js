@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonPopular() {
-    const {posterPath, popularPerson, setItemBoxOpen}  = useContext(Context)
+    const {posterPath, popularPerson, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
 
     function handlePersonTrendingClick(e) {

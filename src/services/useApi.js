@@ -20,6 +20,9 @@ function useApi() {
     const [tvRecommendationArr, setTvRecommendationArr] = useState([])
     const [movieRecommendationID, setMovieRecommendationID] = useState('240')
     const [movieRecommendationArr, setMovieRecommendationArr] = useState([])
+    const [movieId, setMovieId] = useState()
+    const [tvId, setTvId] = useState()
+    const [personId, setPersonId] = useState()
 
 
 
@@ -212,7 +215,9 @@ function useApi() {
       
         
 
-    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID }
+    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
+            topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, 
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId}
 }
 
 

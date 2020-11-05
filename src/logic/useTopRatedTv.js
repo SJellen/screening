@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTopRatedTv() {
-    const {topRatedTv, posterPath, setItemBoxOpen}  = useContext(Context)
+    const {topRatedTv, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
     function handlePopularTvClick(e) {
         let selection = topRatedTv[e].id

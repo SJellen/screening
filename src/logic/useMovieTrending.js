@@ -3,7 +3,7 @@ import {Context} from '../Context'
 
 
 function useMovieTrending() {
-    const {movieTrending, posterPath, setItemBoxOpen}  = useContext(Context)
+    const {movieTrending, posterPath, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id

@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useUpcomingMovies() {
-    const {posterPath, upcomingMovies, setItemBoxOpen}  = useContext(Context)
+    const {posterPath, upcomingMovies, setItemBoxOpen, setMovieId, setTvId, setPersonId}  = useContext(Context)
 
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
