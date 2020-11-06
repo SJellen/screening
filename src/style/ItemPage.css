@@ -7,3 +7,16 @@
     margin: 3rem auto 0 auto;
     color: white;
   }
+  
+  .item-page-close {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem;
+  }
+
+  .item-page-close:hover {
+    cursor: pointer;
+    color: gray;
+    transition: 2s ease;
+  }
+  

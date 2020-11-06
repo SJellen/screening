@@ -1,0 +1,36 @@
+.details-container {
+    border: 1px solid red;
+    width: 75vw;
+    margin: 0 auto;
+    display: flex;
+}
+
+.details-poster {
+    display: flex;
+    justify-content: left;
+}
+
+.detail-word-box {
+    border: 1px solid blue;
+    width: auto;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.detail-word-box > p {
+    width: 40vw;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.details-title {
+    border: 1px solid yellow;
+    font-size: 3rem;
+    
+}
+
+.details-top-word-box {
+    border: 1px solid green;
+    
+    margin-top: 4rem;
+}

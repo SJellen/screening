@@ -10,7 +10,7 @@ function ItemPage() {
 
     const {itemPageOpen, setItemBoxOpen, mediaType}  = useContext(Context)
     
-    console.log(mediaType)
+    
 
 
 
@@ -22,22 +22,14 @@ function ItemPage() {
         <div>
           { itemPageOpen ? 
         <div className="item-page-container">
-            <h1 onClick={handleX}>X</h1>
-
-            { mediaType === 'tv' ?  <Tv /> : mediaType === 'movie' ? <Movie /> : mediaType === 'person' ? <Person /> : setItemBoxOpen(false) }
-            
-            
-            
-            
-
+            <i className="im im-x-mark item-page-close" onClick={handleX}></i>
+            { mediaType === 'tv' ?  <Tv /> : 
+              mediaType === 'movie' ? <Movie /> : 
+              mediaType === 'person' ? <Person /> : 
+              setItemBoxOpen(false) }
         </div> : <div></div>
-        
-        
-        }
-          
-        </div>
-        
-        
+        }   
+        </div> 
     )
 }
 
