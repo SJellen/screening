@@ -5,10 +5,12 @@ import '../style/Movie.css'
 
 function Movie() {
 
-    const {movieDetails, posterPath, dateSplitter, posterPathLarge}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter}  = useContext(Context)
 
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
+
+    
 
     
 
@@ -28,15 +30,15 @@ function Movie() {
             
             <div className="details-mid-word-box">
                 <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>
-                <span className="details-runtime">Runtime {movieDetails.runtime} minutes</span>
+                <span className="details-runtime">Runtime {timeConverter(movieDetails.runtime)}</span>
                  
             </div>
-            <div>
+            <div className="details-tagline">
                 <h3>{movieDetails.tagline}</h3>
             </div>
             
            
-            <p>{movieDetails.overview}</p>
+            <p className="details-overview">{movieDetails.overview}</p>
         </div>
            
 

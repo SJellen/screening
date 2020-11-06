@@ -58,6 +58,13 @@ function ContextProvider({children}) {
         
     }
 
+    function timeConverter(num) {
+        let minutes = num % 60
+        let hours = (num - minutes) / 60
+        return `${hours}h ${minutes}min`
+
+    }
+
     // console.log(movieId, tvId, personId)
     // console.log(movieDetails, movieId)
    
@@ -65,7 +72,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemBoxOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, posterPath, dateSplitter, posterPathLarge}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemBoxOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, posterPath, dateSplitter, posterPathLarge, timeConverter}}>
             {children}
         </Context.Provider>
     )
