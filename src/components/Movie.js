@@ -5,7 +5,7 @@ import '../style/Movie.css'
 
 function Movie() {
 
-    const {movieDetails, posterPath, dateSplitter}  = useContext(Context)
+    const {movieDetails, posterPath, dateSplitter, posterPathLarge}  = useContext(Context)
 
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : '' 
@@ -14,7 +14,7 @@ function Movie() {
 
     return (
         <div className="details-container">
-        <img src={`${posterPath}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
+        <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
 
         <div className="detail-word-box">
             <div className="details-top-word-box">
