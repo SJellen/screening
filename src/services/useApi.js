@@ -262,7 +262,7 @@ function useApi() {
 
         
 
-
+        console.log(movieDetails.release_date)
 
 
         

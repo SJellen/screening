@@ -1,5 +1,4 @@
 .details-container {
-    border: 1px solid red;
     width: 75vw;
     margin: 0 auto;
     display: flex;
@@ -11,7 +10,7 @@
 }
 
 .detail-word-box {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: auto;
     margin: 0 auto;
     padding-top: 3rem;
@@ -24,13 +23,43 @@
 }
 
 .details-title {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     font-size: 3rem;
-    
+    font-weight: 500;
 }
 
+.details-score {
+    font-size: 3rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+}
+
+.details-star {
+    font-size: 3rem;
+    margin-top: .5rem;
+}
+
+
 .details-top-word-box {
-    border: 1px solid green;
     
-    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.details-score-star-box {
+    display: flex;
+}
+
+.details-mid-word-box {
+    border: 1px solid green;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+.details-release {
+    /* border: 2px solid red; */
 }
