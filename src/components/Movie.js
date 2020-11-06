@@ -8,7 +8,7 @@ function Movie() {
     const {movieDetails, posterPath, dateSplitter, posterPathLarge}  = useContext(Context)
 
 
-    const releaseStatus = movieDetails.status === "Released" ? "Released" : '' 
+    const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
     
 
@@ -27,7 +27,7 @@ function Movie() {
             
             
             <div className="details-mid-word-box">
-                <span className="details-release">Released: {dateSplitter(movieDetails.release_date)}</span>
+                <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>
                 <span className="details-runtime">Runtime {movieDetails.runtime} minutes</span>
                  
             </div>
