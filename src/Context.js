@@ -61,8 +61,16 @@ function ContextProvider({children}) {
     function timeConverter(num) {
         let minutes = num % 60
         let hours = (num - minutes) / 60
-        return `${hours}h ${minutes}min`
+        return `${hours > 0 ? hours : ''}${hours > 0 ? "h" : ''} ${minutes}min`
 
+    }
+
+    function getYear(n) {
+        if (n !== undefined) {
+            let numSplit = n.split('-') 
+            return numSplit[0]
+        }
+        
     }
 
     // console.log(movieId, tvId, personId)
@@ -72,7 +80,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemBoxOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, posterPath, dateSplitter, posterPathLarge, timeConverter}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemBoxOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, posterPath, dateSplitter, posterPathLarge, timeConverter, getYear}}>
             {children}
         </Context.Provider>
     )

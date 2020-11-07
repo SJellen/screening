@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
-import '../style/Movie.css'
+import '../style/Item.css'
 
 
 function Movie() {
