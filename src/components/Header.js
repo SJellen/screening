@@ -21,6 +21,7 @@ function Header() {
     function handleEnter() {
         setItemBoxOpen(true)
         fetchSearchResults()
+        document.getElementById('search-bar').value = ''
     }
 
 
@@ -38,6 +39,7 @@ function Header() {
                 
                 <div className="input-container">
                     <input
+                        id="search-bar"
                         className="input"
                         type="text"
                         placeholder="Search Screening"
