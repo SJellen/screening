@@ -35,6 +35,8 @@
     /* border: 1px solid yellow; */
     font-size: 3rem;
     font-weight: 500;
+    max-width: 25vw;
+    text-align: left;
 }
 
 .details-score {

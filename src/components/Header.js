@@ -8,12 +8,11 @@ import '../style/Header.css';
 
 function Header() {
 
-    const {fetchSearchResults, searchResults, setSearchTerm, setMediaType, setItemBoxOpen}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, setItemBoxOpen}  = useContext(Context)
 
     function handleSearch(event) {
         let searchWord = event.target.value
         setSearchTerm(searchWord)
-        console.log(searchWord)
         setMediaType('search')
         
     }

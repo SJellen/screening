@@ -1,5 +1,5 @@
-import {useState, useEffect, useContext} from 'react'
-import {Context} from '../Context'
+import {useState, useEffect} from 'react'
+
 
 function useApi() {
     
@@ -203,7 +203,6 @@ function useApi() {
         useEffect(() => {
             fetchTrending()
             fetchTrendingPerson()
-            fetchSearchResults()
             fetchTopRatedTv()
             fetchPopularTv()
             fetchAirToday()
@@ -214,6 +213,7 @@ function useApi() {
             fetchTvRecommend()
             fetchMovieRecommend()
             fetchPopularPerson()
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])
 
         
@@ -262,7 +262,7 @@ function useApi() {
 
         
 
-        console.log(searchTerm, searchResults)
+        
 
 
         
@@ -271,8 +271,8 @@ function useApi() {
         
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
-            topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, searchResults, setSearchTerm}
+            topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm}
 }
 
 
