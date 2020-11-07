@@ -14,7 +14,9 @@ function Footer() {
         </div>
 
 
-        <img src={blueSquare} alt="TMDB logo" className="tmdb-logo"/>
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" className="api-link">
+            <img src={blueSquare} alt="TMDB logo" className="tmdb-logo"/>
+        </a>
 
 
        
