@@ -33,8 +33,8 @@ function Tv() {
             </div>
             <div className="details-midbottom-word-box">
                
-                <span className="details-release">{`Number of seasons ${tvDetails.number_of_seasons}`}</span>
-                <span className="details-release">{`Total episodes ${tvDetails.number_of_episodes}`}</span>
+                <span className="details-seasons">{`Number of seasons ${tvDetails.number_of_seasons}`}</span>
+                <span className="details-episodes">{`Total episodes ${tvDetails.number_of_episodes}`}</span>
             </div>
             <div className="details-tagline">
                 <h3>{tvDetails.tagline}</h3>

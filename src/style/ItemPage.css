@@ -2,7 +2,7 @@
 .item-page-container {
     background-color: rgb(18, 18, 18);
     max-width: 90vw;
-    height: 80vh;
+    height: auto;
     padding: 2rem;
     margin: 3rem auto 0 auto;
     color: white;
