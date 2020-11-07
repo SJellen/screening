@@ -4,6 +4,7 @@ import '../style/ItemPage.css'
 import Movie from './Movie'
 import Tv from './Tv'
 import Person from './Person'
+import Search from './Search'
 
 
 function ItemPage() {
@@ -26,6 +27,8 @@ function ItemPage() {
             { mediaType === 'tv' ?  <Tv /> : 
               mediaType === 'movie' ? <Movie /> : 
               mediaType === 'person' ? <Person /> : 
+              mediaType === 'search' ? <Search /> :
+
               setItemBoxOpen(false) }
         </div> : <div></div>
         }   

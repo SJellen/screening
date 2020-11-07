@@ -9,7 +9,7 @@ function useApi() {
     const [tvTrending, setTvTrending] = useState([])
     const [movieTrending, setMovieTrending] = useState([])
     const [personTrending, setPersonTrending] = useState([])
-    const [searchTerm, setSearchTerm] = useState('kubrick')
+    const [searchTerm, setSearchTerm] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [topRatedTv, setTopRatedTv] = useState([])
     const [popularTv, setPopularTv] = useState([])
@@ -262,7 +262,7 @@ function useApi() {
 
         
 
-        console.log(movieDetails.release_date)
+        console.log(searchTerm, searchResults)
 
 
         
@@ -272,7 +272,7 @@ function useApi() {
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, topRatedMovies, topRatedTv, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, searchResults, setSearchTerm}
 }
 
 
