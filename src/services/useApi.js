@@ -29,6 +29,9 @@ function useApi() {
     const [movieDetails, setMovieDetails] = useState([])
     const [tvDetails, setTvDetails] = useState([])
     const [personDetails, setPersonDetails] = useState([])
+    const [searchResultsPerson, setSearchResultsPerson] = useState([])
+    const [searchResultsMovie, setSearchResultsMovie] = useState([])
+    const [searchResultsTv, setSearchResultsTv] = useState([])
 
     
 
@@ -77,7 +80,26 @@ function useApi() {
             await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${apiKEY}&language=en-US&query=${searchTerm}`)
             .then(res => res.json())
             .then((data) => {
-                setSearchResults(data.results)
+                
+                let results = data.results
+                
+                let tvSearchArr = [], movieSearchArr = [], personSearchArr = []
+                for (let i = 0; i < results.length; i++) {
+                    
+                if (results[i].media_type === 'tv') {
+                    
+                    tvSearchArr.push(results[i])
+                } else if (results[i].media_type === 'movie') {
+                    movieSearchArr.push(results[i])
+                } else if (results[i].media_type === 'person') {
+                    personSearchArr.push(results[i])
+                }
+            
+                
+                }
+                setSearchResultsMovie(movieSearchArr)
+                setSearchResultsTv(tvSearchArr)
+                setSearchResultsPerson(personSearchArr)
             }
     
             )
@@ -272,7 +294,7 @@ function useApi() {
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson}
 }
 
 

@@ -1,34 +1,20 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Search.css'
+import useSearchResultsMovie from '../logic/useSearchResultsMovie'
+import useSearchResultsTv from '../logic/useSearchResultsTv'
+import useSearchResultsPerson from '../logic/useSearchResultsPerson'
 
 
 function Search() {
 
-    const {searchResults}  = useContext(Context)
-
-    // console.log(searchResults)
-
+    const {searchResultsMovieTile}  = useSearchResultsMovie()
+    const {searchResultsTvTile}  = useSearchResultsTv()
+    const {searchResultsPersonTile}  = useSearchResultsPerson()
 
     
 
-    let tvSearchArr = [], movieSearchArr = [], personSearchArr = []
-        for (let i = 0; i < searchResults.length; i++) {
-            
-            if (searchResults[i].media_type === 'tv') {
-                tvSearchArr.push(searchResults[i])
-            } else if (searchResults[i].media_type === 'movie') {
-                tvSearchArr.push(searchResults[i])
-            } else if (searchResults[i].media_type === 'person') {
-                personSearchArr.push(searchResults[i])
-            }
-            
-                
-        }
-    
-
-    console.log(tvSearchArr, movieSearchArr, personSearchArr)
-
+   
 
      
 
@@ -37,12 +23,24 @@ function Search() {
     
 
     return (
-        <div className="details-container">
-        <div className="search-results-container">
-                <h1> search</h1>
+        
+        <div className="slider-container">
+        <span className="slider-label">Results: Movies</span>
+        <div className="slider-sub-container">
+            {searchResultsMovieTile}
         </div>
-         
+        <span className="slider-label">Results: TV</span>
+        <div className="slider-sub-container">
+            {searchResultsTvTile}
         </div>
+
+        <span className="slider-label">Results: People</span>
+        <div className="slider-sub-container">
+            {searchResultsPersonTile}
+        </div>
+        </div>
+
+     
     )
 }
 
