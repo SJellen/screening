@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
+import blankSquare from '../assets/placeholder.jpg'
 
 function usePersonTrending() {
     const {personTrending, posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
@@ -16,7 +17,7 @@ function usePersonTrending() {
         
         
         <div className="slider-card" key={person.id}> 
-        <img  src={`${posterPath}${person.profile_path}`} alt="poster" onClick={() => handlePersonTrendingClick(index)}/>
+        <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonTrendingClick(index)}/>
         <span className="slider-name">{person.name}</span>
         </div>
         )

@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
+import blankSquare from '../assets/placeholder.jpg'
 
 function useSearchResultsTv() {
     const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, setMediaType, searchResultsTv}  = useContext(Context)
@@ -18,7 +19,7 @@ function useSearchResultsTv() {
         
         
         <div className="slider-card" key={show.id}> 
-        <img  src={`${posterPath}${show.poster_path}`} alt="poster" onClick={() => handleSearchTvClick(index)}/>
+        <img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleSearchTvClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
         <span className="slider-title">{show.name}</span>
         </div>

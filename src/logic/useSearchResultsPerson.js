@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
+import blankSquare from '../assets/placeholder.jpg'
 
 function useSearchResultsPerson() {
     const {posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson}  = useContext(Context)
@@ -16,7 +17,7 @@ function useSearchResultsPerson() {
 
     const searchResultsPersonTile = searchResultsPerson.map((person, index) => 
     <div className="slider-card" key={person.id}> 
-    <img  src={`${posterPath}${person.profile_path}`} alt="poster" onClick={() => handleSearchPersonClick(index)}/>
+    <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleSearchPersonClick(index)}/>
     <span className="slider-name">{person.name}</span>
    </div> 
     )

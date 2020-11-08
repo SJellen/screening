@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
+import blankSquare from '../assets/placeholder.jpg'
 
 function useTvTrending() {
     const {tvTrending, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType}  = useContext(Context)
@@ -15,7 +16,7 @@ function useTvTrending() {
     const tvTrendingTile = tvTrending.map((show, index) => 
         
         <div className="slider-card" key={show.id}> 
-        <img  src={`${posterPath}${show.poster_path}`} alt="poster" onClick={() => handleTvTrendingClick(index)}/>
+        <img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvTrendingClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
         <span className="slider-title">{show.name}</span>
         </div>

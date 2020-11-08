@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../Context'
+import blankSquare from '../assets/placeholder.jpg'
 
 
 function useMovieTrending() {
@@ -21,7 +22,7 @@ function useMovieTrending() {
     const movieTrendingTile = movieTrending.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 
-        <img  src={`${posterPath}${movie.poster_path}`} alt="poster" onClick={() => handleMovieTrendingClick(index)}/>
+        <img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieTrendingClick(index)}/>
         <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
         <span className="slider-title" >{movie.title}</span>
         </div>

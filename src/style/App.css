@@ -14,6 +14,8 @@ html {
 }
 
 
+
+
 .slider-container {
   background-color: rgb(18, 18, 18);
   max-width: 90vw;
@@ -57,6 +59,13 @@ html {
 .slider-card > img:hover {
   cursor: pointer;
 }
+/* 
+.slider-poster {
+  display: block;
+  width: 200px;
+  height: auto;
+  
+} */
 
 .slider-score {
   padding-top: 1rem;
