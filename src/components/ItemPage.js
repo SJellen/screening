@@ -9,27 +9,35 @@ import Search from './Search'
 
 function ItemPage() {
 
-    const {itemPageOpen, setItemBoxOpen, mediaType}  = useContext(Context)
+    const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive}  = useContext(Context)
     
     
 
 
 
     function handleX() {
-        setItemBoxOpen(prevState => !prevState)
+        setItemPageOpen(prevState => !prevState)
+        setSearchResultsActive(false)
+    }
+
+    function handleActiveSearch() {
+        setMediaType('search')
+        setItemPageOpen(true)
+        fetchSearchResults()
+        
     }
 
     return (
         <div>
           { itemPageOpen ? 
         <div className="item-page-container">
-            <i className="im im-x-mark item-page-close" onClick={handleX}></i>
+           { !searchResultsActive  || mediaType === 'search' ? <i className="im im-x-mark item-page-close" onClick={handleX}></i> : <i className="im im-x-mark item-page-close" onClick={handleActiveSearch}></i> } 
             { mediaType === 'tv' ?  <Tv /> : 
               mediaType === 'movie' ? <Movie /> : 
               mediaType === 'person' ? <Person /> : 
               mediaType === 'search' ? <Search /> :
 
-              setItemBoxOpen(false) }
+              setItemPageOpen(false) }
         </div> : <div></div>
         }   
         </div> 

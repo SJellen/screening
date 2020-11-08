@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useSearchResultsTv() {
-    const {posterPath, setItemBoxOpen, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, setMediaType, searchResultsTv}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, setMediaType, searchResultsTv}  = useContext(Context)
 
 
     function handleSearchTvClick(e) {
@@ -10,7 +10,7 @@ function useSearchResultsTv() {
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
-        setItemBoxOpen(true)
+        setItemPageOpen(true)
         
     }
 

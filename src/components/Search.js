@@ -7,7 +7,7 @@ import useSearchResultsPerson from '../logic/useSearchResultsPerson'
 
 
 function Search() {
-
+    const {searchTerm} = useContext(Context)
     const {searchResultsMovieTile}  = useSearchResultsMovie()
     const {searchResultsTvTile}  = useSearchResultsTv()
     const {searchResultsPersonTile}  = useSearchResultsPerson()
@@ -25,6 +25,8 @@ function Search() {
     return (
         
         <div className="slider-container">
+        
+        <h1>Results for {searchTerm}</h1>
         <span className="slider-label">Results: Movies</span>
         <div className="slider-sub-container">
             {searchResultsMovieTile}

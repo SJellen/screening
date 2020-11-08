@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonPopular() {
-    const {posterPath, popularPerson, setItemBoxOpen,  setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
+    const {posterPath, popularPerson, setItemPageOpen,  setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
 
 
     function handlePersonTrendingClick(e) {
@@ -10,7 +10,7 @@ function usePersonPopular() {
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
-        setItemBoxOpen(prevState => !prevState)
+        setItemPageOpen(prevState => !prevState)
     }
     
     const popularPersonTile = popularPerson.map((person, index) => 

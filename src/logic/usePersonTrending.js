@@ -2,14 +2,14 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function usePersonTrending() {
-    const {personTrending, posterPath, setItemBoxOpen, setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
+    const {personTrending, posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
-        setItemBoxOpen(prevState => !prevState)
+        setItemPageOpen(prevState => !prevState)
     }
  
     const personTrendingTile = personTrending.map((person, index) => 

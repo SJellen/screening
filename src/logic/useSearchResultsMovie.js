@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useSearchResultsMovie() {
-    const {posterPath, setItemBoxOpen, setMovieId, fetchMovieDetails, setMediaType, searchResultsMovie}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, searchResultsMovie}  = useContext(Context)
 
 
     function handleSearchMovieClick(e) {
@@ -10,7 +10,7 @@ function useSearchResultsMovie() {
         setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
-        setItemBoxOpen(true)
+        setItemPageOpen(true)
         
     }
 

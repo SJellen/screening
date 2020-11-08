@@ -2,14 +2,14 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useTvTrending() {
-    const {tvTrending, posterPath, setItemBoxOpen, setTvId, fetchTvDetails, setMediaType}  = useContext(Context)
+    const {tvTrending, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType}  = useContext(Context)
 
     function handleTvTrendingClick(e) {
         let selection = tvTrending[e].id
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
-        setItemBoxOpen(prevState => !prevState)
+        setItemPageOpen(prevState => !prevState)
     }
  
     const tvTrendingTile = tvTrending.map((show, index) => 

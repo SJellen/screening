@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import {Context} from '../Context'
 
 function useSearchResultsPerson() {
-    const {posterPath, setItemBoxOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson}  = useContext(Context)
 
 
     function handleSearchPersonClick(e) {
@@ -10,7 +10,7 @@ function useSearchResultsPerson() {
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
-        setItemBoxOpen(true)
+        setItemPageOpen(true)
         
     }
 

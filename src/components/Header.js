@@ -8,7 +8,7 @@ import '../style/Header.css';
 
 function Header() {
 
-    const {fetchSearchResults, setSearchTerm, setMediaType, setItemBoxOpen}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, setItemPageOpen, setSearchResultsActive}  = useContext(Context)
 
     function handleSearch(event) {
         let searchWord = event.target.value
@@ -18,9 +18,10 @@ function Header() {
     }
 
     function handleEnter() {
-        setItemBoxOpen(true)
+        setItemPageOpen(true)
         fetchSearchResults()
         document.getElementById('search-bar').value = ''
+        setSearchResultsActive(true)
     }
 
 
