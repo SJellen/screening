@@ -32,6 +32,7 @@ function useApi() {
     const [searchResultsPerson, setSearchResultsPerson] = useState([])
     const [searchResultsMovie, setSearchResultsMovie] = useState([])
     const [searchResultsTv, setSearchResultsTv] = useState([])
+    const [personCredits, setPersonCredits] = useState([])
 
     
 
@@ -276,7 +277,22 @@ function useApi() {
 
         )
         .catch(error => console.log(error))
-        }     
+        } 
+        
+     
+        const fetchPersonCredits = async (x) => {
+
+            await fetch(`https://api.themoviedb.org/3/person/${x}/combined_credits?api_key=${apiKEY}&language=en-US`)
+            .then(res => res.json())
+            .then((data) => {
+                setPersonCredits(data)
+            }
+    
+            )
+            .catch(error => console.log(error))
+            }     
+
+
 
 
 
@@ -294,7 +310,7 @@ function useApi() {
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits}
 }
 
 

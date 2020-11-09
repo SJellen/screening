@@ -1,18 +1,18 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Item.css'
+import usePersonCredits from '../logic/usePersonCredits'
 
 
 function Person() {
 
-    const {personDetails, posterPathLarge, dateSplitter, getYear}  = useContext(Context)
-
-
+    const {personDetails, posterPathLarge, dateSplitter}  = useContext(Context)
+    const {personCredit} = usePersonCredits()
+    
    
 
-    console.log(personDetails)
-
     return (
+        <div>
         <div className="details-container">
         <div className="poster-container">
             <img src={`${posterPathLarge}${personDetails.profile_path}`} alt="movie poster" className="details-poster" />
@@ -25,8 +25,7 @@ function Person() {
             <div className="details-mid-word-box">
                 <span className="details-birth">Born {dateSplitter(personDetails.birthday)}</span>
                 { personDetails.deathday && <span className="details-death">Died {dateSplitter(personDetails.deathday)}</span>}
-                
-               
+                 
             </div>
             <div className="details-midbottom-word-box">
                
@@ -37,12 +36,15 @@ function Person() {
                 <h3>{personDetails.tagline}</h3>
             </div>
             
-           
             <p className="details-overview">{personDetails.biography}</p>
         </div>
-           
 
         </div>
+        <div className="details-credit-container">
+            {personCredit}
+        </div>
+        </div>
+
     )
 }
 

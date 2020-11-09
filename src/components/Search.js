@@ -26,7 +26,7 @@ function Search() {
         
         <div className="slider-container">
         
-        <h1>Results for {searchTerm}</h1>
+        <h1 className="results-title">Results for {searchTerm}</h1>
         
         {searchResultsMovie.length > 0 ? <span className="slider-label">Results: Movies</span> : ''}
         <div className="slider-sub-container">

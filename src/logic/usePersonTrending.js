@@ -3,13 +3,14 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function usePersonTrending() {
-    const {personTrending, posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType}  = useContext(Context)
+    const {personTrending, posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, fetchPersonCredits}  = useContext(Context)
 
     function handlePersonTrendingClick(e) {
         let selection = personTrending[e].id
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
+        fetchPersonCredits(selection)
         setItemPageOpen(prevState => !prevState)
     }
  

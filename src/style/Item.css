@@ -96,3 +96,11 @@
     max-width: 30vw;
 
 }
+
+.details-credit-container {
+    border: 1px solid red;
+    width: 75vw;
+    margin: 0 auto;
+    
+    
+}

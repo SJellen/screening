@@ -3,7 +3,7 @@
     background-color: rgb(18, 18, 18);
     max-width: 90vw;
     height: auto;
-    padding: 2rem;
+    padding: 2rem 2rem 8rem 2rem;
     margin: 3rem auto 0 auto;
     color: white;
   }
@@ -18,5 +18,10 @@
     cursor: pointer;
     color: gray;
     transition: 2s ease;
+  }
+
+  .results-title {
+    margin-top: 0rem;
+    font-size: 3rem;
   }
   
