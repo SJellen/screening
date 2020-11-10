@@ -99,8 +99,9 @@
 
 .details-credit-container {
     border: 1px solid red;
-    width: 75vw;
+    width: 60vw;
+    padding: 3rem;
     margin: 0 auto;
-    
+    background-color: #1B1B1B;
     
 }

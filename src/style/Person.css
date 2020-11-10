@@ -1,0 +1,51 @@
+.person-filmography {
+    /* color: red;
+    border: 1px solid red; */
+    
+    display: flex;
+    padding: 2rem;
+   
+}
+
+.person-gender-credit{
+    /* color: red;
+    border: 1px solid red; */
+    
+    display: flex;
+    padding: 2rem;
+    
+}
+
+.person-filmography-container {
+    border: 1px solid blue;
+    width: 100%;
+}
+
+.person-filmography-header{
+    border: 1px solid green;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-part-tile {
+    border: 1px solid red;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-part-tile-left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.person-part-title {
+    font-size: 1.25rem;
+}
+
+.person-part-year {
+    font-size: 1.25rem;
+}
