@@ -3,13 +3,14 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useUpcomingMovies() {
-    const {posterPath, upcomingMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType}  = useContext(Context)
+    const {posterPath, upcomingMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits}  = useContext(Context)
 
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
         setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
+        fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
         
     }

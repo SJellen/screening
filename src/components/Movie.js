@@ -10,7 +10,7 @@ function Movie() {
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
-    console.log(movieDetails)
+    // console.log(movieDetails)
 
     
 

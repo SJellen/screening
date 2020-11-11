@@ -2,6 +2,7 @@
     width: 75vw;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     padding-bottom: 5rem;
 }
 
@@ -106,3 +107,37 @@
     background-color: #1B1B1B;
     
 }
+
+.details-cast-slider {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  overflow:scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.details-cast-slider::-webkit-scrollbar {
+    display: none;
+}  
+
+.details-slider-container {
+    border: 1px solid red;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    background-color: rgb(18, 18, 18);
+    max-width: 75vw;
+    padding: 2rem 0;
+    margin: 5rem auto 0 auto;
+    color: white;
+  }
+
+
+  .details-slider-title {
+      display: flex;
+      font-size: 2rem;
+      padding: 2rem;
+  }

@@ -33,6 +33,8 @@ function useApi() {
     const [searchResultsMovie, setSearchResultsMovie] = useState([])
     const [searchResultsTv, setSearchResultsTv] = useState([])
     const [personCredits, setPersonCredits] = useState([])
+    const [movieCredits, setMovieCredits] = useState([])
+    const [tvCredits, setTvCredits] = useState([])
 
     
 
@@ -280,22 +282,54 @@ function useApi() {
         } 
         
      
-        const fetchPersonCredits = async (x) => {
+    const fetchPersonCredits = async (x) => {
 
-            await fetch(`https://api.themoviedb.org/3/person/${x}/combined_credits?api_key=${apiKEY}&language=en-US`)
-            .then(res => res.json())
-            .then((data) => {
-                setPersonCredits(data)
-            }
-    
-            )
-            .catch(error => console.log(error))
+        await fetch(`https://api.themoviedb.org/3/person/${x}/combined_credits?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setPersonCredits(data)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }  
+        
+    const fetchMovieCredits = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/movie/${x}/credits?api_key=${apiKEY}`)
+        .then(res => res.json())
+        .then((data) => {
+            setMovieCredits(data)
+        }
+
+        )
+        .catch(error => console.log(error))
             }     
 
 
+    const fetchTvCredits = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/tv/${x}/credits?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setTvCredits(data)
+        }
+
+        )
+        .catch(error => console.log(error))
+            }          
+
+
+            
+         
+            
+            
+           
 
 
 
+
+    console.log(tvId, tvCredits)
 
 
         
@@ -310,7 +344,7 @@ function useApi() {
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits}
 }
 
 

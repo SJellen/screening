@@ -89,6 +89,14 @@ html {
   margin-top: .5rem;
 }
 
+.slider-character {
+  padding-top: 1rem;
+  text-align: left;
+  font-size: 1.25rem;
+  margin-top: .25rem;
+  color: silver;
+}
+
 
 
 .im-star {

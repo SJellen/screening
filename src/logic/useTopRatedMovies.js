@@ -3,13 +3,14 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useTopRatedMovies() {
-    const {topRatedMovies, posterPath,setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType}  = useContext(Context)
+    const {topRatedMovies, posterPath,setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits}  = useContext(Context)
 
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
         setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
+        fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
         
     }
