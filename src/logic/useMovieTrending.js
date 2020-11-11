@@ -12,10 +12,7 @@ function useMovieTrending() {
         setMovieId(selection)
         fetchMovieDetails(selection)
         setItemPageOpen(prevState => !prevState)
-        
-        
-        
-        
+    
     }
     
 

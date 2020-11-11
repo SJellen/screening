@@ -10,21 +10,27 @@ function Movie() {
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
-    
+    console.log(movieDetails)
 
     
 
     return (
         <div className="details-container">
-        <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
+        { movieDetails.poster_path &&
+            <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
+        }
+        
 
         <div className="detail-word-box">
             <div className="details-top-word-box">
                 <span className="details-title">{movieDetails.title}</span>
+                { movieDetails.vote_count !== 0 ? 
                     <div className="details-score-star-box">
                         <i className="im im-star details-star"></i>
                     <span className="details-score">{movieDetails.vote_average}</span>
-                    </div>
+                    </div> : ''
+                }
+                    
             </div>
             
             

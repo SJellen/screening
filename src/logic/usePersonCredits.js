@@ -5,38 +5,56 @@ import '../style/Person.css'
 
 function usePersonCredits() {
 
-    const {personDetails, posterPathLarge, dateSplitter, personCredits, getYear}  = useContext(Context)
-    const {}  = usePersonCast()
+    const {personDetails, personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails}  = useContext(Context)
+    const {sortedCastTvArr, sortedCastMovieArr}  = usePersonCast()
     const {crew, cast} = personCredits
 
+    function handleMovieTileClick(e) {
+      let selection = sortedCastMovieArr[e].id
+      setMediaType('movie')
+      setMovieId(selection)
+      fetchMovieDetails(selection)
+    }
 
-    // const partTile = cast.map((item, index) => 
-    //     <div key={item.id}>
-    //     <span>{item.media_type === "movie" ? item.title : item.name}</span>
+    function handleTvTileClick(e) {
+        let selection = sortedCastTvArr[e].id
+        setMediaType('tv')
+        setTvId(selection)
+        fetchTvDetails(selection)
+    }
 
-    //     </div>
-    // )
+    
 
-    const partTile = cast && cast.map((item, index) => 
-    <div className="person-part-tile" key={(index)}>
+    const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
+
+    <div className="person-part-tile" key={(index)} onClick={() => handleMovieTileClick(index)}>
     <div className="person-part-tile-left">
-        <span className="person-part-title">{item.media_type === "movie" ? item.title : item.name}</span>
-        <span>{item.character && item.character}</span>
+        <span className="person-part-title">{item.title}</span>
+        <span className="person-part-character" >{item.character && item.character}</span>
     </div>
     
-    <span className="person-part-year">{item.media_type === "tv" ? parseInt(getYear(cast[index].first_air_date)) : item.media_type === "movie" ? parseInt(getYear(cast[index].release_date)) :  ''}</span>
+    <span className="person-part-year">{sortedCastMovieArr[index].release_date === '' ? '' : parseInt(getYear(sortedCastMovieArr[index].release_date))}</span>
+    </div>)
+
+
+
+    const partTvTile = sortedCastTvArr && sortedCastTvArr.map((item, index) => 
+
+    <div className="person-part-tile" key={(index)} onClick={() => handleTvTileClick(index)}>
+    <div className="person-part-tile-left">
+        <span className="person-part-title">{item.name}</span>
+        <span className="person-part-character">{item.character && item.character}</span>
     </div>
-)
-    
+    <span className="person-part-year">{sortedCastTvArr[index].first_air_date === '' ? '' : parseInt(getYear(sortedCastTvArr[index].first_air_date))}</span>
+    </div>)
     
     
     const personCast = (
         <div >
           <span className="person-gender-credit">{personDetails.gender === 2 ? "Actor" : "Actress"} ({cast && cast.length} credits)</span>
-         
-          
-      </div>
-  )
+         </div>)
+    
+    
     
     
     const personCredit = (
@@ -45,16 +63,17 @@ function usePersonCredits() {
                <span className="person-filmography">Filmography</span>
                {personCast}
            </div>
+          <div> 
+          <span className="person-filmography-section-title">Movies</span>
+          {partMovieTile}
+          </div>
 
-
-           {partTile}
-            
-
-            
-
-            
-        </div>
-    )
+          <div>
+          <span className="person-filmography-section-title">Tv</span>
+          {partTvTile}
+          </div>
+   
+        </div>)
        
     
        

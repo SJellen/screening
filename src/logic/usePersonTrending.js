@@ -12,6 +12,7 @@ function usePersonTrending() {
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
  
     const personTrendingTile = personTrending.map((person, index) => 

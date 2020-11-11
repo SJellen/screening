@@ -94,11 +94,12 @@
     font-size: 1.25rem;
     /* border: 1px solid blue; */
     max-width: 30vw;
+    line-height: 2;
 
 }
 
 .details-credit-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 60vw;
     padding: 3rem;
     margin: 0 auto;

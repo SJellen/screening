@@ -13,6 +13,7 @@ function usePersonPopular() {
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
     
     const popularPersonTile = popularPerson.map((person, index) => 
