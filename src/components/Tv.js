@@ -1,13 +1,14 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import useTvCast from '../logic/useTvCast'
+
 import '../style/Item.css'
 
 
 function Tv() {
 
     const {tvDetails, posterPathLarge, timeConverter, getYear}  = useContext(Context)
-    const {castTile} = useTvCast()
+    const {castTvTile} = useTvCast()
 
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
@@ -15,7 +16,12 @@ function Tv() {
 
     return (
         <div className="details-container">
-        <img src={`${posterPathLarge}${tvDetails.poster_path}`} alt="movie poster" className="details-poster" />
+        <div className="poster-container">
+        {   tvDetails.poster_path && 
+            <img src={`${posterPathLarge}${tvDetails.poster_path}`} alt="movie poster" className="details-poster" />
+        }
+        </div>
+        
 
         <div className="detail-word-box">
             <div className="details-top-word-box">
@@ -48,9 +54,11 @@ function Tv() {
         <div className="details-slider-container">
         <span className="details-slider-title">Cast</span>
            <div className="details-cast-slider">
-            {castTile}
+            {castTvTile}
         </div> 
         </div>
+
+        
         
         
            

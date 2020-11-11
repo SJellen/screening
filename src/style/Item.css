@@ -106,6 +106,7 @@
     margin: 0 auto;
     background-color: #1B1B1B;
     
+    
 }
 
 .details-cast-slider {
@@ -126,7 +127,7 @@
 .details-slider-container {
     border: 1px solid red;
     display: flex;
-    justify-content: left;
+    
     flex-direction: column;
     background-color: rgb(18, 18, 18);
     max-width: 75vw;

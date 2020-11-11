@@ -49,7 +49,7 @@ function useTvCast() {
     }
 
 
-    const castTile = cast && cast.map((person, index) => 
+    const castTvTile = cast && cast.map((person, index) => 
 
          
         <div className="slider-card" key={person.id}> 
@@ -61,7 +61,7 @@ function useTvCast() {
 
     
     
-    return {castTile}
+    return {castTvTile}
 }
 
 export default useTvCast

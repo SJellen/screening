@@ -1,24 +1,30 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
+import useMovieCast from '../logic/useMovieCast'
 import '../style/Item.css'
 
 
 function Movie() {
 
     const {movieDetails, dateSplitter, posterPathLarge, timeConverter}  = useContext(Context)
-
+    const {castMovieTile} = useMovieCast()
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
-    // console.log(movieDetails)
+    console.log(movieDetails)
 
     
 
     return (
         <div className="details-container">
-        { movieDetails.poster_path &&
+            <div className="poster-container">
+            { movieDetails.poster_path &&
             <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
-        }
+            }
+        </div>
+            
+          
+        
         
 
         <div className="detail-word-box">
@@ -45,6 +51,13 @@ function Movie() {
             
            
             <p className="details-overview">{movieDetails.overview}</p>
+        </div>
+
+        <div className="details-slider-container">
+        <span className="details-slider-title">Cast</span>
+           <div className="details-cast-slider">
+            {castMovieTile}
+        </div> 
         </div>
            
 
