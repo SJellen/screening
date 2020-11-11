@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import useMovieCast from '../logic/useMovieCast'
+import useMovieCrew from '../logic/useMovieCrew'
 import '../style/Item.css'
 
 
@@ -8,10 +9,11 @@ function Movie() {
 
     const {movieDetails, dateSplitter, posterPathLarge, timeConverter}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
+    const {crewMovieTile} = useMovieCrew()
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
-    console.log(movieDetails)
+    
 
     
 
@@ -61,6 +63,13 @@ function Movie() {
         <span className="details-slider-title">Cast</span>
            <div className="details-cast-slider">
             {castMovieTile}
+        </div> 
+        </div>
+
+        <div className="details-slider-container">
+        <span className="details-slider-title">Crew</span>
+           <div className="details-cast-slider">
+            {crewMovieTile}
         </div> 
         </div>
            

@@ -6,9 +6,9 @@ function useMovieCast() {
 
     const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath}  = useContext(Context)
 
-    const {crew, cast} = movieCredits
+    const {cast} = movieCredits
 
-    console.log(cast)
+    
 
 
     function handlePersonCreditClick(e) {

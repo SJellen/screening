@@ -25,7 +25,8 @@ function Person() {
             </div>
             
             <div className="details-mid-word-box">
-                <span className="details-birth">Born {dateSplitter(personDetails.birthday)}</span>
+                { personDetails.birthday && <span className="details-birth">Born {dateSplitter(personDetails.birthday)}</span>}
+                
                 { personDetails.deathday && <span className="details-death">Died {dateSplitter(personDetails.deathday)}</span>}
                  
             </div>

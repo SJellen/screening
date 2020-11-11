@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useMoviePopular() {
-    const {posterPath, popularMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits}  = useContext(Context)
+    const {posterPath, popularMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits}  = useContext(Context)
 
 
     function handleMoviePopularClick(e) {
@@ -11,6 +11,7 @@ function useMoviePopular() {
         setMediaType('movie')
         setMovieId(selection)
         fetchMovieDetails(selection)
+        setMovieCredits([])
         fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
