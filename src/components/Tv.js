@@ -16,6 +16,8 @@ function Tv() {
 
     return (
         <div className="details-container">
+
+        <div className="detail-top-container">
         <div className="poster-container">
         {   tvDetails.poster_path && 
             <img src={`${posterPathLarge}${tvDetails.poster_path}`} alt="movie poster" className="details-poster" />
@@ -50,6 +52,12 @@ function Tv() {
            
             <p className="details-overview">{tvDetails.overview}</p>
         </div>
+
+
+        </div>
+
+
+       
 
         <div className="details-slider-container">
         <span className="details-slider-title">Cast</span>

@@ -4,12 +4,21 @@
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 5rem;
+    /* border: 1px solid red; */
+}
+
+.detail-top-container {
+    /* border: 1px solid green; */
+    display: flex;
+    width: 75vw;
+    justify-content: space-around;
 }
 
 .details-poster {
     display: block;
     width: 20vw;
     height: auto;
+    /* margin: 0 auto; */
     
 }
 
@@ -19,8 +28,9 @@
 
 .detail-word-box {
     /* border: 1px solid blue; */
+    
     max-width: 60vw;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 3rem;
     background-color: #1B1B1B;
     

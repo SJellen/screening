@@ -12,6 +12,7 @@ function useAiringToday() {
         fetchTvDetails(selection)
         fetchTvCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
 
     const airingTodayTile = airingToday.map((show, index) => 

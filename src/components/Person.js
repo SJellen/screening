@@ -14,6 +14,8 @@ function Person() {
     return (
         <div>
         <div className="details-container">
+
+        <div className="detail-top-container">
         <div className="poster-container">
             <img src={`${posterPathLarge}${personDetails.profile_path}`} alt="movie poster" className="details-poster" />
         </div>
@@ -38,6 +40,10 @@ function Person() {
             
             <p className="details-overview">{personDetails.biography}</p>
         </div>
+
+
+        </div>
+       
 
         </div>
         <div className="details-credit-container">

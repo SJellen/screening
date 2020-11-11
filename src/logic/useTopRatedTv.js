@@ -12,6 +12,7 @@ function useTopRatedTv() {
         fetchTvDetails(selection)
         fetchTvCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
  
     const topRatedTvTile = topRatedTv.map((show, index) => 

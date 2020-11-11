@@ -13,7 +13,7 @@ function useMoviePopular() {
         fetchMovieDetails(selection)
         fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
-        
+        window.scrollTo(0, 0)
     }
 
     const popularMoviesTile = popularMovies.map((movie, index) => 

@@ -11,6 +11,7 @@ function useNowPlaying() {
         fetchMovieDetails(selection)
         fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
         
     }
 

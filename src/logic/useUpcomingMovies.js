@@ -12,6 +12,7 @@ function useUpcomingMovies() {
         fetchMovieDetails(selection)
         fetchMovieCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
         
     }
 

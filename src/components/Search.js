@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
-import '../style/Search.css'
 import useSearchResultsMovie from '../logic/useSearchResultsMovie'
 import useSearchResultsTv from '../logic/useSearchResultsTv'
 import useSearchResultsPerson from '../logic/useSearchResultsPerson'

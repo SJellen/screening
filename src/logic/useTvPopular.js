@@ -12,6 +12,7 @@ function useTvPopular() {
         fetchTvDetails(selection)
         fetchTvCredits(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
     
 

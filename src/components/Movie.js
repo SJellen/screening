@@ -17,7 +17,9 @@ function Movie() {
 
     return (
         <div className="details-container">
-            <div className="poster-container">
+
+        <div className="detail-top-container">
+        <div className="poster-container">
             { movieDetails.poster_path &&
             <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
             }
@@ -52,6 +54,8 @@ function Movie() {
            
             <p className="details-overview">{movieDetails.overview}</p>
         </div>
+        </div>
+            
 
         <div className="details-slider-container">
         <span className="details-slider-title">Cast</span>
