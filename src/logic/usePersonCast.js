@@ -5,7 +5,7 @@ function usePersonCast() {
 
     const {personDetails, setMediaType, setMovieId, fetchMovieCredits, fetchMovieDetails, setMovieCredits, setTvId, personCredits, getYear, fetchTvDetails, setTvCredits, fetchTvCredits}  = useContext(Context)
 
-    const {crew, cast} = personCredits
+    const {cast} = personCredits
 
     function handleMovieTileClick(e) {
         let selection = sortedCastMovieArr[e].id
