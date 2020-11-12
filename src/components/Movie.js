@@ -66,12 +66,16 @@ function Movie() {
         </div> 
         </div>
 
+        { crewMovieTile.length > 0 ? 
         <div className="details-slider-container">
-        <span className="details-slider-title">Crew</span>
-           <div className="details-cast-slider">
-            {crewMovieTile}
-        </div> 
-        </div>
+                <span className="details-slider-title">Crew</span>
+                <div className="details-cast-slider">
+                    {crewMovieTile}
+                </div> 
+                </div>
+                : '' }
+
+        
            
 
         </div>

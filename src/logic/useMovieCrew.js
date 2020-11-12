@@ -7,15 +7,10 @@ function useMovieCrew() {
     const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath}  = useContext(Context)
     const {crew} = movieCredits
 
-    // console.log(crew && crew.length)
+    let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
 
-
-    let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []
-
-    
-
-    
-    if (crew !== undefined) {
+    function crewSorter() {
+      if (crew !== undefined) {
         for (let i = 0; i < crew.length; i++) {
             // console.log(crew[i].department)
             if (crew[i].department === "Directing") {
@@ -29,8 +24,10 @@ function useMovieCrew() {
                 otherJobArr.push(crew[i])
             }
     }
+    }  
     }
-
+    
+    crewSorter()
     let crewSortedArr = [...directorArr, ...writingArr, ...productionArr, ...otherJobArr]
 
 
