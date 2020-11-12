@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useSearchResultsTv() {
-    const {posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, searchResultsTv, fetchTvCredits}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, searchResultsTv, fetchTvCredits, setTvCredits}  = useContext(Context)
 
 
     function handleSearchTvClick(e) {
@@ -11,6 +11,7 @@ function useSearchResultsTv() {
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
+        setTvCredits([])
         fetchTvCredits(selection)
         setItemPageOpen(true)
         

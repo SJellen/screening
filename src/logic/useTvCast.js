@@ -8,7 +8,7 @@ function useTvCast() {
 
     const {crew, cast} = tvCredits
 
-    console.log(cast)
+    // console.log(cast)
 
     
 

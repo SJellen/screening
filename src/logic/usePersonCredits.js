@@ -5,7 +5,7 @@ import '../style/Person.css'
 
 function usePersonCredits() {
 
-    const {personDetails, personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, fetchMovieCredits, fetchTvCredits, setMovieCredits}  = useContext(Context)
+    const {personDetails, personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, fetchMovieCredits, fetchTvCredits, setMovieCredits, setTvCredits}  = useContext(Context)
     const {sortedCastTvArr, sortedCastMovieArr}  = usePersonCast()
     const {crew, cast} = personCredits
 
@@ -24,7 +24,7 @@ function usePersonCredits() {
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
-        setMovieCredits([])
+        setTvCredits([])
         fetchTvCredits(selection)
         window.scrollTo(0, 0)
     }

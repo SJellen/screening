@@ -3,13 +3,14 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useAiringToday() {
-    const {posterPath, airingToday, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits}  = useContext(Context)
+    const {posterPath, airingToday, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
+        setTvCredits([])
         fetchTvCredits(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)

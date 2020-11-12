@@ -3,13 +3,14 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useTopRatedTv() {
-    const {topRatedTv, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits}  = useContext(Context)
+    const {topRatedTv, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits}  = useContext(Context)
 
     function handlePopularTvClick(e) {
         let selection = topRatedTv[e].id
         setMediaType('tv')
         setTvId(selection)
         fetchTvDetails(selection)
+        setTvCredits([])
         fetchTvCredits(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
