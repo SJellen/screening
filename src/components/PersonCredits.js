@@ -1,14 +1,15 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
-import usePersonCast from './usePersonCast';
-import usePersonCrew from './usePersonCrew';
+import PersonCrew from './PersonCrew'
+import PersonCast from './PersonCast';
 import '../style/Person.css'
 
-function usePersonCredits() {
+function PersonCredits() {
 
     
-    const {partMovieTile, partTvTile, personCast}  = usePersonCast()
-    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile} = usePersonCrew()
+    // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
+    const {partMovieTile, partTvTile, personCast} = PersonCast()
+    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile} = PersonCrew()
     
 
     
@@ -101,4 +102,4 @@ function usePersonCredits() {
     return {personCredit}
 }
 
-export default usePersonCredits
+export default PersonCredits

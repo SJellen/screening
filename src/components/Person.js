@@ -1,13 +1,13 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Item.css'
-import usePersonCredits from '../logic/usePersonCredits'
+import PersonCredits from './PersonCredits'
 
 
 function Person() {
 
     const {personDetails, posterPathLarge, dateSplitter}  = useContext(Context)
-    const {personCredit} = usePersonCredits()
+    const {personCredit} = PersonCredits()
     
    
 
