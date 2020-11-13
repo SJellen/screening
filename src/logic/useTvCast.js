@@ -4,46 +4,18 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useTvCast() {
 
-    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, setItemPageOpen}  = useContext(Context)
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, setItemPageOpen, personImages, fetchPersonImages}  = useContext(Context)
 
     const {crew, cast} = tvCredits
 
-    // console.log(cast)
-
-    
-
-    
-    
-    // let castTvArr = [], castMovieArr = [], otherArr = []
-    // if (cast !== undefined) {
-    //    for (let i =0; i < cast.length; i++) {
-    //     if (cast[i].media_type === "movie") {
-    //         castMovieArr.push(cast[i])
-    //     } else if (cast[i].media_type === "tv") {
-    //         castTvArr.push(cast[i])
-    //     } else {
-    //         otherArr.push(cast[i])
-    //     }
-    // } 
-    // }
-
-    
-
-    // const sortedCastTvArr = castTvArr && castTvArr.sort((a,b) => {
-    //     return parseInt(getYear(b.first_air_date)) - parseInt(getYear(a.first_air_date))
-    // })
-
-    // const sortedCastMovieArr = castMovieArr && castMovieArr.sort((a,b) => {
-    //     return parseInt(getYear(b.release_date)) - parseInt(getYear(a.release_date))
-    // })
-
-
+  
     function handlePersonCreditClick(e) {
         let selection = cast[e].id
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
+        fetchPersonImages(selection)
         // setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }

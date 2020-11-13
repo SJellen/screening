@@ -4,10 +4,10 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useTVCrew() {
 
-    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath}  = useContext(Context)
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, personImages, fetchPersonImages}  = useContext(Context)
     const {crew} = tvCredits
 
-    console.log(crew)
+   
 
 
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []
@@ -44,6 +44,7 @@ function useTVCrew() {
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
+        fetchPersonImages(selection)
         // setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }

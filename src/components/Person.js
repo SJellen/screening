@@ -17,7 +17,10 @@ function Person() {
 
         <div className="detail-top-container">
         <div className="poster-container">
-            <img src={`${posterPathLarge}${personDetails.profile_path}`} alt="movie poster" className="details-poster" />
+        { personDetails.profile_path && 
+        <img src={`${posterPathLarge}${personDetails.profile_path}`} alt="movie poster" className="details-poster" />
+        }
+           
         </div>
         <div className="detail-word-box">
             <div className="details-top-word-box">

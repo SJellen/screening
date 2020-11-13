@@ -35,6 +35,7 @@ function useApi() {
     const [personCredits, setPersonCredits] = useState([])
     const [movieCredits, setMovieCredits] = useState([])
     const [tvCredits, setTvCredits] = useState([])
+    const [personImages, setPersonImages] = useState([])
 
     
 
@@ -317,7 +318,19 @@ function useApi() {
 
         )
         .catch(error => console.log(error))
-            }          
+            }     
+            
+    const fetchPersonImages = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/person/${x}/images?api_key=${apiKEY}`)
+        .then(res => res.json())
+        .then((data) => {
+            setPersonImages(data)
+        }
+
+        )
+        .catch(error => console.log(error))
+            }           
 
 
             
@@ -344,7 +357,7 @@ function useApi() {
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits}
+            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages}
 }
 
 

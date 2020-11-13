@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function usePersonPopular() {
-    const {posterPath, popularPerson, setItemPageOpen,  setPersonId, fetchPersonDetails, setMediaType, fetchPersonCredits}  = useContext(Context)
+    const {posterPath, popularPerson, setItemPageOpen,  setPersonId, fetchPersonDetails, setMediaType, fetchPersonCredits, fetchPersonImages}  = useContext(Context)
 
 
     function handlePersonTrendingClick(e) {
@@ -12,6 +12,7 @@ function usePersonPopular() {
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
+        fetchPersonImages(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }
