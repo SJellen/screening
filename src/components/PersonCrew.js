@@ -117,7 +117,7 @@ function PersonCrew() {
 
 
 
-    return {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, otherJobArr, productionArr, directorArr, writingArr}
+    return {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, otherJobArr, productionArr, directorArr, writingArr, sortedTvMiscArr, sortedMovieMiscArr, sortedTvProductionArr, sortedMovieProductionArr, sortedTvWritingArr, sortedMovieWritingArr, sortedTvDirectorArr, sortedMovieDirectorArr}
 }
 
 export default PersonCrew

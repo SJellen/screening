@@ -9,7 +9,7 @@ function PersonCredits() {
     
     // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
     const {partMovieTile, partTvTile, personCastCount} = PersonCast()
-    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr} = PersonCrew()
+    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr, sortedMovieMiscArr, sortedTvProductionArr, sortedMovieProductionArr, sortedTvWritingArr, sortedMovieWritingArr, sortedTvDirectorArr, sortedMovieDirectorArr} = PersonCrew()
     
 
     
@@ -37,15 +37,26 @@ function PersonCredits() {
                {personDirectorCrew}
            </div>
 
-           <div>
+           {
+            sortedMovieDirectorArr && sortedMovieDirectorArr.length > 0 ?
+             <div>
           <span className="person-filmography-section-title">Movie</span>
           {directorMovieTile}
-          </div>
+          </div> : ''
+           }
 
-          <div>
+          
+
+          {
+            sortedTvDirectorArr && sortedTvDirectorArr.length > 0 ?
+             <div>
           <span className="person-filmography-section-title">Tv</span>
           {directorTvTile}
-          </div>
+          </div>  : ''
+          }  
+         
+
+
             </div> : ''
 
           }
@@ -58,40 +69,52 @@ function PersonCredits() {
                <span className="person-filmography"></span>
                {personWritingCrew}
            </div>
-           <div>
+
+           {
+            sortedMovieWritingArr && sortedMovieWritingArr.length > 0 ?
+            <div>
           <span className="person-filmography-section-title">Movie</span>
           {writingMovieTile}
-          </div>
+          </div> : ''
+           }
 
-          <div>
+          {
+            sortedTvWritingArr && sortedTvWritingArr.length > 0 ?
+            <div>
           <span className="person-filmography-section-title">Tv</span>
           {writingTvTile}
-          </div>
+          </div> : ''
+          }
 
             </div> : ''
-
-          }
+            }
 
 
            
             { productionArr && productionArr.length > 0 ?
                 <div>
 
-                    <div className="person-filmography-header">
-                        <span className="person-filmography"></span>
-                        {personProductionCrew}
-                    </div>
+                <div className="person-filmography-header">
+                    <span className="person-filmography"></span>
+                    {personProductionCrew}
+                </div>
 
+                {
+                    sortedMovieProductionArr && sortedMovieProductionArr.length > 0 ?
                     <div>
-                    <span className="person-filmography-section-title">Movie</span>
-                    {productionMovieTile}
-                    </div>
+                <span className="person-filmography-section-title">Movie</span>
+                {productionMovieTile}
+                </div> : ''
+                }
 
-                    <div>
-                    <span className="person-filmography-section-title">Tv</span>
-                    {productionTvTile}
-                    </div>
+                {
+                    sortedTvProductionArr && sortedTvProductionArr.length > 0 ?
+                        <div>
+                <span className="person-filmography-section-title">Tv</span>
+                {productionTvTile}
+                </div> : ''
 
+                }
                 </div> : ''
             }
 
@@ -102,16 +125,27 @@ function PersonCredits() {
                <span className="person-filmography"></span>
                {personOtherCrew}
            </div>
-           
-           <div>
+
+           {
+            sortedMovieMiscArr && sortedMovieMiscArr.length > 0 ?
+            <div>
           <span className="person-filmography-section-title">Movie</span>
           {miscMovieTile}
-          </div>
-            
+          </div> : ''
+           }
+           
+           
+
+          { 
+            sortedTvMiscArr && sortedTvMiscArr.length > 0 ? 
           <div>
           <span className="person-filmography-section-title">Tv</span>
           {miscTvTile}
-          </div>  
+          </div> : ''
+
+          }
+            
+           
                     </div> : ''
                 }
           
