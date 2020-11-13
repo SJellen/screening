@@ -7,7 +7,9 @@ function PersonCast() {
 
     const {sortedCastTvArr, sortedCastMovieArr, handleMovieTileClick, handleTvTileClick}  = usePersonCast()
 
-    const {getYear, cast, personDetails} = useContext(Context)
+    const {getYear,personDetails, personCredits} = useContext(Context)
+    
+    const {cast} = personCredits
 
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
@@ -35,7 +37,7 @@ function PersonCast() {
     
         
     
-    const personCast = (
+    const personCastCount = (
         <div >
           <span className="person-gender-credit">{personDetails.gender === 2 ? "Actor" : "Actress"} ({cast && cast.length} credits)</span>
          </div>)
@@ -45,7 +47,7 @@ function PersonCast() {
 
 
 
-    return {partMovieTile, partTvTile, personCast}
+    return {partMovieTile, partTvTile, personCastCount}
 }
 
 export default PersonCast

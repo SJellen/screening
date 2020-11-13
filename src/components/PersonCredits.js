@@ -8,8 +8,8 @@ function PersonCredits() {
 
     
     // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
-    const {partMovieTile, partTvTile, personCast} = PersonCast()
-    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile} = PersonCrew()
+    const {partMovieTile, partTvTile, personCastCount} = PersonCast()
+    const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr} = PersonCrew()
     
 
     
@@ -17,7 +17,7 @@ function PersonCredits() {
           <div className="person-filmography-container">
            <div className="person-filmography-header">
                <span className="person-filmography">Filmography</span>
-               {personCast}
+               {personCastCount}
            </div>
           <div> 
           <span className="person-filmography-section-title">Movies</span>
@@ -29,7 +29,10 @@ function PersonCredits() {
           {partTvTile}
           </div>
 
-          <div className="person-filmography-header">
+          { directorArr && directorArr.length > 0 ? 
+            <div>
+
+            <div className="person-filmography-header">
                <span className="person-filmography"></span>
                {personDirectorCrew}
            </div>
@@ -43,8 +46,15 @@ function PersonCredits() {
           <span className="person-filmography-section-title">Tv</span>
           {directorTvTile}
           </div>
+            </div> : ''
 
-          <div className="person-filmography-header">
+          }
+
+
+          { writingArr && writingArr.length > 0 ?
+            <div>
+
+            <div className="person-filmography-header">
                <span className="person-filmography"></span>
                {personWritingCrew}
            </div>
@@ -57,38 +67,56 @@ function PersonCredits() {
           <span className="person-filmography-section-title">Tv</span>
           {writingTvTile}
           </div>
+
+            </div> : ''
+
+          }
+
+
            
+            { productionArr && productionArr.length > 0 ?
+                <div>
 
+                    <div className="person-filmography-header">
+                        <span className="person-filmography"></span>
+                        {personProductionCrew}
+                    </div>
 
-           <div className="person-filmography-header">
-               <span className="person-filmography"></span>
-               {personProductionCrew}
-           </div>
+                    <div>
+                    <span className="person-filmography-section-title">Movie</span>
+                    {productionMovieTile}
+                    </div>
 
-           <div>
-          <span className="person-filmography-section-title">Movie</span>
-          {productionMovieTile}
-          </div>
+                    <div>
+                    <span className="person-filmography-section-title">Tv</span>
+                    {productionTvTile}
+                    </div>
 
-          <div>
-          <span className="person-filmography-section-title">Tv</span>
-          {productionTvTile}
-          </div>
+                </div> : ''
+            }
 
-           <div className="person-filmography-header">
+          
+                { otherJobArr && otherJobArr.length > 0 ?
+                    <div> 
+                     <div className="person-filmography-header">
                <span className="person-filmography"></span>
                {personOtherCrew}
            </div>
-
+           
            <div>
           <span className="person-filmography-section-title">Movie</span>
           {miscMovieTile}
           </div>
-
+            
           <div>
           <span className="person-filmography-section-title">Tv</span>
           {miscTvTile}
-          </div>
+          </div>  
+                    </div> : ''
+                }
+          
+
+                
 
 
 
