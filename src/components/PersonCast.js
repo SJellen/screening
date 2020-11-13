@@ -47,7 +47,7 @@ function PersonCast() {
 
 
 
-    return {partMovieTile, partTvTile, personCastCount}
+    return {partMovieTile, partTvTile, personCastCount, sortedCastMovieArr, sortedCastTvArr}
 }
 
 export default PersonCast

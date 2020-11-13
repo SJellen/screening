@@ -8,26 +8,44 @@ function PersonCredits() {
 
     
     // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
-    const {partMovieTile, partTvTile, personCastCount} = PersonCast()
+    const {partMovieTile, partTvTile, personCastCount, sortedCastMovieArr, sortedCastTvArr} = PersonCast()
     const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr, sortedMovieMiscArr, sortedTvProductionArr, sortedMovieProductionArr, sortedTvWritingArr, sortedMovieWritingArr, sortedTvDirectorArr, sortedMovieDirectorArr} = PersonCrew()
     
 
     
     const personCredit = (
           <div className="person-filmography-container">
-           <div className="person-filmography-header">
+
+          <div className="person-filmography-header" id="filmography-title">
                <span className="person-filmography">Filmography</span>
+                </div>
+
+
+           <div className="person-filmography-header">
+               <span className="person-filmography"></span>
                {personCastCount}
            </div>
-          <div> 
+
+           {
+            sortedCastMovieArr && sortedCastMovieArr.length > 0 ?
+            <div> 
           <span className="person-filmography-section-title">Movies</span>
           {partMovieTile}
-          </div>
+          </div> : ''
+           }
 
-          <div>
+           {
+            sortedCastTvArr && sortedCastTvArr.length > 0 ? 
+            <div>
           <span className="person-filmography-section-title">Tv</span>
           {partTvTile}
-          </div>
+          </div> : ''
+           }
+          
+
+          
+
+
 
           { directorArr && directorArr.length > 0 ? 
             <div>
