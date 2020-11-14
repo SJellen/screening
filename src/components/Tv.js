@@ -2,6 +2,8 @@ import React, {useContext} from 'react'
 import {Context} from '../Context'
 import useTvCast from '../logic/useTvCast'
 import useTvCrew from '../logic/useTvCrew'
+import TvRecommendations from './TvRecommendations'
+import TvSimilar from './TvSimilar'
 import '../style/Item.css'
 
 
@@ -10,6 +12,8 @@ function Tv() {
     const {tvDetails, posterPathLarge, timeConverter, getYear}  = useContext(Context)
     const {castTvTile} = useTvCast()
     const {crewTvTile} = useTvCrew()
+    const {tvRecommendTile} = TvRecommendations()
+    const {tvSimilarTile} = TvSimilar()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
 
@@ -77,6 +81,21 @@ function Tv() {
                     </div> 
                     </div>
            : '' }
+
+
+        <div className="details-slider-container">
+            <span className="details-slider-title">Recommendations</span>
+            <div className="details-cast-slider">
+                    {tvRecommendTile}
+            </div> 
+            </div>
+
+        <div className="details-slider-container">
+            <span className="details-slider-title">Similar Shows</span>
+            <div className="details-cast-slider">
+                    {tvSimilarTile}
+            </div> 
+            </div>     
                     
 
         

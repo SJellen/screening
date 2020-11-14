@@ -3,6 +3,7 @@ import {Context} from '../Context'
 import useMovieCast from '../logic/useMovieCast'
 import useMovieCrew from '../logic/useMovieCrew'
 import MovieRecommendations from './MovieRecommendations'
+import MovieSimilar from './MovieSimilar'
 import '../style/Item.css'
 
 
@@ -12,6 +13,7 @@ function Movie() {
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
+    const {movieSimilarTile} = MovieSimilar()
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
@@ -84,6 +86,13 @@ function Movie() {
                     {movieRecommendTile}
             </div> 
             </div>
+
+        <div className="details-slider-container">
+            <span className="details-slider-title">Similar Movies</span>
+            <div className="details-cast-slider">
+                    {movieSimilarTile}
+            </div> 
+            </div>    
                
 
         

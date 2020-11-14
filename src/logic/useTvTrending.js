@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useTvTrending() {
-    const {tvTrending, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits}  = useContext(Context)
+    const {tvTrending, posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend}  = useContext(Context)
 
     function handleTvTrendingClick(e) {
         let selection = tvTrending[e].id
@@ -12,6 +12,8 @@ function useTvTrending() {
         fetchTvDetails(selection)
         setTvCredits([])
         fetchTvCredits(selection)
+        fetchTvSimilar(selection)
+        fetchTvRecommend(selection)
         setItemPageOpen(prevState => !prevState)
     }
  
