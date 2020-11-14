@@ -10,7 +10,6 @@ function useApi() {
     const [movieTrending, setMovieTrending] = useState([])
     const [personTrending, setPersonTrending] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
-    const [searchResults, setSearchResults] = useState([])
     const [topRatedTv, setTopRatedTv] = useState([])
     const [popularTv, setPopularTv] = useState([])
     const [airingToday, setAiringToday] = useState([])
@@ -384,7 +383,7 @@ function useApi() {
       
         
 
-    return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
+    return {movieTrending, personTrending, tvTrending, topRatedTv, popularTv, airingToday, upcomingMovies, 
             topRatedMovies, popularMovies, nowPlaying, popularPerson, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr}
 }
 

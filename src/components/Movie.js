@@ -22,7 +22,7 @@ function Movie() {
     
 
     return (
-        <div className="details-container">
+        <div className="details-container" >
 
         <div className="detail-top-container">
         <div className="poster-container">

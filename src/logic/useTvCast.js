@@ -4,9 +4,9 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useTvCast() {
 
-    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, setItemPageOpen, personImages, fetchPersonImages}  = useContext(Context)
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
 
-    const {crew, cast} = tvCredits
+    const {cast} = tvCredits
 
   
     function handlePersonCreditClick(e) {

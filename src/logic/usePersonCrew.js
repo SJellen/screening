@@ -1,9 +1,9 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import {Context} from '../Context'
 
 function usePersonCrew() {
 
-    const {personDetails, personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, fetchMovieCredits, fetchTvCredits, setMovieCredits, setTvCredits}  = useContext(Context)
+    const {personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, fetchMovieCredits, fetchTvCredits, setMovieCredits, setTvCredits}  = useContext(Context)
 
     const {crew} = personCredits
 

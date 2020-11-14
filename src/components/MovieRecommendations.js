@@ -6,7 +6,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function MovieRecommendations() {
 
-    const {movieTrending, posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr}  = useContext(Context)
+    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr}  = useContext(Context)
 
     function handleMovieRecommendClick(e) {
         let selection = movieRecommendationArr[e].id

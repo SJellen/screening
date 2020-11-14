@@ -4,7 +4,7 @@ import useUpcomingMovies from '../logic/useUpcomingMovies'
 import useNowPlaying from '../logic/useNowPlaying'
 import {Context} from '../Context'
 
-function Popular() {
+function Current() {
     
     const {airingTodayTile} = useAiringToday()
     const {upcomingMoviesTile} = useUpcomingMovies()
@@ -39,4 +39,4 @@ function Popular() {
     )
 }
 
-export default Popular
+export default Current
