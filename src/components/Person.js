@@ -2,12 +2,14 @@ import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Item.css'
 import PersonCredits from './PersonCredits'
+import PersonImages from './PersonImages'
 
 
 function Person() {
 
     const {personDetails, posterPathLarge, dateSplitter}  = useContext(Context)
     const {personCredit} = PersonCredits()
+    const {personImageTile} = PersonImages()
     
    
 
@@ -49,6 +51,9 @@ function Person() {
         </div>
        
 
+        </div>
+        <div className="details-images-container">
+            {personImageTile}
         </div>
         <div className="details-credit-container">
             {personCredit}

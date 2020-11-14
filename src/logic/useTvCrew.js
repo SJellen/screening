@@ -4,7 +4,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useTVCrew() {
 
-    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, personImages, fetchPersonImages}  = useContext(Context)
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath,fetchPersonImages}  = useContext(Context)
     const {crew} = tvCredits
 
    

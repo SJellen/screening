@@ -109,6 +109,27 @@
 
 }
 
+.details-images-container {
+    background-color: #1B1B1B;
+    margin: 3rem auto 7rem auto;
+    display: flex;
+    flex-direction: row;
+    overflow:scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: fit-content;
+    max-width: 70vw;
+    
+    height: auto;
+    
+}
+
+
+.details-images-container::-webkit-scrollbar {
+    display: none;
+}
+
 .details-credit-container {
     /* border: 1px solid red; */
     width: 60vw;

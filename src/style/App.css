@@ -97,6 +97,15 @@ html {
   color: silver;
 }
 
+.slider-image {
+
+  
+  padding: 1rem;
+  background-color: #1B1B1B;
+  min-width: max-content;
+  
+}
+
 
 
 .im-star {

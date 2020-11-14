@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useSearchResultsPerson() {
-    const {posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson, fetchPersonCredits, personImages, fetchPersonImages}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson, fetchPersonCredits,fetchPersonImages}  = useContext(Context)
 
 
     function handleSearchPersonClick(e) {
