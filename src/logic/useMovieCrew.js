@@ -49,7 +49,7 @@ function useMovieCrew() {
     const crewMovieTile = crewSortedArr && crewSortedArr.map((person, index) => 
 
          
-        <div className="slider-card" key={person.id}> 
+        <div className="slider-card" key={person.index}> 
         <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleCrewCreditClick(index)}/>
         <span className="slider-name">{person.name}</span>
         <span className="slider-character">{person.job}</span>

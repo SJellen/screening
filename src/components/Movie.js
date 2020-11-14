@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {Context} from '../Context'
 import useMovieCast from '../logic/useMovieCast'
 import useMovieCrew from '../logic/useMovieCrew'
+import MovieRecommendations from './MovieRecommendations'
 import '../style/Item.css'
 
 
@@ -10,6 +11,7 @@ function Movie() {
     const {movieDetails, dateSplitter, posterPathLarge, timeConverter}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
+    const {movieRecommendTile} = MovieRecommendations()
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
@@ -74,6 +76,15 @@ function Movie() {
                 </div> 
                 </div>
                 : '' }
+
+
+        <div className="details-slider-container">
+            <span className="details-slider-title">Recommendations</span>
+            <div className="details-cast-slider">
+                    {movieRecommendTile}
+            </div> 
+            </div>
+               
 
         
            

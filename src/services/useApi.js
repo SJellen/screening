@@ -19,9 +19,7 @@ function useApi() {
     const [popularMovies, setPopularMovies] = useState([])
     const [popularPerson, setPopularPerson] = useState([])
     const [nowPlaying, setNowPlaying] = useState([])
-    const [tvRecommendationID, setTvRecommendationID] = useState('82856')
     const [tvRecommendationArr, setTvRecommendationArr] = useState([])
-    const [movieRecommendationID, setMovieRecommendationID] = useState('240')
     const [movieRecommendationArr, setMovieRecommendationArr] = useState([])
     const [movieId, setMovieId] = useState()
     const [tvId, setTvId] = useState()
@@ -36,6 +34,7 @@ function useApi() {
     const [movieCredits, setMovieCredits] = useState([])
     const [tvCredits, setTvCredits] = useState([])
     const [personImages, setPersonImages] = useState([])
+    
 
     
 
@@ -189,8 +188,8 @@ function useApi() {
         } 
         
         
-    const fetchTvRecommend = async () => {
-        await fetch(`https://api.themoviedb.org/3/tv/${tvRecommendationID}/recommendations?api_key=${apiKEY}&language=en-US`)
+    const fetchTvRecommend = async (x) => {
+        await fetch(`https://api.themoviedb.org/3/tv/${x}/recommendations?api_key=${apiKEY}&language=en-US`)
         .then(res => res.json())
         .then((data) => {
             setTvRecommendationArr(data.results)
@@ -201,8 +200,8 @@ function useApi() {
         }  
         
         
-    const fetchMovieRecommend = async () => {
-        await fetch(`https://api.themoviedb.org/3/movie/${movieRecommendationID}/recommendations?api_key=${apiKEY}&language=en-US`)
+    const fetchMovieRecommend = async (x) => {
+        await fetch(`https://api.themoviedb.org/3/movie/${x}/recommendations?api_key=${apiKEY}&language=en-US`)
         .then(res => res.json())
         .then((data) => {
             setMovieRecommendationArr(data.results)
@@ -236,8 +235,6 @@ function useApi() {
             fetchTopRatedMovies()
             fetchPopularMovies()
             fetchNowPlaying()
-            fetchTvRecommend()
-            fetchMovieRecommend()
             fetchPopularPerson()
             // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])
@@ -330,8 +327,10 @@ function useApi() {
 
         )
         .catch(error => console.log(error))
-            }           
-
+            }   
+            
+            
+   
 
             
          
@@ -356,8 +355,7 @@ function useApi() {
         
 
     return {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, 
-            topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, 
-            movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages}
+            topRatedMovies, popularMovies, nowPlaying, popularPerson, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend}
 }
 
 
