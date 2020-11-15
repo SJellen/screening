@@ -48,14 +48,14 @@ function Person() {
             </div>
             <div className="details-midbottom-word-box">
                
-                <span className="details-birth-place">{`Place of birth: ${personDetails.place_of_birth}`}</span>
+               { personDetails.place_of_birth && <span className="details-birth-place">{`Place of birth: ${personDetails.place_of_birth}`}</span>}
                
             </div>
             <div className="details-tagline">
                 <h3>{personDetails.tagline}</h3>
             </div>
             
-            <p className="details-overview">{personDetails.biography && personDetails.biography.length < 400 ? personDetails.biography : bioShow ? truncated : nonTruncated}</p>
+            { personDetails.biography && <p className="details-overview">{personDetails.biography.length < 400 ? personDetails.biography : bioShow ? truncated : nonTruncated}</p> }
         </div>
 
 
