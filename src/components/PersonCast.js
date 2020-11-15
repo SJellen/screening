@@ -11,6 +11,9 @@ function PersonCast() {
     
     const {cast} = personCredits
 
+
+   
+
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
     <div className="person-part-tile" key={(index)} onClick={() => handleMovieTileClick(index)}>
@@ -19,7 +22,7 @@ function PersonCast() {
         <span className="person-part-character" >{item.character && item.character}</span>
     </div>
     
-    <span className="person-part-year">{sortedCastMovieArr[index].release_date === '' ? '' : parseInt(getYear(sortedCastMovieArr[index].release_date))}</span>
+    <span className="person-part-year">{sortedCastMovieArr[index].release_date === '' || sortedCastMovieArr[index].release_date === null || sortedCastMovieArr[index].release_date === undefined ? '' : parseInt(getYear(sortedCastMovieArr[index].release_date))}</span>
     </div>)
 
 
@@ -31,7 +34,7 @@ function PersonCast() {
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>
     </div>
-    <span className="person-part-year">{sortedCastTvArr[index].first_air_date === '' ? '' : parseInt(getYear(sortedCastTvArr[index].first_air_date))}</span>
+    <span className="person-part-year">{sortedCastTvArr[index].first_air_date === '' || sortedCastTvArr[index].first_air_date === null || sortedCastTvArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedCastTvArr[index].first_air_date))}</span>
     </div>)
 
     

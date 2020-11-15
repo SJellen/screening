@@ -17,8 +17,8 @@ function Person() {
         window.scrollTo(0, 0)
     }
 
-    const truncated = <div>{truncateBio(personDetails.biography)} <i class="im im-angle-down" onClick={handleTruncate}></i></div>
-    const nonTruncated = <div>{personDetails.biography} <i class="im im-angle-up" onClick={handleTruncate}></i></div>
+    const truncated = <div>{truncateBio(personDetails.biography)} <i className="im im-angle-down" onClick={handleTruncate}></i></div>
+    const nonTruncated = <div>{personDetails.biography} <i className="im im-angle-up" onClick={handleTruncate}></i></div>
 
     
     
