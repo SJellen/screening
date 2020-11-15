@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {Context} from '../Context'
 import '../style/Item.css'
 import PersonCredits from './PersonCredits'
@@ -7,9 +7,20 @@ import PersonImages from './PersonImages'
 
 function Person() {
 
-    const {personDetails, posterPathLarge, dateSplitter}  = useContext(Context)
+    const {personDetails, posterPathLarge, dateSplitter, truncateBio}  = useContext(Context)
     const {personCredit} = PersonCredits()
     const {personImageTile} = PersonImages()
+    const [bioShow, setBioShow] = useState(true)
+
+    function handleTruncate() {
+        setBioShow(prevState => !prevState)
+        window.scrollTo(0, 0)
+    }
+
+    const truncated = <div>{truncateBio(personDetails.biography)} <i class="im im-angle-down" onClick={handleTruncate}></i></div>
+    const nonTruncated = <div>{personDetails.biography} <i class="im im-angle-up" onClick={handleTruncate}></i></div>
+
+    
     
    
 
@@ -44,7 +55,7 @@ function Person() {
                 <h3>{personDetails.tagline}</h3>
             </div>
             
-            <p className="details-overview">{personDetails.biography}</p>
+            <p className="details-overview">{personDetails.biography && personDetails.biography.length < 400 ? personDetails.biography : bioShow ? truncated : nonTruncated}</p>
         </div>
 
 

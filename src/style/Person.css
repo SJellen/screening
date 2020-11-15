@@ -75,3 +75,21 @@
     display: flex;
     padding: 2rem 3rem;
 }
+
+.im-angle-down {
+    font-size: smaller;
+    margin-top: 1rem;
+}
+
+.im-angle-down:hover {
+    cursor: pointer;
+}
+
+.im-angle-up {
+    font-size: smaller;
+    margin-top: 1rem;
+}
+
+.im-angle-up:hover {
+    cursor: pointer;
+}

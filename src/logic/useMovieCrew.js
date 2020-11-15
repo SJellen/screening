@@ -4,7 +4,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useMovieCrew() {
 
-    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath}  = useContext(Context)
+    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
     const {crew} = movieCredits
 
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
@@ -41,6 +41,7 @@ function useMovieCrew() {
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
+        fetchPersonImages(selection)
         // setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }

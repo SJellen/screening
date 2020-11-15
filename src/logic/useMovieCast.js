@@ -4,7 +4,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function useMovieCast() {
 
-    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath}  = useContext(Context)
+    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
 
     const {cast} = movieCredits
 
@@ -17,6 +17,7 @@ function useMovieCast() {
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
+        fetchPersonImages(selection)
         // setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }
