@@ -80,19 +80,19 @@ function Movie() {
                 : '' }
 
 
-        <div className="details-slider-container">
+       { movieRecommendTile.length > 0 ? <div className="details-slider-container">
             <span className="details-slider-title">Recommendations</span>
             <div className="details-cast-slider">
                     {movieRecommendTile}
             </div> 
-            </div>
+            </div> : ''}
 
-        <div className="details-slider-container">
+        { movieSimilarTile.length > 0 ? <div className="details-slider-container">
             <span className="details-slider-title">Similar Movies</span>
             <div className="details-cast-slider">
                     {movieSimilarTile}
             </div> 
-            </div>    
+            </div> : ''  } 
                
 
         
