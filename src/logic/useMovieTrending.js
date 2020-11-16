@@ -4,7 +4,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 
 function useMovieTrending() {
-    const {movieTrending, posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend,  fetchMovieSimilar}  = useContext(Context)
+    const {movieTrending, posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend,  fetchMovieSimilar, fetchMovieReviews}  = useContext(Context)
 
     function handleMovieTrendingClick(e) {
         let selection = movieTrending[e].id
@@ -15,6 +15,7 @@ function useMovieTrending() {
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieSimilar(selection)
+        fetchMovieReviews(selection)
         setItemPageOpen(prevState => !prevState)
     
     }

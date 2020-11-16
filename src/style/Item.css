@@ -174,3 +174,21 @@
       font-size: 2rem;
       padding: 2rem;
   }
+
+  
+
+  .details-review-tile {
+    background-color: #1B1B1B;
+    margin: 0 auto;
+  }
+
+
+.details-review-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(18, 18, 18);
+    width: 74vw;
+    margin: 0 auto;
+    margin-left: 1rem;
+    color: white;
+}

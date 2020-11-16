@@ -73,7 +73,7 @@ function useApi() {
         
 
 
-    return {movieTrending,tvTrending,fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm}
+    return {movieTrending,tvTrending,fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm, searchResultsPerson}
 }
 
 

@@ -27,20 +27,43 @@ function Search() {
         
         <h1 className="results-title">Results for {searchTerm}</h1>
         
-        {searchResultsMovie.length > 0 ? <span className="slider-label">Results: Movies</span> : ''}
+        {searchResultsMovie.length > 0 ? 
+        
+        <div>
+        <span className="slider-label">Results: Movies</span>
         <div className="slider-sub-container">
             {searchResultsMovieTile}
         </div>
-        {searchResultsTv.length > 0 ? <span className="slider-label">Results: TV</span> : ''}
+
+        </div>
+         : ''}
         
+        
+        {searchResultsTv && searchResultsTv.length > 0 ? 
+        <div>
+        <span className="slider-label">Results: TV</span>
         <div className="slider-sub-container">
             {searchResultsTvTile}
         </div>
-        {searchResultsPerson.length > 0 ?  <span className="slider-label">Results: People</span> : ''}
-       
+        </div>
+        
+         : ''}
+        
+        
+
+
+        { searchResultsPerson && searchResultsPerson.length > 0 ?  
+        <div>
+          <span className="slider-label">Results: People</span> 
         <div className="slider-sub-container">
             {searchResultsPersonTile}
+        </div>  
         </div>
+        
+        
+        : ''}
+       
+        
         </div>
 
      

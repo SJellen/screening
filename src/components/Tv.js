@@ -16,6 +16,8 @@ function Tv() {
     const {tvSimilarTile} = TvSimilar()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
+    
+
 
 
     return (
@@ -62,13 +64,14 @@ function Tv() {
 
 
        
-
-        <div className="details-slider-container">
-        <span className="details-slider-title">Cast</span>
-           <div className="details-cast-slider">
-            {castTvTile}
-        </div> 
-        </div>
+            { castTvTile && castTvTile.length > 0 ?
+            <div className="details-slider-container">
+            <span className="details-slider-title">Cast</span>
+            <div className="details-cast-slider">
+                {castTvTile}
+            </div> 
+            </div>  : '' }
+        
 
         
        

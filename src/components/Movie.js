@@ -4,6 +4,7 @@ import useMovieCast from '../logic/useMovieCast'
 import useMovieCrew from '../logic/useMovieCrew'
 import MovieRecommendations from './MovieRecommendations'
 import MovieSimilar from './MovieSimilar'
+import MovieReview from './MovieReview'
 import '../style/Item.css'
 
 
@@ -14,6 +15,7 @@ function Movie() {
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
     const {movieSimilarTile} = MovieSimilar()
+    const {movieReviewTile} = MovieReview()
 
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
@@ -94,7 +96,17 @@ function Movie() {
             </div> 
             </div> : ''  } 
                
-
+        
+        { movieReviewTile.length > 0 ? 
+        <div>
+        <span className="details-slider-title">Reviews</span>
+           <div className="details-review-container">
+                    {movieReviewTile}
+                
+        </div>
+        </div> : '' 
+        }
+                
         
            
 
