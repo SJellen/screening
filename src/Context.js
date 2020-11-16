@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import useApi from './services/useApi'
+import useApiPerson from './services/useApiPerson'
+import useApiMovie from './services/useApiMovie'
+import useApiTv from './services/useApiTv'
 
 const Context = React.createContext()
 
@@ -8,7 +11,13 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
 
-    const {movieTrending, personTrending, tvTrending, searchResults, topRatedTv, popularTv, airingToday, upcomingMovies, topRatedMovies, popularMovies, nowPlaying, popularPerson, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr} = useApi()
+    const {  tvTrending, searchResults,  fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm,    movieTrending,} = useApi()
+
+    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,searchResultsPerson,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId} = useApiPerson()
+
+    const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID} = useApiMovie()
+
+    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr} = useApiTv()
 
     const posterPath = 'https://image.tmdb.org/t/p/w200/'
     const posterPathLarge = 'https://image.tmdb.org/t/p/w780/'
