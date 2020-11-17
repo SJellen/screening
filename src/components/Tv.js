@@ -5,6 +5,7 @@ import useTvCrew from '../logic/useTvCrew'
 import TvRecommendations from './TvRecommendations'
 import TvSimilar from './TvSimilar'
 import TvReview from './TvReview'
+import TvVideo from './TvVideo'
 import '../style/Item.css'
 
 
@@ -16,6 +17,7 @@ function Tv() {
     const {tvRecommendTile} = TvRecommendations()
     const {tvSimilarTile} = TvSimilar()
     const {tvReviewTile} = TvReview()
+    const {tvVideoTile} = TvVideo()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
     
@@ -64,6 +66,17 @@ function Tv() {
 
         </div>
 
+        { tvVideoTile && tvVideoTile.length > 0 ?
+            <div>
+        <span className="details-slider-title">Videos</span>
+        <div className="details-video-container" >
+                    {tvVideoTile}
+                
+        </div>
+        </div> : '' 
+
+        }   
+
 
        
             { castTvTile && castTvTile.length > 0 ?
@@ -110,7 +123,9 @@ function Tv() {
                 
         </div>
         </div> : '' 
-        }    
+        } 
+
+       
                     
 
         

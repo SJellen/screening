@@ -6,7 +6,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function TvRecommendations() {
 
-    const {posterPath, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvRecommend, tvRecommendationArr}  = useContext(Context)
+    const {posterPath, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvRecommend, tvRecommendationArr, fetchTvVideos}  = useContext(Context)
 
     function handleTvRecommendClick(e) {
         let selection = tvRecommendationArr[e].id
@@ -16,6 +16,7 @@ function TvRecommendations() {
         setTvCredits([])
         fetchTvCredits(selection)
         fetchTvRecommend(selection)
+        fetchTvVideos(selection)
         window.scrollTo(0, 0)
         // setItemPageOpen(Tv
     

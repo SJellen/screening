@@ -12,6 +12,7 @@ function useApiTv() {
     const [tvCredits, setTvCredits] = useState([])
     const [tvSimilarArr, setTvSimilarArr] = useState([])
     const [tvReviews, setTvReviews] = useState([])
+    const [tvVideos, setTvVideos] = useState([])
 
 
     const fetchTopRatedTv = async () => {
@@ -118,13 +119,24 @@ function useApiTv() {
         )
         .catch(error => console.log(error))
             }          
-                    
+         
+    const fetchTvVideos = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/tv/${x}/videos?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setTvVideos(data = data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+            }           
                 
 
 
 
 
-    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews}
+    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos}
 }
 
 export default useApiTv

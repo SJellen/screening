@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useAiringToday() {
-    const {posterPath, airingToday, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend, fetchTvReviews}  = useContext(Context)
+    const {posterPath, airingToday, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend, fetchTvReviews, fetchTvVideos}  = useContext(Context)
 
     function handleAiringTodayClick(e) {
         let selection = airingToday[e].id
@@ -15,6 +15,7 @@ function useAiringToday() {
         fetchTvSimilar(selection)
         fetchTvRecommend(selection)
         fetchTvReviews(selection)
+        fetchTvVideos(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }

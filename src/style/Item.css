@@ -126,6 +126,28 @@
     
 }
 
+.details-video-container {
+    background-color: #1B1B1B;
+    margin: 3rem auto 7rem auto;
+    display: flex;
+    flex-direction: row;
+    overflow:scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: fit-content;
+    max-width: 75vw;
+    
+    height: auto;
+    
+}
+
+.details-video-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 
 .details-images-container::-webkit-scrollbar {
     display: none;

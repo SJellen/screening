@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useTvPopular() {
-    const {posterPath, popularTv, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend, fetchTvReviews}  = useContext(Context)
+    const {posterPath, popularTv, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend, fetchTvReviews, fetchTvVideos}  = useContext(Context)
 
     function handlePopularTvClick(e) {
         let selection = popularTv[e].id
@@ -15,6 +15,7 @@ function useTvPopular() {
         fetchTvSimilar(selection)
         fetchTvRecommend(selection)
         fetchTvReviews(selection)
+        fetchTvVideos(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
     }

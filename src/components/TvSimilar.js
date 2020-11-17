@@ -6,7 +6,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function TvSimilar() {
 
-    const {posterPath, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvRecommend, tvSimilarArr, fetchTvSimilar}  = useContext(Context)
+    const {posterPath, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvRecommend, tvSimilarArr, fetchTvSimilar, fetchTvVideos}  = useContext(Context)
 
     function handleTvSimilarClick(e) {
         let selection = tvSimilarArr[e].id
@@ -17,6 +17,7 @@ function TvSimilar() {
         fetchTvCredits(selection)
         fetchTvRecommend(selection)
         fetchTvSimilar(selection)
+        fetchTvVideos(selection)
         window.scrollTo(0, 0)
         // setItemPageOpen(true)
     
