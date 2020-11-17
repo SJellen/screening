@@ -6,7 +6,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function MovieSimilar() {
 
-    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieSimilarArr, fetchMovieSimilar}  = useContext(Context)
+    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieSimilarArr, fetchMovieSimilar, fetchMovieReviews}  = useContext(Context)
 
     function handleMovieSimilarClick(e) {
         let selection = movieSimilarArr[e].id
@@ -16,6 +16,7 @@ function MovieSimilar() {
         setMovieCredits([])
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
+        fetchMovieReviews(selection)
         fetchMovieSimilar(selection)
         window.scrollTo(0, 0)
         // setItemPageOpen(true)
