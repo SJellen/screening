@@ -17,6 +17,7 @@ function useTopRatedMovies() {
         fetchMovieReviews(selection)
         fetchMovieVideos(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
         
     }
  
