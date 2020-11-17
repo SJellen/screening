@@ -15,6 +15,7 @@ function useApiMovie() {
     const [movieCredits, setMovieCredits] = useState([])
     const [movieSimilarArr, setMovieSimilarArr] = useState([])
     const [movieReviews, setMovieReviews] = useState([])
+    const [movieVideos, setMovieVideos] = useState([])
 
 
     const fetchUpcomingMovies = async () => {
@@ -131,10 +132,20 @@ function useApiMovie() {
         .catch(error => console.log(error))
             }  
 
+    const fetchMovieVideos = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/movie/${x}/videos?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setMovieVideos(data = data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+            }       
 
 
-
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos}
 }
 
 export default useApiMovie

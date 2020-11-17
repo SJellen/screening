@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useSearchResultsMovie() {
-    const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, searchResultsMovie, fetchMovieCredits, setMovieCredits, fetchMovieReviews, fetchMovieSimilar, fetchMovieRecommend}  = useContext(Context)
+    const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, searchResultsMovie, fetchMovieCredits, setMovieCredits, fetchMovieReviews, fetchMovieSimilar, fetchMovieRecommend, fetchMovieVideos}  = useContext(Context)
 
 
     function handleSearchMovieClick(e) {
@@ -17,6 +17,7 @@ function useSearchResultsMovie() {
         fetchMovieSimilar(selection)
         fetchMovieReviews(selection)
         fetchMovieCredits(selection)
+        fetchMovieVideos(selection)
         setItemPageOpen(true)
         
     }

@@ -62,8 +62,6 @@ function Tv() {
            
             <p className="details-overview">{tvDetails.overview}</p>
         </div>
-
-
         </div>
 
         { tvVideoTile && tvVideoTile.length > 0 ?
