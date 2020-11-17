@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useNowPlaying() {
-    const {posterPath, nowPlaying, setItemPageOpen, setMovieId, fetchMovieDetails, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, fetchMovieSimilar}  = useContext(Context)
+    const {posterPath, nowPlaying, setItemPageOpen, setMovieId, fetchMovieDetails, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, fetchMovieSimilar, fetchMovieReviews}  = useContext(Context)
 
     function handleNowPlayingClick(e) {
         let selection = nowPlaying[e].id
@@ -13,6 +13,7 @@ function useNowPlaying() {
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieSimilar(selection)
+        fetchMovieReviews(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
         

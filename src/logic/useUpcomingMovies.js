@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useUpcomingMovies() {
-    const {posterPath, upcomingMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits,setMovieCredits, fetchMovieRecommend, fetchMovieSimilar}  = useContext(Context)
+    const {posterPath, upcomingMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits,setMovieCredits, fetchMovieRecommend, fetchMovieSimilar, fetchMovieReviews}  = useContext(Context)
 
     function handleUpcomingMoviesClick(e) {
         let selection = upcomingMovies[e].id
@@ -14,6 +14,7 @@ function useUpcomingMovies() {
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieSimilar(selection)
+        fetchMovieReviews(selection)
         setItemPageOpen(prevState => !prevState)
         window.scrollTo(0, 0)
         

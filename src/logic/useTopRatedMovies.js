@@ -3,7 +3,7 @@ import {Context} from '../Context'
 import blankSquare from '../assets/placeholder.jpg'
 
 function useTopRatedMovies() {
-    const {topRatedMovies, posterPath,setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, fetchMovieSimilar}  = useContext(Context)
+    const {topRatedMovies, posterPath,setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, fetchMovieSimilar, fetchMovieReviews}  = useContext(Context)
 
     function handleMovieTopRatedClick(e) {
         let selection = topRatedMovies[e].id
@@ -14,6 +14,7 @@ function useTopRatedMovies() {
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieSimilar(selection)
+        fetchMovieReviews(selection)
         setItemPageOpen(prevState => !prevState)
         
     }
