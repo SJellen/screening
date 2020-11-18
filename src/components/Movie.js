@@ -11,7 +11,7 @@ import '../style/Item.css'
 
 function Movie() {
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -65,7 +65,9 @@ function Movie() {
         </div>
         </div>
 
-        { movieVideoTile && movieVideoTile.length > 0 ?
+
+
+        { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
             <div>
         <span className="details-slider-title">Videos</span>
         <div className="details-video-container" >
@@ -74,9 +76,9 @@ function Movie() {
         </div>
         </div> : '' 
 
-        }   
+        }    
 
-            
+  
 
         <div className="details-slider-container">
         <span className="details-slider-title">Cast</span>

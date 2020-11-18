@@ -16,6 +16,7 @@ function useApiMovie() {
     const [movieSimilarArr, setMovieSimilarArr] = useState([])
     const [movieReviews, setMovieReviews] = useState([])
     const [movieVideos, setMovieVideos] = useState([])
+    const [movieLoaded, setMovieLoaded] = useState(false)
 
 
     const fetchUpcomingMovies = async () => {
@@ -138,6 +139,11 @@ function useApiMovie() {
         .then(res => res.json())
         .then((data) => {
             setMovieVideos(data = data.results)
+            setTimeout(() => {
+                setMovieLoaded(true)
+            }, 2500)
+            
+            
         }
 
         )
@@ -145,7 +151,7 @@ function useApiMovie() {
             }       
 
 
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded}
 }
 
 export default useApiMovie

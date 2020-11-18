@@ -16,7 +16,7 @@ function PersonCast() {
 
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleMovieTileClick(index)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
         <span className="person-part-character" >{item.character && item.character}</span>
@@ -29,7 +29,7 @@ function PersonCast() {
 
     const partTvTile = sortedCastTvArr && sortedCastTvArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleTvTileClick(index)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>

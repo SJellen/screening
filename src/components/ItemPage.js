@@ -9,7 +9,7 @@ import Search from './Search'
 
 function ItemPage() {
 
-    const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive}  = useContext(Context)
+    const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive, setMovieLoaded, setTvLoaded}  = useContext(Context)
     
     
 
@@ -18,13 +18,16 @@ function ItemPage() {
     function handleX() {
         setItemPageOpen(prevState => !prevState)
         setSearchResultsActive(false)
+        setMovieLoaded(false) 
+        setTvLoaded(false)
     }
 
     function handleActiveSearch() {
         setMediaType('search')
         setItemPageOpen(true)
         fetchSearchResults()
-        
+        setMovieLoaded(false) 
+        setTvLoaded(false)
     }
 
     return (

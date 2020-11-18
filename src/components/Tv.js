@@ -11,7 +11,7 @@ import '../style/Item.css'
 
 function Tv() {
 
-    const {tvDetails, posterPathLarge, timeConverter, getYear}  = useContext(Context)
+    const {tvDetails, posterPathLarge, timeConverter, getYear, tvLoaded}  = useContext(Context)
     const {castTvTile} = useTvCast()
     const {crewTvTile} = useTvCrew()
     const {tvRecommendTile} = TvRecommendations()
@@ -64,7 +64,7 @@ function Tv() {
         </div>
         </div>
 
-        { tvVideoTile && tvVideoTile.length > 0 ?
+        { tvLoaded && tvVideoTile && tvVideoTile.length > 0 ?
             <div>
         <span className="details-slider-title">Videos</span>
         <div className="details-video-container" >

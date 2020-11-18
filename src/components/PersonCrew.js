@@ -10,7 +10,7 @@ function PersonCrew() {
 
     const directorMovieTile = sortedMovieDirectorArr && sortedMovieDirectorArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleMovieTileClick(index, sortedMovieDirectorArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieDirectorArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
     </div>
@@ -21,7 +21,7 @@ function PersonCrew() {
 
     const directorTvTile = sortedTvDirectorArr && sortedTvDirectorArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleTvTileClick(index, sortedTvDirectorArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvDirectorArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>
@@ -31,7 +31,7 @@ function PersonCrew() {
 
     const writingMovieTile = sortedMovieWritingArr && sortedMovieWritingArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleMovieTileClick(index, sortedMovieWritingArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieWritingArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
     </div>
@@ -42,7 +42,7 @@ function PersonCrew() {
 
     const writingTvTile = sortedTvWritingArr && sortedTvWritingArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleTvTileClick(index, sortedTvWritingArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvWritingArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>
@@ -52,7 +52,7 @@ function PersonCrew() {
        
     const productionMovieTile = sortedMovieProductionArr && sortedMovieProductionArr.map((item, index) => 
 
-       <div className="person-part-tile" key={index} onClick={() => handleMovieTileClick(index, sortedMovieProductionArr)}>
+       <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieProductionArr)}>
        <div className="person-part-tile-left">
            <span className="person-part-title">{item.title}</span>
        </div>
@@ -63,7 +63,7 @@ function PersonCrew() {
    
     const productionTvTile = sortedTvProductionArr && sortedTvProductionArr.map((item, index) => 
    
-       <div className="person-part-tile" key={index} onClick={() => handleTvTileClick(index, sortedTvProductionArr)}>
+       <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvProductionArr)}>
        <div className="person-part-tile-left">
            <span className="person-part-title">{item.name}</span>
            <span className="person-part-character">{item.character && item.character}</span>
@@ -73,7 +73,7 @@ function PersonCrew() {
 
     const miscMovieTile = sortedMovieMiscArr && sortedMovieMiscArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleMovieTileClick(index, sortedMovieMiscArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieMiscArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
     </div>
@@ -84,7 +84,7 @@ function PersonCrew() {
 
     const miscTvTile = sortedTvMiscArr && sortedTvMiscArr.map((item, index) => 
 
-    <div className="person-part-tile" key={index} onClick={() => handleTvTileClick(index, sortedTvMiscArr)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvMiscArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>

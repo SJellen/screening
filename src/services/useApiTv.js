@@ -13,6 +13,7 @@ function useApiTv() {
     const [tvSimilarArr, setTvSimilarArr] = useState([])
     const [tvReviews, setTvReviews] = useState([])
     const [tvVideos, setTvVideos] = useState([])
+    const [tvLoaded, setTvLoaded] = useState(false)
 
 
     const fetchTopRatedTv = async () => {
@@ -126,6 +127,10 @@ function useApiTv() {
         .then(res => res.json())
         .then((data) => {
             setTvVideos(data = data.results)
+            setTimeout(() => {
+                setTvLoaded(true)
+            }, 2500)
+            
         }
 
         )
@@ -136,7 +141,7 @@ function useApiTv() {
 
 
 
-    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos}
+    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded}
 }
 
 export default useApiTv
