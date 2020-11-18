@@ -6,7 +6,7 @@ import blankSquare from '../assets/placeholder.jpg'
 
 function MovieRecommendations() {
 
-    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr, fetchMovieReviews}  = useContext(Context)
+    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr, fetchMovieReviews, fetchMovieVideos}  = useContext(Context)
 
     function handleMovieRecommendClick(e) {
         let selection = movieRecommendationArr[e].id
@@ -17,6 +17,7 @@ function MovieRecommendations() {
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieReviews(selection)
+        fetchMovieVideos(selection)
         window.scrollTo(0, 0)
         // setItemPageOpen(true)
     
