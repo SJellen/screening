@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
-import usePersonCast from '../../logic/usePersonCast'
+import usePersonCast from '../../logic/Person/usePersonCast'
 
 
 function PersonCast() {

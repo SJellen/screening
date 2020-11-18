@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
 function useUpcomingMovies() {
     const {posterPath, upcomingMovies, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits,setMovieCredits, fetchMovieRecommend, fetchMovieSimilar, fetchMovieReviews, fetchMovieVideos}  = useContext(Context)

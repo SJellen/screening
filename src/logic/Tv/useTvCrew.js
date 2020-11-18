@@ -1,16 +1,21 @@
 import React, {useContext} from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
-function useMovieCrew() {
+function useTVCrew() {
 
-    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
-    const {crew} = movieCredits
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath,fetchPersonImages}  = useContext(Context)
+    const {crew} = tvCredits
 
-    let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
+   
 
-    function crewSorter() {
-      if (crew !== undefined) {
+
+    let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []
+
+    
+
+    
+    if (crew !== undefined) {
         for (let i = 0; i < crew.length; i++) {
             // console.log(crew[i].department)
             if (crew[i].department === "Directing") {
@@ -24,10 +29,8 @@ function useMovieCrew() {
                 otherJobArr.push(crew[i])
             }
     }
-    }  
     }
-    
-    crewSorter()
+
     let crewSortedArr = [...directorArr, ...writingArr, ...productionArr, ...otherJobArr]
 
 
@@ -47,7 +50,7 @@ function useMovieCrew() {
     }
 
 
-    const crewMovieTile = crewSortedArr && crewSortedArr.map((person, index) => 
+    const crewTvTile = crewSortedArr && crewSortedArr.map((person, index) => 
 
          
         <div className="slider-card" key={person.credit_id}> 
@@ -59,7 +62,7 @@ function useMovieCrew() {
 
     
     
-    return {crewMovieTile}
+    return {crewTvTile}
 }
 
-export default useMovieCrew
+export default useTVCrew

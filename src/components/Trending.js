@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
-import useMovieTrending from '../logic/useMovieTrending'
-import useTvTrending from '../logic/useTvTrending'
-import usePersonTrending from '../logic/usePersonTrending'
+import useMovieTrending from '../logic/Movie/useMovieTrending'
+import useTvTrending from '../logic/Tv/useTvTrending'
+import usePersonTrending from '../logic/Person/usePersonTrending'
 import {Context} from '../Context'
 
 function Trending() {

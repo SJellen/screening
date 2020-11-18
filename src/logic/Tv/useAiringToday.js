@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
 function useAiringToday() {
     const {posterPath, airingToday, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, fetchTvCredits, setTvCredits, fetchTvSimilar, fetchTvRecommend, fetchTvReviews, fetchTvVideos}  = useContext(Context)

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import useTopRatedMovies from '../logic/useTopRatedMovies'
-import useTopRatedTv from '../logic/useTopRatedTv'
+import useTopRatedMovies from '../logic/Movie/useTopRatedMovies'
+import useTopRatedTv from '../logic/Tv/useTopRatedTv'
 import {Context} from '../Context'
 
 

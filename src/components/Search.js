@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
-import useSearchResultsMovie from '../logic/useSearchResultsMovie'
-import useSearchResultsTv from '../logic/useSearchResultsTv'
-import useSearchResultsPerson from '../logic/useSearchResultsPerson'
+import useSearchResultsMovie from '../logic/Search/useSearchResultsMovie'
+import useSearchResultsTv from '../logic/Search/useSearchResultsTv'
+import useSearchResultsPerson from '../logic/Search/useSearchResultsPerson'
 
 
 function Search() {

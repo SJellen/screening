@@ -1,16 +1,14 @@
 import React, {useContext} from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
-function useMovieCast() {
+function useTvCast() {
 
-    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
+    const {tvCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
 
-    const {cast} = movieCredits
+    const {cast} = tvCredits
 
-    
-
-
+  
     function handlePersonCreditClick(e) {
         let selection = cast[e].id
         setMediaType('person')
@@ -23,7 +21,7 @@ function useMovieCast() {
     }
 
 
-    const castMovieTile = cast && cast.map((person, index) => 
+    const castTvTile = cast && cast.map((person, index) => 
 
          
         <div className="slider-card" key={person.credit_id}> 
@@ -35,7 +33,7 @@ function useMovieCast() {
 
     
     
-    return {castMovieTile}
+    return {castTvTile}
 }
 
-export default useMovieCast
+export default useTvCast

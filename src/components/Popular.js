@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
-import useTvPopular from '../logic/useTvPopular'
-import usePersonPopular from '../logic/usePersonPopular'
-import useMoviePopular from '../logic/useMoviePopular'
+import useTvPopular from '../logic/Tv/useTvPopular'
+import usePersonPopular from '../logic/Person/usePersonPopular'
+import useMoviePopular from '../logic/Movie/useMoviePopular'
 import {Context} from '../Context'
 
 function Popular() {

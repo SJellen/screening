@@ -1,5 +1,5 @@
 import React from 'react'
-import usePersonCrew from '../../logic/usePersonCrew'
+import usePersonCrew from '../../logic/Person/usePersonCrew'
 
 
 function PersonCrew() {

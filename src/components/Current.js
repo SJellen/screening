@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
-import useAiringToday from '../logic/useAiringToday'
-import useUpcomingMovies from '../logic/useUpcomingMovies'
-import useNowPlaying from '../logic/useNowPlaying'
+import useAiringToday from '../logic/Tv/useAiringToday'
+import useUpcomingMovies from '../logic/Movie/useUpcomingMovies'
+import useNowPlaying from '../logic/Movie/useNowPlaying'
 import {Context} from '../Context'
 
 function Current() {

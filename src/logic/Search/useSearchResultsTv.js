@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
 function useSearchResultsTv() {
     const {posterPath, setItemPageOpen, setTvId, fetchTvDetails, setMediaType, searchResultsTv, fetchTvCredits, setTvCredits, fetchTvReviews, fetchTvRecommend, fetchTvSimilar, fetchTvVideos}  = useContext(Context)

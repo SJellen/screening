@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import {Context} from '../Context'
-import blankSquare from '../assets/placeholder.jpg'
+import {Context} from '../../Context'
+import blankSquare from '../../assets/placeholder.jpg'
 
 function useSearchResultsMovie() {
     const {posterPath, setItemPageOpen, setMovieId, fetchMovieDetails, setMediaType, searchResultsMovie, fetchMovieCredits, setMovieCredits, fetchMovieReviews, fetchMovieSimilar, fetchMovieRecommend, fetchMovieVideos}  = useContext(Context)
