@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
-import {Context} from '../Context'
-import '../style/Item.css'
+import {Context} from '../../Context'
+import '../../style/Item.css'
 import PersonCredits from './PersonCredits'
 import PersonImages from './PersonImages'
 

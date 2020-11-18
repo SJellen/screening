@@ -1,12 +1,12 @@
 import React, {useContext} from 'react'
-import {Context} from '../Context'
-import useTvCast from '../logic/useTvCast'
-import useTvCrew from '../logic/useTvCrew'
+import {Context} from '../../Context'
+import useTvCast from '../../logic/useTvCast'
+import useTvCrew from '../../logic/useTvCrew'
 import TvRecommendations from './TvRecommendations'
 import TvSimilar from './TvSimilar'
 import TvReview from './TvReview'
 import TvVideo from './TvVideo'
-import '../style/Item.css'
+import '../../style/Item.css'
 
 
 function Tv() {

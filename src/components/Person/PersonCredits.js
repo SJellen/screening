@@ -1,7 +1,7 @@
 import React from 'react'
 import PersonCrew from './PersonCrew'
 import PersonCast from './PersonCast';
-import '../style/Person.css'
+import '../../style/Person.css'
 
 function PersonCredits() {
 

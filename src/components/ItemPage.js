@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/ItemPage.css'
-import Movie from './Movie'
-import Tv from './Tv'
-import Person from './Person'
+import Movie from '../components/Movie/Movie'
+import Tv from '../components/Tv/Tv'
+import Person from '../components/Person/Person'
 import Search from './Search'
 
 

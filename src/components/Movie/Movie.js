@@ -1,12 +1,12 @@
 import React, {useContext} from 'react'
-import {Context} from '../Context'
-import useMovieCast from '../logic/useMovieCast'
-import useMovieCrew from '../logic/useMovieCrew'
+import {Context} from '../../Context'
+import useMovieCast from '../../logic/useMovieCast'
+import useMovieCrew from '../../logic/useMovieCrew'
 import MovieRecommendations from './MovieRecommendations'
 import MovieSimilar from './MovieSimilar'
 import MovieReview from './MovieReview'
 import MovieVideo from './MovieVideo'
-import '../style/Item.css'
+import '../../style/Item.css'
 
 
 function Movie() {
