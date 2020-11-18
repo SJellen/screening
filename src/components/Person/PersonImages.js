@@ -12,7 +12,7 @@ function PersonImages() {
 
     const personImageTile = profiles && profiles.map((image, index) => 
 
-        <div className="slider-image" key={image.index}>
+        <div className="slider-image" key={index}>
         <img src={image.file_path !== null ? `${imagePath}${image.file_path}` : ''} alt="person" />
         </div>
     )
