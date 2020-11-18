@@ -25,6 +25,13 @@
     border: 1px solid white;
 }
 
+.title:hover {
+    cursor: pointer;
+    color: #ffe05d;
+    border: 1px solid #ffe05d;
+    transition: 2.5s;
+}
+
 .menu-box {
     width: 10rem;
     
