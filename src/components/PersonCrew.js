@@ -13,6 +13,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieDirectorArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedMovieDirectorArr[index].release_date === '' || sortedMovieDirectorArr[index].release_date === null || sortedMovieDirectorArr[index].release_date === undefined ? '' : parseInt(getYear(sortedMovieDirectorArr[index].release_date))}</span>
     </div>)
@@ -24,7 +25,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvDirectorArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
-        <span className="person-part-character">{item.character && item.character}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedTvDirectorArr[index].first_air_date === '' || sortedTvDirectorArr[index].first_air_date === null || sortedTvDirectorArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedTvDirectorArr[index].first_air_date))}</span>
     </div>)
@@ -34,6 +35,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieWritingArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedMovieWritingArr[index].release_date === '' || sortedMovieWritingArr[index].release_date === null || sortedMovieWritingArr[index].release_date === undefined ? '' : parseInt(getYear(sortedMovieWritingArr[index].release_date))}</span>
     </div>)
@@ -45,7 +47,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvWritingArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
-        <span className="person-part-character">{item.character && item.character}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedTvWritingArr[index].first_air_date === '' || sortedTvWritingArr[index].first_air_date === null || sortedTvWritingArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedTvWritingArr[index].first_air_date))}</span>
     </div>)
@@ -55,6 +57,7 @@ function PersonCrew() {
        <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieProductionArr)}>
        <div className="person-part-tile-left">
            <span className="person-part-title">{item.title}</span>
+           <span className="person-part-character" >{item.job && item.job}</span>
        </div>
        <span className="person-part-year">{sortedMovieProductionArr[index].release_date === '' || sortedMovieProductionArr[index].release_date === null || sortedMovieProductionArr[index].release_date === undefined ? '' : parseInt(getYear(sortedMovieProductionArr[index].release_date))}</span>
        </div>)
@@ -66,7 +69,7 @@ function PersonCrew() {
        <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvProductionArr)}>
        <div className="person-part-tile-left">
            <span className="person-part-title">{item.name}</span>
-           <span className="person-part-character">{item.character && item.character}</span>
+           <span className="person-part-character" >{item.job && item.job}</span>
        </div>
        <span className="person-part-year">{sortedTvProductionArr[index].first_air_date === '' || sortedTvProductionArr[index].first_air_date === null || sortedTvProductionArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedTvProductionArr[index].first_air_date))}</span>
        </div>)
@@ -76,6 +79,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index, sortedMovieMiscArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedMovieMiscArr[index].release_date === '' || sortedMovieMiscArr[index].release_date === null || sortedMovieMiscArr[index].release_date === undefined ? '' : parseInt(getYear(sortedMovieMiscArr[index].release_date))}</span>
     </div>)
@@ -87,7 +91,7 @@ function PersonCrew() {
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index, sortedTvMiscArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
-        <span className="person-part-character">{item.character && item.character}</span>
+        <span className="person-part-character" >{item.job && item.job}</span>
     </div>
     <span className="person-part-year">{sortedTvMiscArr[index].first_air_date === '' || sortedTvMiscArr[index].first_air_date === null || sortedTvMiscArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedTvMiscArr[index].first_air_date))}</span>
     </div>)   
