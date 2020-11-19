@@ -1,11 +1,13 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
-
+import PersonCrew from './PersonCrew'
+import PersonCast from './PersonCast';
 
 
 function PersonFilmographyNav() {
 
-    const {personCredits} = useContext(Context)
+    const {sortedCastMovieArr, sortedCastTvArr} = PersonCast()
+    const {otherJobArr, productionArr, writingArr, directorArr} = PersonCrew()
     
  
 
@@ -14,31 +16,15 @@ function PersonFilmographyNav() {
         <div className="filmography-nav">
             <span className="filmography-nav-jump" >Jump to:</span>
 
-            <a className="filmography-nav-type" href="#actor">Actor  
-            {/* <span className="filmography-nav-type-movie">Movie</span>
-            <span className="filmography-nav-type-tv">Tv</span> */}
-            </a>
+            {sortedCastMovieArr && sortedCastMovieArr.length > 0 && sortedCastTvArr && sortedCastTvArr.length > 0 ?  <a className="filmography-nav-type" href="#actor">Actor</a> : ''}
 
-            <a className="filmography-nav-type" href="#director">Director  
-            
-            {/* <span className="filmography-nav-type-movie">Movie</span>
-            <span className="filmography-nav-type-tv">Tv</span> */}
-            </a>
+            { directorArr && directorArr.length > 0 ? <a className="filmography-nav-type" href="#director">Director</a> : ''}
 
-            <a className="filmography-nav-type" href="#writer">Writer  
-            {/* <span className="filmography-nav-type-movie">Movie</span>
-            <span className="filmography-nav-type-tv">Tv</span> */}
-            </a>
+           { writingArr && writingArr.length > 0 ? <a className="filmography-nav-type" href="#writer">Writer</a> : ''}
 
-            <a className="filmography-nav-type" href="#producer">Producer  
-            {/* <span className="filmography-nav-type-movie">Movie</span>
-            <span className="filmography-nav-type-tv">Tv</span> */}
-            </a>
+           { productionArr && productionArr.length > 0 ? <a className="filmography-nav-type" href="#producer">Producer</a> : ''}
 
-            <a className="filmography-nav-type" href="#misc">Misc
-            {/* <span className="filmography-nav-type-movie">Movie</span>
-            <span className="filmography-nav-type-tv">Tv</span> */}
-            </a>
+           { otherJobArr && otherJobArr.length > 0 ? <a className="filmography-nav-type" href="#misc">Misc</a> : ''}
         </div>
        
         </div>
