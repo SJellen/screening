@@ -173,6 +173,8 @@
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+   height: 41.5rem;
+   content-visiblity: auto;
 }
 
 
@@ -190,6 +192,7 @@
     padding: 2rem 0;
     margin: 0rem auto 0 auto;
     color: white;
+   
   }
 
 

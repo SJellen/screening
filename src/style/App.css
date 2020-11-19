@@ -22,6 +22,7 @@ html {
   padding: 2rem;
   margin: 3rem auto 0 auto;
   color: white;
+  
 }
 
 .slider-label {
@@ -40,6 +41,8 @@ html {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  height: 41rem;
+  content-visiblity: auto;
 }
 
 .slider-sub-container::-webkit-scrollbar {
