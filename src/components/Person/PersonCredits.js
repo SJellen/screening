@@ -23,7 +23,7 @@ function PersonCredits() {
 
 
            <div className="person-filmography-header">
-               <span className="person-filmography"></span>
+               <span className="person-filmography" id="actor"></span>
                {personCastCount}
            </div>
 
@@ -52,7 +52,7 @@ function PersonCredits() {
             <div>
 
             <div className="person-filmography-header">
-               <span className="person-filmography"></span>
+               <span className="person-filmography" id="director"></span>
                {personDirectorCrew}
            </div>
 
@@ -85,7 +85,7 @@ function PersonCredits() {
             <div>
 
             <div className="person-filmography-header">
-               <span className="person-filmography"></span>
+               <span className="person-filmography" id="writer"></span>
                {personWritingCrew}
            </div>
 
@@ -114,7 +114,7 @@ function PersonCredits() {
                 <div>
 
                 <div className="person-filmography-header">
-                    <span className="person-filmography"></span>
+                    <span className="person-filmography" id="producer"></span>
                     {personProductionCrew}
                 </div>
 
@@ -141,7 +141,7 @@ function PersonCredits() {
                 { otherJobArr && otherJobArr.length > 0 ?
                     <div> 
                      <div className="person-filmography-header">
-               <span className="person-filmography"></span>
+               <span className="person-filmography" id="misc"></span>
                {personOtherCrew}
            </div>
 

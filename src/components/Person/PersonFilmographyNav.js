@@ -14,31 +14,31 @@ function PersonFilmographyNav() {
         <div className="filmography-nav">
             <span className="filmography-nav-jump" >Jump to:</span>
 
-            <span className="filmography-nav-type">Actor
+            <a className="filmography-nav-type" href="#actor">Actor  
             {/* <span className="filmography-nav-type-movie">Movie</span>
             <span className="filmography-nav-type-tv">Tv</span> */}
-            </span>
+            </a>
 
-            <span className="filmography-nav-type">Director
+            <a className="filmography-nav-type" href="#director">Director  
             
             {/* <span className="filmography-nav-type-movie">Movie</span>
             <span className="filmography-nav-type-tv">Tv</span> */}
-            </span>
+            </a>
 
-            <span className="filmography-nav-type">Writer
+            <a className="filmography-nav-type" href="#writer">Writer  
             {/* <span className="filmography-nav-type-movie">Movie</span>
             <span className="filmography-nav-type-tv">Tv</span> */}
-            </span>
+            </a>
 
-            <span className="filmography-nav-type">Producer
+            <a className="filmography-nav-type" href="#producer">Producer  
             {/* <span className="filmography-nav-type-movie">Movie</span>
             <span className="filmography-nav-type-tv">Tv</span> */}
-            </span>
+            </a>
 
-            <span className="filmography-nav-type">Misc
+            <a className="filmography-nav-type" href="#misc">Misc
             {/* <span className="filmography-nav-type-movie">Movie</span>
             <span className="filmography-nav-type-tv">Tv</span> */}
-            </span>
+            </a>
         </div>
        
         </div>
