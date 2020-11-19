@@ -81,6 +81,7 @@
 .im-angle-down {
     font-size: smaller;
     margin-top: 1rem;
+    color: #E1B517;
 }
 
 .im-angle-down:hover {
@@ -88,6 +89,7 @@
 }
 
 .im-angle-up {
+    color: #E1B517;
     font-size: smaller;
     margin-top: 1rem;
 }
@@ -154,7 +156,7 @@
 .item-review-author {
     font-size: 1.25rem;
     margin: 2rem 4rem;
-    color: rgba(255, 215, 0, .85);
+    color: #E1B517;
     font-weight: 700;
 }
 

@@ -104,11 +104,13 @@
 
 .details-overview {
     font-size: 1.25rem;
-    /* border: 1px solid blue; */
     max-width: 30vw;
     line-height: 2;
+    margin: 0 auto;
 
 }
+
+
 
 .details-images-container {
     background-color: #1B1B1B;

@@ -54,8 +54,8 @@ function Person() {
             <div className="details-tagline">
                 <h3>{personDetails.tagline}</h3>
             </div>
-            
-            { personDetails.biography && <p className="details-overview">{personDetails.biography.length < 400 ? personDetails.biography : bioShow ? truncated : nonTruncated}</p> }
+           
+            { personDetails.biography && <div className="details-overview"><span className="details-overview-truncated">{personDetails.biography.length < 400 ? personDetails.biography : bioShow ? truncated : nonTruncated}</span></div> }
         </div>
 
 
