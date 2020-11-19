@@ -5,11 +5,13 @@ import PersonCredits from './PersonCredits'
 import PersonImages from './PersonImages'
 
 
+
 function Person() {
 
     const {personDetails, posterPathLarge, dateSplitter, truncateBio}  = useContext(Context)
     const {personCredit} = PersonCredits()
     const {personImageTile} = PersonImages()
+    
     const [bioShow, setBioShow] = useState(true)
 
     function handleTruncate() {

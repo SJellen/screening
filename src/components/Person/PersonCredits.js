@@ -1,6 +1,7 @@
 import React from 'react'
 import PersonCrew from './PersonCrew'
 import PersonCast from './PersonCast';
+import PersonFilmographyNav from './PersonFilmographyNav'
 import '../../style/Person.css'
 
 function PersonCredits() {
@@ -8,13 +9,14 @@ function PersonCredits() {
     
     // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
     const {partMovieTile, partTvTile, personCastCount, sortedCastMovieArr, sortedCastTvArr} = PersonCast()
+    const {personFilmographyTile} = PersonFilmographyNav()
     const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr, sortedMovieMiscArr, sortedTvProductionArr, sortedMovieProductionArr, sortedTvWritingArr, sortedMovieWritingArr, sortedTvDirectorArr, sortedMovieDirectorArr} = PersonCrew()
     
 
     
     const personCredit = (
           <div className="person-filmography-container">
-
+                    {personFilmographyTile}
           <div className="person-filmography-header" id="filmography-title">
                <span className="person-filmography">Filmography</span>
                 </div>
