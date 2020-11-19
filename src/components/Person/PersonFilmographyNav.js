@@ -1,5 +1,4 @@
-import React, {useContext} from 'react'
-import {Context} from '../../Context'
+import React from 'react'
 import PersonCrew from './PersonCrew'
 import PersonCast from './PersonCast';
 
