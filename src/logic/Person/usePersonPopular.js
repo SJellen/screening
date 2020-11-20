@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
 import blankSquare from '../../assets/placeholder.jpg'
+import {Link} from 'react-router-dom'
 
 function usePersonPopular() {
     const {posterPath, popularPerson, setItemPageOpen,  setPersonId, fetchPersonDetails, setMediaType, fetchPersonCredits, fetchPersonImages}  = useContext(Context)
@@ -19,7 +20,7 @@ function usePersonPopular() {
     
     const popularPersonTile = popularPerson.map((person, index) => 
         <div className="slider-card" key={person.id}> 
-        <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonTrendingClick(index)}/>
+        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonTrendingClick(index)}/></Link>
         <span className="slider-name">{person.name}</span>
        </div> 
         )
