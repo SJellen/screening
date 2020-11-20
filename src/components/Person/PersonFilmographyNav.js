@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import PersonCrew from './PersonCrew'
 import PersonCast from './PersonCast';
+import {Context} from '../../Context'
 
 
 function PersonFilmographyNav() {
 
     const {sortedCastMovieArr, sortedCastTvArr} = PersonCast()
     const {otherJobArr, productionArr, writingArr, directorArr} = PersonCrew()
-    
+    const {personDetails} = useContext(Context)
  
 
     const personFilmographyTile = (
@@ -15,7 +16,7 @@ function PersonFilmographyNav() {
         <div className="filmography-nav">
             <span className="filmography-nav-jump" >Jump to:</span>
 
-            {sortedCastMovieArr && sortedCastMovieArr.length > 0 && sortedCastTvArr && sortedCastTvArr.length > 0 ?  <a className="filmography-nav-type" href="#actor">Actor</a> : ''}
+            {sortedCastMovieArr && sortedCastMovieArr.length > 0 && sortedCastTvArr && sortedCastTvArr.length > 0 ?  <a className="filmography-nav-type" href="#actor">{personDetails.gender === 2 ? "Actor" : "Actress"}</a> : ''}
 
             { directorArr && directorArr.length > 0 ? <a className="filmography-nav-type" href="#director">Director</a> : ''}
 
