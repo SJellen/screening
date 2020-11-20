@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import blankSquare from '../../assets/placeholder.jpg'
+import {Link} from 'react-router-dom'
 
 
 
@@ -28,7 +29,7 @@ function MovieSimilar() {
     const movieSimilarTile = movieSimilarArr.map((movie, index) => 
         
     <div className="slider-card" key={movie.id}> 
-    <img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieSimilarClick(index)}/>
+    <Link to={`/itemPage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieSimilarClick(index)}/></Link>
     <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
     <span className="slider-title" >{movie.title}</span>
     </div>

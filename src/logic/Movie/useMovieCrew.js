@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import blankSquare from '../../assets/placeholder.jpg'
+import {Link} from 'react-router-dom'
 
 function useMovieCrew() {
 
@@ -51,7 +52,7 @@ function useMovieCrew() {
 
          
         <div className="slider-card" key={person.credit_id}> 
-        <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleCrewCreditClick(index)}/>
+        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleCrewCreditClick(index)}/></Link>
         <span className="slider-name">{person.name}</span>
         <span className="slider-character">{person.job}</span>
        </div> 
