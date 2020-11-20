@@ -16,13 +16,18 @@
 .title {
     font-size: 2rem;
     /* margin-left: 5rem; */
+    display: flex;
     margin-top: 1rem;
-    margin-bottom: 1rem;
     padding: .5rem;
-    border-radius: 5px;;
+    border-radius: 5px;
     font-weight: 700;
     color: white;
     border: 1px solid white;
+}
+
+.header-title-link {
+    text-decoration: none;
+    
 }
 
 .title:hover {
@@ -96,6 +101,9 @@ input:active {
    border: 1px solid silver;
    border-left: 1px solid grey;
 }
+
+
+
 
 
 

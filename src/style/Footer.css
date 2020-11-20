@@ -21,6 +21,7 @@
     font-size: 2rem;
     /* margin-left: 5rem; */
     
+    
     /* margin-top: 1rem;
     margin-bottom: 5rem; */
     padding: .5rem;
@@ -35,6 +36,11 @@
     color: #E1B517;
     border: 1px solid #E1B517;
     transition: 2.5s;
+}
+
+.footer-title-link {
+    text-decoration: none;
+    
 }
 
 .tmdb-logo {

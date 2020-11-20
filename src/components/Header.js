@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Header.css';
+import {Link} from 'react-router-dom'
 
 
 
@@ -8,7 +9,7 @@ import '../style/Header.css';
 
 function Header() {
 
-    const {fetchSearchResults, setSearchTerm, setMediaType, setItemPageOpen, setSearchResultsActive}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, setItemPageOpen, setSearchResultsActive,   setMovieLoaded, setTvLoaded}  = useContext(Context)
 
     function handleSearch(event) {
         let searchWord = event.target.value
@@ -24,12 +25,19 @@ function Header() {
         setSearchResultsActive(true)
     }
 
+    function handleX() {
+        setItemPageOpen(prevState => !prevState)
+        setSearchResultsActive(false)
+        setMovieLoaded(false) 
+        setTvLoaded(false)
+    }
+
 
    
         return (
             <div className="header">
             <div className="header-left-container">
-                <span className="title">Screening</span>
+            <Link to='/'  className="header-title-link"><span className="title" onClick={handleX}>Screening</span></Link>
                     <div className="menu-box">
                          <i className="im im-menu"></i>
                         <span className="menu-span">Menu</span> 
