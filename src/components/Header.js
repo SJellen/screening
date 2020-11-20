@@ -26,7 +26,7 @@ function Header() {
     }
 
     function handleX() {
-        setItemPageOpen(prevState => !prevState)
+        setItemPageOpen(false)
         setSearchResultsActive(false)
         setMovieLoaded(false) 
         setTvLoaded(false)
@@ -37,7 +37,7 @@ function Header() {
         return (
             <div className="header">
             <div className="header-left-container">
-            <Link to='/'  className="header-title-link"><span className="title" onClick={handleX}>Screening</span></Link>
+            <Link to='/home'  className="header-title-link"><span className="title" onClick={handleX}>Screening</span></Link>
                     <div className="menu-box">
                          <i className="im im-menu"></i>
                         <span className="menu-span">Menu</span> 
