@@ -5,9 +5,9 @@ import usePersonCast from '../../logic/Person/usePersonCast'
 
 function PersonCast() {
 
-    const {sortedCastTvArr, sortedCastMovieArr, handleMovieTileClick, handleTvTileClick}  = usePersonCast()
+    const {sortedCastTvArr, sortedCastMovieArr}  = usePersonCast()
 
-    const {getYear,personDetails, personCredits} = useContext(Context)
+    const {getYear,personDetails, personCredits, handleMovieClick, handleTvClick} = useContext(Context)
     
     const {cast} = personCredits
 
@@ -16,7 +16,7 @@ function PersonCast() {
 
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
-    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieTileClick(index)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieClick(index, sortedCastMovieArr, prevState => prevState)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
         <span className="person-part-character" >{item.character && item.character}</span>
@@ -29,7 +29,7 @@ function PersonCast() {
 
     const partTvTile = sortedCastTvArr && sortedCastTvArr.map((item, index) => 
 
-    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvTileClick(index)}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvClick(index, sortedCastTvArr, prevState => prevState)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>

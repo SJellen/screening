@@ -3,29 +3,11 @@ import {Context} from '../../Context'
 
 function usePersonCast() {
 
-    const {setMediaType, setMovieId, fetchMovieCredits, fetchMovieDetails, setMovieCredits, setTvId, personCredits, getYear, fetchTvDetails, setTvCredits, fetchTvCredits}  = useContext(Context)
+    const {personCredits, getYear}  = useContext(Context)
 
     const {cast} = personCredits
 
-    function handleMovieTileClick(e) {
-        let selection = sortedCastMovieArr[e].id
-        setMediaType('movie')
-        setMovieId(selection)
-        fetchMovieDetails(selection)
-        setMovieCredits([])
-        fetchMovieCredits(selection)
-        window.scrollTo(0, 0)
-      }
-  
-      function handleTvTileClick(e) {
-          let selection = sortedCastTvArr[e].id
-          setMediaType('tv')
-          setTvId(selection)
-          fetchTvDetails(selection)
-          setTvCredits([])
-          fetchTvCredits(selection)
-          window.scrollTo(0, 0)
-      }
+    
 
     let castTvArr = [], castMovieArr = [], otherArr = []
     if (cast !== undefined) {
@@ -48,7 +30,7 @@ function usePersonCast() {
         return parseInt(getYear(b.release_date)) - parseInt(getYear(a.release_date))
     })
 
-    return {sortedCastTvArr, sortedCastMovieArr, handleMovieTileClick, handleTvTileClick}
+    return {sortedCastTvArr, sortedCastMovieArr}
 }
 
 export default usePersonCast

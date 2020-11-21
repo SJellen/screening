@@ -96,7 +96,7 @@ function ContextProvider({children}) {
         }
     }
 
-    function handleMovieClick(e, arr) {
+    function handleMovieClick(e, arr, pageOpen=prevState => !prevState) {
         let selection = arr[e].id
         setMediaType('movie')
         setMovieId(selection)
@@ -107,23 +107,23 @@ function ContextProvider({children}) {
         fetchMovieSimilar(selection)
         fetchMovieReviews(selection)
         fetchMovieVideos(selection)
-        setItemPageOpen(prevState => !prevState)
+        setItemPageOpen(pageOpen)
         window.scrollTo(0, 0)
         
     }
 
-    function handlePersonClick(e, arr) {
+    function handlePersonClick(e, arr, pageOpen=prevState => !prevState) {
         let selection = arr[e].id
         setMediaType('person')
         setPersonId(selection)
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
         fetchPersonImages(selection)
-        setItemPageOpen(prevState => !prevState)
+        setItemPageOpen(pageOpen)
         window.scrollTo(0, 0)
     }
 
-    function handleTvClick(e, arr) {
+    function handleTvClick(e, arr, pageOpen=prevState => !prevState) {
         let selection = arr[e].id
         setMediaType('tv')
         setTvId(selection)
@@ -134,7 +134,7 @@ function ContextProvider({children}) {
         fetchTvRecommend(selection)
         fetchTvReviews(selection)
         fetchTvVideos(selection)
-        setItemPageOpen(prevState => !prevState)
+        setItemPageOpen(pageOpen)
         window.scrollTo(0, 0)
     }
 

@@ -3,29 +3,11 @@ import {Context} from '../../Context'
 
 function usePersonCrew() {
 
-    const {personCredits, getYear, setMediaType, setMovieId, fetchMovieDetails, setTvId, fetchTvDetails, fetchMovieCredits, fetchTvCredits, setMovieCredits, setTvCredits}  = useContext(Context)
+    const {personCredits, getYear}  = useContext(Context)
 
     const {crew} = personCredits
 
-    function handleMovieTileClick(e, arr) {
-        let selection = arr[e].id
-        setMediaType('movie')
-        setMovieId(selection)
-        fetchMovieDetails(selection)
-        setMovieCredits([])
-        fetchMovieCredits(selection)
-        window.scrollTo(0, 0)
-      }
-  
-      function handleTvTileClick(e, arr) {
-          let selection = arr[e].id
-          setMediaType('tv')
-          setTvId(selection)
-          fetchTvDetails(selection)
-          setTvCredits([])
-          fetchTvCredits(selection)
-          window.scrollTo(0, 0)
-      }
+    
 
 
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
@@ -117,7 +99,7 @@ function usePersonCrew() {
 
    
     
-    return {sortedMovieDirectorArr, handleMovieTileClick, getYear, sortedTvDirectorArr, handleTvTileClick, sortedMovieWritingArr, sortedTvWritingArr, sortedMovieProductionArr, sortedTvProductionArr, sortedMovieMiscArr, sortedTvMiscArr, directorArr, writingArr, productionArr, otherJobArr}
+    return {sortedMovieDirectorArr,  getYear, sortedTvDirectorArr, sortedMovieWritingArr, sortedTvWritingArr, sortedMovieProductionArr, sortedTvProductionArr, sortedMovieMiscArr, sortedTvMiscArr, directorArr, writingArr, productionArr, otherJobArr}
 }
 
 export default usePersonCrew
