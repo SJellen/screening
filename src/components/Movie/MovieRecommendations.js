@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function MovieRecommendations() {
 
-    const {posterPath, setMovieId, fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr, fetchMovieReviews, fetchMovieVideos}  = useContext(Context)
+    const {posterPath, setMovieId,  fetchMovieDetails, setMediaType, fetchMovieCredits, setMovieCredits, fetchMovieRecommend, movieRecommendationArr, fetchMovieReviews, fetchMovieVideos}  = useContext(Context)
 
     function handleMovieRecommendClick(e) {
         let selection = movieRecommendationArr[e].id
