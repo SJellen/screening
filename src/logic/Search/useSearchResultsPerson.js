@@ -4,23 +4,11 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useSearchResultsPerson() {
-    const {posterPath, setItemPageOpen, setPersonId, fetchPersonDetails, setMediaType, searchResultsPerson, fetchPersonCredits,fetchPersonImages}  = useContext(Context)
-
-
-    function handleSearchPersonClick(e) {
-        let selection = searchResultsPerson[e].id
-        setMediaType('person')
-        setPersonId(selection)
-        fetchPersonDetails(selection)
-        fetchPersonCredits(selection)
-        fetchPersonImages(selection)
-        setItemPageOpen(true)
-        window.scrollTo(0, 0)
-    }
+    const {posterPath, handlePersonClick, searchResultsPerson}  = useContext(Context)
 
     const searchResultsPersonTile = searchResultsPerson && searchResultsPerson.map((person, index) => 
     <div className="slider-card" key={person.id}> 
-    <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleSearchPersonClick(index)}/></Link>
+    <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, searchResultsPerson, true)}/></Link>
     <span className="slider-name">{person.name}</span>
    </div> 
     )
