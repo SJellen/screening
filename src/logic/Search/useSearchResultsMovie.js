@@ -20,6 +20,7 @@ function useSearchResultsMovie() {
         fetchMovieCredits(selection)
         fetchMovieVideos(selection)
         setItemPageOpen(true)
+        window.scrollTo(0, 0)
         
     }
 
