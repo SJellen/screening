@@ -19,6 +19,7 @@ function useMovieTrending() {
         fetchMovieReviews(selection)
         fetchMovieVideos(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     
     }
     

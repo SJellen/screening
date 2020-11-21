@@ -18,6 +18,7 @@ function useTvTrending() {
         fetchTvReviews(selection)
         fetchTvVideos(selection)
         setItemPageOpen(prevState => !prevState)
+        window.scrollTo(0, 0)
     }
  
     const tvTrendingTile = tvTrending.map((show, index) => 

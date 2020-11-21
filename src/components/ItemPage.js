@@ -5,13 +5,17 @@ import Movie from '../components/Movie/Movie'
 import Tv from '../components/Tv/Tv'
 import Person from '../components/Person/Person'
 import Search from './Search'
+import {useHistory} from 'react-router-dom'
 
 
 function ItemPage() {
 
     const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive, setMovieLoaded, setTvLoaded}  = useContext(Context)
     
-    
+    const history = useHistory()
+    const handleHistory = () => {
+    history.push("/home")
+   }
 
 
 
@@ -20,6 +24,8 @@ function ItemPage() {
         setSearchResultsActive(false)
         setMovieLoaded(false) 
         setTvLoaded(false)
+        handleHistory()
+        
     }
 
     function handleActiveSearch() {
