@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom'
 
 function ItemPage() {
 
-    const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive, setMovieLoaded, setTvLoaded}  = useContext(Context)
+    const {itemPageOpen, setItemPageOpen, mediaType, searchResultsActive, fetchSearchResults, setMediaType, setSearchResultsActive, setMovieLoaded, setTvLoaded, setPersonId, setTvId, setMovieId, setLastPersonId, setLastMovieId, setLastTvId, setLastMediaType, activeHistory, handleActiveHistory, lastMediaType}  = useContext(Context)
     
     const history = useHistory()
     const handleHistory = () => {
@@ -25,6 +25,14 @@ function ItemPage() {
         setMovieLoaded(false) 
         setTvLoaded(false)
         handleHistory()
+        setPersonId()
+        setTvId()
+        setMovieId()
+        setLastPersonId()
+        setLastMovieId()
+        setLastTvId()
+        setLastMediaType()
+        window.scrollTo(0, 0)
         
     }
 
@@ -40,7 +48,9 @@ function ItemPage() {
         <div>
           { itemPageOpen ? 
         <div className="item-page-container">
-           { !searchResultsActive  || mediaType === 'search' ? <i className="im im-x-mark item-page-close" onClick={handleX}></i> : <i className="im im-x-mark item-page-close" onClick={handleActiveSearch}></i> } 
+           { !searchResultsActive  || mediaType === 'search' ?  <i className="im im-x-mark item-page-close" onClick={handleX}></i> :
+            searchResultsActive || activeHistory  ? <i className="im im-arrow-left item-page-close" onClick={handleActiveSearch}></i> :
+            <i className="im im-x-mark item-page-close" onClick={handleActiveSearch}>active</i> } 
             { mediaType === 'tv' ?  <Tv /> : 
               mediaType === 'movie' ? <Movie /> : 
               mediaType === 'person' ? <Person /> : 

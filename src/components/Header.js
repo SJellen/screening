@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom'
 
 function Header() {
 
-    const {fetchSearchResults, setSearchTerm, setMediaType, setItemPageOpen, setSearchResultsActive,   setMovieLoaded, setTvLoaded}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, setItemPageOpen, setSearchResultsActive,  handleLogoClick}  = useContext(Context)
 
     function handleSearch(event) {
         let searchWord = event.target.value
@@ -25,19 +25,14 @@ function Header() {
         setSearchResultsActive(true)
     }
 
-    function handleX() {
-        setItemPageOpen(false)
-        setSearchResultsActive(false)
-        setMovieLoaded(false) 
-        setTvLoaded(false)
-    }
+    
 
 
    
         return (
             <div className="header">
             <div className="header-left-container">
-            <Link to='/home'  className="header-title-link"><span className="title" onClick={handleX}>Screening</span></Link>
+            <Link to='/home'  className="header-title-link"><span className="title" onClick={handleLogoClick}>Screening</span></Link>
                     <div className="menu-box">
                          <i className="im im-menu"></i>
                         <span className="menu-span">Menu</span> 

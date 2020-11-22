@@ -7,20 +7,15 @@ import {Link} from 'react-router-dom'
 
 function Footer() {
 
-    const {setItemPageOpen,  setSearchResultsActive, setMovieLoaded, setTvLoaded}  = useContext(Context)
+    const {handleLogoClick}  = useContext(Context)
 
-    function handleX() {
-        setItemPageOpen(false)
-        setSearchResultsActive(false)
-        setMovieLoaded(false) 
-        setTvLoaded(false)
-    }
+   
 
 
     return (
         <div className="footer">
         <div className="logo-box">
-            <Link to='/home'  className="footer-title-link"><span className="footer-title" onClick={handleX}>Screening</span></Link>
+            <Link to='/home'  className="footer-title-link"><span className="footer-title" onClick={handleLogoClick}>Screening</span></Link>
         </div>
 
 

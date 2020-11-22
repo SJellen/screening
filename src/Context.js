@@ -4,6 +4,7 @@ import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
 import useApiTv from './services/useApiTv'
 
+
 const Context = React.createContext()
 
 
@@ -25,8 +26,9 @@ function ContextProvider({children}) {
 
     const [itemPageOpen, setItemPageOpen] = useState(false)
     const [mediaType, setMediaType] = useState(null)
-    const [lastMediaType, setLastMediaType] = useState(null)
+    const [lastMediaType, setLastMediaType] = useState()
     const [searchResultsActive, setSearchResultsActive] = useState(false)
+    const [activeHistory, setActiveHistory] = useState(false)
 
     
 
@@ -99,15 +101,23 @@ function ContextProvider({children}) {
 
 
     const currentTvId = tvId, currentMovieId = movieId, currentPersonId = personId
+    const currentMediaType = mediaType
+
+
+    console.log(currentMediaType)
 
     function handleMovieClick(e, arr, pageOpen=prevState => !prevState) {
-        setLastMediaType(mediaType)
+        setLastMediaType(currentMediaType)
+        
         if (mediaType === "tv") {
             setLastTvId(currentTvId)
+            setActiveHistory(true)
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
+            setActiveHistory(true)
         } else if (mediaType === 'person') {
-            setLastMovieId(currentPersonId)
+            setLastPersonId(currentPersonId)
+            setActiveHistory(true)
         }
         let selection = arr[e].id
         setMediaType('movie')
@@ -125,13 +135,16 @@ function ContextProvider({children}) {
     }
 
     function handlePersonClick(e, arr, pageOpen=prevState => !prevState) {
-        setLastMediaType(mediaType)
+        setLastMediaType(currentMediaType)
         if (mediaType === "tv") {
             setLastTvId(currentTvId)
+            setActiveHistory(true)
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
+            setActiveHistory(true)
         } else if (mediaType === 'person') {
-            setLastMovieId(currentPersonId)
+            setLastPersonId(currentPersonId)
+            setActiveHistory(true)
         }
         let selection = arr[e].id
         setMediaType('person')
@@ -144,13 +157,22 @@ function ContextProvider({children}) {
     }
 
     function handleTvClick(e, arr, pageOpen=prevState => !prevState) {
-        setLastMediaType(mediaType)
+        setLastMediaType(currentMediaType)
         if (mediaType === "tv") {
             setLastTvId(currentTvId)
+            setActiveHistory(true)
+            setLastMovieId()
+            setLastPersonId()
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
+            setActiveHistory(true)
+            setLastPersonId()
+            setLastTvId()
         } else if (mediaType === 'person') {
             setLastPersonId(currentPersonId)
+            setActiveHistory(true)
+            setLastTvId()
+            setLastMovieId()
         }
         let selection = arr[e].id
         setMediaType('tv')
@@ -166,7 +188,63 @@ function ContextProvider({children}) {
         window.scrollTo(0, 0)
     }
 
-    
+
+  
+
+
+    function handleActiveHistory() {
+        if (lastTvId !== undefined) {
+        setActiveHistory(true)
+        setMediaType('tv')
+        setTvId(lastTvId)
+        fetchTvDetails(lastTvId)
+        setTvCredits([])
+        fetchTvCredits(lastTvId)
+        fetchTvSimilar(lastTvId)
+        fetchTvRecommend(lastTvId)
+        fetchTvReviews(lastTvId)
+        fetchTvVideos(lastTvId)
+        setItemPageOpen(true)
+        window.scrollTo(0, 0)
+        } else if (lastMovieId !== undefined) {
+        setActiveHistory(true)
+        setMediaType('movie')
+        setMovieId(lastMovieId)
+        fetchMovieDetails(lastMovieId)
+        setMovieCredits([])
+        fetchMovieCredits(lastMovieId)
+        fetchMovieRecommend(lastMovieId)
+        fetchMovieSimilar(lastMovieId)
+        fetchMovieReviews(lastMovieId)
+        fetchMovieVideos(lastMovieId)
+        setItemPageOpen(true)
+        window.scrollTo(0, 0)
+        } else if (lastPersonId !== undefined) {
+        setActiveHistory(true)
+        setMediaType('person')
+        setPersonId(lastPersonId)
+        fetchPersonDetails(lastPersonId)
+        fetchPersonCredits(lastPersonId)
+        fetchPersonImages(lastPersonId)
+        setItemPageOpen(true)
+        window.scrollTo(0, 0)
+        }
+    }
+
+    function handleLogoClick() {
+        setItemPageOpen(false)
+        setSearchResultsActive(false)
+        setMovieLoaded(false) 
+        setTvLoaded(false)
+        setPersonId()
+        setTvId()
+        setMovieId()
+        setLastPersonId()
+        setLastMovieId()
+        setLastTvId()
+        setLastMediaType()
+        window.scrollTo(0, 0)
+    }
 
 
        
@@ -174,7 +252,7 @@ function ContextProvider({children}) {
   
         
     
-        console.log(mediaType, movieId,  lastMediaType, lastMovieId, lastPersonId, lastTvId)
+        console.log(mediaType, movieId, personId, tvId,  lastMediaType, lastMovieId, lastPersonId, lastTvId, activeHistory)
     
     
     
@@ -184,7 +262,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemPageOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, searchResultsActive, setSearchResultsActive, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemPageOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, searchResultsActive, setSearchResultsActive, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick, handleActiveHistory, setLastTvId, setLastMovieId, setLastPersonId, setActiveHistory, activeHistory, handleLogoClick, setLastMediaType}}>
             {children}
         </Context.Provider>
     )
