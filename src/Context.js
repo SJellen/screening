@@ -112,12 +112,18 @@ function ContextProvider({children}) {
         if (mediaType === "tv") {
             setLastTvId(currentTvId)
             setActiveHistory(true)
+            setLastMovieId()
+            setLastPersonId()
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
             setActiveHistory(true)
+            setLastPersonId()
+            setLastMovieId()
         } else if (mediaType === 'person') {
             setLastPersonId(currentPersonId)
             setActiveHistory(true)
+            setLastMovieId()
+            setLastTvId()
         }
         let selection = arr[e].id
         setMediaType('movie')
@@ -139,12 +145,18 @@ function ContextProvider({children}) {
         if (mediaType === "tv") {
             setLastTvId(currentTvId)
             setActiveHistory(true)
+            setLastMovieId()
+            setLastPersonId()
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
             setActiveHistory(true)
+            setLastPersonId()
+            setLastMovieId()
         } else if (mediaType === 'person') {
             setLastPersonId(currentPersonId)
             setActiveHistory(true)
+            setLastMovieId()
+            setLastTvId()
         }
         let selection = arr[e].id
         setMediaType('person')
@@ -243,6 +255,7 @@ function ContextProvider({children}) {
         setLastMovieId()
         setLastTvId()
         setLastMediaType()
+        setActiveHistory(false)
         window.scrollTo(0, 0)
     }
 

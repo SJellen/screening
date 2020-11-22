@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 function useMovieCrew() {
 
-    const {movieCredits, setMediaType, setPersonId, fetchPersonCredits, fetchPersonDetails, posterPath, fetchPersonImages}  = useContext(Context)
+    const {movieCredits, posterPath, handlePersonClick}  = useContext(Context)
     const {crew} = movieCredits
 
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
@@ -32,27 +32,11 @@ function useMovieCrew() {
     let crewSortedArr = [...directorArr, ...writingArr, ...productionArr, ...otherJobArr]
 
 
-    
-    
-
-
-    function handleCrewCreditClick(e) {
-        let selection = crewSortedArr[e].id
-        setMediaType('person')
-        setPersonId(selection)
-        fetchPersonDetails(selection)
-        fetchPersonCredits(selection)
-        fetchPersonImages(selection)
-        // setItemPageOpen(prevState => !prevState)
-        window.scrollTo(0, 0)
-    }
-
-
     const crewMovieTile = crewSortedArr && crewSortedArr.map((person, index) => 
 
          
         <div className="slider-card" key={person.credit_id}> 
-        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handleCrewCreditClick(index)}/></Link>
+        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/></Link>
         <span className="slider-name">{person.name}</span>
         <span className="slider-character">{person.job}</span>
        </div> 
