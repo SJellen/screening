@@ -15,9 +15,9 @@ import {useHistory} from 'react-router-dom'
 
 function App() {
   const history = useHistory()
-  const handleHistory = () => {
-    history.push("/home")
-  }
+  // const handleHistory = () => {
+  //   history.push("/home")
+  // }
 
   useEffect(() => {
     history.push("/home")

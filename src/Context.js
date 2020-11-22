@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
@@ -150,7 +150,7 @@ function ContextProvider({children}) {
         } else if (mediaType === "movie") {
             setLastMovieId(currentMovieId)
         } else if (mediaType === 'person') {
-            setLastMovieId(currentPersonId)
+            setLastPersonId(currentPersonId)
         }
         let selection = arr[e].id
         setMediaType('tv')
