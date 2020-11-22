@@ -1,4 +1,5 @@
-import React from 'react'
+import {useContext} from 'react'
+import {Context} from '../../Context'
 import PersonCrew from './PersonCrew'
 import PersonCast from './PersonCast';
 import PersonFilmographyNav from './PersonFilmographyNav'
@@ -6,11 +7,17 @@ import '../../style/Person.css'
 
 function PersonCredits() {
 
+    const {personCredits}  = useContext(Context)
+
     
     // const {partMovieTile, partTvTile, personCast}  = usePersonCast()
     const {partMovieTile, partTvTile, personCastCount, sortedCastMovieArr, sortedCastTvArr} = PersonCast()
     const {personFilmographyTile} = PersonFilmographyNav()
     const {personDirectorCrew, personWritingCrew, personProductionCrew, personOtherCrew, directorMovieTile, directorTvTile, writingMovieTile, writingTvTile, productionMovieTile, productionTvTile, miscMovieTile, miscTvTile, sortedTvMiscArr, otherJobArr, productionArr, writingArr, directorArr, sortedMovieMiscArr, sortedTvProductionArr, sortedMovieProductionArr, sortedTvWritingArr, sortedMovieWritingArr, sortedTvDirectorArr, sortedMovieDirectorArr} = PersonCrew()
+
+    const {cast} = personCredits
+
+    console.log(cast && cast.length)
     
 
     
@@ -22,10 +29,10 @@ function PersonCredits() {
                 </div>
 
 
-           <div className="person-filmography-header">
+         { cast && cast.length > 0 ?  <div className="person-filmography-header">
                <span className="person-filmography" id="actor"></span>
                {personCastCount}
-           </div>
+           </div> : '' }
 
            {
             sortedCastMovieArr && sortedCastMovieArr.length > 0 ?
