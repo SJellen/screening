@@ -8,6 +8,7 @@ function useApiTv() {
     const [airingToday, setAiringToday] = useState([])
     const [tvRecommendationArr, setTvRecommendationArr] = useState([])
     const [tvId, setTvId] = useState()
+    const [lastTvId, setLastTvId] = useState()
     const [tvDetails, setTvDetails] = useState([])
     const [tvCredits, setTvCredits] = useState([])
     const [tvSimilarArr, setTvSimilarArr] = useState([])
@@ -141,7 +142,7 @@ function useApiTv() {
 
 
 
-    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded}
+    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId}
 }
 
 export default useApiTv

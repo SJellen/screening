@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
@@ -13,11 +13,11 @@ function ContextProvider({children}) {
 
     const {searchResultsPerson,  tvTrending, searchResults,  fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm,    movieTrending,} = useApi()
 
-    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId} = useApiPerson()
+    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId} = useApiPerson()
 
-    const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded} = useApiMovie()
+    const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId } = useApiMovie()
 
-    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded} = useApiTv()
+    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId} = useApiTv()
 
     const posterPath = 'https://image.tmdb.org/t/p/w200/'
     const posterPathLarge = 'https://image.tmdb.org/t/p/w780/'
@@ -25,6 +25,7 @@ function ContextProvider({children}) {
 
     const [itemPageOpen, setItemPageOpen] = useState(false)
     const [mediaType, setMediaType] = useState(null)
+    const [lastMediaType, setLastMediaType] = useState(null)
     const [searchResultsActive, setSearchResultsActive] = useState(false)
 
     
@@ -96,7 +97,18 @@ function ContextProvider({children}) {
         }
     }
 
+
+    const currentTvId = tvId, currentMovieId = movieId, currentPersonId = personId
+
     function handleMovieClick(e, arr, pageOpen=prevState => !prevState) {
+        setLastMediaType(mediaType)
+        if (mediaType === "tv") {
+            setLastTvId(currentTvId)
+        } else if (mediaType === "movie") {
+            setLastMovieId(currentMovieId)
+        } else if (mediaType === 'person') {
+            setLastMovieId(currentPersonId)
+        }
         let selection = arr[e].id
         setMediaType('movie')
         setMovieId(selection)
@@ -113,6 +125,14 @@ function ContextProvider({children}) {
     }
 
     function handlePersonClick(e, arr, pageOpen=prevState => !prevState) {
+        setLastMediaType(mediaType)
+        if (mediaType === "tv") {
+            setLastTvId(currentTvId)
+        } else if (mediaType === "movie") {
+            setLastMovieId(currentMovieId)
+        } else if (mediaType === 'person') {
+            setLastMovieId(currentPersonId)
+        }
         let selection = arr[e].id
         setMediaType('person')
         setPersonId(selection)
@@ -124,6 +144,14 @@ function ContextProvider({children}) {
     }
 
     function handleTvClick(e, arr, pageOpen=prevState => !prevState) {
+        setLastMediaType(mediaType)
+        if (mediaType === "tv") {
+            setLastTvId(currentTvId)
+        } else if (mediaType === "movie") {
+            setLastMovieId(currentMovieId)
+        } else if (mediaType === 'person') {
+            setLastMovieId(currentPersonId)
+        }
         let selection = arr[e].id
         setMediaType('tv')
         setTvId(selection)
@@ -141,12 +169,12 @@ function ContextProvider({children}) {
     
 
 
-    
+       
 
   
         
     
-
+        console.log(mediaType, movieId,  lastMediaType, lastMovieId, lastPersonId, lastTvId)
     
     
     

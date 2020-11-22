@@ -7,6 +7,7 @@ function useApiPerson() {
     const [personTrending, setPersonTrending] = useState([])
     const [popularPerson, setPopularPerson] = useState([])
     const [personId, setPersonId] = useState()
+    const [lastPersonId, setLastPersonId] = useState()
     const [personDetails, setPersonDetails] = useState([])
     const [personCredits, setPersonCredits] = useState([])
     const [personImages, setPersonImages] = useState([])
@@ -88,7 +89,7 @@ function useApiPerson() {
 
 
 
-    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId}
+    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId}
 }
 
 export default useApiPerson

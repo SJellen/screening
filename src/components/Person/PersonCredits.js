@@ -17,7 +17,7 @@ function PersonCredits() {
 
     const {cast} = personCredits
 
-    console.log(cast && cast.length)
+    
     
 
     

@@ -99,19 +99,19 @@ function Tv() {
            : '' }
 
 
-        <div className="details-slider-container">
+       { tvRecommendTile.length > 0 ?  <div className="details-slider-container">
             <span className="details-slider-title">Recommendations</span>
             <div className="details-cast-slider">
                     {tvRecommendTile}
             </div> 
-            </div>
+            </div> : ''}
 
-        <div className="details-slider-container">
+        { tvSimilarTile.length > 0 ? <div className="details-slider-container">
             <span className="details-slider-title">Similar Shows</span>
             <div className="details-cast-slider">
                     {tvSimilarTile}
             </div> 
-            </div>     
+            </div> : ''  }  
 
             { tvReviewTile.length > 0 ? 
         <div>

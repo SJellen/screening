@@ -11,6 +11,7 @@ function useApiMovie() {
     const [nowPlaying, setNowPlaying] = useState([])
     const [movieRecommendationArr, setMovieRecommendationArr] = useState([])
     const [movieId, setMovieId] = useState()
+    const [lastMovieId, setLastMovieId] = useState()
     const [movieDetails, setMovieDetails] = useState([])
     const [movieCredits, setMovieCredits] = useState([])
     const [movieSimilarArr, setMovieSimilarArr] = useState([])
@@ -92,7 +93,7 @@ function useApiMovie() {
         fetchNowPlaying()
             
             // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])  
+    },[lastMovieId, movieId])  
     
     
     const fetchMovieDetails = async (x) => {
@@ -151,7 +152,7 @@ function useApiMovie() {
             }       
 
 
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId}
 }
 
 export default useApiMovie
