@@ -6,38 +6,46 @@ import Popular from '../components/Popular'
 import TopRated from './TopRated'
 import Current from './Current'
 import Footer from './Footer'
-import ItemPage from './ItemPage'
-import {useHistory} from 'react-router-dom'
+import MoviePage from './MoviePage'
+import {useHistory, BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import TvPage from './TvPage';
+import SearchPage from './SearchPage'
+import PersonPage from './PersonPage'
 
 
-
-
-
-function App() {
-  const history = useHistory()
-  // const handleHistory = () => {
-  //   history.push("/home")
-  // }
-
-  useEffect(() => {
-    history.push("/home")
-  }, [])
-
-
+function Home() {
   return (
-    
-     <div className="App">
-      <Header />
-      <Trending />
+    <div>
+       <Trending />
       <Popular />
       <TopRated />
       <Current />
-      <ItemPage />
+    </div>
+  )
+}
+
+
+function App() {
+  
+
+
+  return (
+    <Router>
+      <div className="App">
+      <Header />
+     <Switch>
+       <Route exact path="/" component={Home} />
+       <Route path="/moviePage/" component={MoviePage} />
+       <Route path="/tvPage/" component={TvPage} />
+       <Route path="/personPage/" component={PersonPage} />
+       <Route path="/searchPage/" component={SearchPage} />
+     </Switch>
+   
       <Footer />
       
     </div>
-  
-   
+    </Router>
+ 
   );
 }
 

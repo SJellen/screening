@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import usePersonCast from '../../logic/Person/usePersonCast'
+import {Link} from 'react-router-dom'
 
 
 function PersonCast() {
@@ -16,26 +17,32 @@ function PersonCast() {
 
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
-    <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieClick(index, sortedCastMovieArr, prevState => prevState)}>
+    <Link to={`/moviePage/${item.credit_id}`} style={{ textDecoration: 'none', color: "white"}}>
+<div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieClick(index, sortedCastMovieArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
         <span className="person-part-character" >{item.character && item.character}</span>
     </div>
     
     <span className="person-part-year">{sortedCastMovieArr[index].release_date === '' || sortedCastMovieArr[index].release_date === null || sortedCastMovieArr[index].release_date === undefined ? '' : parseInt(getYear(sortedCastMovieArr[index].release_date))}</span>
-    </div>)
+    </div>
+    </Link>
+    )
 
 
 
     const partTvTile = sortedCastTvArr && sortedCastTvArr.map((item, index) => 
-
-    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvClick(index, sortedCastTvArr, prevState => prevState)}>
+    <Link to={`/tvPage/${item.credit_id}`} style={{ textDecoration: 'none', color: "white"}}>
+    <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvClick(index, sortedCastTvArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>
         <span className="person-part-character">{item.character && item.character}</span>
     </div>
     <span className="person-part-year">{sortedCastTvArr[index].first_air_date === '' || sortedCastTvArr[index].first_air_date === null || sortedCastTvArr[index].first_air_date === undefined ? '' : parseInt(getYear(sortedCastTvArr[index].first_air_date))}</span>
-    </div>)
+    </div>
+    </Link>
+    
+    )
 
     
         

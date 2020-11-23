@@ -8,7 +8,7 @@ function useSearchResultsPerson() {
 
     const searchResultsPersonTile = searchResultsPerson && searchResultsPerson.map((person, index) => 
     <div className="slider-card" key={person.id}> 
-    <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, searchResultsPerson, true)}/></Link>
+    <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, searchResultsPerson, true)}/></Link>
     <span className="slider-name">{person.name}</span>
    </div> 
     )

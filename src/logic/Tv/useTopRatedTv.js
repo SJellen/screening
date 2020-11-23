@@ -12,7 +12,7 @@ function useTopRatedTv() {
         
         
         <div className="slider-card" key={show.id}> 
-        <Link to={`/itemPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, topRatedTv)}/></Link>
+        <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, topRatedTv)}/></Link>
         <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
         <span className="slider-title">{show.name}</span>
         </div>

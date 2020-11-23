@@ -36,7 +36,7 @@ function useMovieCrew() {
 
          
         <div className="slider-card" key={person.credit_id}> 
-        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/></Link>
+        <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/></Link>
         <span className="slider-name">{person.name}</span>
         <span className="slider-character">{person.job}</span>
        </div> 

@@ -11,7 +11,7 @@ function usePersonTrending() {
         
         
         <div className="slider-card" key={person.id}> 
-        <Link to={`/itemPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, personTrending)}/></Link>
+        <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, personTrending)}/></Link>
         <span className="slider-name">{person.name}</span>
         </div>
         )

@@ -12,7 +12,16 @@
     display: flex;
     justify-content: flex-end;
     margin: 2rem;
+    text-decoration: inherit;
+    
   }
+
+  .item-page-close:link {
+    text-decoration: none;
+    
+  }
+
+  
 
   .item-page-close:hover {
     cursor: pointer;
@@ -24,6 +33,6 @@
     margin-top: 0rem;
     font-size: 3rem;
   }
-
+  
  
   

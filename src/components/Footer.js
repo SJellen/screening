@@ -15,7 +15,7 @@ function Footer() {
     return (
         <div className="footer">
         <div className="logo-box">
-            <Link to='/home'  className="footer-title-link"><span className="footer-title" onClick={handleLogoClick}>Screening</span></Link>
+            <Link to='/'  className="footer-title-link"><span className="footer-title" onClick={handleLogoClick}>Screening</span></Link>
         </div>
 
 

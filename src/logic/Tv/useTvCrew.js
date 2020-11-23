@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import blankSquare from '../../assets/placeholder.jpg'
+import {Link} from 'react-router-dom'
 
 function useTVCrew() {
 
@@ -32,7 +33,10 @@ function useTVCrew() {
 
          
         <div className="slider-card" key={person.credit_id}> 
-        <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/>
+        <Link to={`/personPage/${person.id}`}>
+            <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/> 
+        </Link>
+       
         <span className="slider-name">{person.name}</span>
         <span className="slider-character">{person.job}</span>
        </div> 
