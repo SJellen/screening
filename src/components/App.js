@@ -1,4 +1,3 @@
-import {useEffect} from 'react'
 import '../style/App.css';
 import Header from '../components/Header'
 import Trending from '../components/Trending'
@@ -7,7 +6,7 @@ import TopRated from './TopRated'
 import Current from './Current'
 import Footer from './Footer'
 import MoviePage from './MoviePage'
-import {useHistory, BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import TvPage from './TvPage';
 import SearchPage from './SearchPage'
 import PersonPage from './PersonPage'
