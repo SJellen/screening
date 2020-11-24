@@ -29,8 +29,11 @@ function Movie() {
 
         <div className="detail-top-container">
         <div className="poster-container">
+        
             { movieDetails.poster_path &&
+               
             <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
+               
             }
         </div>
             
@@ -39,6 +42,7 @@ function Movie() {
         
 
         <div className="detail-word-box">
+        
             <div className="details-top-word-box">
                 <span className="details-title">{movieDetails.title}</span>
                 { movieDetails.vote_count !== 0 ? 

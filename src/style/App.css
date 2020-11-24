@@ -117,5 +117,28 @@ html {
   margin-right: .5rem;
 }
 
+.watchlist-ribbon {
+  margin-top: -3rem;
+}
+
+.im-bookmark-slider {
+  color: rgba(192, 192, 192, .75);
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 3rem;
+  position: relative;
+  
+  
+  top: 3rem;
+  left: 8rem;
+  z-index: 3;
+
+}
+
+.im-bookmark-slider:hover {
+  cursor: pointer;
+}
+
+
+
 
 
