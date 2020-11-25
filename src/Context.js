@@ -170,27 +170,47 @@ function ContextProvider({children}) {
 
     // console.log(watchListMovie, watchListTv, window.location)
 
-    // function pageReload() {
-        
-    //     const path = window.location.pathname
-    //     const splitPath = path.split('/')
-    //     const cleanPath = splitPath.filter(item => item !== '')
-    //     const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
-    //     console.log(cleanPath, pathMediaType, pathMediaId)
-    //     if (pathMediaType === "moviePage") {
-    //         setMediaType('movie')
-    //     setMovieId(pathMediaId)
-    //     fetchMovieDetails(pathMediaId)
-    //     setMovieCredits([])
-    //     fetchMovieCredits(pathMediaId)
-    //     fetchMovieRecommend(pathMediaId)
-    //     fetchMovieSimilar(pathMediaId)
-    //     fetchMovieReviews(pathMediaId)
-    //     fetchMovieVideos(pathMediaId)
-    //     window.scrollTo(0, 0)
-    //     }
+ 
 
-    // }
+
+    useEffect(() => {
+        const path = window.location.pathname
+        const splitPath = path.split('/')
+        const cleanPath = splitPath.filter(item => item !== '')
+        const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
+        console.log(cleanPath, pathMediaType, pathMediaId)
+        if (pathMediaType === "moviePage") {
+        setMediaType('movie')
+        setMovieId(pathMediaId)
+        fetchMovieDetails(pathMediaId)
+        setMovieCredits([])
+        fetchMovieCredits(pathMediaId)
+        fetchMovieRecommend(pathMediaId)
+        fetchMovieSimilar(pathMediaId)
+        fetchMovieReviews(pathMediaId)
+        fetchMovieVideos(pathMediaId)
+        window.scrollTo(0, 0)
+        } else if (pathMediaType === "tvPage") {
+        setMediaType('tv')
+        setTvId(pathMediaId)
+        fetchTvDetails(pathMediaId)
+        setTvCredits([])
+        fetchTvCredits(pathMediaId)
+        fetchTvSimilar(pathMediaId)
+        fetchTvRecommend(pathMediaId)
+        fetchTvReviews(pathMediaId)
+        fetchTvVideos(pathMediaId)
+        window.scrollTo(0, 0)
+        } else if (pathMediaType === "personPage") {
+            setMediaType('person')
+            setPersonId(pathMediaId)
+            fetchPersonDetails(pathMediaId)
+            fetchPersonCredits(pathMediaId)
+            fetchPersonImages(pathMediaId)
+            window.scrollTo(0, 0)
+        }
+
+    }, [])
 
    
 
