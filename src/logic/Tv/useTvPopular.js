@@ -4,15 +4,15 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useTvPopular() {
-    const {posterPath, popularTv, handleTvClick, handleRibbon, ribbonToggle}  = useContext(Context)
+    const {posterPath, popularTv, handleTvClick, handleRibbonTv, watchListTv}  = useContext(Context)
 
     const popularTvTile = popularTv.map((show, index) => 
         
         <div className="slider-card" key={show.id}> 
         <span className="watchlist-ribbon">
-        { ribbonToggle === show.id ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, popularTv)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, popularTv)} style={{color: ""}}></i>
+        { watchListTv.includes(show.id) ?
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, popularTv)} style={{color: "#E1B517"}}></i> :
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, popularTv)} style={{color: ""}}></i>
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, popularTv)}/></Link>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
@@ -26,7 +26,9 @@ function ContextProvider({children}) {
 
     const [itemPageOpen, setItemPageOpen] = useState(false)
     const [mediaType, setMediaType] = useState(null)
-    const [ribbonToggle, setRibbonToggle] = useState()
+    
+    const [watchListTv, setWatchListTv] = useState([])
+    const [watchListMovie, setWatchListMovie] = useState([])
    
 
     
@@ -148,25 +150,55 @@ function ContextProvider({children}) {
 
     
 
-    function handleRibbon(e, arr) {
+    function handleRibbonTv(e, arr) {
         let selection = arr[e].id
-        console.log(selection)
-        console.log(ribbonToggle)
-        setRibbonToggle(selection)
-        if (selection === ribbonToggle) {
-            setRibbonToggle()
-        }
-        
+        if (watchListTv.includes(selection)) {
+            setWatchListTv([...watchListTv.filter(item => item !== selection)])
+        } else {
+            setWatchListTv([...watchListTv, selection])
+        } 
     }
 
+    function handleRibbonMovie(e, arr) {
+        let selection = arr[e].id
+        if (watchListMovie.includes(selection)) {
+            setWatchListMovie([...watchListMovie.filter(item => item !== selection)])
+        } else {
+            setWatchListMovie([...watchListMovie, selection])
+        } 
+    }
 
-       
+    // console.log(watchListMovie, watchListTv, window.location)
+
+    // function pageReload() {
+        
+    //     const path = window.location.pathname
+    //     const splitPath = path.split('/')
+    //     const cleanPath = splitPath.filter(item => item !== '')
+    //     const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
+    //     console.log(cleanPath, pathMediaType, pathMediaId)
+    //     if (pathMediaType === "moviePage") {
+    //         setMediaType('movie')
+    //     setMovieId(pathMediaId)
+    //     fetchMovieDetails(pathMediaId)
+    //     setMovieCredits([])
+    //     fetchMovieCredits(pathMediaId)
+    //     fetchMovieRecommend(pathMediaId)
+    //     fetchMovieSimilar(pathMediaId)
+    //     fetchMovieReviews(pathMediaId)
+    //     fetchMovieVideos(pathMediaId)
+    //     window.scrollTo(0, 0)
+    //     }
+
+    // }
+
+   
 
   
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemPageOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick, setLastTvId, setLastMovieId, setLastPersonId, handleLogoClick, setRibbonToggle, ribbonToggle, handleRibbon}}>
+        <Context.Provider value={{movieTrending, personTrending, tvTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, itemPageOpen, setItemPageOpen, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick, setLastTvId, setLastMovieId, setLastPersonId, handleLogoClick, watchListTv, watchListMovie, handleRibbonTv, handleRibbonMovie}}>
             {children}
         </Context.Provider>
     )

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 function MoviePage() {
 
-  
+
     return (
         <div>
         

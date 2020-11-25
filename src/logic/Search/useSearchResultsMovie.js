@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useSearchResultsMovie() {
-    const {handleMovieClick, posterPath, searchResultsMovie, handleRibbon, ribbonToggle}  = useContext(Context)
+    const {handleMovieClick, posterPath, searchResultsMovie, handleRibbonMovie, watchListMovie}  = useContext(Context)
 
 
 
@@ -12,9 +12,9 @@ function useSearchResultsMovie() {
        
         <div className="slider-card" key={movie.id}> 
          <span className="watchlist-ribbon">
-         { ribbonToggle === movie.id ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, searchResultsMovie)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, searchResultsMovie)} style={{color: ""}}></i>
+         { watchListMovie.includes(movie.id) ?
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, searchResultsMovie)} style={{color: "#E1B517"}}></i> :
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, searchResultsMovie)} style={{color: ""}}></i>
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" className="slider-poster" onClick={() => handleMovieClick(index, searchResultsMovie, true)}/></Link>

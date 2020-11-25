@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useTopRatedTv() {
-    const {topRatedTv, posterPath, handleTvClick, handleRibbon, ribbonToggle}  = useContext(Context)
+    const {topRatedTv, posterPath, handleTvClick, handleRibbonTv, watchListTv}  = useContext(Context)
 
   
  
@@ -13,9 +13,9 @@ function useTopRatedTv() {
         
         <div className="slider-card" key={show.id}> 
         <span className="watchlist-ribbon">
-        { ribbonToggle === show.id ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, topRatedTv)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbon(index, topRatedTv)} style={{color: ""}}></i>
+        { watchListTv.includes(show.id) ?
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, topRatedTv)} style={{color: "#E1B517"}}></i> :
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, topRatedTv)} style={{color: ""}}></i>
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, topRatedTv)}/></Link>
