@@ -17,7 +17,7 @@ function PersonCast() {
 
     const partMovieTile = sortedCastMovieArr && sortedCastMovieArr.map((item, index) => 
 
-    <Link to={`/moviePage/${item.credit_id}`} style={{ textDecoration: 'none', color: "white"}}>
+    <Link to={`/moviePage/${item.id}`} style={{ textDecoration: 'none', color: "white"}}>
 <div className="person-part-tile" key={item.credit_id} onClick={() => handleMovieClick(index, sortedCastMovieArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.title}</span>
@@ -32,7 +32,7 @@ function PersonCast() {
 
 
     const partTvTile = sortedCastTvArr && sortedCastTvArr.map((item, index) => 
-    <Link to={`/tvPage/${item.credit_id}`} style={{ textDecoration: 'none', color: "white"}}>
+    <Link to={`/tvPage/${item.id}`} style={{ textDecoration: 'none', color: "white"}}>
     <div className="person-part-tile" key={item.credit_id} onClick={() => handleTvClick(index, sortedCastTvArr)}>
     <div className="person-part-tile-left">
         <span className="person-part-title">{item.name}</span>

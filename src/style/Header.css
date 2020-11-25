@@ -117,14 +117,16 @@ input:active {
 
 
 .watchListCount {
-    display: inline;
+    display: inline-block;
     position: absolute;
     background-color: red;
+    filter: drop-shadow(1px 1px 1px black);
     font-size: 1.25rem;
-    margin-top: -.75rem;
+    margin-top: -.5rem;
     margin-left: -1rem;
-    padding: .5rem;
+    padding: 3.25px 5px;
     border-radius: 50%;
+    
 }
 
 
