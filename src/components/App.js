@@ -10,12 +10,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import TvPage from './TvPage';
 import SearchPage from './SearchPage'
 import PersonPage from './PersonPage'
+import WatchList from './WatchList'
 
 
 function Home() {
   return (
     <div>
-       <Trending />
+      <Trending />
       <Popular />
       <TopRated />
       <Current />
@@ -38,6 +39,8 @@ function App() {
        <Route path="/tvPage/" component={TvPage} />
        <Route path="/personPage/" component={PersonPage} />
        <Route path="/searchPage/" component={SearchPage} />
+       <Route path="/watchList/" component={WatchList} />
+
      </Switch>
    
       <Footer />

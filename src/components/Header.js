@@ -63,7 +63,9 @@ function Header() {
                 </div>
 
 
-                <div className="header-right-container"><i class="im im-user-circle">{watchListTotal > 0 ? <span className="watchListCount">{watchListTotal}</span> : ''}</i></div>
+                <Link to="/watchList/" style={{textDecoration: "none"}}>
+                    <div className="header-right-container"><i className="im im-user-circle">{watchListTotal > 0 ? <span className="watchListCount">{watchListTotal}</span> : ''}</i></div>
+                </Link>
                 
             </div>
         )
