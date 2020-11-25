@@ -103,6 +103,31 @@ input:active {
 }
 
 
+.header-right-container {
+    min-width: 55px;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.im-user-circle {
+    color: white;
+    font-size: 3.5rem;
+}
+
+
+.watchListCount {
+    display: inline;
+    position: absolute;
+    background-color: red;
+    font-size: 1.25rem;
+    margin-top: -.75rem;
+    margin-left: -1rem;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+
 
 
 
