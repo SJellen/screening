@@ -15,7 +15,7 @@ function TvRecommendations() {
         
     <div className="slider-card" key={show.id}> 
     <span className="watchlist-ribbon">
-    { watchListTv.includes(show.id) ?
+    { watchListTv.includes(show) ?
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, tvRecommendationArr)} style={{color: "#E1B517"}}></i> :
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, tvRecommendationArr)} style={{color: ""}}></i>
        }

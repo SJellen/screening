@@ -15,7 +15,7 @@ function useWatchListMovie() {
        
         <div className="slider-card" key={movie.id}> 
          <span className="watchlist-ribbon">
-         { watchListMovie.includes(movie.id) ?
+         { watchListMovie.includes(movie) ?
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, watchListMovie)} style={{color: "#E1B517"}}></i> :
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, watchListMovie)} style={{color: ""}}></i>
        }

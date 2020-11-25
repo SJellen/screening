@@ -151,24 +151,26 @@ function ContextProvider({children}) {
     
 
     function handleRibbonTv(e, arr) {
-        let selection = arr[e].id
-        if (watchListTv.includes(selection)) {
-            setWatchListTv([...watchListTv.filter(item => item !== selection)])
+        // let selection = arr[e].id
+        let selectionInfo = arr[e]
+        if (watchListTv.includes(selectionInfo)) {
+            setWatchListTv([...watchListTv.filter(item => item !== selectionInfo)])
         } else {
-            setWatchListTv([...watchListTv, selection])
+            setWatchListTv([...watchListTv, selectionInfo])
         } 
     }
 
     function handleRibbonMovie(e, arr) {
-        let selection = arr[e].id
-        if (watchListMovie.includes(selection)) {
-            setWatchListMovie([...watchListMovie.filter(item => item !== selection)])
+        // let selection = arr[e].id
+        let selectionInfo = arr[e]
+        if (watchListMovie.includes(selectionInfo)) {
+            setWatchListMovie([...watchListMovie.filter(item => item !== selectionInfo)])
         } else {
-            setWatchListMovie([...watchListMovie, selection])
+            setWatchListMovie([...watchListMovie, selectionInfo])
         } 
     }
 
-    // console.log(watchListMovie, watchListTv, window.location)
+    console.log(watchListMovie, watchListTv)
 
  
 

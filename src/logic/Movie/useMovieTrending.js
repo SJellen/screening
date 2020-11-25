@@ -7,12 +7,13 @@ import {Link} from 'react-router-dom'
 function useMovieTrending() {
     const {movieTrending, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie}  = useContext(Context)
 
+
     
     const movieTrendingTile = movieTrending.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 
         <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie.id) ?
+       { watchListMovie.includes(movie) ?
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, movieTrending)} style={{color: "#E1B517"}}></i> :
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, movieTrending)} style={{color: ""}}></i>
        }
