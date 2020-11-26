@@ -33,6 +33,18 @@
     margin-top: 0rem;
     font-size: 3rem;
   }
+
+
+  .menu-page-container {
+    background-color: rgb(18, 18, 18);
+    position: relative;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem 0rem 8rem 0rem;
+    margin: -5rem auto -5rem auto;
+    color: white;
+  }
   
  
   

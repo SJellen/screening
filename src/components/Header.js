@@ -38,10 +38,13 @@ function Header() {
             <div className="header">
             <div className="header-left-container">
             <Link to='/'  className="header-title-link"><span className="title" onClick={handleLogoClick}>Screening</span></Link>
-                    <div className="menu-box">
-                         <i className="im im-menu"></i>
-                        <span className="menu-span">Menu</span> 
-                    </div>
+                   
+            <Link to="/menuPage/" style={{textDecoration: "none"}}>
+                <div className="menu-box">
+                        <i className="im im-menu"></i>
+                    <span className="menu-span">Menu</span> 
+                </div>
+            </Link> 
             </div>
                 
                 

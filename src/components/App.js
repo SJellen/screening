@@ -11,6 +11,7 @@ import TvPage from './TvPage';
 import SearchPage from './SearchPage'
 import PersonPage from './PersonPage'
 import WatchList from './WatchList'
+import MenuPage from './MenuPage'
 
 
 function Home() {
@@ -40,7 +41,7 @@ function App() {
        <Route path="/personPage/" component={PersonPage} />
        <Route path="/searchPage/" component={SearchPage} />
        <Route path="/watchList/" component={WatchList} />
-
+        <Route path="/menuPage/" component={MenuPage} />
      </Switch>
    
       <Footer />
