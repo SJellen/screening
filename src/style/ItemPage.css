@@ -45,6 +45,32 @@
     margin: -5rem auto -5rem auto;
     color: white;
   }
+
+  .menu-page-close {
+    display: inline-block;
+    
+    margin: 1rem 4rem;
+    text-decoration: inherit;
+    color: black;
+    background-color: #E1B517;
+    padding: 1.36rem;
+    border-radius:  50%;
+
+  }
+
+  .menu-close-container {
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  .menu-page-close:hover {
+    cursor: pointer;
+    
+    transition: 2s ease;
+    filter: brightness(50%);
+    
+  }
   
  
   

@@ -11,9 +11,12 @@ function MenuPage() {
         <div>
        
         <div className="menu-page-container">
-         <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
-            <i className="im im-x-mark item-page-close" ></i> 
-        </Link>
+        <div className="menu-close-container">
+           <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
+            <i className="im im-x-mark menu-page-close" ></i> 
+        </Link> 
+        </div>
+         
               <Menu />  
         </div>   
         </div> 
