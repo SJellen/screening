@@ -1,10 +1,12 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
+import {Context} from '../../Context'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 
 
 function Menu() {
+
+    const {handleMenuPopularClick} = useContext(Context)
 
 
     return (
@@ -17,7 +19,7 @@ function Menu() {
             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E1B517"><path d="M0 1v22h24v-22h-24zm4 20h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm14 16h-12v-8h12v8zm0-10h-12v-8h12v8zm4 10h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg><span className="menu-title-box-name">Movies</span></span>
             </div>
             <ul className="menu-media-list">
-                <Link to={"/menuLinkPage/"} style={{textDecoration: "none"}}><li>Popular Movie</li></Link>
+                <Link to={"/menuLinkPage/popularMovies/"} style={{textDecoration: "none"}} onClick={handleMenuPopularClick} className="menu-media-list-link"><li>Popular Movies</li></Link>
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
