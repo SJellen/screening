@@ -40,7 +40,7 @@
     position: relative;
     z-index: 10;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2rem 0rem 8rem 0rem;
     margin: -5rem auto -5rem auto;
     color: white;
@@ -94,6 +94,15 @@
   filter: brightness(50%);
 }
 
+.menu-title-box-name {
+  
+  margin: 0 2rem;
+ 
+
+  
+
+}
+
 .menu-logo-box{
   margin: 1rem 4rem;
   /* border: 1px solid red; */
@@ -107,4 +116,39 @@
   display: flex;
   justify-content: space-between;
 }
+
+.menu-list-container {
+  border: 1px solid gold;
+  width: 90vw;
+  margin: 4rem auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-list {
+  border: 1px solid red;
+  width: 30vw;
+  margin: 2rem auto;
+}
+
+
+.menu-title-box {
+  text-align: left;
+  border: 1px solid green;
+  font-size: 2rem;
+}
+
+.menu-media-list {
+  list-style: none;
+  border: 1px solid orange;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.menu-media-list > li {
+  margin: 2rem 0;
+}
+
   
