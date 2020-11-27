@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 
-function useMenuPopularPage() {
+function useMenuPopularMoviePage() {
     const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie,  menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6 }  = useContext(Context)
 
   
@@ -111,4 +111,4 @@ function useMenuPopularPage() {
 
 
 
-export default useMenuPopularPage
+export default useMenuPopularMoviePage

@@ -6,6 +6,7 @@ import MenuPopularMovies from './Menu/MenuPopularMovies'
 import MenuTopRatedMovies from './Menu/MenuTopRatedMovies'
 import MenuUpcomingMovies from './Menu/MenuUpcomingMovies'
 import MenuNowPlayingMovies from './Menu/MenuNowPlayingMovies'
+import MenuMostMoneyMovies from './Menu/MenuMostMoneyMovies'
 
 
 function MenuLinkPage() {
@@ -25,6 +26,7 @@ function MenuLinkPage() {
                <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />
                <Route path="/menuLinkPage/upcomingMovies/" component={MenuUpcomingMovies} />
                <Route path="/menuLinkPage/nowPlayingMovies/" component={MenuNowPlayingMovies} />
+               <Route path="/menuLinkPage/mostMoneyMovies/" component={MenuMostMoneyMovies} />
 
            </Switch>
            </Router>

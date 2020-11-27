@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuNowPlayingPage from '../../logic/Menu/useMenuNowPlayingPage'
+import useMenuNowPlayingMoviePage from '../../logic/Menu/useMenuNowPlayingMoviePage'
 import {Context} from '../../Context'
 
 
-function MenuPopularMovies() {
+function MenuNowPlayingMovies() {
     
-    const {menuNowPlayingMoviesPageTile1, menuNowPlayingMoviesPageTile2, menuNowPlayingMoviesPageTile3, menuNowPlayingMoviesPageTile4, menuNowPlayingMoviesPageTile5, menuNowPlayingMoviesPageTile6} = useMenuNowPlayingPage()
+    const {menuNowPlayingMoviesPageTile1, menuNowPlayingMoviesPageTile2, menuNowPlayingMoviesPageTile3, menuNowPlayingMoviesPageTile4, menuNowPlayingMoviesPageTile5, menuNowPlayingMoviesPageTile6} = useMenuNowPlayingMoviePage()
     const {itemPageOpen}  = useContext(Context)
     
     
@@ -69,4 +69,4 @@ function MenuPopularMovies() {
     )
 }
 
-export default MenuPopularMovies
+export default MenuNowPlayingMovies

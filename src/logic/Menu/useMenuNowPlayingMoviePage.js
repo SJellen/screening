@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 
-function useMenuNowPlayingPage() {
+function useMenuNowPlayingMoviePage() {
     const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6 }  = useContext(Context)
 
   
@@ -111,4 +111,4 @@ function useMenuNowPlayingPage() {
 
 
 
-export default useMenuNowPlayingPage
+export default useMenuNowPlayingMoviePage

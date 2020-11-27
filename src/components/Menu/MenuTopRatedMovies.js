@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuTopRatedPage from '../../logic/Menu/useMenuTopRatedPage'
+import useMenuTopRatedMoviePage from '../../logic/Menu/useMenuTopRatedMoviePage'
 import {Context} from '../../Context'
 
 
 function MenuTopRatedMovies() {
     
-    const {menuTopRatedPageTile1, menuTopRatedPageTile2, menuTopRatedPageTile3, menuTopRatedPageTile4,menuTopRatedPageTile5, menuTopRatedPageTile6} = useMenuTopRatedPage()
+    const {menuTopRatedPageTile1, menuTopRatedPageTile2, menuTopRatedPageTile3, menuTopRatedPageTile4,menuTopRatedPageTile5, menuTopRatedPageTile6} = useMenuTopRatedMoviePage()
     const {itemPageOpen}  = useContext(Context)
     
     

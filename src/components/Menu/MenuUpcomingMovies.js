@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuUpcomingPage from '../../logic/Menu/useMenuUpcomingPage'
+import useMenuUpcomingMoviePage from '../../logic/Menu/useMenuUpcomingMoviePage'
 import {Context} from '../../Context'
 
 
 function MenuUpcomingMovies() {
     
-    const {menuUpcomingPageTile1, menuUpcomingPageTile2, menuUpcomingPageTile3, menuUpcomingPageTile4,menuUpcomingPageTile5, menuUpcomingPageTile6} = useMenuUpcomingPage()
+    const {menuUpcomingPageTile1, menuUpcomingPageTile2, menuUpcomingPageTile3, menuUpcomingPageTile4,menuUpcomingPageTile5, menuUpcomingPageTile6} = useMenuUpcomingMoviePage()
     const {itemPageOpen}  = useContext(Context)
     
     
