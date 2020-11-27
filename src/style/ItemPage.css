@@ -49,7 +49,7 @@
   .menu-page-close {
     display: inline-block;
     
-    margin: 1rem 4rem;
+    margin: 0 4rem;
     text-decoration: inherit;
     color: black;
     background-color: #E1B517;
@@ -61,6 +61,8 @@
   .menu-close-container {
     display: flex;
     justify-content: flex-end;
+    /* border: 1px solid green; */
+    /* width: 10rem; */
 
   }
 
@@ -72,5 +74,37 @@
     
   }
   
+  .menu-title {
+    font-size: 2rem;
+    /* margin-left: 5rem; */
+    display: inline-block;
+    
+    /* margin-top: 1rem;
+    margin-bottom: 5rem; */
+    padding: .5rem;
+    border-radius: 5px;;
+    font-weight: 700;
+    color: #E1B517;
+    border: 1px solid #E1B517;
+}
+
+.menu-title:hover {
+  cursor: pointer;
+  transition: 2s ease;
+  filter: brightness(50%);
+}
+
+.menu-logo-box{
+  margin: 1rem 4rem;
+  /* border: 1px solid red; */
+  /* width: 12.5rem; */
+  display: flex;
+  justify-content: flex-start;
+}
  
+.menu-top-box {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+}
   
