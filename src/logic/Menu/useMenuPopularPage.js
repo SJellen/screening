@@ -7,10 +7,7 @@ import {Link} from 'react-router-dom'
 function useMenuPopularPage() {
     const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie,  menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6 }  = useContext(Context)
 
-    console.log(menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6 )
-
-
-    
+  
     const menuPopularPageTile1 = menuPopularMoviesPage1.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 

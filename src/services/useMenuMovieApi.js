@@ -53,6 +53,26 @@ function useMenuMovieApi() {
 
 
 
+        useEffect(() => {
+            const path = window.location.pathname
+            const splitPath = path.split('/')
+            const cleanPath = splitPath.filter(item => item !== '')
+            const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
+            console.log(cleanPath, pathMediaType, pathMediaId)
+            if (pathMediaId === "popularMovies") {
+                fetchPopularMenuMovies(1)
+                fetchPopularMenuMovies(2)
+                fetchPopularMenuMovies(3)
+                fetchPopularMenuMovies(4)
+                fetchPopularMenuMovies(5)
+                fetchPopularMenuMovies(6)
+            }
+    
+        }, [])    
+
+
+
+
 
 
     return {handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6 } 

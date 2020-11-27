@@ -174,7 +174,7 @@ function ContextProvider({children}) {
         } 
     }
 
-    console.log(watchListMovie, watchListTv)
+    
 
  
 
@@ -185,6 +185,7 @@ function ContextProvider({children}) {
         const cleanPath = splitPath.filter(item => item !== '')
         const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
         console.log(cleanPath, pathMediaType, pathMediaId)
+        console.log(pathMediaType)
         if (pathMediaType === "moviePage") {
             setMediaType('movie')
             setMovieId(pathMediaId)
