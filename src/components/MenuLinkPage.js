@@ -4,6 +4,8 @@ import '../style/ItemPage.css'
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import MenuPopularMovies from './Menu/MenuPopularMovies'
 import MenuTopRatedMovies from './Menu/MenuTopRatedMovies'
+import MenuUpcomingMovies from './Menu/MenuUpcomingMovies'
+import MenuNowPlayingMovies from './Menu/MenuNowPlayingMovies'
 
 
 function MenuLinkPage() {
@@ -21,6 +23,8 @@ function MenuLinkPage() {
            <Switch >
                <Route path="/menuLinkPage/popularMovies/" component={MenuPopularMovies} />
                <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />
+               <Route path="/menuLinkPage/upcomingMovies/" component={MenuUpcomingMovies} />
+               <Route path="/menuLinkPage/nowPlayingMovies/" component={MenuNowPlayingMovies} />
 
            </Switch>
            </Router>

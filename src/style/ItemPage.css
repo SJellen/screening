@@ -158,4 +158,8 @@
   padding: 1rem 0;
 }
 
+.menu-media-list-link:hover {
+  filter: brightness(50%)
+}
+
   

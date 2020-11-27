@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function Menu() {
 
-    const {handleMenuPopularClick, handleMenuTopRatedClick} = useContext(Context)
+    const {handleMenuPopularClick, handleMenuTopRatedClick, handleMenuUpcomingClick, handleMenuNowPlayingClick} = useContext(Context)
 
 
     return (
@@ -21,8 +21,8 @@ function Menu() {
             <ul className="menu-media-list">
                 <Link to={"/menuLinkPage/popularMovies/"} style={{textDecoration: "none"}} onClick={handleMenuPopularClick} className="menu-media-list-link"><li>Popular Movies</li></Link>
                 <Link to={"/menuLinkPage/topRatedMovies/"} style={{textDecoration: "none"}} onClick={handleMenuTopRatedClick} className="menu-media-list-link"><li>Top Rated Movies</li></Link>
-                <li>3</li>
-                <li>4</li>
+                <Link to={"/menuLinkPage/upcomingMovies/"} style={{textDecoration: "none"}} onClick={handleMenuUpcomingClick} className="menu-media-list-link"><li>Upcoming Movies</li></Link>
+                <Link to={"/menuLinkPage/nowPlayingMovies/"} style={{textDecoration: "none"}} onClick={handleMenuNowPlayingClick} className="menu-media-list-link"><li>Movies Playing Now</li></Link>
                 <li>5</li>
                 <li>6</li>
             </ul>

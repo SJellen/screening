@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuTopRatedPage from '../../logic/Menu/useMenuTopRatedPage'
+import useMenuNowPlayingPage from '../../logic/Menu/useMenuNowPlayingPage'
 import {Context} from '../../Context'
 
 
-function MenuTopRatedMovies() {
+function MenuPopularMovies() {
     
-    const {menuTopRatedPageTile1, menuTopRatedPageTile2, menuTopRatedPageTile3, menuTopRatedPageTile4,menuTopRatedPageTile5, menuTopRatedPageTile6} = useMenuTopRatedPage()
+    const {menuNowPlayingMoviesPageTile1, menuNowPlayingMoviesPageTile2, menuNowPlayingMoviesPageTile3, menuNowPlayingMoviesPageTile4, menuNowPlayingMoviesPageTile5, menuNowPlayingMoviesPageTile6} = useMenuNowPlayingPage()
     const {itemPageOpen}  = useContext(Context)
     
     
@@ -16,35 +16,35 @@ function MenuTopRatedMovies() {
             itemPageOpen ? <div></div> :
        <div>
         <div className="slider-container">
-                <span className="slider-label">Top Rated Movies</span>
+                <span className="slider-label">Movies Playing Now</span>
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile1}
+                    {menuNowPlayingMoviesPageTile1}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile2}
+                    {menuNowPlayingMoviesPageTile2}
                 </div>
                 </div>
 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile3}
+                    {menuNowPlayingMoviesPageTile3}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile4}
+                    {menuNowPlayingMoviesPageTile4}
                 </div>   
                 </div>
                 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile5}
+                    {menuNowPlayingMoviesPageTile5}
                 </div>  
                 </div>     
             
@@ -52,7 +52,7 @@ function MenuTopRatedMovies() {
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedPageTile6}
+                    {menuNowPlayingMoviesPageTile6}
                 </div>  
                 </div>
        </div>    
@@ -69,4 +69,4 @@ function MenuTopRatedMovies() {
     )
 }
 
-export default MenuTopRatedMovies
+export default MenuPopularMovies
