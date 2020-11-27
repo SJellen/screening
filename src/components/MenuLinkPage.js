@@ -1,23 +1,34 @@
 import React from 'react'
 import '../style/ItemPage.css'
 
-import {Link} from 'react-router-dom'
+import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import MenuPopularMovies from './Menu/MenuPopularMovies'
+import MenuTopRatedMovies from './Menu/MenuTopRatedMovies'
 
 
 function MenuLinkPage() {
 
 
     return (
-        <div>
+       
+            <div>
         
         <div className="item-page-container">
            <Link to='/' style={{ textDecoration: 'none', color: "white" }}>
                <i className="im im-x-mark item-page-close" ></i> 
            </Link> 
-            <MenuPopularMovies />
+            <Router>
+           <Switch >
+               <Route path="/menuLinkPage/popularMovies/" component={MenuPopularMovies} />
+               <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />
+
+           </Switch>
+           </Router>
+            
         </div>  
-        </div> 
+        </div>
+        
+         
     )
 }
 

@@ -6,11 +6,11 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function Menu() {
 
-    const {handleMenuPopularClick} = useContext(Context)
+    const {handleMenuPopularClick, handleMenuTopRatedClick} = useContext(Context)
 
 
     return (
-        <Switch>
+        // <Switch>
        
              <div className="menu-page">
         <div className="menu-list-container">
@@ -20,7 +20,7 @@ function Menu() {
             </div>
             <ul className="menu-media-list">
                 <Link to={"/menuLinkPage/popularMovies/"} style={{textDecoration: "none"}} onClick={handleMenuPopularClick} className="menu-media-list-link"><li>Popular Movies</li></Link>
-                <li>2</li>
+                <Link to={"/menuLinkPage/topRatedMovies/"} style={{textDecoration: "none"}} onClick={handleMenuTopRatedClick} className="menu-media-list-link"><li>Top Rated Movies</li></Link>
                 <li>3</li>
                 <li>4</li>
                 <li>5</li>
@@ -66,7 +66,7 @@ function Menu() {
         </div>
         
        
-        </Switch>
+        // </Switch>
     )
 
 }
