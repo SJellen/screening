@@ -11,6 +11,15 @@ function useMenuTvApi() {
     const [menuPopularTvPage6, setMenuPopularTvPage6] = useState([])
 
 
+    const [menuTopRatedTvPage1, setMenuTopRatedTvPage1] = useState([])
+    const [menuTopRatedTvPage2, setMenuTopRatedTvPage2] = useState([])
+    const [menuTopRatedTvPage3, setMenuTopRatedTvPage3] = useState([])
+    const [menuTopRatedTvPage4, setMenuTopRatedTvPage4] = useState([])
+    const [menuTopRatedTvPage5, setMenuTopRatedTvPage5] = useState([])
+    const [menuTopRatedTvPage6, setMenuTopRatedTvPage6] = useState([])
+
+
+
     const fetchPopularMenuTv = async (num) => {
         await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKEY}&language=en-US&page=${num}`)
         .then(res => res.json())
@@ -38,6 +47,32 @@ function useMenuTvApi() {
         } 
 
 
+    const fetchTopRatedMenuTv = async (num) => {
+        await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKEY}&language=en-US&page=${num}`)
+        .then(res => res.json())
+        .then((data) => {
+
+            if (num === 1) {
+                setMenuTopRatedTvPage1(data.results)
+            } else if (num === 2) {
+                setMenuTopRatedTvPage2(data.results)
+            } else if (num === 3) {
+                setMenuTopRatedTvPage3(data.results)
+            } else if (num === 4) {
+                setMenuTopRatedTvPage4(data.results)
+            } else if (num === 5) {
+                setMenuTopRatedTvPage5(data.results)
+            } else {
+                setMenuTopRatedTvPage6(data.results)
+            }
+
+            
+        }
+
+        )
+        .catch(error => console.log(error))
+        }   
+
 
 
 
@@ -50,6 +85,16 @@ function useMenuTvApi() {
         fetchPopularMenuTv(5)
         fetchPopularMenuTv(6)
     }
+
+    function handleMenuTopRatedTvClick() {
+        fetchTopRatedMenuTv(1)
+        fetchTopRatedMenuTv(2)
+        fetchTopRatedMenuTv(3)
+        fetchTopRatedMenuTv(4)
+        fetchTopRatedMenuTv(5)
+        fetchTopRatedMenuTv(6)
+    }
+
 
 
 
@@ -69,15 +114,14 @@ function useMenuTvApi() {
             fetchPopularMenuTv(4)
             fetchPopularMenuTv(5)
             fetchPopularMenuTv(6)
-        }
-        //  else if (pathMediaId === "topRatedTv") {
-        //     fetchTopRatedMenuTv(1)
-        //     fetchTopRatedMenuTv(2)
-        //     fetchTopRatedMenuTv(3)
-        //     fetchTopRatedMenuTv(4)
-        //     fetchTopRatedMenuTv(5)
-        //     fetchTopRatedMenuTv(6)
-        //  } 
+        } else if (pathMediaId === "topRatedTv") {
+            fetchTopRatedMenuTv(1)
+            fetchTopRatedMenuTv(2)
+            fetchTopRatedMenuTv(3)
+            fetchTopRatedMenuTv(4)
+            fetchTopRatedMenuTv(5)
+            fetchTopRatedMenuTv(6)
+         } 
         
         // else if (pathMediaId === "upcomingMovies") {
         //     fetchUpcomingMenuMovies(1)
@@ -109,7 +153,7 @@ function useMenuTvApi() {
 
 
 
-    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6}
+    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6}
 
 }
 

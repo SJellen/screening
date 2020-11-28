@@ -8,7 +8,7 @@ import MenuUpcomingMovies from './Menu/MenuUpcomingMovies'
 import MenuNowPlayingMovies from './Menu/MenuNowPlayingMovies'
 import MenuMostMoneyMovies from './Menu/MenuMostMoneyMovies'
 import MenuPopularTv from './Menu/MenuPopularTv'
-
+import MenuTopRatedTv from './Menu/MenuTopRatedTv'
 
 function MenuLinkPage() {
     return (
@@ -23,6 +23,7 @@ function MenuLinkPage() {
       <Route path="/menuLinkPage/nowPlayingMovies/" component={MenuNowPlayingMovies} />
       <Route path="/menuLinkPage/mostMoneyMovies/" component={MenuMostMoneyMovies} />
       <Route path="/menuLinkPage/popularTv/" component={MenuPopularTv} />
+      <Route path="/menuLinkPage/topRatedTv/" component={MenuTopRatedTv} />
       </div>
       
     )
