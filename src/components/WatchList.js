@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {Context} from '../Context'
 import useWatchListMovie from '../logic/WatchList/useWatchListMovie'
 import useWatchListTv from '../logic/WatchList/useWatchListTv'
+import {Link} from 'react-router-dom'
 
 
 
@@ -16,6 +17,9 @@ function WatchList() {
     return (
         
         <div className="slider-container">
+        <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
+            <i className="im im-x-mark item-page-close" ></i> 
+        </Link>
         
         <h1 className="results-title">Watch list</h1>
         
