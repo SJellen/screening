@@ -1,6 +1,5 @@
 import React from 'react'
 import '../style/ItemPage.css'
-
 import {Link, Route} from 'react-router-dom'
 import MenuPopularMovies from './Menu/MenuPopularMovies'
 import MenuTopRatedMovies from './Menu/MenuTopRatedMovies'
@@ -10,6 +9,7 @@ import MenuMostMoneyMovies from './Menu/MenuMostMoneyMovies'
 import MenuPopularTv from './Menu/MenuPopularTv'
 import MenuTopRatedTv from './Menu/MenuTopRatedTv'
 import MenuOnAirTv from './Menu/MenuOnAirTv'
+import MenuAiringTodayTv from './Menu/MenuAiringTodayTv'
 
 function MenuLinkPage() {
     return (
@@ -26,6 +26,7 @@ function MenuLinkPage() {
         <Route path="/menuLinkPage/popularTv/" component={MenuPopularTv} />
         <Route path="/menuLinkPage/topRatedTv/" component={MenuTopRatedTv} />
         <Route path="/menuLinkPage/onAirTv/" component={MenuOnAirTv} />
+        <Route path="/menuLinkPage/airingTodayTv/" component={MenuAiringTodayTv} />
       </div>
       
     )

@@ -25,6 +25,13 @@ function useMenuTvApi() {
     const [menuOnAirTvPage5, setMenuOnAirTvPage5] = useState([])
     const [menuOnAirTvPage6, setMenuOnAirTvPage6] = useState([])
 
+    const [menuAiringTodayTvPage1, setMenuAiringTodayTvPage1] = useState([])
+    const [menuAiringTodayTvPage2, setMenuAiringTodayTvPage2] = useState([])
+    const [menuAiringTodayTvPage3, setMenuAiringTodayTvPage3] = useState([])
+    const [menuAiringTodayTvPage4, setMenuAiringTodayTvPage4] = useState([])
+    const [menuAiringTodayTvPage5, setMenuAiringTodayTvPage5] = useState([])
+    const [menuAiringTodayTvPage6, setMenuAiringTodayTvPage6] = useState([])
+
 
 
     const fetchPopularMenuTv = async (num) => {
@@ -108,6 +115,33 @@ function useMenuTvApi() {
         }
 
 
+    const fetchAiringTodayMenuTv = async (num) => {
+        await fetch(`https://api.themoviedb.org/3/tv/airing_today?api_key=${apiKEY}&language=en-US&page=${num}`)
+        .then(res => res.json())
+        .then((data) => {
+
+            if (num === 1) {
+                setMenuAiringTodayTvPage1(data.results)
+            } else if (num === 2) {
+                setMenuAiringTodayTvPage2(data.results)
+            } else if (num === 3) {
+                setMenuAiringTodayTvPage3(data.results)
+            } else if (num === 4) {
+                setMenuAiringTodayTvPage4(data.results)
+            } else if (num === 5) {
+                setMenuAiringTodayTvPage5(data.results)
+            } else {
+                setMenuAiringTodayTvPage6(data.results)
+            }
+
+            
+        }
+
+        )
+        .catch(error => console.log(error))
+        }    
+
+
     function handleMenuPopularTvClick() {
         fetchPopularMenuTv(1)
         fetchPopularMenuTv(2)
@@ -134,6 +168,17 @@ function useMenuTvApi() {
         fetchOnAirMenuTv(5)
         fetchOnAirMenuTv(6)
     }
+
+    function handleMenuAiringTodayTvClick() {
+        fetchAiringTodayMenuTv(1)
+        fetchAiringTodayMenuTv(2)
+        fetchAiringTodayMenuTv(3)
+        fetchAiringTodayMenuTv(4)
+        fetchAiringTodayMenuTv(5)
+        fetchAiringTodayMenuTv(6)
+    }
+
+
 
 
 
@@ -168,6 +213,13 @@ function useMenuTvApi() {
             fetchOnAirMenuTv(4)
             fetchOnAirMenuTv(5)
             fetchOnAirMenuTv(6)
+         } else if (pathMediaId === "airingTodayTv") {
+            fetchAiringTodayMenuTv(1)
+            fetchAiringTodayMenuTv(2)
+            fetchAiringTodayMenuTv(3)
+            fetchAiringTodayMenuTv(4)
+            fetchAiringTodayMenuTv(5)
+            fetchAiringTodayMenuTv(6)
          }
         
         // else if (pathMediaId === "upcomingMovies") {
@@ -200,7 +252,7 @@ function useMenuTvApi() {
 
 
 
-    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6}
+    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6}
 
 }
 

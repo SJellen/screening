@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuOnAirTvPage from '../../logic/Menu/useMenuOnAirTvPage'
+import useMenuAiringTodayPage from '../../logic/Menu/useMenuAiringTodayPage'
 import {Context} from '../../Context'
 
 
-function MenuOnAirTv() {
+function MenuAiringTodayTv() {
     
-    const {menuOnAirTvTile1, menuOnAirTvTile2, menuOnAirTvTile3, menuOnAirTvTile4, menuOnAirTvTile5, menuOnAirTvTile6} = useMenuOnAirTvPage()
+    const {menuAiringTodayTvTile1, menuAiringTodayTvTile2, menuAiringTodayTvTile3, menuAiringTodayTvTile4, menuAiringTodayTvTile5, menuAiringTodayTvTile6} = useMenuAiringTodayPage()
     const {itemPageOpen}  = useContext(Context)
     
     
@@ -16,35 +16,35 @@ function MenuOnAirTv() {
             itemPageOpen ? <div></div> :
        <div>
         <div className="slider-container">
-                <span className="slider-label">Shows On Now</span>
+                <span className="slider-label">Shows Airing Today</span>
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile1}
+                    {menuAiringTodayTvTile1}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile2}
+                    {menuAiringTodayTvTile2}
                 </div>
                 </div>
 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile3}
+                    {menuAiringTodayTvTile3}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile4}
+                    {menuAiringTodayTvTile4}
                 </div>   
                 </div>
                 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile5}
+                    {menuAiringTodayTvTile5}
                 </div>  
                 </div>     
             
@@ -52,7 +52,7 @@ function MenuOnAirTv() {
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuOnAirTvTile6}
+                    {menuAiringTodayTvTile6}
                 </div>  
                 </div>
        </div>    
@@ -69,4 +69,4 @@ function MenuOnAirTv() {
     )
 }
 
-export default MenuOnAirTv
+export default MenuAiringTodayTv

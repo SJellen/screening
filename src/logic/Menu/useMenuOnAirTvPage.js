@@ -8,7 +8,7 @@ function useMenuOnAirTvPage() {
 
   
  
-    const menuOnAirTvTvTile1 = menuOnAirTvPage1.map((show, index) => 
+    const menuOnAirTvTile1 = menuOnAirTvPage1.map((show, index) => 
         
         
         <div className="slider-card" key={show.id}> 
@@ -24,7 +24,7 @@ function useMenuOnAirTvPage() {
         </div>
         )
 
-    const menuOnAirTvTvTile2 = menuOnAirTvPage2.map((show, index) => 
+    const menuOnAirTvTile2 = menuOnAirTvPage2.map((show, index) => 
     
     
     <div className="slider-card" key={show.id}> 
@@ -40,7 +40,7 @@ function useMenuOnAirTvPage() {
     </div>
     )
     
-    const menuOnAirTvTvTile3 = menuOnAirTvPage3.map((show, index) => 
+    const menuOnAirTvTile3 = menuOnAirTvPage3.map((show, index) => 
     
     
     <div className="slider-card" key={show.id}> 
@@ -56,7 +56,7 @@ function useMenuOnAirTvPage() {
     </div>
     )
     
-    const menuOnAirTvTvTile4 = menuOnAirTvPage4.map((show, index) => 
+    const menuOnAirTvTile4 = menuOnAirTvPage4.map((show, index) => 
     
     
     <div className="slider-card" key={show.id}> 
@@ -72,7 +72,7 @@ function useMenuOnAirTvPage() {
     </div>
     )
     
-    const menuOnAirTvTvTile5 = menuOnAirTvPage5.map((show, index) => 
+    const menuOnAirTvTile5 = menuOnAirTvPage5.map((show, index) => 
     
     
     <div className="slider-card" key={show.id}> 
@@ -88,7 +88,7 @@ function useMenuOnAirTvPage() {
     </div>
     )
     
-    const menuOnAirTvTvTile6 = menuOnAirTvPage6.map((show, index) => 
+    const menuOnAirTvTile6 = menuOnAirTvPage6.map((show, index) => 
     
     
     <div className="slider-card" key={show.id}> 
@@ -104,7 +104,7 @@ function useMenuOnAirTvPage() {
     </div>
     )
 
-        return {menuOnAirTvTvTile1, menuOnAirTvTvTile2, menuOnAirTvTvTile3, menuOnAirTvTvTile4, menuOnAirTvTvTile5, menuOnAirTvTvTile6}
+        return {menuOnAirTvTile1, menuOnAirTvTile2, menuOnAirTvTile3, menuOnAirTvTile4, menuOnAirTvTile5, menuOnAirTvTile6}
 }
 
 
