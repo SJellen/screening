@@ -6,13 +6,14 @@ import TopRated from './TopRated'
 import Current from './Current'
 import Footer from './Footer'
 import MoviePage from './MoviePage'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import TvPage from './TvPage';
 import SearchPage from './SearchPage'
 import PersonPage from './PersonPage'
 import WatchList from './WatchList'
 import MenuPage from './MenuPage'
 import MenuLinkPage from './MenuLinkPage'
+
 
 
 function Home() {
@@ -25,6 +26,8 @@ function Home() {
     </div>
   )
 }
+
+
 
 
 function App() {
@@ -43,7 +46,8 @@ function App() {
        <Route path="/searchPage/" component={SearchPage} />
        <Route path="/watchList/" component={WatchList} />
         <Route path="/menuPage/" component={MenuPage} />
-        <Route path="/menuLinkPage" component={MenuLinkPage} />
+        <MenuLinkPage />
+       
      </Switch>
    
       <Footer />

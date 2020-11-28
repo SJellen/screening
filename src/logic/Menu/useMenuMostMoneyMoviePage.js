@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 function useMenuMostMoneyPage() {
     const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6 }  = useContext(Context)
 
-   console.log(menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6)
+  
    
     const menuMostMoneyMoviesPageTile1 = menuMostMoneyMovies1.map((movie, index) => 
         
