@@ -17,7 +17,7 @@ function MenuPopularTv() {
             itemPageOpen ? <div></div> :
        <div>
         <div className="slider-container">
-                <span className="slider-label">Most Popular Movies</span>
+                <span className="slider-label">Most Popular Tv</span>
                 <div className="slider-sub-container">
                     {menuPopularTvPageTile1}
                 </div>

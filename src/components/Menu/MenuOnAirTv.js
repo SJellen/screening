@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import useMenuTopRatedTvPage from '../../logic/Menu/useMenuTopRatedTvPage'
+import useMenuOnAirTvPage from '../../logic/Menu/useMenuOnAirTvPage'
 import {Context} from '../../Context'
 
 
-function MenuTopRatedTv() {
+function MenuOnAirTv() {
     
-    const {menuTopRatedTvTile1, menuTopRatedTvTile2, menuTopRatedTvTile3, menuTopRatedTvTile4, menuTopRatedTvTile5, menuTopRatedTvTile6} = useMenuTopRatedTvPage()
+    const {menuOnAirTvTvTile1, menuOnAirTvTvTile2, menuOnAirTvTvTile3, menuOnAirTvTvTile4, menuOnAirTvTvTile5, menuOnAirTvTvTile6} = useMenuOnAirTvPage()
     const {itemPageOpen}  = useContext(Context)
     
     
@@ -16,35 +16,35 @@ function MenuTopRatedTv() {
             itemPageOpen ? <div></div> :
        <div>
         <div className="slider-container">
-                <span className="slider-label">Top Rated Tv</span>
+                <span className="slider-label">Shows On Now</span>
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile1}
+                    {menuOnAirTvTvTile1}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile2}
+                    {menuOnAirTvTvTile2}
                 </div>
                 </div>
 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile3}
+                    {menuOnAirTvTvTile3}
                 </div>
                 </div>
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile4}
+                    {menuOnAirTvTvTile4}
                 </div>   
                 </div>
                 
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile5}
+                    {menuOnAirTvTvTile5}
                 </div>  
                 </div>     
             
@@ -52,7 +52,7 @@ function MenuTopRatedTv() {
 
                 <div className="slider-container">
                 <div className="slider-sub-container">
-                    {menuTopRatedTvTile6}
+                    {menuOnAirTvTvTile6}
                 </div>  
                 </div>
        </div>    
@@ -69,4 +69,4 @@ function MenuTopRatedTv() {
     )
 }
 
-export default MenuTopRatedTv
+export default MenuOnAirTv

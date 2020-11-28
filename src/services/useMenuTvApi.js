@@ -18,6 +18,13 @@ function useMenuTvApi() {
     const [menuTopRatedTvPage5, setMenuTopRatedTvPage5] = useState([])
     const [menuTopRatedTvPage6, setMenuTopRatedTvPage6] = useState([])
 
+    const [menuOnAirTvPage1, setMenuOnAirTvPage1] = useState([])
+    const [menuOnAirTvPage2, setMenuOnAirTvPage2] = useState([])
+    const [menuOnAirTvPage3, setMenuOnAirTvPage3] = useState([])
+    const [menuOnAirTvPage4, setMenuOnAirTvPage4] = useState([])
+    const [menuOnAirTvPage5, setMenuOnAirTvPage5] = useState([])
+    const [menuOnAirTvPage6, setMenuOnAirTvPage6] = useState([])
+
 
 
     const fetchPopularMenuTv = async (num) => {
@@ -74,7 +81,31 @@ function useMenuTvApi() {
         }   
 
 
+    const fetchOnAirMenuTv = async (num) => {
+        await fetch(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${apiKEY}&language=en-US&page=${num}`)
+        .then(res => res.json())
+        .then((data) => {
 
+            if (num === 1) {
+                setMenuOnAirTvPage1(data.results)
+            } else if (num === 2) {
+                setMenuOnAirTvPage2(data.results)
+            } else if (num === 3) {
+                setMenuOnAirTvPage3(data.results)
+            } else if (num === 4) {
+                setMenuOnAirTvPage4(data.results)
+            } else if (num === 5) {
+                setMenuOnAirTvPage5(data.results)
+            } else {
+                setMenuOnAirTvPage6(data.results)
+            }
+
+            
+        }
+
+        )
+        .catch(error => console.log(error))
+        }
 
 
     function handleMenuPopularTvClick() {
@@ -93,6 +124,15 @@ function useMenuTvApi() {
         fetchTopRatedMenuTv(4)
         fetchTopRatedMenuTv(5)
         fetchTopRatedMenuTv(6)
+    }
+
+    function handleMenuOnAirTvClick() {
+        fetchOnAirMenuTv(1)
+        fetchOnAirMenuTv(2)
+        fetchOnAirMenuTv(3)
+        fetchOnAirMenuTv(4)
+        fetchOnAirMenuTv(5)
+        fetchOnAirMenuTv(6)
     }
 
 
@@ -121,7 +161,14 @@ function useMenuTvApi() {
             fetchTopRatedMenuTv(4)
             fetchTopRatedMenuTv(5)
             fetchTopRatedMenuTv(6)
-         } 
+         } else if (pathMediaId === "onAirTv") {
+            fetchOnAirMenuTv(1)
+            fetchOnAirMenuTv(2)
+            fetchOnAirMenuTv(3)
+            fetchOnAirMenuTv(4)
+            fetchOnAirMenuTv(5)
+            fetchOnAirMenuTv(6)
+         }
         
         // else if (pathMediaId === "upcomingMovies") {
         //     fetchUpcomingMenuMovies(1)
@@ -153,7 +200,7 @@ function useMenuTvApi() {
 
 
 
-    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6}
+    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6}
 
 }
 
