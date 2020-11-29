@@ -39,6 +39,13 @@ function useMenuMovieApi() {
     const [menuMostMoneyMovies4, setMenuMostMoneyMovies4] = useState([])
     const [menuMostMoneyMovies5, setMenuMostMoneyMovies5] = useState([])
     const [menuMostMoneyMovies6, setMenuMostMoneyMovies6] = useState([])
+
+    const [menuTrendingMoviesPage1, setMenuTrendingMoviesPage1] = useState([])
+    const [menuTrendingMoviesPage2, setMenuTrendingMoviesPage2] = useState([])
+    const [menuTrendingMoviesPage3, setMenuTrendingMoviesPage3] = useState([])
+    const [menuTrendingMoviesPage4, setMenuTrendingMoviesPage4] = useState([])
+    const [menuTrendingMoviesPage5, setMenuTrendingMoviesPage5] = useState([])
+    const [menuTrendingMoviesPage6, setMenuTrendingMoviesPage6] = useState([])
     
     
 
@@ -149,31 +156,58 @@ function useMenuMovieApi() {
             }
             
             
-        const fetchMostMoneyMenuMovies = async (num) => {
-                await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=${num}`)
-                .then(res => res.json())
-                .then((data) => {
-        
-                    if (num === 1) {
-                        setMenuMostMoneyMovies1(data.results)
-                    } else if (num === 2) {
-                        setMenuMostMoneyMovies2(data.results)
-                    } else if (num === 3) {
-                        setMenuMostMoneyMovies3(data.results)
-                    } else if (num === 4) {
-                        setMenuMostMoneyMovies4(data.results)
-                    } else if (num === 5) {
-                        setMenuMostMoneyMovies5(data.results)
-                    } else {
-                        setMenuMostMoneyMovies6(data.results)
-                    }
-        
-                    
+    const fetchMostMoneyMenuMovies = async (num) => {
+            await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=${num}`)
+            .then(res => res.json())
+            .then((data) => {
+    
+                if (num === 1) {
+                    setMenuMostMoneyMovies1(data.results)
+                } else if (num === 2) {
+                    setMenuMostMoneyMovies2(data.results)
+                } else if (num === 3) {
+                    setMenuMostMoneyMovies3(data.results)
+                } else if (num === 4) {
+                    setMenuMostMoneyMovies4(data.results)
+                } else if (num === 5) {
+                    setMenuMostMoneyMovies5(data.results)
+                } else {
+                    setMenuMostMoneyMovies6(data.results)
                 }
-        
-                )
-                .catch(error => console.log(error))
-                }               
+    
+                
+            }
+    
+            )
+            .catch(error => console.log(error))
+            }     
+                
+    
+        const fetchTrendingMenuMovies = async (num) => {
+            await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKEY}&page=${num}`)
+            .then(res => res.json())
+            .then((data) => {
+    
+                if (num === 1) {
+                    setMenuTrendingMoviesPage1(data.results)
+                } else if (num === 2) {
+                    setMenuTrendingMoviesPage2(data.results)
+                } else if (num === 3) {
+                    setMenuTrendingMoviesPage3(data.results)
+                } else if (num === 4) {
+                    setMenuTrendingMoviesPage4(data.results)
+                } else if (num === 5) {
+                    setMenuTrendingMoviesPage5(data.results)
+                } else {
+                    setMenuTrendingMoviesPage6(data.results)
+                }
+    
+                
+            }
+    
+            )
+            .catch(error => console.log(error))
+            }             
     
 
 
@@ -222,6 +256,15 @@ function useMenuMovieApi() {
             fetchMostMoneyMenuMovies(6)
         }
 
+        function handleMenuTrendingMoviesClick() {
+            fetchTrendingMenuMovies(1)
+            fetchTrendingMenuMovies(2)
+            fetchTrendingMenuMovies(3)
+            fetchTrendingMenuMovies(4)
+            fetchTrendingMenuMovies(5)
+            fetchTrendingMenuMovies(6)
+        }
+
 
 
 
@@ -266,6 +309,13 @@ function useMenuMovieApi() {
                 fetchMostMoneyMenuMovies(4)
                 fetchMostMoneyMenuMovies(5)
                 fetchMostMoneyMenuMovies(6)
+            } else if (pathMediaId === "trendingMovies") {
+                fetchTrendingMenuMovies(1)
+                fetchTrendingMenuMovies(2)
+                fetchTrendingMenuMovies(3)
+                fetchTrendingMenuMovies(4)
+                fetchTrendingMenuMovies(5)
+                fetchTrendingMenuMovies(6)
             }
     
         }, [])    
@@ -275,7 +325,7 @@ function useMenuMovieApi() {
 
 
 
-    return {handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3, menuNowPlayingMoviesPage4, menuNowPlayingMoviesPage5, menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6  } 
+    return {handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3, menuNowPlayingMoviesPage4, menuNowPlayingMoviesPage5, menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, handleMenuTrendingMoviesClick, menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6  } 
 }
 
 export default useMenuMovieApi

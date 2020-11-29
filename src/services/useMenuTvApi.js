@@ -32,6 +32,13 @@ function useMenuTvApi() {
     const [menuAiringTodayTvPage5, setMenuAiringTodayTvPage5] = useState([])
     const [menuAiringTodayTvPage6, setMenuAiringTodayTvPage6] = useState([])
 
+    const [menuTrendingTvPage1, setMenuTrendingTvPage1] = useState([])
+    const [menuTrendingTvPage2, setMenuTrendingTvPage2] = useState([])
+    const [menuTrendingTvPage3, setMenuTrendingTvPage3] = useState([])
+    const [menuTrendingTvPage4, setMenuTrendingTvPage4] = useState([])
+    const [menuTrendingTvPage5, setMenuTrendingTvPage5] = useState([])
+    const [menuTrendingTvPage6, setMenuTrendingTvPage6] = useState([])
+
 
 
     const fetchPopularMenuTv = async (num) => {
@@ -139,7 +146,34 @@ function useMenuTvApi() {
 
         )
         .catch(error => console.log(error))
-        }    
+        }  
+        
+        
+    const fetchTrendingMenuTv = async (num) => {
+        await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKEY}&page=${num}`)
+        .then(res => res.json())
+        .then((data) => {
+
+            if (num === 1) {
+                setMenuTrendingTvPage1(data.results)
+            } else if (num === 2) {
+                setMenuTrendingTvPage2(data.results)
+            } else if (num === 3) {
+                setMenuTrendingTvPage3(data.results)
+            } else if (num === 4) {
+                setMenuTrendingTvPage4(data.results)
+            } else if (num === 5) {
+                setMenuTrendingTvPage5(data.results)
+            } else {
+                setMenuTrendingTvPage6(data.results)
+            }
+
+            
+        }
+
+        )
+        .catch(error => console.log(error))
+        }      
 
 
     function handleMenuPopularTvClick() {
@@ -176,6 +210,15 @@ function useMenuTvApi() {
         fetchAiringTodayMenuTv(4)
         fetchAiringTodayMenuTv(5)
         fetchAiringTodayMenuTv(6)
+    }
+
+    function handleMenuTrendingTvClick() {
+        fetchTrendingMenuTv(1)
+        fetchTrendingMenuTv(2)
+        fetchTrendingMenuTv(3)
+        fetchTrendingMenuTv(4)
+        fetchTrendingMenuTv(5)
+        fetchTrendingMenuTv(6)
     }
 
 
@@ -220,30 +263,16 @@ function useMenuTvApi() {
             fetchAiringTodayMenuTv(4)
             fetchAiringTodayMenuTv(5)
             fetchAiringTodayMenuTv(6)
-         }
+         }  else if (pathMediaId === "trendingTv") {
+            fetchTrendingMenuTv(1)
+            fetchTrendingMenuTv(2)
+            fetchTrendingMenuTv(3)
+            fetchTrendingMenuTv(4)
+            fetchTrendingMenuTv(5)
+            fetchTrendingMenuTv(6)
+        }
         
-        // else if (pathMediaId === "upcomingMovies") {
-        //     fetchUpcomingMenuMovies(1)
-        //     fetchUpcomingMenuMovies(2)
-        //     fetchUpcomingMenuMovies(3)
-        //     fetchUpcomingMenuMovies(4)
-        //     fetchUpcomingMenuMovies(5)
-        //     fetchUpcomingMenuMovies(6)
-        // } else if (pathMediaId === "nowPlayingMovies") {
-        //     fetchNowPlayingMenuMovies(1)
-        //     fetchNowPlayingMenuMovies(2)
-        //     fetchNowPlayingMenuMovies(3)
-        //     fetchNowPlayingMenuMovies(4)
-        //     fetchNowPlayingMenuMovies(5)
-        //     fetchNowPlayingMenuMovies(6)
-        // } else if (pathMediaId === "mostMoneyMovies") {
-        //     fetchMostMoneyMenuMovies(1)
-        //     fetchMostMoneyMenuMovies(2)
-        //     fetchMostMoneyMenuMovies(3)
-        //     fetchMostMoneyMenuMovies(4)
-        //     fetchMostMoneyMenuMovies(5)
-        //     fetchMostMoneyMenuMovies(6)
-        // }
+       
 
     }, [])    
 
@@ -252,7 +281,7 @@ function useMenuTvApi() {
 
 
 
-    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6}
+    return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6, handleMenuTrendingTvClick, menuTrendingTvPage1, menuTrendingTvPage2, menuTrendingTvPage3, menuTrendingTvPage4, menuTrendingTvPage5, menuTrendingTvPage6  }
 
 }
 
