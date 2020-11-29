@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 function useApiMovie() {
 
     const apiKEY = process.env.REACT_APP_TMDB_API_KEY
-    
+    const [movieTrending, setMovieTrending] = useState([])
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [topRatedMovies, setTopRatedMovies] = useState([])
     const [popularMovies, setPopularMovies] = useState([])
@@ -18,6 +18,18 @@ function useApiMovie() {
     const [movieReviews, setMovieReviews] = useState([])
     const [movieVideos, setMovieVideos] = useState([])
     const [movieLoaded, setMovieLoaded] = useState(false)
+
+
+    const fetchTrendingMovie = async () => {
+        await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKEY}`)
+        .then(res => res.json())
+        .then((data) => {
+            setMovieTrending(data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }
 
 
     const fetchUpcomingMovies = async () => {
@@ -91,6 +103,7 @@ function useApiMovie() {
         fetchTopRatedMovies()
         fetchPopularMovies()
         fetchNowPlaying()
+        fetchTrendingMovie()
             
             // eslint-disable-next-line react-hooks/exhaustive-deps
     },[lastMovieId, movieId])  
@@ -152,7 +165,7 @@ function useApiMovie() {
             }       
 
 
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId, movieTrending, fetchTrendingMovie}
 }
 
 export default useApiMovie

@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 function useApiTv() {
 
     const apiKEY = process.env.REACT_APP_TMDB_API_KEY
+    const [tvTrending, setTvTrending] = useState([])
     const [topRatedTv, setTopRatedTv] = useState([])
     const [popularTv, setPopularTv] = useState([])
     const [airingToday, setAiringToday] = useState([])
@@ -15,6 +16,22 @@ function useApiTv() {
     const [tvReviews, setTvReviews] = useState([])
     const [tvVideos, setTvVideos] = useState([])
     const [tvLoaded, setTvLoaded] = useState(false)
+
+    const fetchTrendingTv = async () => {
+        await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKEY}`)
+        .then(res => res.json())
+        .then((data) => {
+            setTvTrending(data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }
+
+
+
+
+
 
 
     const fetchTopRatedTv = async () => {
@@ -80,6 +97,7 @@ function useApiTv() {
             fetchTopRatedTv()
             fetchPopularTv()
             fetchAirToday()
+            fetchTrendingTv()
             // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])   
         
@@ -142,7 +160,7 @@ function useApiTv() {
 
 
 
-    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId}
+    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId, tvTrending, fetchTrendingTv}
 }
 
 export default useApiTv
