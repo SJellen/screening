@@ -17,14 +17,8 @@ function useApiPerson() {
         await fetch(`https://api.themoviedb.org/3/trending/person/week?api_key=${apiKEY}`)
         .then(res => res.json())
         .then((data) => {
-            let trending = data.results
-            let personArr = []
-            for (let i=0; i < trending.length; i++) {
-                if  (trending[i].media_type === "person") {
-                    personArr.push(trending[i])
-                } 
-            }
-            setPersonTrending(personArr)
+            
+            setPersonTrending(data.results)
            
         }
         )

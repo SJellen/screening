@@ -10,7 +10,7 @@ function Popular() {
     const {popularMoviesTile} = useMoviePopular()
     const {popularTvTile} = useTvPopular()
     const {popularPersonTile} = usePersonPopular()
-    const {handleMenuPopularClick, handleMenuPopularTvClick} = useContext(Context)
+    const {handleMenuPopularClick, handleMenuPopularTvClick, handleMenuPopularPersonClick} = useContext(Context)
   
     
 
@@ -27,7 +27,7 @@ function Popular() {
             {popularTvTile}
         </div>
 
-        <span className="slider-label">Popular: People <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="#E1B517" className="link-arrow"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg></span>
+        <span className="slider-label">Popular: People <Link to={"/menuLinkPage/popularPerson/"} style={{textDecoration: "none"}} onClick={handleMenuPopularPersonClick} ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="#E1B517" className="link-arrow"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg></Link></span>
         <div className="slider-sub-container">
             {popularPersonTile}
         </div>
