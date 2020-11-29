@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 
 

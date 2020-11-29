@@ -218,6 +218,7 @@ function useMenuMovieApi() {
             fetchPopularMenuMovies(4)
             fetchPopularMenuMovies(5)
             fetchPopularMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
         function handleMenuTopRatedClick() {
@@ -227,6 +228,7 @@ function useMenuMovieApi() {
             fetchTopRatedMenuMovies(4)
             fetchTopRatedMenuMovies(5)
             fetchTopRatedMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
         function handleMenuUpcomingClick() {
@@ -236,6 +238,7 @@ function useMenuMovieApi() {
             fetchUpcomingMenuMovies(4)
             fetchUpcomingMenuMovies(5)
             fetchUpcomingMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
         function handleMenuNowPlayingClick() {
@@ -245,6 +248,7 @@ function useMenuMovieApi() {
             fetchNowPlayingMenuMovies(4)
             fetchNowPlayingMenuMovies(5)
             fetchNowPlayingMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
         function handleMenuMostMoneyClick() {
@@ -254,6 +258,7 @@ function useMenuMovieApi() {
             fetchMostMoneyMenuMovies(4)
             fetchMostMoneyMenuMovies(5)
             fetchMostMoneyMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
         function handleMenuTrendingMoviesClick() {
@@ -263,6 +268,7 @@ function useMenuMovieApi() {
             fetchTrendingMenuMovies(4)
             fetchTrendingMenuMovies(5)
             fetchTrendingMenuMovies(6)
+            window.scrollTo(0, 0)
         }
 
 
@@ -281,6 +287,7 @@ function useMenuMovieApi() {
                 fetchPopularMenuMovies(4)
                 fetchPopularMenuMovies(5)
                 fetchPopularMenuMovies(6)
+                window.scrollTo(0, 0)
             } else if (pathMediaId === "topRatedMovies") {
                 fetchTopRatedMenuMovies(1)
                 fetchTopRatedMenuMovies(2)
@@ -288,6 +295,7 @@ function useMenuMovieApi() {
                 fetchTopRatedMenuMovies(4)
                 fetchTopRatedMenuMovies(5)
                 fetchTopRatedMenuMovies(6)
+                window.scrollTo(0, 0)
             } else if (pathMediaId === "upcomingMovies") {
                 fetchUpcomingMenuMovies(1)
                 fetchUpcomingMenuMovies(2)
@@ -295,6 +303,7 @@ function useMenuMovieApi() {
                 fetchUpcomingMenuMovies(4)
                 fetchUpcomingMenuMovies(5)
                 fetchUpcomingMenuMovies(6)
+                window.scrollTo(0, 0)
             } else if (pathMediaId === "nowPlayingMovies") {
                 fetchNowPlayingMenuMovies(1)
                 fetchNowPlayingMenuMovies(2)
@@ -302,6 +311,7 @@ function useMenuMovieApi() {
                 fetchNowPlayingMenuMovies(4)
                 fetchNowPlayingMenuMovies(5)
                 fetchNowPlayingMenuMovies(6)
+                window.scrollTo(0, 0)
             } else if (pathMediaId === "mostMoneyMovies") {
                 fetchMostMoneyMenuMovies(1)
                 fetchMostMoneyMenuMovies(2)
@@ -309,6 +319,7 @@ function useMenuMovieApi() {
                 fetchMostMoneyMenuMovies(4)
                 fetchMostMoneyMenuMovies(5)
                 fetchMostMoneyMenuMovies(6)
+                window.scrollTo(0, 0)
             } else if (pathMediaId === "trendingMovies") {
                 fetchTrendingMenuMovies(1)
                 fetchTrendingMenuMovies(2)
@@ -316,6 +327,7 @@ function useMenuMovieApi() {
                 fetchTrendingMenuMovies(4)
                 fetchTrendingMenuMovies(5)
                 fetchTrendingMenuMovies(6)
+                window.scrollTo(0, 0)
             }
     
         }, [])    

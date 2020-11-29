@@ -183,6 +183,7 @@ function useMenuTvApi() {
         fetchPopularMenuTv(4)
         fetchPopularMenuTv(5)
         fetchPopularMenuTv(6)
+        window.scrollTo(0, 0)
     }
 
     function handleMenuTopRatedTvClick() {
@@ -192,6 +193,7 @@ function useMenuTvApi() {
         fetchTopRatedMenuTv(4)
         fetchTopRatedMenuTv(5)
         fetchTopRatedMenuTv(6)
+        window.scrollTo(0, 0)
     }
 
     function handleMenuOnAirTvClick() {
@@ -201,6 +203,7 @@ function useMenuTvApi() {
         fetchOnAirMenuTv(4)
         fetchOnAirMenuTv(5)
         fetchOnAirMenuTv(6)
+        window.scrollTo(0, 0)
     }
 
     function handleMenuAiringTodayTvClick() {
@@ -210,6 +213,7 @@ function useMenuTvApi() {
         fetchAiringTodayMenuTv(4)
         fetchAiringTodayMenuTv(5)
         fetchAiringTodayMenuTv(6)
+        window.scrollTo(0, 0)
     }
 
     function handleMenuTrendingTvClick() {
@@ -219,6 +223,7 @@ function useMenuTvApi() {
         fetchTrendingMenuTv(4)
         fetchTrendingMenuTv(5)
         fetchTrendingMenuTv(6)
+        window.scrollTo(0, 0)
     }
 
 
@@ -242,6 +247,7 @@ function useMenuTvApi() {
             fetchPopularMenuTv(4)
             fetchPopularMenuTv(5)
             fetchPopularMenuTv(6)
+            window.scrollTo(0, 0)
         } else if (pathMediaId === "topRatedTv") {
             fetchTopRatedMenuTv(1)
             fetchTopRatedMenuTv(2)
@@ -249,6 +255,7 @@ function useMenuTvApi() {
             fetchTopRatedMenuTv(4)
             fetchTopRatedMenuTv(5)
             fetchTopRatedMenuTv(6)
+            window.scrollTo(0, 0)
          } else if (pathMediaId === "onAirTv") {
             fetchOnAirMenuTv(1)
             fetchOnAirMenuTv(2)
@@ -256,6 +263,7 @@ function useMenuTvApi() {
             fetchOnAirMenuTv(4)
             fetchOnAirMenuTv(5)
             fetchOnAirMenuTv(6)
+            window.scrollTo(0, 0)
          } else if (pathMediaId === "airingTodayTv") {
             fetchAiringTodayMenuTv(1)
             fetchAiringTodayMenuTv(2)
@@ -263,6 +271,7 @@ function useMenuTvApi() {
             fetchAiringTodayMenuTv(4)
             fetchAiringTodayMenuTv(5)
             fetchAiringTodayMenuTv(6)
+            window.scrollTo(0, 0)
          }  else if (pathMediaId === "trendingTv") {
             fetchTrendingMenuTv(1)
             fetchTrendingMenuTv(2)
@@ -270,6 +279,7 @@ function useMenuTvApi() {
             fetchTrendingMenuTv(4)
             fetchTrendingMenuTv(5)
             fetchTrendingMenuTv(6)
+            window.scrollTo(0, 0)
         }
         
        
