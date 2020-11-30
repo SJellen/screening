@@ -93,7 +93,7 @@ function useMenuPersonApi() {
             const path = window.location.pathname
             const splitPath = path.split('/')
             const cleanPath = splitPath.filter(item => item !== '')
-            const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
+            const pathMediaId = cleanPath[1]
             // console.log(cleanPath, pathMediaType, pathMediaId)
             if (pathMediaId === "trendingPerson") {
                 fetchTrendingMenuPerson(1)
