@@ -171,7 +171,7 @@ function useApiMovie() {
         await fetch(`https://api.themoviedb.org/3/movie/${x}/watch/providers?api_key=${apiKEY}`)
         .then(res => res.json())
         .then((data) => {
-            setMovieProviders(data.results)
+            setMovieProviders(data.results.US)
         }
 
         )

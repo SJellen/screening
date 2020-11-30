@@ -123,6 +123,7 @@ function ContextProvider({children}) {
         fetchMovieSimilar(selection)
         fetchMovieReviews(selection)
         fetchMovieVideos(selection)
+        fetchMovieProviders(selection)
         window.scrollTo(0, 0)
     }
 
@@ -147,6 +148,7 @@ function ContextProvider({children}) {
         fetchTvRecommend(selection)
         fetchTvReviews(selection)
         fetchTvVideos(selection)
+        fetchTvProviders(selection)
         window.scrollTo(0, 0)
     }
 
@@ -208,6 +210,7 @@ function ContextProvider({children}) {
             fetchMovieSimilar(pathMediaId)
             fetchMovieReviews(pathMediaId)
             fetchMovieVideos(pathMediaId)
+            fetchMovieProviders(pathMediaId)
             window.scrollTo(0, 0)
         } else if (pathMediaType === "tvPage") {
             setMediaType('tv')
@@ -219,6 +222,7 @@ function ContextProvider({children}) {
             fetchTvRecommend(pathMediaId)
             fetchTvReviews(pathMediaId)
             fetchTvVideos(pathMediaId)
+            fetchTvProviders(pathMediaId)
             window.scrollTo(0, 0)
         } else if (pathMediaType === "personPage") {
             setMediaType('person')

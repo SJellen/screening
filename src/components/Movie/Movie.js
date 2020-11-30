@@ -11,7 +11,7 @@ import '../../style/Item.css'
 
 function Movie() {
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -21,7 +21,7 @@ function Movie() {
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
     
-
+    console.log(movieProviders)
     
 
     return (

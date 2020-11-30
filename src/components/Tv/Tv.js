@@ -11,7 +11,7 @@ import '../../style/Item.css'
 
 function Tv() {
 
-    const {tvDetails, posterPathLarge, timeConverter, getYear, tvLoaded}  = useContext(Context)
+    const {tvDetails, posterPathLarge, timeConverter, getYear, tvLoaded, tvProviders}  = useContext(Context)
     const {castTvTile} = useTvCast()
     const {crewTvTile} = useTvCrew()
     const {tvRecommendTile} = TvRecommendations()
@@ -21,7 +21,7 @@ function Tv() {
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
     
-
+    console.log(tvProviders)
 
 
     return (
