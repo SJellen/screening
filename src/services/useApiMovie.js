@@ -18,6 +18,7 @@ function useApiMovie() {
     const [movieReviews, setMovieReviews] = useState([])
     const [movieVideos, setMovieVideos] = useState([])
     const [movieLoaded, setMovieLoaded] = useState(false)
+    const [movieProviders, setMovieProviders] = useState([])
 
 
     const fetchTrendingMovie = async () => {
@@ -155,17 +156,30 @@ function useApiMovie() {
             setMovieVideos(data = data.results)
             setTimeout(() => {
                 setMovieLoaded(true)
-            }, 2500)
+            }, 1500)
             
             
         }
 
         )
         .catch(error => console.log(error))
-            }       
+            }   
+            
+            
+
+    const fetchMovieProviders = async (x) => {
+        await fetch(`https://api.themoviedb.org/3/movie/${x}/watch/providers?api_key=${apiKEY}`)
+        .then(res => res.json())
+        .then((data) => {
+            setMovieProviders(data.results)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }        
 
 
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId, movieTrending, fetchTrendingMovie}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId, movieTrending, fetchTrendingMovie, fetchMovieProviders, movieProviders}
 }
 
 export default useApiMovie
