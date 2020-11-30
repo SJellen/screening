@@ -1,7 +1,7 @@
 import React from 'react'
 import '../style/ItemPage.css'
 import Movie from './Movie/Movie'
-import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 function MoviePage() {

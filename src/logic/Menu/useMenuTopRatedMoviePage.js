@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 function useMenuTopRatedMoviePage() {
-    const {posterPath, handleMovieClick, handleRibbonMovie, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, watchListMovie}  = useContext(Context)
+    const {posterPath, handleMovieClick, handleRibbonMovie, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, watchListMovie}  = useContext(Context)
 
   
     const menuTopRatedPageTile1 = menuTopRatedMoviesPage1.map((movie, index) => 

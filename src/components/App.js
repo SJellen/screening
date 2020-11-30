@@ -6,7 +6,7 @@ import TopRated from './TopRated'
 import Current from './Current'
 import Footer from './Footer'
 import MoviePage from './MoviePage'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import TvPage from './TvPage';
 import SearchPage from './SearchPage'
 import PersonPage from './PersonPage'

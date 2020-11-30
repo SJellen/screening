@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useMenuPopularTvPage() {
-    const {posterPath, popularTv, handleTvClick, handleRibbonTv, watchListTv,  menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6}  = useContext(Context)
+    const {posterPath,  handleTvClick, handleRibbonTv, watchListTv,  menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6}  = useContext(Context)
 
     const menuPopularTvPageTile1 = menuPopularTvPage1.map((show, index) => 
         
