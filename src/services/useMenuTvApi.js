@@ -239,7 +239,7 @@ function useMenuTvApi() {
         const splitPath = path.split('/')
         const cleanPath = splitPath.filter(item => item !== '')
         const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
-        console.log(cleanPath, pathMediaType, pathMediaId)
+        // console.log(cleanPath, pathMediaType, pathMediaId)
         if (pathMediaId === "popularTv") {
             fetchPopularMenuTv(1)
             fetchPopularMenuTv(2)

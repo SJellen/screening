@@ -279,7 +279,7 @@ function useMenuMovieApi() {
             const splitPath = path.split('/')
             const cleanPath = splitPath.filter(item => item !== '')
             const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1]
-            console.log(cleanPath, pathMediaType, pathMediaId)
+            // console.log(cleanPath, pathMediaType, pathMediaId)
             if (pathMediaId === "popularMovies") {
                 fetchPopularMenuMovies(1)
                 fetchPopularMenuMovies(2)
