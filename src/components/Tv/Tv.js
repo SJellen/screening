@@ -6,6 +6,7 @@ import TvRecommendations from './TvRecommendations'
 import TvSimilar from './TvSimilar'
 import TvReview from './TvReview'
 import TvVideo from './TvVideo'
+import TvWatchBox from './TvWatchBox'
 import '../../style/Item.css'
 
 
@@ -18,6 +19,7 @@ function Tv() {
     const {tvSimilarTile} = TvSimilar()
     const {tvReviewTile} = TvReview()
     const {tvVideoTile} = TvVideo()
+    const {TvWatchBox} = TvWatchBox()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
     

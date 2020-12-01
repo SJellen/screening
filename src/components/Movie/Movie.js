@@ -6,10 +6,13 @@ import MovieRecommendations from './MovieRecommendations'
 import MovieSimilar from './MovieSimilar'
 import MovieReview from './MovieReview'
 import MovieVideo from './MovieVideo'
+import MovieWatchBox from './MovieWatchBox'
 import '../../style/Item.css'
 
 
 function Movie() {
+
+    
 
     const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
@@ -18,10 +21,11 @@ function Movie() {
     const {movieSimilarTile} = MovieSimilar()
     const {movieReviewTile} = MovieReview()
     const {movieVideoTile} = MovieVideo()
+    const {movieProviderTile} = MovieWatchBox()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
 
+    // console.log(movieProviders)
     
-    console.log(movieProviders)
     
 
     return (
@@ -70,10 +74,17 @@ function Movie() {
         </div>
 
 
+       
+          
+            <div className="details-watch-box">
+                 {movieProviderTile}  
+        </div> 
+
+
 
         { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
             <div>
-        <span className="details-slider-title">Videos</span>
+        <span className="details-slider-title-video">Videos</span>
         <div className="details-video-container" >
                     {movieVideoTile}
                 
