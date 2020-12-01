@@ -19,7 +19,7 @@ function Tv() {
     const {tvSimilarTile} = TvSimilar()
     const {tvReviewTile} = TvReview()
     const {tvVideoTile} = TvVideo()
-    const {TvWatchBox} = TvWatchBox()
+    const {tvProviderTile} = TvWatchBox()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
 
     
@@ -66,9 +66,14 @@ function Tv() {
         </div>
         </div>
 
+
+        <div className="details-watch-box">
+                 {tvProviderTile}  
+        </div> 
+
         { tvLoaded && tvVideoTile && tvVideoTile.length > 0 ?
             <div>
-        <span className="details-slider-title">Videos</span>
+        <span className="details-slider-title-video">Videos</span>
         <div className="details-video-container" >
                     {tvVideoTile}
                 
