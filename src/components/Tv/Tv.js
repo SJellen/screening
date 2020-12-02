@@ -66,21 +66,25 @@ function Tv() {
         </div>
         </div>
 
-
+        <div className="details-slider-video-watch-container">
         <div className="details-watch-box">
-                 {tvProviderTile}  
-        </div> 
+                        {tvProviderTile}  
+                </div> 
 
-        { tvLoaded && tvVideoTile && tvVideoTile.length > 0 ?
-            <div>
-        <span className="details-slider-title-video">Videos</span>
-        <div className="details-video-container" >
-                    {tvVideoTile}
-                
+                { tvLoaded && tvVideoTile && tvVideoTile.length > 0 ?
+                    <div>
+                <span className="details-slider-title-video">Videos</span>
+                <div className="details-video-container" >
+                            {tvVideoTile}
+                        
+                </div>
+                </div> : '' 
+
+                } 
+
+
         </div>
-        </div> : '' 
-
-        }   
+          
 
 
        

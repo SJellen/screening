@@ -14,7 +14,7 @@ function Movie() {
 
     
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -74,24 +74,29 @@ function Movie() {
         </div>
 
 
-       
-          
-            <div className="details-watch-box">
-                 {movieProviderTile}  
-        </div> 
+        <div className="details-slider-video-watch-container">
+        <div className="details-watch-box">
+                        {movieProviderTile}  
+                </div> 
 
 
 
-        { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
-            <div>
-        <span className="details-slider-title-video">Videos</span>
-        <div className="details-video-container" >
-                    {movieVideoTile}
-                
+                { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
+                    <div>
+                <span className="details-slider-title-video">Videos</span>
+                <div className="details-video-container" >
+                            {movieVideoTile}
+                        
+                </div>
+                </div> : '' 
+
+                }  
+
+
+
         </div>
-        </div> : '' 
-
-        }    
+          
+              
 
   
 

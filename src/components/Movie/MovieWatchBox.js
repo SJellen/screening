@@ -1,22 +1,39 @@
-import React, {useContext} from 'react'
-import {Context} from '../../Context'
+import React from 'react'
+import useMovieWatchBox from '../../logic/Movie/useMovieWatchBox'
 
 
 function MovieWatchBox() {
 
-    const {movieProviders}  = useContext(Context)
+    const {movieBuyTile, movieRentTile, movieStreamTile} = useMovieWatchBox()
 
-
-    console.log(movieProviders)
 
     const movieProviderTile = (
         <div className="details-watch-box-container">
-           <span className="details-watch-box-container-title">Stream</span>
-           <div className="details-watch-box-provider-container"></div>
-           <span className="details-watch-box-container-title">Rent</span>
-           <div className="details-watch-box-provider-container"></div>
-           <span className="details-watch-box-container-title">Buy</span>
-           <div className="details-watch-box-provider-container"></div>
+           { movieStreamTile && movieStreamTile.length > 0 ?
+           <div>
+               <span className="details-watch-box-container-title">Stream</span>
+           <div className="details-watch-box-provider-container">{movieStreamTile}</div>
+           </div>
+                : ''
+           }
+
+           { movieRentTile && movieRentTile.length > 0 ? 
+           <div>
+                <span className="details-watch-box-container-title">Rent</span>
+           <div className="details-watch-box-provider-container">{movieRentTile}</div>
+
+           </div> : ''
+           }
+
+           {  movieBuyTile && movieBuyTile.length > 0 ? 
+           <div>
+               <span className="details-watch-box-container-title">Buy</span>
+           <div className="details-watch-box-provider-container">{movieBuyTile}</div>
+           </div> : ''
+
+           }
+          
+           
         </div>
     )
 
