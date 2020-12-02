@@ -156,7 +156,7 @@ function useApiMovie() {
             setMovieVideos(data = data.results)
             setTimeout(() => {
                 setMovieLoaded(true)
-            }, 1500)
+            }, 500)
             
             
         }
@@ -184,7 +184,7 @@ function useApiMovie() {
         }        
 
 
-    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId, movieTrending, fetchTrendingMovie, fetchMovieProviders, movieProviders}
+    return {upcomingMovies, topRatedMovies, popularMovies, nowPlaying, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded, lastMovieId, setLastMovieId, movieTrending, fetchTrendingMovie, fetchMovieProviders, movieProviders, setMovieDetails, setMovieRecommendationArr, setMovieSimilarArr, setMovieReviews, setMovieVideos, setMovieProviders}
 }
 
 export default useApiMovie

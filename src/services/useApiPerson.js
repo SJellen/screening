@@ -83,7 +83,7 @@ function useApiPerson() {
 
 
 
-    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId}
+    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId, setPersonDetails, setPersonCredits}
 }
 
 export default useApiPerson

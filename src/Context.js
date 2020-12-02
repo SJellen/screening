@@ -17,11 +17,11 @@ function ContextProvider({children}) {
 
     const {searchResultsPerson,   searchResults,  fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm,  } = useApi()
 
-    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId,  setLastPersonId} = useApiPerson()
+    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId,  setLastPersonId, setPersonDetails, setPersonCredits} = useApiPerson()
 
-    const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded,  setLastMovieId, fetchTrendingMovie, movieTrending, fetchMovieProviders, movieProviders} = useApiMovie()
+    const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded,  setLastMovieId, fetchTrendingMovie, movieTrending, fetchMovieProviders, movieProviders, setMovieDetails, setMovieRecommendationArr, setMovieSimilarArr, setMovieReviews, setMovieVideos, setMovieProviders} = useApiMovie()
 
-    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded,  setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders } = useApiTv()
+    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded,  setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders } = useApiTv()
 
     const {handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, handleMenuTrendingMoviesClick, menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6  } = useMenuMovieApi()
 
@@ -117,8 +117,14 @@ function ContextProvider({children}) {
         let selection = arr[e].id
         setMediaType('movie')
         setMovieId(selection)
-        fetchMovieDetails(selection)
+        setMovieDetails([])
         setMovieCredits([])
+        setMovieRecommendationArr([])
+        setMovieSimilarArr([])
+        setMovieReviews([])
+        setMovieVideos([])
+        setMovieProviders([])
+        fetchMovieDetails(selection)
         fetchMovieCredits(selection)
         fetchMovieRecommend(selection)
         fetchMovieSimilar(selection)
@@ -132,6 +138,9 @@ function ContextProvider({children}) {
         let selection = arr[e].id
         setMediaType('person')
         setPersonId(selection)
+        setPersonDetails([]) 
+        setPersonCredits([]) 
+        setPersonImages([])
         fetchPersonDetails(selection)
         fetchPersonCredits(selection)
         fetchPersonImages(selection)
@@ -142,8 +151,14 @@ function ContextProvider({children}) {
         let selection = arr[e].id
         setMediaType('tv')
         setTvId(selection)
-        fetchTvDetails(selection)
         setTvCredits([])
+        setTvDetails([]) 
+        setTvSimilarArr([]) 
+        setTvRecommendationArr([]) 
+        setTvReviews([]) 
+        setTvVideos([]) 
+        setTvProviders([])
+        fetchTvDetails(selection)
         fetchTvCredits(selection)
         fetchTvSimilar(selection)
         fetchTvRecommend(selection)
