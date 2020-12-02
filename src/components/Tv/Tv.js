@@ -8,6 +8,7 @@ import TvReview from './TvReview'
 import TvVideo from './TvVideo'
 import TvWatchBox from './TvWatchBox'
 import '../../style/Item.css'
+import blankSquare from '../../assets/placeholder.jpg'
 
 
 function Tv() {
@@ -24,7 +25,7 @@ function Tv() {
     const {buy, rent, flatrate} = tvProviders
 
     
-    console.log(tvProviders)
+    
 
 
     return (
@@ -32,9 +33,9 @@ function Tv() {
 
         <div className="detail-top-container">
         <div className="poster-container">
-        {   tvDetails.poster_path && 
-            <img src={`${posterPathLarge}${tvDetails.poster_path}`} alt="movie poster" className="details-poster" />
-        }
+        
+            <img src={tvDetails.poster_path !== null ? `${posterPathLarge}${tvDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
+        
         </div>
         
 

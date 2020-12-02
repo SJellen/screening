@@ -8,6 +8,7 @@ import MovieReview from './MovieReview'
 import MovieVideo from './MovieVideo'
 import MovieWatchBox from './MovieWatchBox'
 import '../../style/Item.css'
+import blankSquare from '../../assets/placeholder.jpg'
 
 
 function Movie() {
@@ -35,11 +36,11 @@ function Movie() {
         <div className="detail-top-container">
         <div className="poster-container">
         
-            { movieDetails.poster_path &&
+            
                
-            <img src={`${posterPathLarge}${movieDetails.poster_path}`} alt="movie poster" className="details-poster" />
+            <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
                
-            }
+            
         </div>
             
           

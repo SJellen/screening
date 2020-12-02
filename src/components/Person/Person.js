@@ -3,6 +3,7 @@ import {Context} from '../../Context'
 import '../../style/Item.css'
 import PersonCredits from './PersonCredits'
 import PersonImages from './PersonImages'
+import blankSquare from '../../assets/placeholder.jpg'
 
 
 
@@ -32,9 +33,9 @@ function Person() {
 
         <div className="detail-top-container">
         <div className="poster-container">
-        { personDetails.profile_path && 
-        <img src={`${posterPathLarge}${personDetails.profile_path}`} alt="movie poster" className="details-poster" />
-        }
+       
+        <img src={personDetails.profile_path !== null ? `${posterPathLarge}${personDetails.profile_path}`: blankSquare} alt="movie poster" className="details-poster" />
+        
            
         </div>
         <div className="detail-word-box">
