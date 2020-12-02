@@ -173,6 +173,8 @@ function useApiMovie() {
         .then((data) => {
             if (data.results.US !== undefined) {
                 setMovieProviders(data.results.US)
+            } else {
+                setMovieProviders([])
             }
             
         }

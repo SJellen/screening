@@ -163,6 +163,8 @@ function useApiTv() {
         .then((data) => {
             if (data.results.US) {
                 setTvProviders(data.results.US)
+            } else {
+                setTvProviders([])
             }
             
         }
