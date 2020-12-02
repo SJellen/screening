@@ -15,8 +15,8 @@ function WatchList() {
     console.log(watchListTv, watchListMovie)
 
     return (
-        
-        <div className="slider-container">
+       
+           <div className="watchlist-page-container">
         <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
             <i className="im im-x-mark item-page-close" ></i> 
         </Link>
@@ -47,7 +47,9 @@ function WatchList() {
         
 
         
+        
         </div>
+        
 
      
     )

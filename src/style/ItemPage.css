@@ -162,4 +162,16 @@
   filter: brightness(50%)
 }
 
+
+.watchlist-page-container {
+  background-color: rgb(18, 18, 18);
+  max-width: 90vw;
+  min-height: 100vh;
+  padding: 2rem;
+  padding-bottom: 10rem;
+  margin: 3rem auto 0 auto;
+  color: white;
+  
+}
+
   
