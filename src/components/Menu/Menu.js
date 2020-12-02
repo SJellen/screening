@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import { Link} from 'react-router-dom'
+import MenuFooter from './MenuFooter'
 
 
 
@@ -10,7 +11,7 @@ function Menu() {
 
 
     return (
-        // <Switch>
+        
        
              <div className="menu-page">
         <div className="menu-list-container">
@@ -54,6 +55,10 @@ function Menu() {
             </ul>
             </div>
 
+            <div className="menu-footer-container">
+                <MenuFooter />
+            </div>
+
         </div>
        
 
@@ -64,7 +69,7 @@ function Menu() {
         </div>
         
        
-        // </Switch>
+     
     )
 
 }

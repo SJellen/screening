@@ -162,6 +162,24 @@
   filter: brightness(50%)
 }
 
+.menu-footer-container {
+  border: 1px solid red;
+  margin: 5rem 0 0 0;
+  
+  width: 100%;
+  height:auto;
+  /* background-color: gray; */
+}
+
+.menu-footer {
+  border: 1px solid yellow;
+}
+
+
+
+
+
+
 
 .watchlist-page-container {
   background-color: rgb(18, 18, 18);
