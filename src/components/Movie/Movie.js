@@ -14,7 +14,7 @@ function Movie() {
 
     
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders, movieCredits}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -24,6 +24,7 @@ function Movie() {
     const {movieProviderTile} = MovieWatchBox()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
+    const {cast} = movieCredits
     
     
     
@@ -61,7 +62,10 @@ function Movie() {
             
             <div className="details-mid-word-box">
                 <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>
-                <span className="details-runtime">Runtime {timeConverter(movieDetails.runtime)}</span>
+                { movieDetails.runtime > 0 ? 
+                    <span className="details-runtime">Runtime {timeConverter(movieDetails.runtime)}</span> : ''
+                }
+                
                  
             </div>
             <div className="details-tagline">
@@ -100,14 +104,16 @@ function Movie() {
           
               
 
-  
+                { cast > 0 ? 
+                <div className="details-slider-container">
+                        <span className="details-slider-title">Cast</span>
+                        <div className="details-cast-slider">
+                            {castMovieTile}
+                        </div> 
+                        </div> : ''
+                }
 
-        <div className="details-slider-container">
-        <span className="details-slider-title">Cast</span>
-           <div className="details-cast-slider">
-            {castMovieTile}
-        </div> 
-        </div>
+        
 
         { crewMovieTile.length > 0 ? 
         <div className="details-slider-container">
