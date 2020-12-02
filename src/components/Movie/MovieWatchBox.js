@@ -5,6 +5,8 @@ import useMovieWatchBox from '../../logic/Movie/useMovieWatchBox'
 function MovieWatchBox() {
 
     const {movieBuyTile, movieRentTile, movieStreamTile} = useMovieWatchBox()
+   
+   
 
 
     const movieProviderTile = (
@@ -25,7 +27,7 @@ function MovieWatchBox() {
            </div> : ''
            }
 
-           {  movieBuyTile && movieBuyTile.length > 0 ? 
+           {  movieBuyTile && movieBuyTile > 0  ? 
            <div>
                <span className="details-watch-box-container-title">Buy</span>
            <div className="details-watch-box-provider-container">{movieBuyTile}</div>

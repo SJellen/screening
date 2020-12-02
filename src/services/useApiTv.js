@@ -161,7 +161,10 @@ function useApiTv() {
         await fetch(`https://api.themoviedb.org/3/tv/${x}/watch/providers?api_key=${apiKEY}`)
         .then(res => res.json())
         .then((data) => {
-            setTvProviders(data.results.US)
+            if (data.results.US) {
+                setTvProviders(data.results.US)
+            }
+            
         }
 
         )

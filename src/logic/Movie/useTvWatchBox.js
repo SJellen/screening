@@ -12,25 +12,25 @@ function useTvWatchBox() {
     const tvProviderRent = tvProviders.rent
     const tvProviderFlatRate = tvProviders.flatrate
 
-    console.log(posterPathSmall, tvProviders, tvProviderBuy)
+    // console.log(posterPathSmall, tvProviders, tvProviderBuy)
 
-    const tvBuyTile = tvProviderBuy && tvProviderBuy.map((movie) => 
-        <div className="details-watch-box-provider-icon">
-        <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
+    const tvBuyTile = tvProviderBuy && tvProviderBuy.map((show) => 
+        <div className="details-watch-box-provider-icon" key={show.provider_id}>
+        <img src={`${posterPathSmall}${show.logo_path}`} alt="service icon"/>
         </div>
     
     
     ) 
 
-    const tvRentTile = tvProviderRent && tvProviderRent.map((movie) => 
-        <div className="details-watch-box-provider-icon">
-        <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
+    const tvRentTile = tvProviderRent && tvProviderRent.map((show) => 
+        <div className="details-watch-box-provider-icon" key={show.provider_id}>
+        <img src={`${posterPathSmall}${show.logo_path}`} alt="service icon"/>
         </div>
     ) 
 
-    const tvStreamTile = tvProviderFlatRate && tvProviderFlatRate.map((movie) => 
-        <div className="details-watch-box-provider-icon">
-        <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
+    const tvStreamTile = tvProviderFlatRate && tvProviderFlatRate.map((show) => 
+        <div className="details-watch-box-provider-icon" key={show.provider_id}>
+        <img src={`${posterPathSmall}${show.logo_path}`} alt="service icon"/>
         </div>
     ) 
 

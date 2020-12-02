@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {Context} from '../../Context'
 
 
@@ -7,27 +7,27 @@ import {Context} from '../../Context'
 function useMovieWatchBox() {
 
     const {posterPathSmall, movieProviders}  = useContext(Context)
+    const {buy, rent, flatrate} = movieProviders
+    
 
-    const movieProviderBuy = movieProviders.buy
-    const movieProviderRent = movieProviders.rent
-    const movieProviderFlatRate = movieProviders.flatrate
+   
 
-    console.log(posterPathSmall, movieProviders, movieProviderBuy)
+    console.log(buy, rent, flatrate)
 
-    const movieBuyTile =  movieProviderBuy && movieProviderBuy.map((movie, index) => 
-        <div className="details-watch-box-provider-icon">
+    const movieBuyTile =  buy && buy.map((movie) => 
+        <div className="details-watch-box-provider-icon" key={movie.provider_id}>
         <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
         </div>
     ) 
 
-    const movieRentTile = movieProviderRent && movieProviderRent.map((movie, index) => 
-        <div className="details-watch-box-provider-icon">
+    const movieRentTile = rent && rent.map((movie) => 
+        <div className="details-watch-box-provider-icon" key={movie.provider_id}>
         <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
         </div>
     ) 
 
-    const movieStreamTile = movieProviderFlatRate && movieProviderFlatRate.map((movie, index) => 
-        <div className="details-watch-box-provider-icon">
+    const movieStreamTile = flatrate && flatrate.map((movie) => 
+        <div className="details-watch-box-provider-icon" key={movie.provider_id}>
         <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
         </div>
     ) 
