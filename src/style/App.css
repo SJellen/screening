@@ -138,6 +138,11 @@ html {
   cursor: pointer;
 }
 
+.link-arrow:hover {
+  fill: #ffa62b;
+  transition: ease 1s;
+}
+
 
 
 
