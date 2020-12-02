@@ -21,6 +21,7 @@ function Tv() {
     const {tvVideoTile} = TvVideo()
     const {tvProviderTile} = TvWatchBox()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
+    const {buy, rent, flatrate} = tvProviders
 
     
     console.log(tvProviders)
@@ -67,11 +68,11 @@ function Tv() {
         </div>
 
         <div className="details-slider-video-watch-container">
-                { tvProviderTile && tvProviderTile.length > 0 ?
-                <div className="details-watch-box">
-                                        {tvProviderTile}  
-                                </div> : ''
+                
+        { buy === undefined && rent === undefined && flatrate === undefined ? '' :
+                    <div className="details-watch-box">  {tvProviderTile}  </div> 
                 }
+              
             
 
                 { tvLoaded && tvVideoTile && tvVideoTile.length > 0 ?

@@ -14,7 +14,7 @@ function Movie() {
 
     
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -23,8 +23,8 @@ function Movie() {
     const {movieVideoTile} = MovieVideo()
     const {movieProviderTile} = MovieWatchBox()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
-
-    // console.log(movieProviders)
+    const {buy, rent, flatrate} = movieProviders
+    
     
     
 
@@ -75,9 +75,11 @@ function Movie() {
 
 
         <div className="details-slider-video-watch-container">
-        <div className="details-watch-box">
-                        {movieProviderTile}  
-                </div> 
+                { buy === undefined && rent === undefined && flatrate === undefined ? '' :
+                    <div className="details-watch-box">  {movieProviderTile}  </div> 
+                }
+                
+             
 
 
 
