@@ -118,15 +118,15 @@
 }
 
 .menu-list-container {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
   width: 90vw;
-  margin: 4rem auto;
+  margin: 8rem auto;
   display: flex;
   flex-wrap: wrap;
 }
 
 .menu-list {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 30vw;
   margin: 2rem auto;
 }
@@ -134,13 +134,14 @@
 
 .menu-title-box {
   text-align: left;
-  border: 1px solid green;
+  margin-left: 4rem;
+  /* border: 1px solid green; */
   font-size: 2rem;
 }
 
 .menu-media-list {
   list-style: none;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   width: 25vw;
   display: flex;
   flex-direction: column;
@@ -163,7 +164,7 @@
 }
 
 .menu-footer-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 5rem 0 0 0;
   
   width: 100%;
@@ -172,7 +173,7 @@
 }
 
 .menu-footer {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 

@@ -105,14 +105,17 @@ function Movie() {
           
               
 
-                { cast > 0 ? 
+                {  castMovieTile && castMovieTile.length > 0 ?
                 <div className="details-slider-container">
                         <span className="details-slider-title">Cast</span>
                         <div className="details-cast-slider">
                             {castMovieTile}
                         </div> 
                         </div> : ''
+
                 }
+                
+                
 
         
 
