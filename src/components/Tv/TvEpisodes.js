@@ -19,8 +19,8 @@ function TvEpisodes() {
     // )
 
     const tvEpisodesTile =  tvDetails.seasons && tvDetails.seasons.map((show) => 
-        <div className="detail-season-number-box">
-            <span>{show.season_number}</span>
+        <div className="detail-season-number-box" key={show.id}>
+            <span>{show.season_number === 0 ? "Specials" : show.season_number}</span>
         </div>
     
     )
