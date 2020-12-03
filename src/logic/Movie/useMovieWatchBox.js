@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import {Context} from '../../Context'
 
 
@@ -12,7 +12,7 @@ function useMovieWatchBox() {
 
    
 
-    console.log(buy, rent, flatrate)
+    
 
     const movieBuyTile =  buy && buy.map((movie) => 
         <div className="details-watch-box-provider-icon" key={movie.provider_id}>

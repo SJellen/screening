@@ -101,6 +101,18 @@
     font-size: 1.5rem;
 }
 
+.details-episode-container {
+    background-color: #1B1B1B;
+
+    width: 70vw; 
+    height: 50rem;
+    margin: 3rem auto 5rem auto;
+}
+
+
+
+
+
 
 .details-watch-box {
     background-color: #1B1B1B;
@@ -254,6 +266,31 @@
     font-size: 2rem;
     padding: 0rem;
     margin-top: 8rem;
+}
+
+.details-slider-title-episodes {
+    display: flex;
+    font-size: 2rem;
+    padding: 0rem;
+    margin-left: 4rem;
+}
+
+.details-season-number-container {
+    /* border: 1px solid red; */
+    display: flex;
+    width: max-content;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    font-size: 1.25rem;
+    padding: 2rem 0;
+}
+
+.detail-season-number-box {
+    padding: 0 2rem;
+}
+
+.details-episode-season-title {
+    margin-left: 2rem;
 }
   
 

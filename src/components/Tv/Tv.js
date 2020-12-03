@@ -7,6 +7,7 @@ import TvSimilar from './TvSimilar'
 import TvReview from './TvReview'
 import TvVideo from './TvVideo'
 import TvWatchBox from './TvWatchBox'
+import TvEpisodes from './TvEpisodes'
 import '../../style/Item.css'
 import blankSquare from '../../assets/placeholder.jpg'
 
@@ -21,10 +22,11 @@ function Tv() {
     const {tvReviewTile} = TvReview()
     const {tvVideoTile} = TvVideo()
     const {tvProviderTile} = TvWatchBox()
+    const {tvEpisodesTile} = TvEpisodes()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
     const {buy, rent, flatrate} = tvProviders
 
-    
+    console.log(tvDetails)
     
 
 
@@ -68,6 +70,15 @@ function Tv() {
         </div>
         </div>
 
+        <span className="details-slider-title-episodes">Episodes</span> 
+        <div className="details-episode-container">
+            <div className="details-season-number-container">
+                {tvEpisodesTile}
+                <span className="details-episode-season-title">Seasons</span>
+            </div>
+              
+        </div>
+
         <div className="details-slider-video-watch-container">
                 
         { buy === undefined && rent === undefined && flatrate === undefined ? '' :
@@ -80,6 +91,7 @@ function Tv() {
                     <div>
                 <span className="details-slider-title-video">Videos</span> 
                 <div className="details-video-container" >
+                
                             {tvVideoTile}
                         
                 </div>
