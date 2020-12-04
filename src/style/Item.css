@@ -105,7 +105,7 @@
     background-color: #1B1B1B;
 
     width: 70vw; 
-    height: 50rem;
+    height: fit-content;
     margin: 3rem auto 5rem auto;
 }
 
@@ -276,14 +276,28 @@
 }
 
 .details-season-number-container {
-    /* border: 1px solid red; */
+   
     display: flex;
-    width: max-content;
+    width: fit-content;
     flex-direction: row-reverse;
     justify-content: space-evenly;
     font-size: 1.25rem;
     padding: 2rem 0;
+   
 }
+
+.details-season-number-slider-container {
+  overflow:scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  content-visiblity: auto;
+}
+
+.details-season-number-slider-container::-webkit-scrollbar {
+    display: none;
+   }
+
 
 .detail-season-number-box {
     padding: 0 2rem;
@@ -291,6 +305,66 @@
 
 .details-episode-season-title {
     margin-left: 2rem;
+}
+
+.details-last-next-episode-title {
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 2rem auto -2rem auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.25rem;
+}
+
+.details-last-next-episode-container{
+    /* border: 1px solid green; */
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-episode-card {
+    /* border: 1px solid red; */
+    background-color: #131313;
+    width: 30vw;
+    height:auto;
+    
+}
+
+.details-episode-card-img-container {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    min-height: 20rem;
+}
+
+.details-episode-card-img {
+    width: 75%;
+    height: auto;
+    
+}
+
+.details-episode-card-title {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+}
+
+.details-episode-card-stat-box {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    padding: .25rem 0;
+}
+
+.details-episode-card-overview-container {
+    border: 1px solid blue;
+    padding: 2rem;
+    text-align: left;
 }
   
 
