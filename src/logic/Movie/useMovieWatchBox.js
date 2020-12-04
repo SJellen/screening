@@ -11,7 +11,7 @@ function useMovieWatchBox() {
     
 
    
-
+    console.log(movieProviders)
     
 
     const movieBuyTile =  buy && buy.map((movie) => 
