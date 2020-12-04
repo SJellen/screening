@@ -25,8 +25,9 @@ function Tv() {
     const {tvEpisodesTile} = TvEpisodes()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
     const {buy, rent, flatrate} = tvProviders
+    
 
-    console.log(tvDetails)
+    
     
 
 
@@ -74,7 +75,7 @@ function Tv() {
         <div className="details-episode-container">
             <div className="details-season-number-container">
                 {tvEpisodesTile}
-                <span className="details-episode-season-title">Seasons</span>
+                <span className="details-episode-season-title">{tvDetails.seasons && tvDetails.seasons.length > 1 ? "Seasons" : "Season"}</span>
             </div>
               
         </div>
