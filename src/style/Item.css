@@ -303,6 +303,12 @@
     padding: 0 2rem;
 }
 
+.detail-season-number:hover {
+    cursor: pointer;
+    color: gray;
+    transition: 1s ease;
+}
+
 .details-episode-season-title {
     margin-left: 2rem;
 }
@@ -326,45 +332,103 @@
 
 .details-episode-card {
     /* border: 1px solid red; */
-    background-color: #131313;
+    background-color: rgba(19, 19, 19, .75);
     width: 30vw;
     height:auto;
     
 }
 
+.details-episode-card-season {
+    /* border: 1px solid red; */
+    background-color: rgba(19, 19, 19, .75);
+    width: 75%;
+    height:auto;
+    
+}
+
+
+
 .details-episode-card-img-container {
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
+    /* border: 1px solid red; */
+    display: block;
+    /* justify-content: center; */
+    
     padding: 1.5rem 0;
-    min-height: 20rem;
+    min-height: auto;
 }
 
 .details-episode-card-img {
+    margin: 0 auto;
+    display: block;
     width: 75%;
     height: auto;
     
 }
 
+.details-episode-card-img-season {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
+   
+}
+
+.details-episode-card-img-season-container {
+    /* border: 1px solid blue; */
+    padding: 2rem;
+}
+
 .details-episode-card-title {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
-    padding: 1rem 1rem;
+    padding: 2rem 2.5rem;
     font-size: 1.5rem;
+    
 }
 
 .details-episode-card-stat-box {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: space-evenly;
-    padding: .25rem 0;
+    padding: .25rem 0 1rem 0;
+    font-size: 1.25rem;
+    color: silver;
 }
 
 .details-episode-card-overview-container {
-    border: 1px solid blue;
-    padding: 2rem;
+    /* border: 1px solid blue; */
+    padding: 1.5rem 0 3rem 0;
     text-align: left;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: silver;
+}
+
+.details-episode-season-img-overview-container {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-episode-card-overview-season-container {
+     /* border: 1px solid blue; */
+     padding: 3rem 3rem 3rem 3rem;
+     text-align: left;
+     width: 70%;
+     margin: 0 auto;
+     font-size: 1.25rem;
+     line-height: 1.5;
+     color: silver;
+}
+
+.details-episode-card-season-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+    /* border: 1px solid red; */
 }
   
 

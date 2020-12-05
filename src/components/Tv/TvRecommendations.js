@@ -11,7 +11,7 @@ function TvRecommendations() {
     const {posterPath, handleTvClick, tvRecommendationArr, handleRibbonTv, watchListTv}  = useContext(Context)
  
 
-    const tvRecommendTile = tvRecommendationArr.map((show, index) => 
+    const tvRecommendTile = tvRecommendationArr && tvRecommendationArr.map((show, index) => 
         
     <div className="slider-card" key={show.id}> 
     <span className="watchlist-ribbon">

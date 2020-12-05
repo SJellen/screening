@@ -10,7 +10,7 @@ function TvSimilar() {
     const {posterPath, handleTvClick, tvSimilarArr, handleRibbonTv, watchListTv}  = useContext(Context)
 
 
-    const tvSimilarTile = tvSimilarArr.map((show, index) => 
+    const tvSimilarTile = tvSimilarArr && tvSimilarArr.map((show, index) => 
         
     <div className="slider-card" key={show.id}> 
     <span className="watchlist-ribbon">

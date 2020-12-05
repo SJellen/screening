@@ -22,11 +22,9 @@ function Tv() {
     const {tvReviewTile} = TvReview()
     const {tvVideoTile} = TvVideo()
     const {tvProviderTile} = TvWatchBox()
-    const {tvEpisodesTile, lastEpisodeTile, nextEpisodeTile} = TvEpisodes()
     const releaseStatus = tvDetails.status === "Ended" ? getYear(tvDetails.last_air_date) : 'Current' 
     const {buy, rent, flatrate} = tvProviders
-    const lastEpisode = tvDetails.last_episode_to_air
-    const nextEpisode = tvDetails.next_episode_to_air
+   
     
 
     
@@ -74,24 +72,7 @@ function Tv() {
         </div>
 
         <span className="details-slider-title-episodes">Episodes</span> 
-        <div className="details-episode-container">
-        <div className="details-season-number-slider-container">
-            <div className="details-season-number-container">
-                {tvEpisodesTile}
-                <span className="details-episode-season-title">{tvDetails.seasons && tvDetails.seasons.length > 1 ? "Seasons" : "Season"}</span>
-            </div>
-        </div>
-            
-            <div className="details-last-next-episode-title">
-               {lastEpisode && <span>Last Episode</span>} 
-                {nextEpisode && <span>Next Episode</span>}
-            </div>
-            <div className="details-last-next-episode-container">
-            {lastEpisodeTile}
-            {nextEpisodeTile}
-            </div>
-            
-        </div>
+        <TvEpisodes />
 
         <div className="details-slider-video-watch-container">
                 
@@ -141,7 +122,7 @@ function Tv() {
            : '' }
 
 
-       { tvRecommendTile.length > 0 ?  <div className="details-slider-container">
+       {  tvRecommendTile.length > 0 ?  <div className="details-slider-container">
             <span className="details-slider-title">Recommendations</span>
             <div className="details-cast-slider">
                     {tvRecommendTile}
