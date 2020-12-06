@@ -31,7 +31,7 @@ function TvEpisodesMain() {
     )
 
     const lastEpisodeTile = ( lastEpisode && 
-        <div className="details-episode-card-season" key={lastEpisode.id}>
+        <div className="details-episode-card-season" key={lastEpisode.id} >
    <div className="details-episode-card-title">
        <span>{lastEpisode.name}</span>
        <span>

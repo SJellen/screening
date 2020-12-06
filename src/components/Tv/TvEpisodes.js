@@ -3,7 +3,7 @@ import {Context} from '../../Context'
 import TvEpisodesMain from '../Tv/Episodes/TvEpisodesMain'
 import EpisodesLanding from '../Tv/Episodes/EpisodesLanding'
 import TvEpisodesSeason from '../Tv/Episodes/TvEpisodesSeason'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 
 function TvEpisodes() {

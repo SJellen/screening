@@ -3,11 +3,11 @@ import {Context} from '../../../Context'
 import episodePlaceholder from '../../../assets/episodePlaceholder.jpg'
 
 function TvEpisodesSeason() {
-    const {tvSeasonArr, posterPath, dateSplitter}  = useContext(Context)
-    
+    const {tvSeasonArr, posterPath, dateSplitter, handleEpisodeTileClick}  = useContext(Context)
 
-    const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show) => 
-    <div className="details-episode-card-season-container" key={show.id}>
+
+    const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show, index) => 
+    <div className="details-episode-card-season-container" key={show.id} onClick={() => handleEpisodeTileClick(index, tvSeasonArr)}>
     <div className="details-episode-card-season" >
     <div className="details-episode-card-title">
             <span>{show.name}</span>
