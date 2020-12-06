@@ -1,17 +1,14 @@
 import React, {useContext} from 'react'
 import {Context} from '../../../Context'
-import TvEpisodesMain from '../Episodes/TvEpisodesMain'
 import episodePlaceholder from '../../../assets/episodePlaceholder.jpg'
 
 function TvEpisodesSeason() {
-    const {tvDetails, tvSeasonArr, posterPath, dateSplitter}  = useContext(Context)
-    const lastEpisode = tvDetails.last_episode_to_air
-    const nextEpisode = tvDetails.next_episode_to_air
-    const {lastEpisodeTile, nextEpisodeTile} = TvEpisodesMain()
+    const {tvSeasonArr, posterPath, dateSplitter}  = useContext(Context)
+    
 
     const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show) => 
-    <div className="details-episode-card-season-container">
-    <div className="details-episode-card-season" key={show.id}>
+    <div className="details-episode-card-season-container" key={show.id}>
+    <div className="details-episode-card-season" >
     <div className="details-episode-card-title">
             <span>{show.name}</span>
             <span><i className="im im-star"></i>{show.vote_average}</span>

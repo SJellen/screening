@@ -101,6 +101,8 @@ function useApiTv() {
             fetchPopularTv()
             fetchAirToday()
             fetchTrendingTv()
+            
+            
             // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])   
         
