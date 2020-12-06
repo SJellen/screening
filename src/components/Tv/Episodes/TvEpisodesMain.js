@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom'
 
 function TvEpisodesMain() {
 
-    const {tvDetails, posterPath, dateSplitter, handleSeasonClick, tvSeason, setTvSeason, setTempSeason, tempSeason}  = useContext(Context)
+    const {tvDetails, posterPath, dateSplitter, handleSeasonClick, tvSeason, setTvSeason}  = useContext(Context)
     const lastEpisode = tvDetails.last_episode_to_air
     const nextEpisode = tvDetails.next_episode_to_air
 
-    // console.log(tvSeason, tempSeason)
+  
     
 
     const tvEpisodesTile =  tvDetails.seasons && tvDetails.seasons.map((show) => 

@@ -112,7 +112,7 @@
 
 .details-season-switch {
     /* border: 1px solid red; */
-    min-height: 25rem;
+    min-height: fit-content;
     padding-bottom: 5rem;
 }
 

@@ -171,18 +171,8 @@ function ContextProvider({children}) {
 
     
     function handleSeasonClick(arr) {
-        
         let selection = arr
-
-       
         fetchTvSeasonArr(selection) 
-       
-        
-        
-         
-        // setTimeout(() => {
-        //     setTvSeason()
-        // }, 500)
     }
 
 
@@ -230,7 +220,7 @@ function ContextProvider({children}) {
 
 
     useEffect(() => {
-        console.log(window.location)
+        
         const path = window.location.pathname
         const splitPath = path.split('/')
         const cleanPath = splitPath.filter(item => item !== '')
@@ -252,6 +242,8 @@ function ContextProvider({children}) {
             fetchMovieProviders(pathMediaId)
             window.scrollTo(0, 0)
         } else if (pathMediaType === "tvPage") {
+
+            
             setMediaType('tv')
             setTvId(pathMediaId)
             fetchTvDetails(pathMediaId)

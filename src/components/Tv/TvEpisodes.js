@@ -10,11 +10,7 @@ function TvEpisodes() {
     const {tvDetails, tvSeason}  = useContext(Context)
     const {tvEpisodesTile} = TvEpisodesMain()
 
-    
-
-    console.log(tvSeason)
    
-
    return (
        <Router>
           <div className="details-episode-container">
@@ -24,24 +20,15 @@ function TvEpisodes() {
             <span className="details-episode-season-title">{tvDetails.seasons && tvDetails.seasons.length > 1 ? "Seasons" : "Season"}</span>
         </div>
     </div>
-
-
     <div className="details-season-switch">
-    
     <Switch>
         <Route exact path={`/tvPage/${tvDetails.id}`} component={EpisodesLanding} />
         <Route path={`/tvPage/${tvDetails.id}/${tvSeason}`} component={TvEpisodesSeason} />
     </Switch>
 
 
+    </div>  
     </div>
-        
-    </div>
-    
-      
-       
-        
-    
        </Router>
     
    )

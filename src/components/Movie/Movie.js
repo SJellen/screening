@@ -15,7 +15,7 @@ function Movie() {
 
     
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders, movieCredits}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -25,7 +25,7 @@ function Movie() {
     const {movieProviderTile} = MovieWatchBox()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
-    const {cast} = movieCredits
+    
     
     
     

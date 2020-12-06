@@ -9,11 +9,6 @@ function useMovieWatchBox() {
     const {posterPathSmall, movieProviders}  = useContext(Context)
     const {buy, rent, flatrate} = movieProviders
     
-
-   
-    console.log(movieProviders)
-    
-
     const movieBuyTile =  buy && buy.map((movie) => 
         <div className="details-watch-box-provider-icon" key={movie.provider_id}>
         <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
@@ -31,7 +26,6 @@ function useMovieWatchBox() {
         <img src={`${posterPathSmall}${movie.logo_path}`} alt="service icon"/>
         </div>
     ) 
-
 
 
     return {movieBuyTile, movieRentTile, movieStreamTile}
