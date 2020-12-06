@@ -323,8 +323,8 @@
 
 .details-last-next-episode-title {
     /* border: 1px solid red; */
-    width: 67.5%;
-    margin: 2rem auto -2rem auto;
+    width: 80%;
+    margin: 2rem auto 2rem auto;
     
     display: flex;
     justify-content: left;
@@ -334,7 +334,7 @@
 .details-last-next-episode-container{
     /* border: 1px solid green; */
     width: 90%;
-    margin: 5rem auto;
+    margin: 0rem auto;
     display: flex;
     justify-content: space-around;
 }

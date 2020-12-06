@@ -12,7 +12,7 @@ function TvEpisodes() {
 
    
    return (
-       <Router>
+      
           <div className="details-episode-container">
     <div className="details-season-number-slider-container">
         <div className="details-season-number-container">
@@ -22,14 +22,14 @@ function TvEpisodes() {
     </div>
     <div className="details-season-switch">
     <Switch>
-        <Route exact path={`/tvPage/${tvDetails.id}`} component={EpisodesLanding} />
+        <Route exact path={`/tvPage/${tvDetails.id}/`} component={EpisodesLanding} />
         <Route path={`/tvPage/${tvDetails.id}/${tvSeason}`} component={TvEpisodesSeason} />
     </Switch>
 
 
     </div>  
     </div>
-       </Router>
+      
     
    )
 

@@ -19,7 +19,7 @@ function TvSimilar() {
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, tvSimilarArr)} style={{color: ""}}></i>
        }
         </span>
-    <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvSimilarArr, prevState => prevState)}/></Link>
+    <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvSimilarArr)}/></Link>
     <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
     <span className="slider-title" >{show.name}</span>
     </div>

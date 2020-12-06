@@ -165,6 +165,7 @@ function ContextProvider({children}) {
         fetchTvReviews(selection)
         fetchTvVideos(selection)
         fetchTvProviders(selection)
+        
         window.scrollTo(0, 0)
     }
 

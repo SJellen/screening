@@ -10,6 +10,10 @@ function TvEpisodesMain() {
     const lastEpisode = tvDetails.last_episode_to_air
     const nextEpisode = tvDetails.next_episode_to_air
 
+   
+    
+
+
   
     
 
@@ -17,8 +21,10 @@ function TvEpisodesMain() {
         <div className="detail-season-number-box" key={show.id}>
            <Link to={`/tvPage/${tvDetails.id}/${tvSeason}`} style={{ textDecoration: 'none', color: "white"  }}>
                <span onClick={(e) =>   handleSeasonClick(show.season_number)}
-                   onMouseDown={(e) => setTvSeason(show.season_number)}
-                className="detail-season-number">{show.season_number === 0 ? "Specials" : show.season_number}</span>
+                     onMouseDown={(e) => setTvSeason(show.season_number)}
+                     className="detail-season-number"
+                     >{show.season_number === 0 ? "Specials" : show.season_number}
+                </span>
            </Link> 
         </div>
     
