@@ -1,13 +1,13 @@
 import React, {useContext} from 'react'
 import {Context} from '../../../Context'
 import episodePlaceholder from '../../../assets/episodePlaceholder.jpg'
-import {Link} from 'react-router-dom'
+
 
 
 
 function TvNextEpisodeTile() {
 
-    const {tvDetails, posterPath, dateSplitter, handleSeasonClick, tvSeason, setTvSeason}  = useContext(Context)
+    const {tvDetails, posterPath, dateSplitter}  = useContext(Context)
     const nextEpisode = tvDetails.next_episode_to_air
 
 
