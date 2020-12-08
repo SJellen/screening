@@ -105,24 +105,13 @@ function TvEpisodesSeason() {
         
                 } 
            
-
-
-           
-
-        
-
-
-
     </div>
     )
-
-
 
     return (
         <div>
              {tvSeasonEpisodeTile}
         </div>
-    
     )
 }
 

@@ -1,12 +1,14 @@
 import React, {useContext} from 'react'
 import {Context} from '../../../Context'
-import TvEpisodesMain from '../Episodes/TvEpisodesMain'
+import TvLastEpisodeTile from './TvLastEpisodeTile'
+import TvNextEpisodeTile from './TvNextEpisodeTile'
 
 function EpisodesLanding() {
     const {tvDetails}  = useContext(Context)
     const lastEpisode = tvDetails.last_episode_to_air
     const nextEpisode = tvDetails.next_episode_to_air
-    const {lastEpisodeTile, nextEpisodeTile} = TvEpisodesMain()
+    const {lastEpisodeTile} = TvLastEpisodeTile()
+    const {nextEpisodeTile} = TvNextEpisodeTile()
 
 
     return (
