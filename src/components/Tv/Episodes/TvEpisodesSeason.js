@@ -53,10 +53,10 @@ function TvEpisodesSeason() {
             
             <div className="details-slider-container-episode" >
             { show.guest_stars.length > 0 ?
-                <div>
+                <div key={show.id}>
                    <span className="details-slider-title-episode-dropdown">Guest Stars</span>
-                            <div className="slider-container-episode" style={{backgroundColor: "black"}}>
-                            <div className="slider-sub-container-episode" style={{backgroundColor: "black"}}>
+                            <div className="slider-container-episode" >
+                            <div className="slider-sub-container-episode" >
                         { show.guest_stars && show.guest_stars.map((item, index) => 
                             
                         <div className="slider-card-episode" key={item.credit_id}> 
@@ -78,10 +78,10 @@ function TvEpisodesSeason() {
 
             { show.crew.length > 0 ?
 
-                <div>
+                <div key={show.id}>
                 <span className="details-slider-title-episode-dropdown">Crew</span>
-                        <div className="slider-container-episode" style={{backgroundColor: "black"}}>
-                        <div className="slider-sub-container-episode" style={{backgroundColor: "black"}}>
+                        <div className="slider-container-episode" >
+                        <div className="slider-sub-container-episode" >
 
                         { show.crew && show.crew.map((item, index) => 
                         <div className="slider-card-episode" key={item.credit_id}> 
