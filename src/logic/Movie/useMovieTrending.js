@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 function useMovieTrending() {
     const {movieTrending, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie}  = useContext(Context)
 
-
+   
     
     const movieTrendingTile = movieTrending.map((movie, index) => 
         
