@@ -10,7 +10,6 @@ function TvEpisodesSeason() {
 
     function handleEpisodeTileClick(e, arr) {
         let selection = arr[e].id
-        console.log(selection)
         setEpisodeCast(selection)
         if (selection === showEpisodeCast) {
             setEpisodeCast()
@@ -18,7 +17,7 @@ function TvEpisodesSeason() {
     }
     
     
-    console.log(tvSeasonArr)
+   
 
 
     const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show, index) => 
@@ -51,9 +50,9 @@ function TvEpisodesSeason() {
             </div>
                 { showEpisodeCast === show.id ?
             
-            <div className="details-slider-container-episode" >
+            <div className="details-slider-container-episode" key={show.id}>
             { show.guest_stars.length > 0 ?
-                <div key={show.id}>
+                <div >
                    <span className="details-slider-title-episode-dropdown">Guest Stars</span>
                             <div className="slider-container-episode" >
                             <div className="slider-sub-container-episode" >
