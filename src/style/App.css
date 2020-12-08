@@ -25,6 +25,12 @@ html {
   
 }
 
+.slider-container-episode {
+  padding: 0;
+  
+  
+}
+
 .slider-label {
   display: flex;
   font-size: 2rem;
@@ -50,6 +56,23 @@ html {
   }
 
 
+  .slider-sub-container-episode {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: row;
+    overflow:scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 30rem;
+    content-visiblity: auto;
+  }
+  
+  .slider-sub-container-episode::-webkit-scrollbar {
+     display: none;
+    }
+
+
 
 .slider-card {
   padding: 2rem;
@@ -58,6 +81,27 @@ html {
   background-color: #1B1B1B;
   margin: 0 1rem;
 }
+
+.slider-card-episode {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #1B1B1B;
+  margin: 0 .5rem;
+}
+
+.slider-card-episode > img:hover {
+  cursor: pointer;
+}
+
+.slider-card-episode-image {
+  /* border: 1px solid red; */
+  height: 20rem;
+}
+
+
+
+
 
 .slider-card > img:hover {
   cursor: pointer;
@@ -96,6 +140,22 @@ html {
   padding-top: 1rem;
   text-align: left;
   font-size: 1.25rem;
+  margin-top: .25rem;
+  color: silver;
+}
+
+
+.slider-name-episode {
+  padding-top: 1rem;
+  text-align: left;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.slider-character-episode {
+  padding-top: 0;
+  text-align: left;
+  font-size: 1rem;
   margin-top: .25rem;
   color: silver;
 }

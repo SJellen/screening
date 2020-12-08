@@ -6,22 +6,26 @@ import {Link} from 'react-router-dom'
 
 function TvEpisodesSeason() {
     const {tvSeasonArr, posterPath, dateSplitter,   handlePersonClick}  = useContext(Context)
-    const {showEpisodeCast, setEpisodeCast} = useState(false)
+    const [showEpisodeCast, setEpisodeCast] = useState()
 
     function handleEpisodeTileClick(e, arr) {
-        let selection = arr[e]
-        console.log(selection.crew, selection.guest_stars)
+        let selection = arr[e].id
+        console.log(selection)
+        setEpisodeCast(selection)
+        if (selection === showEpisodeCast) {
+            setEpisodeCast()
+        }
     }
     
     
-
+    console.log(tvSeasonArr)
 
 
     const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show, index) => 
     
     <div key={show.id}>
-        <div className="details-episode-card-season-container"  onClick={() => handleEpisodeTileClick(index, tvSeasonArr)}>
-            <div className="details-episode-card-season" >
+        <div className="details-episode-card-season-container"   >
+            <div className="details-episode-card-season-tile" style={{width: showEpisodeCast === show.id ? "95%" : ''}} onClick={() => handleEpisodeTileClick(index, tvSeasonArr)} >
             <div className="details-episode-card-title">
                     <span>{show.name}</span>
                     <span><i className="im im-star"></i>{show.vote_average}</span>
@@ -45,23 +49,23 @@ function TvEpisodesSeason() {
 
             </div>
             </div>
-
+                { showEpisodeCast === show.id ?
             
-            <div className="details-slider-container" style={{height: "auto", backgroundColor: "black", color: "white", display: "flex", overflow: "hidden"}}>
+            <div className="details-slider-container-episode" >
             { show.guest_stars.length > 0 ?
                 <div>
-                   <span className="details-slider-title">Guest Stars</span>
-                            <div className="slider-container" style={{backgroundColor: "black"}}>
-                            <div className="slider-sub-container" style={{backgroundColor: "black"}}>
+                   <span className="details-slider-title-episode-dropdown">Guest Stars</span>
+                            <div className="slider-container-episode" style={{backgroundColor: "black"}}>
+                            <div className="slider-sub-container-episode" style={{backgroundColor: "black"}}>
                         { show.guest_stars && show.guest_stars.map((item, index) => 
                             
-                        <div className="slider-card" key={item.credit_id}> 
+                        <div className="slider-card-episode" key={item.credit_id}> 
                         <Link to={`/personPage/${item.id}`}>
-                            <img  src={item.profile_path !== null ? `${posterPath}${item.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, show.guest_stars)}/> 
+                            <img className="slider-card-episode-image" src={item.profile_path !== null ? `${posterPath}${item.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, show.guest_stars)}/> 
                         </Link>
                     
-                        <span className="slider-name">{item.name}</span>
-                        <span className="slider-character">{item.job}</span>
+                        <span className="slider-name-episode">{item.name}</span>
+                        <span className="slider-character-episode">{item.character}</span>
                     </div>    
                     
                             )
@@ -70,23 +74,20 @@ function TvEpisodesSeason() {
                         </div> 
                 </div> : ''
                 
-
-
-
             }
 
             { show.crew.length > 0 ?
 
                 <div>
-                <span className="details-slider-title">Crew</span>
-                        <div className="slider-container" style={{backgroundColor: "black"}}>
-                        <div className="slider-sub-container" style={{backgroundColor: "black"}}>
+                <span className="details-slider-title-episode-dropdown">Crew</span>
+                        <div className="slider-container-episode" style={{backgroundColor: "black"}}>
+                        <div className="slider-sub-container-episode" style={{backgroundColor: "black"}}>
 
                         { show.crew && show.crew.map((item, index) => 
-                        <div className="slider-card" key={item.credit_id}> 
-                        <Link to={`/personPage/${item.id}`}><img  src={item.profile_path !== null ? `${posterPath}${item.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, show.crew)}/></Link>
-                        <span className="slider-name">{item.name}</span>
-                        <span className="slider-character">{item.job}</span>
+                        <div className="slider-card-episode" key={item.credit_id}> 
+                        <Link to={`/personPage/${item.id}`}><img className="slider-card-episode-image" src={item.profile_path !== null ? `${posterPath}${item.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, show.crew)}/></Link>
+                        <span className="slider-name-episode">{item.name}</span>
+                        <span className="slider-character-episode">{item.job}</span>
                     </div> 
                         
                         
@@ -99,13 +100,10 @@ function TvEpisodesSeason() {
 
                 </div> : ''
             }
-           
-
-       
-
-        </div>
         
-            
+        </div> : ''
+        
+                } 
            
 
 

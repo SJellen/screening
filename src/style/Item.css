@@ -263,11 +263,31 @@
   }
 
 
+.details-slider-container-episode {
+/* border: 1px solid red; */
+display: flex;
+height: auto;
+flex-direction: column;
+background-color: rgb(10, 10, 10);
+max-width: 75vw;
+padding: 0 2rem 2rem 2rem;
+margin: 0rem auto 0 auto;
+color: white;
+
+}
+
+
   .details-slider-title {
       display: flex;
       font-size: 2rem;
       padding: 2rem;
   }
+
+  .details-slider-title-episode-dropdown {
+    display: flex;
+    font-size: 1.5rem;
+    padding: 2rem;
+}
 
   .details-slider-title-video {
     display: flex;
@@ -355,6 +375,17 @@
     
 }
 
+.details-episode-card-season-tile {
+    /* border: 1px solid red; */
+    background-color: rgba(19, 19, 19, .75);
+    width: 90%;
+    height:auto;
+    
+}
+
+.details-episode-card-season-tile:hover {
+    cursor: pointer;
+}
 
 
 .details-episode-card-img-container {
