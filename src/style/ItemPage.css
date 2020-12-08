@@ -119,15 +119,16 @@
 
 .menu-list-container {
   /* border: 1px solid gold; */
-  width: 90vw;
+  width: 80vw;
   margin: 8rem auto;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
 .menu-list {
   /* border: 1px solid red; */
-  width: 30vw;
+  width: 20vw;
   margin: 2rem auto;
 }
 
