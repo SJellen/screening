@@ -9,7 +9,7 @@ function MovieRecommendations() {
 
     const {posterPath, handleMovieClick, movieRecommendationArr, handleRibbonMovie, watchListMovie}  = useContext(Context)
 
-    const movieRecommendTile = movieRecommendationArr.map((movie, index) => 
+    const movieRecommendTile = movieRecommendationArr && movieRecommendationArr.map((movie, index) => 
         
     <div className="slider-card" key={movie.id}>
     <span className="watchlist-ribbon">

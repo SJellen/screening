@@ -174,6 +174,7 @@ function ContextProvider({children}) {
     function handleSeasonClick(arr) {
         let selection = arr
         fetchTvSeasonArr(selection) 
+       
     }
 
 
@@ -258,8 +259,9 @@ function ContextProvider({children}) {
             fetchTvReviews(pathMediaId)
             fetchTvVideos(pathMediaId)
             fetchTvProviders(pathMediaId)
-            setTvSeason(pathSeason)
-            fetchTvSeasonArr(pathSeason)
+            // setTvSeason(pathSeason)
+            // fetchTvSeasonArr(pathSeason)
+           console.log(pathSeason)
             window.scrollTo(0, 0)
         } else if (pathMediaType === "personPage") {
             setMediaType('person')
@@ -273,7 +275,7 @@ function ContextProvider({children}) {
     }, [])
 
    
-
+    console.log(tvSeasonArr)
    
 
 

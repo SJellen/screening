@@ -179,10 +179,13 @@ function useApiTv() {
 
 
     const fetchTvSeasonArr = async (x) => {
+            
             await fetch(`https://api.themoviedb.org/3/tv/${tvId}/season/${x}?api_key=${apiKEY}&language=en-US`)
             .then(res => res.json())
             .then((data) => {
+                
                     setTvSeasonArr(data.episodes)
+                    
             }
     
             )

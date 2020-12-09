@@ -119,7 +119,7 @@ function Movie() {
 
         
 
-        { crewMovieTile.length > 0 ? 
+        { crewMovieTile && crewMovieTile.length > 0 ? 
         <div className="details-slider-container">
                 <span className="details-slider-title">Crew</span>
                 <div className="details-cast-slider">
