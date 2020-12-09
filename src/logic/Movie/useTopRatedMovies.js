@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useTopRatedMovies() {
-    const {topRatedMovies, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie}  = useContext(Context)
+    const {topRatedMovies, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, ratingTruncate}  = useContext(Context)
 
  
     const topRatedMoviesTile = topRatedMovies.map((movie, index) => 
@@ -17,7 +17,7 @@ function useTopRatedMovies() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, topRatedMovies)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title">{movie.title}</span>
         </div>
         )

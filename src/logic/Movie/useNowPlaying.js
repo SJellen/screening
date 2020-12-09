@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useNowPlaying() {
-    const {posterPath, nowPlaying, handleMovieClick, handleRibbonMovie, watchListMovie}  = useContext(Context)
+    const {posterPath, nowPlaying, handleMovieClick, handleRibbonMovie, watchListMovie, ratingTruncate}  = useContext(Context)
 
 
     const nowPlayingTile = nowPlaying.map((movie, index) => 
@@ -17,7 +17,7 @@ function useNowPlaying() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, nowPlaying)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title">{movie.title}</span>
         </div>
         )

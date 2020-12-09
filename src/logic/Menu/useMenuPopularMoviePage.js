@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 function useMenuPopularMoviePage() {
-    const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie,  menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6 }  = useContext(Context)
+    const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie,  menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, ratingTruncate }  = useContext(Context)
 
   
     const menuPopularPageTile1 = menuPopularMoviesPage1.map((movie, index) => 
@@ -18,7 +18,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage1)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -34,7 +34,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage2)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -51,7 +51,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage3)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -67,7 +67,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage4)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -83,7 +83,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage5)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -100,7 +100,7 @@ function useMenuPopularMoviePage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuPopularMoviesPage6)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>

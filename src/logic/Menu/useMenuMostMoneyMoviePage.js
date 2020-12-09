@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 function useMenuMostMoneyPage() {
-    const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6 }  = useContext(Context)
+    const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, ratingTruncate}  = useContext(Context)
 
   
    
@@ -19,7 +19,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, menuMostMoneyMovies1)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -35,7 +35,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuMostMoneyMovies2)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -52,7 +52,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuMostMoneyMovies3)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -68,7 +68,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuMostMoneyMovies4)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -84,7 +84,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuMostMoneyMovies5)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
@@ -101,7 +101,7 @@ function useMenuMostMoneyPage() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuMostMoneyMovies6)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>

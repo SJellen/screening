@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function MovieRecommendations() {
 
-    const {posterPath, handleMovieClick, movieRecommendationArr, handleRibbonMovie, watchListMovie}  = useContext(Context)
+    const {posterPath, handleMovieClick, movieRecommendationArr, handleRibbonMovie, watchListMovie, ratingTruncate}  = useContext(Context)
 
     const movieRecommendTile = movieRecommendationArr && movieRecommendationArr.map((movie, index) => 
         
@@ -19,7 +19,7 @@ function MovieRecommendations() {
        }
         </span> 
     <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, movieRecommendationArr, prevState => prevState)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+    {ratingTruncate(movie)}
     <span className="slider-title" >{movie.title}</span>
     </div>
     )

@@ -5,10 +5,8 @@ import {Link} from 'react-router-dom'
 
 
 function useMovieTrending() {
-    const {movieTrending, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie}  = useContext(Context)
+    const {movieTrending, posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, ratingTruncate}  = useContext(Context)
 
-   
-    
     const movieTrendingTile = movieTrending.map((movie, index) => 
         
         <div className="slider-card" key={movie.id}> 
@@ -19,7 +17,7 @@ function useMovieTrending() {
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, movieTrending)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{movie.vote_average}</span>
+        {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         
         </div>
