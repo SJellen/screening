@@ -45,10 +45,10 @@ function Tv() {
         <div className="detail-word-box">
             <div className="details-top-word-box">
                 <span className="details-title">{tvDetails.name}</span>
-                    <div className="details-score-star-box">
+                { tvDetails.vote_count !== 0 ?   <div className="details-score-star-box">
                         <i className="im im-star details-star"></i>
                     <span className="details-score">{tvDetails.vote_average}</span>
-                    </div>
+                    </div> : ''}
             </div>
             
             

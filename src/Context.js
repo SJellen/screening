@@ -182,14 +182,9 @@ function ContextProvider({children}) {
     }
 
 
-    // function handleEpisodeTileClick(e, arr) {
-    //     const selection = arr[e]
-    //     console.log(selection.crew, selection.guest_stars)
-    // }
-
 
    
-
+    console.log(movieDetails)
 
     
 
@@ -279,7 +274,7 @@ function ContextProvider({children}) {
     }, [])
 
    
-    console.log(tvSeasonArr)
+    
    
 
 
