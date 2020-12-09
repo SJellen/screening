@@ -198,7 +198,7 @@ function useApiTv() {
 
 
 
-    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders, tvSeason, setTvSeason, fetchTvSeasonArr, tvSeasonArr}
+    return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders, tvSeason, setTvSeason, fetchTvSeasonArr, tvSeasonArr, setTvSeasonArr}
 }
 
 export default useApiTv

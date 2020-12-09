@@ -7,7 +7,7 @@ import episodePlaceholder from '../../../assets/episodePlaceholder.jpg'
 
 function TvNextEpisodeTile() {
 
-    const {tvDetails, posterPath, dateSplitter}  = useContext(Context)
+    const {tvDetails, posterPath, dateSplitter, ratingTruncate}  = useContext(Context)
     const nextEpisode = tvDetails.next_episode_to_air
 
 
@@ -15,9 +15,7 @@ function TvNextEpisodeTile() {
         <div className="details-episode-card-season" key={nextEpisode.id}>
    <div className="details-episode-card-title">
        <span>{nextEpisode.name}</span>
-       <span>
-       
-       <i className="im im-star"></i>{nextEpisode.vote_average}</span>
+       {ratingTruncate(nextEpisode)}
    </div>
    <div className="details-episode-season-img-overview-container">
    <div className="details-episode-card-img-season-container">

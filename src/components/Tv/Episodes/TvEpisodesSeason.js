@@ -5,7 +5,7 @@ import blankSquare from '../../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function TvEpisodesSeason() {
-    const {tvSeasonArr, posterPath, dateSplitter,   handlePersonClick, tvSeason}  = useContext(Context)
+    const {tvSeasonArr, posterPath, dateSplitter,   handlePersonClick, tvSeason, ratingTruncate}  = useContext(Context)
     const [showEpisodeCast, setEpisodeCast] = useState()
 
     function handleEpisodeTileClick(e, arr) {
@@ -27,7 +27,7 @@ function TvEpisodesSeason() {
             <div className="details-episode-card-season-tile" style={{width: showEpisodeCast === show.id ? "95%" : ''}} onClick={() => handleEpisodeTileClick(index, tvSeasonArr)} >
             <div className="details-episode-card-title">
                     <span>{show.name}</span>
-                    <span><i className="im im-star"></i>{show.vote_average}</span>
+                    {ratingTruncate(show)}
                 </div>
                 <div className="details-episode-season-img-overview-container">
                 <div className="details-episode-card-img-season-container">

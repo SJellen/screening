@@ -7,7 +7,7 @@ import episodePlaceholder from '../../../assets/episodePlaceholder.jpg'
 
 function TvLastEpisodeTile() {
 
-    const {tvDetails, posterPath, dateSplitter}  = useContext(Context)
+    const {tvDetails, posterPath, dateSplitter, ratingTruncate}  = useContext(Context)
     const lastEpisode = tvDetails.last_episode_to_air
 
 
@@ -15,8 +15,7 @@ function TvLastEpisodeTile() {
         <div className="details-episode-card-season" key={lastEpisode.id} >
    <div className="details-episode-card-title">
        <span>{lastEpisode.name}</span>
-       <span>
-       <i className="im im-star"></i>{lastEpisode.vote_average}</span>
+       {ratingTruncate(lastEpisode)}
    </div>
    <div className="details-episode-season-img-overview-container">
    <div className="details-episode-card-img-season-container">

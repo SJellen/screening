@@ -21,7 +21,7 @@ function ContextProvider({children}) {
 
     const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded,  setLastMovieId, fetchTrendingMovie, movieTrending, fetchMovieProviders, movieProviders, setMovieDetails, setMovieRecommendationArr, setMovieSimilarArr, setMovieReviews, setMovieVideos, setMovieProviders} = useApiMovie()
 
-    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded,  setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders, tvSeason, setTvSeason, fetchTvSeasonArr, tvSeasonArr } = useApiTv()
+    const {topRatedTv, popularTv, airingToday,   tvRecommendationID, setTvRecommendationID,   setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded,  setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders, tvSeason, setTvSeason, fetchTvSeasonArr, tvSeasonArr, setTvSeasonArr } = useApiTv()
 
     const {handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, handleMenuTrendingMoviesClick, menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6  } = useMenuMovieApi()
 
@@ -177,6 +177,7 @@ function ContextProvider({children}) {
     
     function handleSeasonClick(arr) {
         let selection = arr
+        setTvSeasonArr([])
         fetchTvSeasonArr(selection) 
        
     }
