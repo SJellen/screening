@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 function TvRecommendations() {
 
 
-    const {posterPath, handleTvClick, tvRecommendationArr, handleRibbonTv, watchListTv}  = useContext(Context)
+    const {posterPath, handleTvClick, tvRecommendationArr, handleRibbonTv, watchListTv, ratingTruncate}  = useContext(Context)
  
 
     const tvRecommendTile = tvRecommendationArr && tvRecommendationArr.map((show, index) => 
@@ -21,7 +21,7 @@ function TvRecommendations() {
        }
         </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvRecommendationArr)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title" >{show.name}</span>
     </div>
     )

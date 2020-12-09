@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function TvSimilar() {
 
-    const {posterPath, handleTvClick, tvSimilarArr, handleRibbonTv, watchListTv}  = useContext(Context)
+    const {posterPath, handleTvClick, tvSimilarArr, handleRibbonTv, watchListTv, ratingTruncate}  = useContext(Context)
 
 
     const tvSimilarTile = tvSimilarArr && tvSimilarArr.map((show, index) => 
@@ -20,7 +20,7 @@ function TvSimilar() {
        }
         </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvSimilarArr)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title" >{show.name}</span>
     </div>
     )

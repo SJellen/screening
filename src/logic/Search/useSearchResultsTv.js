@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useSearchResultsTv() {
-    const {posterPath,handleTvClick,searchResultsTv, handleRibbonTv, watchListTv}  = useContext(Context)
+    const {posterPath,handleTvClick,searchResultsTv, handleRibbonTv, watchListTv, ratingTruncate}  = useContext(Context)
 
 
     const searchResultsTvTile = searchResultsTv.map((show, index) => 
@@ -18,7 +18,7 @@ function useSearchResultsTv() {
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, searchResultsTv, true)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+        {ratingTruncate(show)}
         <span className="slider-title">{show.name}</span>
         </div>
         )
