@@ -283,6 +283,15 @@ color: white;
       padding: 2rem;
   }
 
+
+  .details-slider-title-episode-season-number {
+      
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      padding: 2rem;
+  }
+
   .details-slider-title-episode-dropdown {
     display: flex;
     font-size: 1.5rem;

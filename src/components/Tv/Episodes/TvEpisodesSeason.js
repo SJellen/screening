@@ -5,7 +5,7 @@ import blankSquare from '../../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function TvEpisodesSeason() {
-    const {tvSeasonArr, posterPath, dateSplitter,   handlePersonClick}  = useContext(Context)
+    const {tvSeasonArr, posterPath, dateSplitter,   handlePersonClick, tvSeason}  = useContext(Context)
     const [showEpisodeCast, setEpisodeCast] = useState()
 
     function handleEpisodeTileClick(e, arr) {
@@ -17,7 +17,7 @@ function TvEpisodesSeason() {
     }
     
     
-   
+   console.log(tvSeasonArr)
 
 
     const tvSeasonEpisodeTile = tvSeasonArr && tvSeasonArr.map((show, index) => 
@@ -109,6 +109,7 @@ function TvEpisodesSeason() {
 
     return (
         <div>
+        <span className="details-slider-title-episode-season-number">{tvSeason !== 0 ? "Season" : 'Specials'} {tvSeason !== 0 ? tvSeason : ''}</span>
              {tvSeasonEpisodeTile}
         </div>
     )

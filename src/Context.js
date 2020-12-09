@@ -184,7 +184,7 @@ function ContextProvider({children}) {
 
 
    
-    console.log(movieDetails)
+    
 
     
 
@@ -231,8 +231,7 @@ function ContextProvider({children}) {
         const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1], pathSeason = cleanPath[2]
         
 
-        // console.log(cleanPath, pathMediaType, pathMediaId)
-        // console.log(pathMediaType)
+     
         if (pathMediaType === "moviePage") {
             setMediaType('movie')
             setMovieId(pathMediaId)
@@ -247,7 +246,6 @@ function ContextProvider({children}) {
             window.scrollTo(0, 0)
         } else if (pathMediaType === "tvPage") {
 
-            
             setMediaType('tv')
             setTvId(pathMediaId)
             fetchTvDetails(pathMediaId)
@@ -258,9 +256,7 @@ function ContextProvider({children}) {
             fetchTvReviews(pathMediaId)
             fetchTvVideos(pathMediaId)
             fetchTvProviders(pathMediaId)
-            // setTvSeason(pathSeason)
-            // fetchTvSeasonArr(pathSeason)
-           console.log(pathSeason)
+            
             window.scrollTo(0, 0)
         } else if (pathMediaType === "personPage") {
             setMediaType('person')
