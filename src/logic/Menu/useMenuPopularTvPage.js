@@ -4,7 +4,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 function useMenuPopularTvPage() {
-    const {posterPath,  handleTvClick, handleRibbonTv, watchListTv,  menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6}  = useContext(Context)
+    const {posterPath,  handleTvClick, handleRibbonTv, watchListTv,  menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, ratingTruncate}  = useContext(Context)
 
     const menuPopularTvPageTile1 = menuPopularTvPage1.map((show, index) => 
         
@@ -16,7 +16,7 @@ function useMenuPopularTvPage() {
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage1)}/></Link>
-        <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+        {ratingTruncate(show)}
         <span className="slider-title">{show.name}</span>
         </div>
         )
@@ -32,7 +32,7 @@ function useMenuPopularTvPage() {
     }
     </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage2)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title">{show.name}</span>
     </div>
     )
@@ -47,7 +47,7 @@ function useMenuPopularTvPage() {
     }
     </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage3)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title">{show.name}</span>
     </div>
     )
@@ -62,7 +62,7 @@ function useMenuPopularTvPage() {
     }
     </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage4)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title">{show.name}</span>
     </div>
     )
@@ -77,7 +77,7 @@ function useMenuPopularTvPage() {
     }
     </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage5)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title">{show.name}</span>
     </div>
     )
@@ -92,7 +92,7 @@ function useMenuPopularTvPage() {
     }
     </span>
     <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, menuPopularTvPage6)}/></Link>
-    <span className="slider-score"><i className="im im-star"></i>{show.vote_average}</span>
+    {ratingTruncate(show)}
     <span className="slider-title">{show.name}</span>
     </div>
     )
