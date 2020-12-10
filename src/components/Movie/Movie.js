@@ -25,7 +25,8 @@ function Movie() {
     const {movieProviderTile} = MovieWatchBox()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
-    
+
+    console.log(movieDetails)
     
     
     

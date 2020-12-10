@@ -27,7 +27,7 @@ function MovieWatchBox() {
            </div> : ''
            }
 
-           {  movieBuyTile && movieBuyTile > 0  ? 
+           {  movieBuyTile && movieBuyTile.length > 0  ? 
            <div>
                <span className="details-watch-box-container-title">Buy</span>
            <div className="details-watch-box-provider-container">{movieBuyTile}</div>
