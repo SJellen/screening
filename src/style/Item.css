@@ -83,7 +83,7 @@
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
-
+    line-height: 2;
 }
 
 .details-midbottom-word-box {
@@ -121,7 +121,7 @@
 
 
 .details-movie-details-container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     
     width: 70vw;
     margin: 0 auto 5rem auto;
@@ -131,7 +131,7 @@
 }
 
 .details-movie-details-tile {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 90%;
     margin: 2rem auto;
     display: flex;
@@ -139,7 +139,7 @@
 }
 
 .movie-details-list-container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 40%;
     padding: 2rem;
     margin: 0 auto;
@@ -149,16 +149,16 @@
 
 .movie-details-list-item {
     list-style: none;
-    color: blue;
+    /* color: blue; */
     font-size: 1.25rem;
     display: flex;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     padding: 1rem;
     
 }
 
 .movie-details-list {
-    border: 1px solid gold;
+    /* border: 1px solid gold; */
     display: flex;
     flex-direction: column;
     
@@ -166,20 +166,27 @@
    
 }
 
+.movie-details-list-logo {
+    /* border: 1px solid slateblue; */
+    background-color: white;
+    margin-right: 2rem;
+}
+
 .movie-details-list-title {
-    color: red;
-    border: 1px solid gray;
+    color: white;
+    border-bottom: 1px solid rgb(73, 84, 100);
     font-size: 1.5rem;
     display: flex;
     margin-top: 1rem;
     justify-content: center;
+    line-height: 2;
 }
 
 
 
 
 .movie-detail-homepage-link-container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     justify-content: flex-end;
     margin-top: 2rem;

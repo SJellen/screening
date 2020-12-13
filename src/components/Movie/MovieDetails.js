@@ -23,7 +23,7 @@ function MovieDetails() {
     const productionCompaniesList = production_companies && production_companies.map(company => 
     <div key={company.id}>
 
-        <li className="movie-details-list-item"><span>{company.logo_path !== null ? <img src={`${posterPathSmall}${company.logo_path}`} alt="company logo"/> : ''}</span>{company.name}</li> 
+        <li className="movie-details-list-item"><span>{company.logo_path !== null ? <img className="movie-details-list-logo" src={`${posterPathSmall}${company.logo_path}`} alt="company logo"/> : ''}</span>{company.name}</li> 
     </div>)       
         
         
@@ -52,7 +52,7 @@ function MovieDetails() {
         </ul>  
         </div>
         <div className="movie-details-list-container">
-          <span className="movie-details-list-title">Finance</span>
+          <span className="movie-details-list-title">Finances</span>
         <ul className="movie-details-list">
             <li className="movie-details-list-item">Budget: ${budget}</li>
             <li className="movie-details-list-item">Revenue: ${revenue}</li>
