@@ -158,6 +158,22 @@
 
 
 
+.movie-detail-homepage-link-container {
+    border: 1px solid green;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    
+}
+
+.movie-detail-homepage-link {
+    fill: #FFD700;
+    
+    margin-right: 2rem;
+}
+
+
+
 
 
 
