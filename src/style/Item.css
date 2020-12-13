@@ -83,6 +83,7 @@
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
+
 }
 
 .details-midbottom-word-box {
@@ -124,35 +125,54 @@
     
     width: 70vw;
     margin: 0 auto 5rem auto;
-    height: 300px;
+    height: auto;
     background-color: #1B1B1B;
-    
+    padding-bottom: 3rem;
 }
 
 .details-movie-details-tile {
     border: 1px solid red;
     width: 90%;
-    margin: 0 auto;
+    margin: 2rem auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .movie-details-list-container {
     border: 1px solid green;
-    width: 30%;
+    width: 40%;
+    padding: 2rem;
+    margin: 0 auto;
+    
     
 }
 
 .movie-details-list-item {
     list-style: none;
     color: blue;
+    font-size: 1.25rem;
+    display: flex;
+    border: 1px solid pink;
+    padding: 1rem;
+    
 }
 
 .movie-details-list {
-    list-style: none;
+    border: 1px solid gold;
+    display: flex;
+    flex-direction: column;
+    
+    
+   
 }
 
 .movie-details-list-title {
     color: red;
+    border: 1px solid gray;
+    font-size: 1.5rem;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
 }
 
 

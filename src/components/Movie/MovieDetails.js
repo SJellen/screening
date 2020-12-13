@@ -34,7 +34,7 @@ function MovieDetails() {
     <div key={id} className="details-movie-details-tile">
     
         <div className="movie-details-list-container">
-          <span className="movie-details-list-title">Genre</span>
+          <span className="movie-details-list-title">Genres</span>
         <ul className="movie-details-list">
             {genrelist}
         </ul>  
@@ -54,9 +54,9 @@ function MovieDetails() {
         <div className="movie-details-list-container">
           <span className="movie-details-list-title">Finance</span>
         <ul className="movie-details-list">
-            <li>Budget: ${budget}</li>
-            <li>Revenue: ${revenue}</li>
-            <li>Profit/Loss: ${revenue - budget}</li>
+            <li className="movie-details-list-item">Budget: ${budget}</li>
+            <li className="movie-details-list-item">Revenue: ${revenue}</li>
+            <li className="movie-details-list-item">Profit/Loss: ${revenue - budget}</li>
         </ul>  
         </div>
         
