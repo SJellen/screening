@@ -7,6 +7,7 @@ import MovieSimilar from './MovieSimilar'
 import MovieReview from './MovieReview'
 import MovieVideo from './MovieVideo'
 import MovieWatchBox from './MovieWatchBox'
+import MovieDetails from './MovieDetails'
 import '../../style/Item.css'
 import blankSquare from '../../assets/placeholder.jpg'
 
@@ -23,10 +24,11 @@ function Movie() {
     const {movieReviewTile} = MovieReview()
     const {movieVideoTile} = MovieVideo()
     const {movieProviderTile} = MovieWatchBox()
+    const {movieDetailsTile} = MovieDetails()
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
 
-    console.log(movieDetails)
+    
     
     
     
@@ -35,19 +37,11 @@ function Movie() {
         <div className="details-container" >
 
         <div className="detail-top-container">
-        <div className="poster-container">
-        
-            
-               
+        <div className="poster-container">  
             <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
-               
-            
         </div>
             
           
-        
-        
-
         <div className="detail-word-box">
         
             <div className="details-top-word-box">
@@ -78,6 +72,17 @@ function Movie() {
             <p className="details-overview">{movieDetails.overview}</p>
         </div>
         </div>
+
+       
+        <div className="details-movie-details-container">
+            {movieDetailsTile}
+
+            <span >{movieDetails.homepage}</span>
+        </div>
+            
+        
+
+
 
 
         <div className="details-slider-video-watch-container">
