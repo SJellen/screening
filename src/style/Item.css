@@ -173,6 +173,7 @@
 }
 
 .movie-details-list-title {
+    font-weight: 600;
     color: white;
     border-bottom: 1px solid rgb(73, 84, 100);
     font-size: 1.5rem;
