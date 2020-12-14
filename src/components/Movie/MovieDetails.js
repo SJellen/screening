@@ -5,7 +5,7 @@ import {Context} from '../../Context'
 
 function MovieDetails() {
 
-    const {movieDetails, posterPathSmall}  = useContext(Context)
+    const {movieDetails, posterPathSmall, dollarsWithCommas}  = useContext(Context)
     const {budget, id, genres, production_companies, production_countries, revenue} = movieDetails
    
     
@@ -54,9 +54,9 @@ function MovieDetails() {
         <div className="movie-details-list-container">
           <span className="movie-details-list-title">Finances</span>
         <ul className="movie-details-list">
-            <li className="movie-details-list-item">Budget: ${budget}</li>
-            <li className="movie-details-list-item">Revenue: ${revenue}</li>
-            <li className="movie-details-list-item">Profit/Loss: ${revenue - budget}</li>
+            <li className="movie-details-list-item">Budget: ${budget && dollarsWithCommas(budget)}</li>
+            <li className="movie-details-list-item">Revenue: ${revenue && dollarsWithCommas(revenue)}</li>
+            <li className="movie-details-list-item">Profit/Loss: ${revenue && budget && dollarsWithCommas(revenue - budget)}</li>
         </ul>  
         </div>
         
