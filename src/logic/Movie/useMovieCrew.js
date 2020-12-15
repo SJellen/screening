@@ -1,11 +1,10 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import {Context} from '../../Context'
-import blankSquare from '../../assets/placeholder.jpg'
-import {Link} from 'react-router-dom'
+
 
 function useMovieCrew() {
 
-    const {movieCredits, posterPath, handlePersonClick}  = useContext(Context)
+    const {movieCredits,personTileMaker}  = useContext(Context)
     const {crew} = movieCredits
 
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
@@ -32,17 +31,7 @@ function useMovieCrew() {
     let crewSortedArr = [...directorArr, ...writingArr, ...productionArr, ...otherJobArr]
 
 
-    const crewMovieTile = crewSortedArr && crewSortedArr.map((person, index) => 
-
-         
-        <div className="slider-card" key={person.credit_id}> 
-        <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, crewSortedArr, prevState => prevState)}/></Link>
-        <span className="slider-name">{person.name}</span>
-        <span className="slider-character">{person.job}</span>
-       </div> 
-        )
-
-    
+    const crewMovieTile = crewSortedArr && personTileMaker(crewSortedArr)
     
     return {crewMovieTile}
 }
