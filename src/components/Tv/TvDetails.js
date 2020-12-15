@@ -5,8 +5,8 @@ import {Context} from '../../Context'
 
 function TvDetails() {
 
-    const {tvDetails, posterPathSmall, dollarsWithCommas}  = useContext(Context)
-    const {budget, id, genres, production_companies, production_countries, revenue, networks, created_by} = tvDetails
+    const {tvDetails, posterPathSmall}  = useContext(Context)
+    const {id, genres, production_companies, production_countries,  networks, created_by} = tvDetails
    
     
 

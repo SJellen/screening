@@ -6,6 +6,8 @@ import useApiTv from './services/useApiTv'
 import useMenuMovieApi from './services/useMenuMovieApi'
 import useMenuTvApi from './services/useMenuTvApi'
 import useMenuPersonApi from './services/useMenuPersonApi'
+import blankSquare from './assets/placeholder.jpg'
+import {Link} from 'react-router-dom'
 
 
 const Context = React.createContext()
@@ -223,6 +225,45 @@ function ContextProvider({children}) {
         } 
     }
 
+
+    function tvTileMaker(arr) {
+        return arr.map((show, index) => 
+        
+        
+        <div className="slider-card" key={show.id}> 
+        <span className="watchlist-ribbon">
+        { watchListTv.includes(show) ?
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: "#E1B517"}}></i> :
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: ""}}></i>
+       }
+        </span>
+        <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, arr)}/></Link>
+        {ratingTruncate(show)}
+        <span className="slider-title">{show.name}</span>
+        </div>
+        )
+        
+    }
+
+    function movieTileMaker(arr) {
+        return arr.map((movie, index) => 
+        
+        <div className="slider-card" key={movie.id}> 
+        <span className="watchlist-ribbon">
+       { watchListMovie.includes(movie) ?
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: "#E1B517"}}></i> :
+         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: ""}}></i>
+       }
+        </span>
+        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, arr)}/></Link>
+        {ratingTruncate(movie)}
+        <span className="slider-title" >{movie.title}</span>
+        
+        </div>
+        )
+        
+    }
+
     
 
  
@@ -280,7 +321,7 @@ function ContextProvider({children}) {
 
 
     return (
-        <Context.Provider value={{movieTrending, personTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick, setLastTvId, setLastMovieId, setLastPersonId, handleLogoClick, watchListTv, watchListMovie, handleRibbonTv, handleRibbonMovie, handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6, tvTrending, fetchTrendingTv, fetchTrendingMovie, handleMenuTrendingMoviesClick, menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6, handleMenuTrendingPersonClick, menuTrendingTvPage1, menuTrendingTvPage2, menuTrendingTvPage3, menuTrendingTvPage4, menuTrendingTvPage5, menuTrendingTvPage6, handleMenuTrendingTvClick,  menuTrendingPersonPage1, menuTrendingPersonPage2, menuTrendingPersonPage3, menuTrendingPersonPage4, menuTrendingPersonPage5, menuTrendingPersonPage6, handleMenuPopularPersonClick, menuPopularPersonPage1, menuPopularPersonPage2, menuPopularPersonPage3, menuPopularPersonPage4, menuPopularPersonPage5, menuPopularPersonPage6, fetchMovieProviders, movieProviders, fetchTvProviders, tvProviders, posterPathSmall, handleSeasonClick, tvSeason, tvSeasonArr, setTvSeason, setTempSeason, tempSeason, ratingTruncate, dollarsWithCommas}}>
+        <Context.Provider value={{movieTrending, personTrending, posterPath, popularTv, popularMovies, popularPerson, topRatedTv, topRatedMovies, airingToday, upcomingMovies, nowPlaying, tvRecommendationID, setTvRecommendationID, movieRecommendationID, setMovieRecommendationID, setMovieId, setTvId, setPersonId, movieId, tvId, personId, fetchMovieDetails, movieDetails, fetchTvDetails, fetchPersonDetails, personDetails, tvDetails, mediaType, setMediaType, dateSplitter, posterPathLarge, timeConverter, getYear, fetchSearchResults, searchResults, setSearchTerm, searchResultsMovie, searchResultsTv, searchResultsPerson, searchTerm, fetchPersonCredits, personCredits, fetchMovieCredits, fetchTvCredits, tvCredits, movieCredits, setMovieCredits, setTvCredits, personImages, setPersonImages, fetchPersonImages, movieRecommendationArr, tvRecommendationArr, fetchTvRecommend, fetchMovieRecommend, fetchMovieSimilar, movieSimilarArr, fetchTvSimilar, tvSimilarArr,truncateBio, fetchMovieReviews, movieReviews, truncateReview, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, videoPath, fetchMovieVideos, movieVideos, movieLoaded, tvLoaded, setMovieLoaded, setTvLoaded, handleMovieClick, handlePersonClick, handleTvClick, setLastTvId, setLastMovieId, setLastPersonId, handleLogoClick, watchListTv, watchListMovie, handleRibbonTv, handleRibbonMovie, handleMenuPopularClick, menuPopularMoviesPage1, menuPopularMoviesPage2,menuPopularMoviesPage3,menuPopularMoviesPage4, menuPopularMoviesPage5, menuPopularMoviesPage6, handleMenuTopRatedClick, menuTopRatedMoviesPage1, menuTopRatedMoviesPage2, menuTopRatedMoviesPage3, menuTopRatedMoviesPage4, menuTopRatedMoviesPage5, menuTopRatedMoviesPage6, handleMenuUpcomingClick, menuUpcomingMoviesPage1, menuUpcomingMoviesPage2, menuUpcomingMoviesPage3,menuUpcomingMoviesPage4,menuUpcomingMoviesPage5,menuUpcomingMoviesPage6, handleMenuNowPlayingClick, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, handleMenuMostMoneyClick, menuMostMoneyMovies1, menuMostMoneyMovies2, menuMostMoneyMovies3, menuMostMoneyMovies4, menuMostMoneyMovies5, menuMostMoneyMovies6, handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6, tvTrending, fetchTrendingTv, fetchTrendingMovie, handleMenuTrendingMoviesClick, menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6, handleMenuTrendingPersonClick, menuTrendingTvPage1, menuTrendingTvPage2, menuTrendingTvPage3, menuTrendingTvPage4, menuTrendingTvPage5, menuTrendingTvPage6, handleMenuTrendingTvClick,  menuTrendingPersonPage1, menuTrendingPersonPage2, menuTrendingPersonPage3, menuTrendingPersonPage4, menuTrendingPersonPage5, menuTrendingPersonPage6, handleMenuPopularPersonClick, menuPopularPersonPage1, menuPopularPersonPage2, menuPopularPersonPage3, menuPopularPersonPage4, menuPopularPersonPage5, menuPopularPersonPage6, fetchMovieProviders, movieProviders, fetchTvProviders, tvProviders, posterPathSmall, handleSeasonClick, tvSeason, tvSeasonArr, setTvSeason, setTempSeason, tempSeason, ratingTruncate, dollarsWithCommas, tvTileMaker, movieTileMaker}}>
             {children}
         </Context.Provider>
     )

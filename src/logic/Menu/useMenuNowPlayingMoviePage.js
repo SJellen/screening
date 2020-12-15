@@ -1,110 +1,16 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
-import blankSquare from '../../assets/placeholder.jpg'
-import {Link} from 'react-router-dom'
 
 
 function useMenuNowPlayingMoviePage() {
-    const {posterPath, handleMovieClick, handleRibbonMovie, watchListMovie, menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, ratingTruncate }  = useContext(Context)
+    const {menuNowPlayingMoviesPage1, menuNowPlayingMoviesPage2, menuNowPlayingMoviesPage3,menuNowPlayingMoviesPage4,menuNowPlayingMoviesPage5,menuNowPlayingMoviesPage6, movieTileMaker }  = useContext(Context)
 
-  
-    const menuNowPlayingMoviesPageTile1 = menuNowPlayingMoviesPage1.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage1)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage1)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage1)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        )
-
-    const menuNowPlayingMoviesPageTile2 = menuNowPlayingMoviesPage2.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage2)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage2)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage2)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        )  
-        
-        
-    const menuNowPlayingMoviesPageTile3 = menuNowPlayingMoviesPage3.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage3)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage3)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage3)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        ) 
-        
-    const menuNowPlayingMoviesPageTile4 = menuNowPlayingMoviesPage4.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage4)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage4)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage4)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        )
-
-    const menuNowPlayingMoviesPageTile5 = menuNowPlayingMoviesPage5.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage5)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage5)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage5)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        )  
-        
-        
-    const menuNowPlayingMoviesPageTile6 = menuNowPlayingMoviesPage6.map((movie, index) => 
-        
-        <div className="slider-card" key={movie.id}> 
-        <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage6)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, menuNowPlayingMoviesPage6)} style={{color: ""}}></i>
-       }
-        </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() => handleMovieClick(index, menuNowPlayingMoviesPage6)}/></Link>
-        {ratingTruncate(movie)}
-        <span className="slider-title" >{movie.title}</span>
-        
-        </div>
-        )    
+    const menuNowPlayingMoviesPageTile1 = movieTileMaker(menuNowPlayingMoviesPage1)
+    const menuNowPlayingMoviesPageTile2 = movieTileMaker(menuNowPlayingMoviesPage2)  
+    const menuNowPlayingMoviesPageTile3 = movieTileMaker(menuNowPlayingMoviesPage3) 
+    const menuNowPlayingMoviesPageTile4 = movieTileMaker(menuNowPlayingMoviesPage4)
+    const menuNowPlayingMoviesPageTile5 = movieTileMaker(menuNowPlayingMoviesPage5)  
+    const menuNowPlayingMoviesPageTile6 = movieTileMaker(menuNowPlayingMoviesPage6)
 
         return {menuNowPlayingMoviesPageTile1, menuNowPlayingMoviesPageTile2, menuNowPlayingMoviesPageTile3, menuNowPlayingMoviesPageTile4, menuNowPlayingMoviesPageTile5, menuNowPlayingMoviesPageTile6}
 }
