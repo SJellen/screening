@@ -47,7 +47,7 @@ html {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height: 41rem;
+  height: 40.5rem;
   content-visiblity: auto;
 }
 
@@ -137,11 +137,12 @@ html {
 }
 
 .slider-character {
-  padding-top: 1rem;
+  padding-top: .25rem;
   text-align: left;
   font-size: 1.25rem;
   margin-top: .25rem;
   color: silver;
+
 }
 
 

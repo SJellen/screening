@@ -11,7 +11,7 @@ function PersonPage() {
         <div>
         
         <div className="item-page-container">
-           <Link to='/' style={{ textDecoration: 'none', color: "white"  }}>
+           <Link to='/' style={{ textDecoration: 'none', color: "white"  }} >
                <i className="im im-x-mark item-page-close" ></i> 
            </Link> 
             <Person />   
