@@ -272,7 +272,7 @@ function ContextProvider({children}) {
 
     
 
-    
+    console.log(movieId, tvId)
 
 
     useEffect(() => {
@@ -280,7 +280,7 @@ function ContextProvider({children}) {
         const path = window.location.pathname
         const splitPath = path.split('/')
         const cleanPath = splitPath.filter(item => item !== '')
-        const pathMediaType = cleanPath[0], pathMediaId = cleanPath[1], pathSeason = cleanPath[2]
+        const pathMediaType = cleanPath[0], pathMediaId = parseInt(cleanPath[1]), pathSeason = cleanPath[2]
         
 
      
