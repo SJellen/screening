@@ -43,6 +43,8 @@ function ContextProvider({children}) {
     const [watchListTv, setWatchListTv] = useState([])
     const [watchListMovie, setWatchListMovie] = useState([])
     const [tempSeason, setTempSeason] = useState([])
+    const [watchListMovieIds, setWatchListMovieIds] = useState([])
+    const [watchListTvIds, setWatchListTvIds] = useState([])
     // const {showEpisodeCast, setEpisodeCast} = useState(false)
     
 
@@ -191,7 +193,7 @@ function ContextProvider({children}) {
 
 
    
-    
+    console.log(watchListMovie)
 
     
 
@@ -231,7 +233,7 @@ function ContextProvider({children}) {
         
         <div className="slider-card" key={show.id}> 
         <span className="watchlist-ribbon">
-        { watchListTv.includes(show) ?
+        { watchListTvIds.includes(show.id) ?
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: "#E1B517"}}></i> :
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: ""}}></i>
        }
@@ -248,7 +250,7 @@ function ContextProvider({children}) {
         
         <div className="slider-card" key={movie.id}> 
         <span className="watchlist-ribbon">
-       { watchListMovie.includes(movie) ?
+       { watchListMovieIds.includes(movie.id) ?
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: "#E1B517"}}></i> :
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: ""}}></i>
        }
@@ -270,11 +272,23 @@ function ContextProvider({children}) {
         )
     }
 
+    console.log(watchListMovie, watchListMovieIds)
+
+
     
 
 
     useEffect(() => {
-       
+        let movieIdArr = [], tvIdArr = []
+        for (let i = 0; i < watchListMovie.length; i++) {
+            movieIdArr.push(watchListMovie[i].id)
+        }
+        for (let i = 0; i < watchListTv.length; i++) {
+            tvIdArr.push(watchListTv[i].id)
+        }
+        setWatchListMovieIds(movieIdArr)
+        setWatchListTvIds(tvIdArr)
+
         
         
         const path = window.location.pathname
@@ -319,7 +333,7 @@ function ContextProvider({children}) {
             window.scrollTo(0, 0)
         }
            // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [watchListMovie, watchListTv])
 
    
     
