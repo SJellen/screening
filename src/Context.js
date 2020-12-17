@@ -271,18 +271,10 @@ function ContextProvider({children}) {
     }
 
     
-    const [watchListMovieIds, setWatchListMovieIds] = useState([])
-
-    
-        console.log(watchListMovieIds)
 
 
     useEffect(() => {
-        let movieIdArr = []
-        for (let i = 0; i < watchListMovie.length; i++) {
-            movieIdArr.push(watchListMovie[i].id)
-        }
-        setWatchListMovieIds(movieIdArr)
+       
         
         
         const path = window.location.pathname
@@ -327,7 +319,7 @@ function ContextProvider({children}) {
             window.scrollTo(0, 0)
         }
            // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [watchListMovie])
+    }, [])
 
    
     
