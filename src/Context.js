@@ -208,9 +208,9 @@ function ContextProvider({children}) {
     
 
     function handleRibbonTv(e, arr) {
-        // let selection = arr[e].id
+        let selection = arr[e].id
         let selectionInfo = arr[e]
-        if (watchListTv.includes(selectionInfo)) {
+        if (watchListTvIds.includes(selection)) {
             setWatchListTv([...watchListTv.filter(item => item !== selectionInfo)])
         } else {
             setWatchListTv([...watchListTv, selectionInfo])
@@ -218,9 +218,9 @@ function ContextProvider({children}) {
     }
 
     function handleRibbonMovie(e, arr) {
-        // let selection = arr[e].id
+        let selection = arr[e].id
         let selectionInfo = arr[e]
-        if (watchListMovie.includes(selectionInfo)) {
+        if (watchListMovieIds.includes(selection)) {
             setWatchListMovie([...watchListMovie.filter(item => item !== selectionInfo)])
         } else {
             setWatchListMovie([...watchListMovie, selectionInfo])
