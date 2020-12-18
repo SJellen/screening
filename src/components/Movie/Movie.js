@@ -14,7 +14,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 
 function Movie() {
 
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders, watchListMovieIds, setWatchListMovie, watchListMovie, ribbonUpdater}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders, watchListMovieIds, setWatchListMovie, watchListMovie}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()

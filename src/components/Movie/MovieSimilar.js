@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function MovieSimilar() {
 
-    const {posterPath, handleMovieClick,movieSimilarArr, handleRibbonMovie, watchListMovie, ratingTruncate, watchListMovieIds, setWatchListMovie}  = useContext(Context)
+    const {posterPath, handleMovieClick,movieSimilarArr, watchListMovie, ratingTruncate, watchListMovieIds, setWatchListMovie}  = useContext(Context)
 
     function handleRibbonMovieSimilar(e,arr) {
         let selection = arr[e].id

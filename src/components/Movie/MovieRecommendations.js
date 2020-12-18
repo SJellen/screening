@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function MovieRecommendations() {
 
-    const {posterPath, handleMovieClick, movieRecommendationArr, handleRibbonMovie, watchListMovie, ratingTruncate, watchListMovieIds, setWatchListMovie}  = useContext(Context)
+    const {posterPath, handleMovieClick, movieRecommendationArr, watchListMovie, ratingTruncate, watchListMovieIds, setWatchListMovie}  = useContext(Context)
 
     function handleRibbonMovieRecommendations(e,arr) {
         let selection = arr[e].id

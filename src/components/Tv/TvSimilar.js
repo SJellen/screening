@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 function TvSimilar() {
 
-    const {posterPath, handleTvClick, tvSimilarArr, handleRibbonTv, watchListTv, ratingTruncate, watchListTvIds, setWatchListTv}  = useContext(Context)
+    const {posterPath, handleTvClick, tvSimilarArr,watchListTv, ratingTruncate, watchListTvIds, setWatchListTv}  = useContext(Context)
 
     function handleRibbonTvSimilar(e,arr) {
         let selection = arr[e].id
