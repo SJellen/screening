@@ -25,6 +25,9 @@
 
 .poster-container {
    max-width: 30rem;
+   
+   
+   
 }
 
 .detail-word-box {
@@ -67,6 +70,7 @@
 
 
 .details-top-word-box {
+    
     
     display: flex;
     justify-content: space-around;

@@ -15,7 +15,7 @@ import TvDetails from './TvDetails'
 
 function Tv() {
 
-    const {tvDetails, posterPathLarge, timeConverter, getYear, tvLoaded, tvProviders}  = useContext(Context)
+    const {tvDetails, posterPathLarge, timeConverter, getYear, tvLoaded, tvProviders, watchListTvIds, setWatchListTv, watchListTv}  = useContext(Context)
     const {castTvTile} = useTvCast()
     const {crewTvTile} = useTvCrew()
     const {tvRecommendTile} = TvRecommendations()
@@ -28,7 +28,16 @@ function Tv() {
     const {buy, rent, flatrate} = tvProviders
    
     
-
+    function handleRibbonTvPage(arr) {
+        let selection = arr.id
+        let selectionInfo = arr
+        
+        if (watchListTvIds && watchListTvIds.includes(selection)) {
+            setWatchListTv([...watchListTv.filter(item => item.id !==  selection)])
+        } else {
+            setWatchListTv([...watchListTv, selectionInfo])
+        } 
+    } 
     
     
 
@@ -45,6 +54,10 @@ function Tv() {
         
 
         <div className="detail-word-box">
+        { watchListTvIds &&  watchListTvIds.includes(tvDetails.id) ?
+                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonTvPage(tvDetails)} style={{color: "#E1B517"}}></i> :
+                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonTvPage(tvDetails)} style={{color: ""}}></i>
+                }
             <div className="details-top-word-box">
                 <span className="details-title">{tvDetails.name}</span>
                 { tvDetails.vote_count !== 0 ?   <div className="details-score-star-box">

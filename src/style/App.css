@@ -205,6 +205,22 @@ html {
 }
 
 
+.im-bookmark-page {
+  color: rgba(192, 192, 192, .75);
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 4rem;
+  position: absolute;
+  top: 17.5rem;
+  right: 17.5%;
+  z-index: 3;
+
+}
+
+.im-bookmark-page:hover {
+  cursor: pointer;
+}
+
+
 
 
 

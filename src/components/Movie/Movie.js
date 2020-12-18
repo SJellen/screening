@@ -14,9 +14,7 @@ import blankSquare from '../../assets/placeholder.jpg'
 
 function Movie() {
 
-    
-
-    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders}  = useContext(Context)
+    const {movieDetails, dateSplitter, posterPathLarge, timeConverter, movieLoaded, movieProviders, watchListMovieIds, setWatchListMovie, watchListMovie, ribbonUpdater}  = useContext(Context)
     const {castMovieTile} = useMovieCast()
     const {crewMovieTile} = useMovieCrew()
     const {movieRecommendTile} = MovieRecommendations()
@@ -28,32 +26,52 @@ function Movie() {
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
 
+
+
+     function handleRibbonMoviePage(arr) {
+        let selection = arr.id
+        let selectionInfo = arr
+        
+        if (watchListMovieIds && watchListMovieIds.includes(selection)) {
+            setWatchListMovie([...watchListMovie.filter(item => item.id !==  selection)])
+        } else {
+            setWatchListMovie([...watchListMovie, selectionInfo])
+        } 
+    } 
     
 
-    
-    
-    
-    
+
 
     return (
         <div className="details-container" >
 
         <div className="detail-top-container">
         <div className="poster-container">  
-            <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
+            
+        <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
+
         </div>
             
           
         <div className="detail-word-box">
-        
+          { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
+                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}}></i> :
+                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}}></i>
+                }
             <div className="details-top-word-box">
+              
+
+           
                 <span className="details-title">{movieDetails.title}</span>
                 { movieDetails.vote_count !== 0 ? 
                     <div className="details-score-star-box">
                         <i className="im im-star details-star"></i>
                     <span className="details-score">{movieDetails.vote_average}</span>
+
                     </div> : ''
                 }
+           
+
                     
             </div>
             
