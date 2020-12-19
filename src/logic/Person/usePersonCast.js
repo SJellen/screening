@@ -10,7 +10,7 @@ function usePersonCast() {
         return parseInt(getYear(b.first_air_date)) - parseInt(getYear(a.first_air_date))
     })
 
-    const sortedCastMovieArr = personMovieCast !== undefined && personMovieCast.sort((a,b) => {
+    const sortedCastMovieArr = personMovieCast && personMovieCast.sort((a,b) => {
         return parseInt(getYear(b.release_date)) - parseInt(getYear(a.release_date))
     })
 

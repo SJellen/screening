@@ -19,7 +19,7 @@ function ContextProvider({children}) {
 
     const {searchResultsPerson,   searchResults,  fetchSearchResults, setSearchTerm, searchResultsMovie, searchResultsTv,  searchTerm,  } = useApi()
 
-    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId,  setLastPersonId, setPersonDetails, setPersonCredits, personMovieCast, setPersonMovieCast, personTvCast, setPersonTvCast, fetchPersonMovieCredits , fetchPersonTvCredits } = useApiPerson()
+    const {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId,  setLastPersonId, setPersonDetails, setPersonCredits, personMovieCast,personTvCast, fetchPersonMovieCredits , fetchPersonTvCredits } = useApiPerson()
 
     const {upcomingMovies, topRatedMovies, popularMovies, nowPlaying,setMovieRecommendationID, setMovieId,movieId,fetchMovieDetails, movieDetails,fetchMovieCredits,movieCredits, setMovieCredits,movieRecommendationArr,fetchMovieRecommend,fetchMovieSimilar, movieSimilarArr,movieRecommendationID, fetchMovieReviews, movieReviews, fetchMovieVideos, movieVideos, movieLoaded, setMovieLoaded,  setLastMovieId, fetchTrendingMovie, movieTrending, fetchMovieProviders, movieProviders, setMovieDetails, setMovieRecommendationArr, setMovieSimilarArr, setMovieReviews, setMovieVideos, setMovieProviders} = useApiMovie()
 
