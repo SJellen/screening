@@ -11,6 +11,8 @@ function useApiPerson() {
     const [personDetails, setPersonDetails] = useState([])
     const [personCredits, setPersonCredits] = useState([])
     const [personImages, setPersonImages] = useState([])
+    const [personMovieCast, setPersonMovieCast] = useState([])
+    const [personTvCast, setPersonTvCast] = useState([])
    
 
     const fetchTrendingPerson = async () => {
@@ -82,8 +84,32 @@ function useApiPerson() {
 
 
 
+    const fetchPersonMovieCredits = async (x) => {
 
-    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId, setPersonDetails, setPersonCredits}
+        await fetch(`https://api.themoviedb.org/3/person/${x}/movie_credits?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setPersonMovieCast(data.cast)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }  
+        
+    const fetchPersonTvCredits = async (x) => {
+
+        await fetch(`https://api.themoviedb.org/3/person/${x}/tv_credits?api_key=${apiKEY}&language=en-US`)
+        .then(res => res.json())
+        .then((data) => {
+            setPersonTvCast(data.cast)
+        }
+
+        )
+        .catch(error => console.log(error))
+        }     
+
+
+    return {personTrending,popularPerson,setPersonId,fetchPersonDetails, personDetails,fetchPersonCredits, personCredits,personImages, setPersonImages, fetchPersonImages, personId, lastPersonId, setLastPersonId, setPersonDetails, setPersonCredits, personMovieCast, setPersonMovieCast, fetchPersonMovieCredits , fetchPersonTvCredits, personTvCast}
 }
 
 export default useApiPerson

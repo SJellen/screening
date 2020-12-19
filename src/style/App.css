@@ -80,6 +80,7 @@ html {
   flex-direction: column;
   background-color: #1B1B1B;
   margin: 0 1rem;
+  max-width: 23.75rem;
 }
 
 .slider-card-episode {
