@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import { Link} from 'react-router-dom'
-import MenuFooter from './MenuFooter'
+
 
 
 
@@ -122,12 +122,6 @@ function Menu() {
             </ul>
             </div>
 
-
-            
-
-            <div className="menu-footer-container">
-                <MenuFooter />
-            </div>
 
         </div>
 

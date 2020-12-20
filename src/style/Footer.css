@@ -4,7 +4,7 @@
     height: 10rem;
     margin-top: 5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .logo-box {
@@ -47,4 +47,19 @@
     height: 4rem;
     margin-top: 3.5rem;
 }
+
+
+
+.logo {
+    border-radius: 50%;
+    width: 50px;
+    margin-left: 1.5rem;
+    margin-top: 2.5rem;
+    box-shadow: 3px 0px .5px .5px rgba(29,60,138,1);
+  }
+  
+  .logo:hover {
+    box-shadow: 3px 0px .5px .5px rgba(255, 172, 65, 1);
+    transition: 1s ease-in;
+  }
 
