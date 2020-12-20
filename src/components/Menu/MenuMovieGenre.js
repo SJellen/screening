@@ -1,14 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import useMenuMovieGenre from '../../logic/Menu/useMenuMovieGenre'
-import {Context} from '../../Context'
+
 
 
 function MenuMovieGenre() {
     
     const {menuMovieGenreTile1, menuMovieGenreTile2, menuMovieGenreTile3, menuMovieGenreTile4, menuMovieGenreTile5, menuMovieGenreTile6, menuMovieGenreTile7, menuMovieGenreTile8, menuMovieGenreTile9, menuMovieGenreTile10} = useMenuMovieGenre()
-
-    
-
     const [genrePath, setGenrePath] = useState()
 
     useEffect(() => {
@@ -93,13 +90,7 @@ function MenuMovieGenre() {
                 </div>
        </div>    
        
-        
-      
-  
-
-
         </div>
-        
         
         
     )
