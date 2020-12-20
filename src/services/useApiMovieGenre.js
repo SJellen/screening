@@ -72,7 +72,6 @@ function useApiMovieGenre() {
         }
 
         function movieGenreToString() {
-            
             return  genre === 28 ? "Action" :
                     genre === 12 ? "Adventure" :
                     genre === 16 ? "Animation" :
@@ -92,8 +91,30 @@ function useApiMovieGenre() {
                     genre === 53 ? "Thriller" :
                     genre === 10752 ? "War" :
                      "Western" 
-                    
-    
+        }
+
+        function movieStringGenreToNum(str) {
+            return  str === "Action" ? 28 :
+            str === "Adventure" ? 12 :
+            str === "Animation" ? 16 :
+            str === "Comedy" ? 35 :
+            str === "Crime" ? 80 :
+            str === "Documentary" ? 99 :
+            str === "Drama" ? 18 :
+            str === "Family" ? 10751 :
+            str === "Fantasy" ? 14 :
+            str === "History" ? 36 :
+            str === "Horror" ? 27 :
+            str === "Music" ? 10402 :
+            str === "Mystery" ? 9648 :
+            str === "Romance" ? 10749 :
+            str === "Science Fiction" ? 878 :
+            str === "Tv" ? 10770 :
+            str === "Thriller" ? 53 :
+            str === "War" ? 10752 :
+             "Western" 
+
+
         }
 
 
@@ -101,6 +122,25 @@ function useApiMovieGenre() {
 
         useEffect(() => {
 
+            const path = window.location.pathname
+            const splitPath = path.split('/')
+            const cleanPath = splitPath.filter(item => item !== '')
+            const pathGenre = cleanPath[2]
+            console.log(pathGenre)
+            let numberGenre = movieStringGenreToNum(pathGenre)
+            fetchGenreMovies(1, numberGenre)
+            fetchGenreMovies(2, numberGenre)
+            fetchGenreMovies(3, numberGenre)
+            fetchGenreMovies(4, numberGenre)
+            fetchGenreMovies(5, numberGenre)
+            fetchGenreMovies(6, numberGenre)
+            fetchGenreMovies(7, numberGenre)
+            fetchGenreMovies(8, numberGenre)
+            fetchGenreMovies(9, numberGenre)
+            fetchGenreMovies(10, numberGenre)
+            
+            console.log(numberGenre)
+            
         }, [genre])
         
         

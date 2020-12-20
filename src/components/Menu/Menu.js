@@ -8,7 +8,7 @@ import MenuFooter from './MenuFooter'
 
 function Menu() {
 
-    const {handleMenuPopularClick, handleMenuTopRatedClick, handleMenuUpcomingClick, handleMenuNowPlayingClick, handleMenuMostMoneyClick, handleMenuPopularTvClick, handleMenuTopRatedTvClick, handleMenuOnAirTvClick, handleMenuAiringTodayTvClick, handleMenuTrendingMoviesClick, handleMenuTrendingTvClick, handleMenuPopularPersonClick, handleMenuTrendingPersonClick, handleMovieGenreClick, handleMovieGenreHover} = useContext(Context)
+    const {handleMenuPopularClick, handleMenuTopRatedClick, handleMenuUpcomingClick, handleMenuNowPlayingClick, handleMenuMostMoneyClick, handleMenuPopularTvClick, handleMenuTopRatedTvClick, handleMenuOnAirTvClick, handleMenuAiringTodayTvClick, handleMenuTrendingMoviesClick, handleMenuTrendingTvClick, handleMenuPopularPersonClick, handleMenuTrendingPersonClick, handleMovieGenreClick, handleMovieGenreHover, movieGenreToString} = useContext(Context)
 
     
 
@@ -67,25 +67,25 @@ function Menu() {
             </div>
             <ul className="menu-media-list">
                
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(28)} className="menu-media-list-link"><li>Action Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(12)} className="menu-media-list-link"><li>Adventure Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(16)} className="menu-media-list-link"><li>Animation Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(35)} className="menu-media-list-link"><li>Comedy Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(80)} className="menu-media-list-link"><li>Crime Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(99)} className="menu-media-list-link"><li>Documentary Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(18)} className="menu-media-list-link"><li>Drama Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10751)} className="menu-media-list-link"><li>Family Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(14)} className="menu-media-list-link"><li>Fantasy Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(36)} className="menu-media-list-link"><li>History Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(27)} className="menu-media-list-link"><li>Horror Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10402)} className="menu-media-list-link"><li>Music Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(9648)} className="menu-media-list-link"><li>Mystery Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10749)} className="menu-media-list-link"><li>Romance Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(878)} className="menu-media-list-link"><li>Science Fiction Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10770)} className="menu-media-list-link"><li>Tv Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(53)} className="menu-media-list-link"><li>Thiller Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10752)} className="menu-media-list-link"><li>War Movies</li></Link>
-                <Link to={"/menuLinkPage/movieGenre/"} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(37)} className="menu-media-list-link"><li>Western Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(28)} className="menu-media-list-link"><li>Action Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(12)} className="menu-media-list-link"><li>Adventure Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(16)} className="menu-media-list-link"><li>Animation Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(35)} className="menu-media-list-link"><li>Comedy Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(80)} className="menu-media-list-link"><li>Crime Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(99)} className="menu-media-list-link"><li>Documentary Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(18)} className="menu-media-list-link"><li>Drama Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10751)} className="menu-media-list-link"><li>Family Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(14)} className="menu-media-list-link"><li>Fantasy Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(36)} className="menu-media-list-link"><li>History Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(27)} className="menu-media-list-link"><li>Horror Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10402)} className="menu-media-list-link"><li>Music Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(9648)} className="menu-media-list-link"><li>Mystery Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10749)} className="menu-media-list-link"><li>Romance Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(878)} className="menu-media-list-link"><li>Science Fiction Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10770)} className="menu-media-list-link"><li>Tv Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(53)} className="menu-media-list-link"><li>Thiller Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10752)} className="menu-media-list-link"><li>War Movies</li></Link>
+                <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(37)} className="menu-media-list-link"><li>Western Movies</li></Link>
                 
                
             </ul>

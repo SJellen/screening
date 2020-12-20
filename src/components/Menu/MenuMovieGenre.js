@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import useMenuMovieGenre from '../../logic/Menu/useMenuMovieGenre'
 import {Context} from '../../Context'
 
@@ -7,7 +7,17 @@ function MenuMovieGenre() {
     
     const {menuMovieGenreTile1, menuMovieGenreTile2, menuMovieGenreTile3, menuMovieGenreTile4, menuMovieGenreTile5, menuMovieGenreTile6, menuMovieGenreTile7, menuMovieGenreTile8, menuMovieGenreTile9, menuMovieGenreTile10} = useMenuMovieGenre()
 
-    const {movieGenreToString} = useContext(Context)
+    
+
+    const [genrePath, setGenrePath] = useState()
+
+    useEffect(() => {
+        const path = window.location.pathname
+        const splitPath = path.split('/')
+        const cleanPath = splitPath.filter(item => item !== '')
+        const pathGenre = cleanPath[2]
+        setGenrePath(pathGenre)
+    }, [])
     
     
     
@@ -18,7 +28,7 @@ function MenuMovieGenre() {
         
        <div>
         <div className="slider-container">
-                <span className="slider-label">{movieGenreToString()} Movies</span>
+                <span className="slider-label">{genrePath} Movies</span>
                 <div className="slider-sub-container">
                     {menuMovieGenreTile1}
                 </div>
