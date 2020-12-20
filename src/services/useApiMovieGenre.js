@@ -67,8 +67,8 @@ function useApiMovieGenre() {
         }
 
         function handleMovieGenreHover(num) {
-            let genX = num
-            setGenre(genX)
+            let genreMovie = num
+            setGenre(genreMovie)
         }
 
         function movieGenreToString() {
@@ -126,7 +126,6 @@ function useApiMovieGenre() {
             const splitPath = path.split('/')
             const cleanPath = splitPath.filter(item => item !== '')
             const pathGenre = cleanPath[2]
-            console.log(pathGenre)
             let numberGenre = movieStringGenreToNum(pathGenre)
             fetchGenreMovies(1, numberGenre)
             fetchGenreMovies(2, numberGenre)
@@ -138,8 +137,7 @@ function useApiMovieGenre() {
             fetchGenreMovies(8, numberGenre)
             fetchGenreMovies(9, numberGenre)
             fetchGenreMovies(10, numberGenre)
-            
-            console.log(numberGenre)
+             
             
         }, [genre])
         

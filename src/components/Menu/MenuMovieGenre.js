@@ -24,70 +24,72 @@ function MenuMovieGenre() {
       
         
        <div>
-        <div className="slider-container">
-                <span className="slider-label">{genrePath} Movies</span>
+
+            <span className="slider-label-genre">{genrePath} Movies</span>
+
+                 {menuMovieGenreTile1 && menuMovieGenreTile1.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile1}
                 </div>
-                </div>
+                </div> : ''}
 
-                <div className="slider-container">
+                { menuMovieGenreTile2 && menuMovieGenreTile2.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile2}
                 </div>
-                </div>
+                </div> : '' }
 
 
-                <div className="slider-container">
+               { menuMovieGenreTile3 && menuMovieGenreTile3.length > 0 ?  <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile3}
                 </div>
-                </div>
+                </div> : '' }
 
-                <div className="slider-container">
+                { menuMovieGenreTile4 && menuMovieGenreTile4.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile4}
                 </div>   
-                </div>
+                </div> : '' }
                 
 
-                <div className="slider-container">
+               { menuMovieGenreTile5 && menuMovieGenreTile5.length > 0 ?  <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile5}
                 </div>  
-                </div>     
+                </div>  : ''  }   
             
 
 
-                <div className="slider-container">
+                { menuMovieGenreTile6 && menuMovieGenreTile6.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile6}
                 </div>  
-                </div>
+                </div> : '' }
 
-                <div className="slider-container">
+                { menuMovieGenreTile7 && menuMovieGenreTile7.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile7}
                 </div>  
-                </div>
+                </div> : '' }
 
-                <div className="slider-container">
+                { menuMovieGenreTile8 && menuMovieGenreTile8.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile8}
                 </div>  
-                </div>
+                </div> : '' }
 
-                <div className="slider-container">
+                { menuMovieGenreTile9 && menuMovieGenreTile9.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile9}
                 </div>  
-                </div>
+                </div> : ''}
 
-                <div className="slider-container">
+                { menuMovieGenreTile10 && menuMovieGenreTile10.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile10}
                 </div>  
-                </div>
+                </div> : ''}
        </div>    
        
         </div>

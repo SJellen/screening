@@ -39,6 +39,15 @@ html {
 
 }
 
+.slider-label-genre {
+  display: flex;
+  /* justify-content: center; */
+  font-size: 2rem;
+  margin-left: 3rem;
+  /* padding: 1rem 0; */
+  font-weight: 600;
+}
+
 .slider-sub-container {
   /* border: 1px solid blue; */
   display: flex;

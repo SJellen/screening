@@ -8,7 +8,7 @@ import MenuFooter from './MenuFooter'
 
 function Menu() {
 
-    const {handleMenuPopularClick, handleMenuTopRatedClick, handleMenuUpcomingClick, handleMenuNowPlayingClick, handleMenuMostMoneyClick, handleMenuPopularTvClick, handleMenuTopRatedTvClick, handleMenuOnAirTvClick, handleMenuAiringTodayTvClick, handleMenuTrendingMoviesClick, handleMenuTrendingTvClick, handleMenuPopularPersonClick, handleMenuTrendingPersonClick, handleMovieGenreClick, handleMovieGenreHover, movieGenreToString} = useContext(Context)
+    const {handleMenuPopularClick, handleMenuTopRatedClick, handleMenuUpcomingClick, handleMenuNowPlayingClick, handleMenuMostMoneyClick, handleMenuPopularTvClick, handleMenuTopRatedTvClick, handleMenuOnAirTvClick, handleMenuAiringTodayTvClick, handleMenuTrendingMoviesClick, handleMenuTrendingTvClick, handleMenuPopularPersonClick, handleMenuTrendingPersonClick, handleMovieGenreClick, handleMovieGenreHover, movieGenreToString, handleTvGenreClick, handleTvGenreHover, tvGenreToString} = useContext(Context)
 
     
 
@@ -86,6 +86,37 @@ function Menu() {
                 <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(53)} className="menu-media-list-link"><li>Thiller Movies</li></Link>
                 <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(10752)} className="menu-media-list-link"><li>War Movies</li></Link>
                 <Link to={`/menuLinkPage/movieGenre/${movieGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleMovieGenreClick()} onMouseEnter={() => handleMovieGenreHover(37)} className="menu-media-list-link"><li>Western Movies</li></Link>
+                
+               
+            </ul>
+            </div>
+
+
+            <div className="menu-list">
+            <div className="menu-title-box">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E1B517"><path d="M20.327 13.099l-.427-.427.71-.71.424.427-.707.71zm-.417 4.467l-.708-.709-.428.427.707.709.429-.427zm4.09-11.566v16h-24v-16h10.888l-2.888-3.375.781-.625 3.219 3.75 3.219-3.75.781.625-2.888 3.375h10.888zm-21.049 12.993c.674.671 3.362 1.007 6.05 1.007 2.687 0 5.375-.336 6.049-1.007.633-.632.95-2.851.95-5.059 0-2.181-.31-4.351-.93-4.97-.637-.635-3.399-.964-6.141-.964-2.681 0-5.346.314-5.997.964-.603.601-.913 2.668-.931 4.786-.018 2.268.299 4.594.95 5.243zm15.049-5.9c0 1.021.796 1.851 1.802 1.904 1.097.059 2.009-.814 2.009-1.904 0-1.049-.85-1.906-1.907-1.906-1.048 0-1.904.847-1.904 1.906zm4-3.093v-.555h-4v.555h4zm-4 7.988c0 1.062.86 1.907 1.903 1.907 1.058 0 1.907-.858 1.907-1.907s-.85-1.906-1.907-1.906c-1.047 0-1.903.846-1.903 1.906zm4-9.988h-4v.555h4v-.555z"/></svg><span className="menu-title-box-name">Genres</span></span>
+            </div>
+            <ul className="menu-media-list">
+               
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(28)} className="menu-media-list-link"><li>Action Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(12)} className="menu-media-list-link"><li>Adventure Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(16)} className="menu-media-list-link"><li>Animation Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(35)} className="menu-media-list-link"><li>Comedy Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(80)} className="menu-media-list-link"><li>Crime Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(99)} className="menu-media-list-link"><li>Documentary Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(18)} className="menu-media-list-link"><li>Drama Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(10751)} className="menu-media-list-link"><li>Family Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(14)} className="menu-media-list-link"><li>Fantasy Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(36)} className="menu-media-list-link"><li>History Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(27)} className="menu-media-list-link"><li>Horror Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(10402)} className="menu-media-list-link"><li>Music Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(9648)} className="menu-media-list-link"><li>Mystery Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(10749)} className="menu-media-list-link"><li>Romance Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(878)} className="menu-media-list-link"><li>Science Fiction Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(10770)} className="menu-media-list-link"><li>Television Movies</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(53)} className="menu-media-list-link"><li>Thiller Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(10752)} className="menu-media-list-link"><li>War Tv Shows</li></Link>
+                <Link to={`/menuLinkPage/tvGenre/${tvGenreToString()}`} style={{textDecoration: "none"}} onClick={() => handleTvGenreClick()} onMouseEnter={() => handleTvGenreHover(37)} className="menu-media-list-link"><li>Western Tv Shows</li></Link>
                 
                
             </ul>

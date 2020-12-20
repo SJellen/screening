@@ -15,6 +15,7 @@ import MenuTrendingTv from "./Menu/MenuTrendingTv"
 import MenuTrendingPerson from './Menu/MenuTrendingPerson'
 import MenuPopularPerson from './Menu/MenuPopularPerson'
 import MenuMovieGenre from './Menu/MenuMovieGenre'
+import MenuTvGenre from './Menu/MenuTvGenre'
 
 function MenuLinkPage() {
     return (
@@ -37,6 +38,7 @@ function MenuLinkPage() {
         <Route path="/menuLinkPage/popularPerson/" component={MenuPopularPerson} />
         <Route path="/menuLinkPage/trendingPerson/" component={MenuTrendingPerson} />
         <Route path="/menuLinkPage/movieGenre/" component={MenuMovieGenre} />
+        <Route path="/menuLinkPage/tvGenre/" component={MenuTvGenre} />
       </div>
       
     )
