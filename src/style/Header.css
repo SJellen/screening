@@ -119,6 +119,26 @@ input:active {
    border-left: 1px solid grey;
 }
 
+.header-watchlist-box-container {
+    margin-top: .25rem;
+    /* border: 1px solid red; */
+    font-size: 1.5rem;
+    color: inherit;
+    
+}
+
+.header-watchlist-box-container:active {
+    color: inherit;
+}
+
+.im-bookmark-header {
+    color: white;
+}
+
+.header-watchlist {
+    color: white;
+}
+
 
 .header-right-container {
     min-width: 55px;
