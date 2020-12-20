@@ -36,14 +36,15 @@ html {
   font-size: 2rem;
   margin-left: 2rem;
   padding: 2rem 0;
-
+  font-weight: 600;
 }
 
 .slider-label-genre {
   display: flex;
   /* justify-content: center; */
   font-size: 2rem;
-  margin-left: 3rem;
+  margin-left: 4rem;
+  margin-bottom: -3rem;
   /* padding: 1rem 0; */
   font-weight: 600;
 }
