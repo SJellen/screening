@@ -118,6 +118,12 @@ input:active {
     color: white;
 }
 
+.header-signIn {
+    margin-top: .25rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
 
 .header-right-container {
     min-width: 55px;
