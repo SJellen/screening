@@ -13,15 +13,11 @@
     justify-content: flex-end;
     margin: 2rem;
     text-decoration: inherit;
-    
   }
 
   .item-page-close:link {
     text-decoration: none;
-    
   }
-
-  
 
   .item-page-close:hover {
     cursor: pointer;
@@ -33,7 +29,6 @@
     margin-top: 0rem;
     font-size: 3rem;
   }
-
 
   .menu-page-container {
     background-color: rgb(18, 18, 18);
@@ -61,26 +56,17 @@
   .menu-close-container {
     display: flex;
     justify-content: flex-end;
-    /* border: 1px solid green; */
-    /* width: 10rem; */
-
   }
 
   .menu-page-close:hover {
     cursor: pointer;
-    
     transition: 2s ease;
     filter: brightness(50%);
-    
   }
   
   .menu-title {
     font-size: 2rem;
-    /* margin-left: 5rem; */
     display: inline-block;
-    
-    /* margin-top: 1rem;
-    margin-bottom: 5rem; */
     padding: .5rem;
     border-radius: 5px;;
     font-weight: 700;
@@ -95,34 +81,24 @@
 }
 
 .menu-title-box-name {
-  
   margin: 0 2rem;
- 
-
-  
-
 }
 
 .menu-logo-box{
   margin: 1rem 4rem;
-  /* border: 1px solid red; */
-  /* width: 12.5rem; */
   display: flex;
   justify-content: flex-start;
 }
  
 .menu-top-box {
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-between;
 }
 
 .menu-list-container {
-  /* border: 1px solid gold; */
   width: 70vw;
   margin: 8rem auto;
   display: flex;
-  
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -137,13 +113,11 @@
 .menu-title-box {
   text-align: left;
   margin-left: 4rem;
-  /* border: 1px solid green; */
   font-size: 2rem;
 }
 
 .menu-media-list {
   list-style: none;
-  /* border: 1px solid orange; */
   width: 25vw;
   display: flex;
   flex-direction: column;
@@ -168,7 +142,6 @@
 .menu-footer-container {
   border: 1px solid red;
   margin: 5rem auto -10rem auto;
-  
   width: 70vw;
   height:100px;
   background-color: gray;
@@ -177,11 +150,6 @@
 .menu-footer {
   border: 1px solid yellow;
 }
-
-
-
-
-
 
 
 .watchlist-page-container {

@@ -10,20 +10,10 @@
 .logo-box {
     height: 3rem;
     margin-top: 3.5rem;
-    
-    
-    
-   
 }
-
 
 .footer-title {
     font-size: 2rem;
-    /* margin-left: 5rem; */
-    
-    
-    /* margin-top: 1rem;
-    margin-bottom: 5rem; */
     padding: .5rem;
     border-radius: 5px;;
     font-weight: 700;
@@ -40,15 +30,12 @@
 
 .footer-title-link {
     text-decoration: none;
-    
 }
 
 .tmdb-logo {
     height: 4rem;
     margin-top: 3.5rem;
 }
-
-
 
 .logo {
     border-radius: 50%;

@@ -4,11 +4,9 @@
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 5rem;
-    /* border: 1px solid red; */
 }
 
 .detail-top-container {
-    /* border: 1px solid green; */
     display: flex;
     width: 75vw;
     justify-content: space-around;
@@ -19,28 +17,17 @@
     display: block;
     width: 20vw;
     height: auto;
-    /* margin: 0 auto; */
-    
 }
 
 .poster-container {
    max-width: 30rem;
-   
-   
-   
 }
 
 .detail-word-box {
-    /* border: 1px solid blue; */
-    
     max-width: 60vw;
-    /* margin: 0 auto; */
     padding: 3rem;
     background-color: #1B1B1B;
-    
 }
-
-
 
 .detail-word-box > p {
     width: 40vw;
@@ -49,7 +36,6 @@
 }
 
 .details-title {
-    /* border: 1px solid yellow; */
     font-size: 3rem;
     font-weight: 500;
     max-width: 25vw;
@@ -68,10 +54,7 @@
     margin-top: .5rem;
 }
 
-
 .details-top-word-box {
-    
-    
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
@@ -98,19 +81,14 @@
     font-size: 1.5rem;
 }
 
-
-
 .details-tagline {
-    /* border: 1px solid red; */
     width: 40vw;
     margin: 5rem auto;
-   
     font-size: 1.5rem;
 }
 
 .details-episode-container {
     background-color: #1B1B1B;
-    /* border: 1px solid red; */
     width: 70vw; 
     height: fit-content;
     margin: 3rem auto 5rem auto;
@@ -118,15 +96,12 @@
 
 
 .details-season-switch {
-    /* border: 1px solid red; */
     min-height: fit-content;
     padding-bottom: 5rem;
 }
 
 
 .details-movie-details-container {
-    /* border: 1px solid blue; */
-    
     width: 70vw;
     margin: 0 auto 5rem auto;
     height: auto;
@@ -135,7 +110,6 @@
 }
 
 .details-movie-details-tile {
-    /* border: 1px solid red; */
     width: 90%;
     margin: 2rem auto;
     display: flex;
@@ -143,35 +117,24 @@
 }
 
 .movie-details-list-container {
-    /* border: 1px solid green; */
     width: 40%;
     padding: 2rem;
-    margin: 0 auto;
-    
-    
+    margin: 0 auto; 
 }
 
 .movie-details-list-item {
     list-style: none;
-    /* color: blue; */
     font-size: 1.25rem;
     display: flex;
-    /* border: 1px solid pink; */
     padding: 1rem;
-    
 }
 
 .movie-details-list {
-    /* border: 1px solid gold; */
     display: flex;
     flex-direction: column;
-    
-    
-   
 }
 
 .movie-details-list-logo {
-    /* border: 1px solid slateblue; */
     background-color: white;
     margin-right: 2rem;
 }
@@ -187,27 +150,16 @@
     line-height: 2;
 }
 
-
-
-
 .movie-detail-homepage-link-container {
-    /* border: 1px solid green; */
     display: flex;
     justify-content: flex-end;
     margin-top: 2rem;
-    
 }
 
 .movie-detail-homepage-link {
     fill: #FFD700;
-    
     margin-right: 2rem;
 }
-
-
-
-
-
 
 .details-watch-box {
     background-color: #1B1B1B;
@@ -224,7 +176,6 @@
 }
 
 .details-watch-box-container {
-    /* border: 1px solid red; */
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -264,8 +215,6 @@
     text-align: left;
 }
 
-
-
 .details-images-container {
     background-color: #1B1B1B;
     margin: 3rem auto 7rem auto;
@@ -277,9 +226,7 @@
     scrollbar-width: none;
     width: fit-content;
     max-width: 70vw;
-    
-    height: auto;
-    
+    height: auto; 
 }
 
 .details-video-container {
@@ -293,34 +240,25 @@
     scrollbar-width: none;
     width: fit-content;
     max-width: 75vw;
-    
     height: auto;
-    
 }
 
 .details-video-container::-webkit-scrollbar {
     display: none;
 }
 
-
-
-
 .details-images-container::-webkit-scrollbar {
     display: none;
 }
 
 .details-credit-container {
-    /* border: 1px solid red; */
     width: 60vw;
     padding: 3rem;
     margin: 0 auto;
     background-color: #1B1B1B;
-    
-    
 }
 
 .details-cast-slider {
-  /* border: 1px solid blue; */
   display: flex;
   flex-direction: row;
   overflow:scroll;
@@ -331,61 +269,52 @@
    content-visiblity: auto;
 }
 
-
 .details-cast-slider::-webkit-scrollbar {
     display: none;
 }  
 
 .details-slider-container {
-    /* border: 1px solid red; */
     display: flex;
-    
     flex-direction: column;
     background-color: rgb(18, 18, 18);
     max-width: 75vw;
     padding: 2rem 0;
     margin: 0rem auto 0 auto;
     color: white;
-   
-  }
-
+}
 
 .details-slider-container-episode {
-/* border: 1px solid red; */
-display: flex;
-height: auto;
-flex-direction: column;
-background-color: rgb(10, 10, 10);
-max-width: 75vw;
-padding: 0 2rem 2rem 2rem;
-margin: 0rem auto 0 auto;
-color: white;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    background-color: rgb(10, 10, 10);
+    max-width: 75vw;
+    padding: 0 2rem 2rem 2rem;
+    margin: 0rem auto 0 auto;
+    color: white;
+}
 
+.details-slider-title {
+    display: flex;
+    font-size: 2rem;
+    padding: 2rem;
 }
 
 
-  .details-slider-title {
-      display: flex;
-      font-size: 2rem;
-      padding: 2rem;
+.details-slider-title-episode-season-number {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 2rem;
   }
 
-
-  .details-slider-title-episode-season-number {
-      
-      display: flex;
-      justify-content: center;
-      font-size: 2rem;
-      padding: 2rem;
-  }
-
-  .details-slider-title-episode-dropdown {
+.details-slider-title-episode-dropdown {
     display: flex;
     font-size: 1.5rem;
     padding: 2rem;
 }
 
-  .details-slider-title-video {
+.details-slider-title-video {
     display: flex;
     font-size: 2rem;
     padding: 0rem;
@@ -399,15 +328,13 @@ color: white;
     margin-left: 4rem;
 }
 
-.details-season-number-container {
-   
+.details-season-number-container {  
     display: flex;
     width: fit-content;
     flex-direction: row-reverse;
     justify-content: space-evenly;
     font-size: 1.25rem;
     padding: 2rem 0;
-   
 }
 
 .details-season-number-slider-container {
@@ -420,8 +347,7 @@ color: white;
 
 .details-season-number-slider-container::-webkit-scrollbar {
     display: none;
-   }
-
+}
 
 .detail-season-number-box {
     padding: 0 2rem;
@@ -438,17 +364,14 @@ color: white;
 }
 
 .details-last-next-episode-title {
-    /* border: 1px solid red; */
     width: 80%;
     margin: 2rem auto 2rem auto;
-    
     display: flex;
     justify-content: left;
     font-size: 1.25rem;
 }
 
 .details-last-next-episode-container{
-    /* border: 1px solid green; */
     width: 90%;
     margin: 0rem auto;
     display: flex;
@@ -456,39 +379,29 @@ color: white;
 }
 
 .details-episode-card {
-    /* border: 1px solid red; */
     background-color: rgba(19, 19, 19, .75);
     width: 30vw;
     height:auto;
-    
 }
 
 .details-episode-card-season {
-    /* border: 1px solid red; */
     background-color: rgba(19, 19, 19, .75);
     width: 90%;
     height:auto;
-    
 }
 
 .details-episode-card-season-tile {
-    /* border: 1px solid red; */
     background-color: rgba(19, 19, 19, .75);
     width: 90%;
     height:auto;
-    
 }
 
 .details-episode-card-season-tile:hover {
     cursor: pointer;
 }
 
-
 .details-episode-card-img-container {
-    /* border: 1px solid red; */
     display: block;
-    /* justify-content: center; */
-    
     padding: 1.5rem 0;
     min-height: auto;
 }
@@ -497,8 +410,7 @@ color: white;
     margin: 0 auto;
     display: block;
     width: 75%;
-    height: auto;
-    
+    height: auto; 
 }
 
 .details-episode-card-img-season {
@@ -506,23 +418,19 @@ color: white;
     display: block;
     width: 100%;
     height: auto;
-   
 }
 
 .details-episode-card-img-season-container {
-    /* border: 1px solid blue; */
     padding: 2rem;
 }
 
 .details-episode-card-title {
-    /* border: 1px solid blue; */
     width: 85%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 2rem 2.5rem;
     font-size: 1.5rem;
-    
 }
 
 .details-episode-card-stat-box {
@@ -546,7 +454,6 @@ color: white;
 } */
 
 .details-episode-season-img-overview-container {
-    /* border: 1px solid red; */
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -554,7 +461,6 @@ color: white;
 }
 
 .details-episode-card-overview-season-container {
-     /* border: 1px solid rgb(142, 182, 49); */
      padding: 3rem 3rem 3rem 3rem;
      text-align: left;
      width: 70%;
@@ -568,17 +474,12 @@ color: white;
     display: flex;
     justify-content: space-around;
     margin: 2rem auto;
-    /* border: 1px solid blue; */
-    
 }
-  
-
-  .details-review-tile {
+.details-review-tile {
     background-color: #1B1B1B;
     margin: 0 auto;
   }
-
-
+  
 .details-review-container {
     display: flex;
     flex-direction: column;

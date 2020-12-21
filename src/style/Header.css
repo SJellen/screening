@@ -15,7 +15,6 @@
 
 .title {
     font-size: 2rem;
-    /* margin-left: 5rem; */
     display: flex;
     margin-top: 1rem;
     padding: .5rem;
@@ -27,7 +26,6 @@
 
 .header-title-link {
     text-decoration: none;
-    
 }
 
 .title:hover {
@@ -43,13 +41,10 @@
     justify-content: center;
     margin-top: 1.5rem;
     padding: .5rem .25rem .25rem .25rem;
-   
     flex-direction: row;
-    /* padding: .5rem; */
     border-radius: 5px;
     font-weight: 700;
     color: white;
-    /* border: 1px solid white; */
 }
 
 .menu-box:hover {
@@ -60,26 +55,17 @@
 .menu-span {
     font-size: 1.75rem;
     margin-left: 1rem;
-    
-    
     font-weight: 700;
     color: white;
 }
 
-
 .im-menu {
     color: gray;
-    
-    /* margin-top: 1.75rem; */
-    
 }
-
-
 
 .input-container {
     width: 50%;
     display: flex;
-    /* justify-content: center; */
     flex-direction: row;
 }
 
@@ -89,12 +75,8 @@
     margin-top: 1.25rem;
     z-index: 1;
     position: relative;
-    /* background-image:url('../assets/magnifier.svg');
-    background-repeat:no-repeat; */
     border: none;
     border-radius: 5px;
-    /* background-position:   97.5%; */
-    
 }
 
 .input::placeholder {
@@ -104,7 +86,6 @@
 input:active {
     border: none;
 }
-
 
 .search-button {
    height: 54%;
@@ -121,10 +102,8 @@ input:active {
 
 .header-watchlist-box-container {
     margin-top: .25rem;
-    /* border: 1px solid red; */
     font-size: 1.5rem;
-    color: inherit;
-    
+    color: inherit; 
 }
 
 .header-watchlist-box-container:active {
@@ -152,7 +131,6 @@ input:active {
     font-size: 3.5rem;
 }
 
-
 .watchListCount {
     display: inline-block;
     position: absolute;
@@ -162,8 +140,7 @@ input:active {
     margin-top: -.5rem;
     margin-left: -1rem;
     padding: 3.25px 5px;
-    border-radius: 50%;
-    
+    border-radius: 50%;  
 }
 
 

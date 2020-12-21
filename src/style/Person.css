@@ -1,10 +1,6 @@
 .person-filmography {
-    /* color: red;
-    border: 1px solid red; */
-    
     display: flex;
     padding: 2rem;
-   
 }
 
 #filmography-title {
@@ -12,30 +8,22 @@
 }
 
 .person-gender-credit{
-    /* color: red;
-    border: 1px solid red; */
-    
     display: flex;
     padding: 2rem;
-    
 }
 
 .person-filmography-container {
-    /* border: 1px solid blue; */
     width: 100%;
 }
 
 .person-filmography-header{
-    /* border: 1px solid green; */
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
 
 .person-part-tile {
-    /* border: 1px solid red; */
     padding: 1rem;
-    /* margin: 1rem 0; */
     display: flex;
     justify-content: space-between;
     background-color: rgba(57, 62, 70, .5);
@@ -54,12 +42,10 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    
 }
 
 .person-part-title {
     font-size: 1.25rem;
-    
 }
 
 .person-part-character {
@@ -69,8 +55,6 @@
 .person-part-year {
     font-size: 1.25rem;
 }
-
-
 
 .person-filmography-section-title {
     font-size: 1.5rem;
@@ -98,18 +82,10 @@
     cursor: pointer;
 }
 
-
-
-
 .item-review {
-    /* border: 1px solid blue; */
-    
-    
     text-align: left;
     margin: 0 auto;
-    
     color: white;
-    
     line-height: 2;
 }
 
@@ -117,34 +93,21 @@
     display: flex;
     min-width: 25rem;
     text-align: left;
-    
-    /* border: 1px solid red; */
 }
 
 .item-review-container {
-    /* border: 1px solid green; */
     text-align: left;
     padding-right: 2rem;
-    
-   
 }
 
 
 .item-part-review {
-    /* border: 1px solid red; */
-    
-    /* margin: 1rem 0; */
     display: flex; 
-    /* justify-content: right;  */
     background-color: #1B1B1B;
-   
     margin: 1rem 0;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
     font-size: 1.25rem;
-    /* border: 1px solid orange; */
-    /* display: flex; */
     justify-content: space-between;
-    /* padding: 1rem; */
 }
 
 .item-part-review:hover {
@@ -169,14 +132,11 @@
     text-decoration: none;
     display: flex;
     padding: 1rem 0;
-   
-
 }
 
 .review-link:active {
     color: blanchedalmond;
 }
-
 
 .video-card {
     padding: 1rem;
@@ -191,7 +151,6 @@
   }
 
  .filmography-nav-container {
-     /* border: 1px solid red; */
      font-size: 1.5rem;
      display: flex;
      justify-content: flex-end;
@@ -199,11 +158,8 @@
 
  .filmography-nav {
     min-width: 40vw;
-    /* border: 1px solid yellow; */
     display: flex;
-    justify-content: space-evenly;
-    
-     
+    justify-content: space-evenly;  
  }
 
  .filmography-nav-type {
