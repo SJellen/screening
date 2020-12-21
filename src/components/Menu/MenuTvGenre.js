@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import useMenuTvGenre from '../../logic/Menu/useMenuTvGenre'
 
-
-
 function MenuTvGenre() {
     
     const {menuTvGenreTile1, menuTvGenreTile2, menuTvGenreTile3, menuTvGenreTile4, menuTvGenreTile5, menuTvGenreTile6, menuTvGenreTile7, menuTvGenreTile8, menuTvGenreTile9, menuTvGenreTile10} = useMenuTvGenre()
@@ -16,15 +14,8 @@ function MenuTvGenre() {
         setGenrePathTv(pathGenre)
     }, [])
     
-    
-    
-
     return (
-        <div>
-      
-        
        <div>
-
             <span className="slider-label-genre">{genrePathTv} Television</span>
                { menuTvGenreTile1 && menuTvGenreTile1.length > 0 ?  <div className="slider-container">
                 <div className="slider-sub-container">
@@ -59,7 +50,6 @@ function MenuTvGenre() {
                 </div> : ''  } 
             
 
-
                 { menuTvGenreTile6 && menuTvGenreTile6.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuTvGenreTile6}
@@ -89,11 +79,7 @@ function MenuTvGenre() {
                     {menuTvGenreTile10}
                 </div>  
                 </div> : ''}
-       </div>    
-       
-        </div>
-        
-        
+       </div>     
     )
 }
 

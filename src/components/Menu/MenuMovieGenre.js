@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import useMenuMovieGenre from '../../logic/Menu/useMenuMovieGenre'
 
-
-
 function MenuMovieGenre() {
     
     const {menuMovieGenreTile1, menuMovieGenreTile2, menuMovieGenreTile3, menuMovieGenreTile4, menuMovieGenreTile5, menuMovieGenreTile6, menuMovieGenreTile7, menuMovieGenreTile8, menuMovieGenreTile9, menuMovieGenreTile10} = useMenuMovieGenre()
@@ -16,17 +14,9 @@ function MenuMovieGenre() {
         setGenrePath(pathGenre)
     }, [])
     
-    
-    
-
     return (
-        <div>
-      
-        
        <div>
-
             <span className="slider-label-genre">{genrePath} Movies</span>
-
                  {menuMovieGenreTile1 && menuMovieGenreTile1.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
                     {menuMovieGenreTile1}
@@ -90,11 +80,7 @@ function MenuMovieGenre() {
                     {menuMovieGenreTile10}
                 </div>  
                 </div> : ''}
-       </div>    
-       
-        </div>
-        
-        
+       </div>       
     )
 }
 
