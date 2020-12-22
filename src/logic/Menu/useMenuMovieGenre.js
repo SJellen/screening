@@ -5,9 +5,6 @@ import {Context} from '../../Context'
 function useMenuMovieGenre() {
     const {genreMovies1, genreMovies2, genreMovies3, genreMovies4, genreMovies5, genreMovies6, genreMovies7, genreMovies8, genreMovies9, genreMovies10, movieTileMaker }  = useContext(Context)
 
-
-    
-
     const menuMovieGenreTile1 = genreMovies1 && movieTileMaker(genreMovies1)
     const menuMovieGenreTile2 = genreMovies2 && movieTileMaker(genreMovies2)  
     const menuMovieGenreTile3 = genreMovies3 && movieTileMaker(genreMovies3) 
@@ -21,6 +18,5 @@ function useMenuMovieGenre() {
 
         return {menuMovieGenreTile1, menuMovieGenreTile2, menuMovieGenreTile3, menuMovieGenreTile4, menuMovieGenreTile5, menuMovieGenreTile6, menuMovieGenreTile7, menuMovieGenreTile8, menuMovieGenreTile9, menuMovieGenreTile10}
 }
-
 
 export default useMenuMovieGenre

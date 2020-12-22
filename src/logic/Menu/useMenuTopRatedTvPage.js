@@ -12,9 +12,7 @@ function useMenuTopRatedTvPage() {
     const menuTopRatedTvTile5 = tvTileMaker(menuTopRatedTvPage5)
     const menuTopRatedTvTile6 = tvTileMaker(menuTopRatedTvPage6)
  
-
         return {menuTopRatedTvTile1, menuTopRatedTvTile2, menuTopRatedTvTile3, menuTopRatedTvTile4, menuTopRatedTvTile5, menuTopRatedTvTile6}
 }
-
 
 export default useMenuTopRatedTvPage

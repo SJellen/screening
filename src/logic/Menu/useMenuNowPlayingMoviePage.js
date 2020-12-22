@@ -15,6 +15,4 @@ function useMenuNowPlayingMoviePage() {
         return {menuNowPlayingMoviesPageTile1, menuNowPlayingMoviesPageTile2, menuNowPlayingMoviesPageTile3, menuNowPlayingMoviesPageTile4, menuNowPlayingMoviesPageTile5, menuNowPlayingMoviesPageTile6}
 }
 
-
-
 export default useMenuNowPlayingMoviePage

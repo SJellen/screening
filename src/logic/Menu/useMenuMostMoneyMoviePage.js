@@ -15,6 +15,4 @@ function useMenuMostMoneyPage() {
         return {menuMostMoneyMoviesPageTile1, menuMostMoneyMoviesPageTile2, menuMostMoneyMoviesPageTile3, menuMostMoneyMoviesPageTile4, menuMostMoneyMoviesPageTile5, menuMostMoneyMoviesPageTile6}
 }
 
-
-
 export default useMenuMostMoneyPage

@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
 
-
 function useMenuPopularPersonPage() {
     const {menuPopularPersonPage1, menuPopularPersonPage2, menuPopularPersonPage3, menuPopularPersonPage4, menuPopularPersonPage5, menuPopularPersonPage6, personTileMaker}  = useContext(Context)
 
@@ -14,7 +13,5 @@ function useMenuPopularPersonPage() {
 
         return {menuPopularPersonTile1, menuPopularPersonTile2, menuPopularPersonTile3, menuPopularPersonTile4, menuPopularPersonTile5, menuPopularPersonTile6}
 }
-
-
 
 export default useMenuPopularPersonPage

@@ -1,10 +1,8 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
 
-
 function useMenuTvGenre() {
     const {genreTv1, genreTv2, genreTv3, genreTv4, genreTv5, genreTv6, genreTv7, genreTv8, genreTv9, genreTv10, tvTileMaker }  = useContext(Context)
-
 
     const menuTvGenreTile1 = genreTv1 && tvTileMaker(genreTv1)
     const menuTvGenreTile2 = genreTv2 && tvTileMaker(genreTv2)  
@@ -19,6 +17,5 @@ function useMenuTvGenre() {
 
         return {menuTvGenreTile1, menuTvGenreTile2, menuTvGenreTile3, menuTvGenreTile4, menuTvGenreTile5, menuTvGenreTile6, menuTvGenreTile7, menuTvGenreTile8, menuTvGenreTile9, menuTvGenreTile10}
 }
-
 
 export default useMenuTvGenre

@@ -4,7 +4,6 @@ import {Context} from '../../Context'
 function useMenuTrendingMoviePage() {
     const {menuTrendingMoviesPage1, menuTrendingMoviesPage2, menuTrendingMoviesPage3, menuTrendingMoviesPage4, menuTrendingMoviesPage5, menuTrendingMoviesPage6,  movieTileMaker }  = useContext(Context)
 
-  
     const menuTrendingMoviesTile1 = movieTileMaker(menuTrendingMoviesPage1)
     const menuTrendingMoviesTile2 = movieTileMaker(menuTrendingMoviesPage2)    
     const menuTrendingMoviesTile3 = movieTileMaker(menuTrendingMoviesPage3)   
@@ -14,7 +13,5 @@ function useMenuTrendingMoviePage() {
 
         return {menuTrendingMoviesTile1, menuTrendingMoviesTile2, menuTrendingMoviesTile3, menuTrendingMoviesTile4, menuTrendingMoviesTile5, menuTrendingMoviesTile6}
 }
-
-
 
 export default useMenuTrendingMoviePage

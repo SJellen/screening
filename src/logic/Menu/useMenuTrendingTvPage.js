@@ -11,11 +11,8 @@ function useMenuTrendingTvPage() {
     const menuTrendingTvTile4 = tvTileMaker(menuTrendingTvPage4)
     const menuTrendingTvTile5 = tvTileMaker(menuTrendingTvPage5)
     const menuTrendingTvTile6 = tvTileMaker(menuTrendingTvPage6)
- 
-    
 
         return {menuTrendingTvTile1, menuTrendingTvTile2, menuTrendingTvTile3, menuTrendingTvTile4, menuTrendingTvTile5, menuTrendingTvTile6}
 }
-
 
 export default useMenuTrendingTvPage
