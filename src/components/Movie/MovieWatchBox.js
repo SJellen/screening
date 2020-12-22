@@ -7,8 +7,6 @@ function MovieWatchBox() {
     const {movieBuyTile, movieRentTile, movieStreamTile} = useMovieWatchBox()
    
    
-
-
     const movieProviderTile = (
         <div className="details-watch-box-container">
            { movieStreamTile && movieStreamTile.length > 0 ?
@@ -34,11 +32,9 @@ function MovieWatchBox() {
            </div> : ''
 
            }
-          
-           
         </div>
     )
-
+    
     return {movieProviderTile}
 }
 

@@ -26,8 +26,6 @@ function Movie() {
     const releaseStatus = movieDetails.status === "Released" ? "Released" : 'Release date' 
     const {buy, rent, flatrate} = movieProviders
 
-
-
      function handleRibbonMoviePage(arr) {
         let selection = arr.id
         let selectionInfo = arr
@@ -40,123 +38,81 @@ function Movie() {
     } 
     
 
-
-
     return (
         <div className="details-container" >
-
-        <div className="detail-top-container">
-        <div className="poster-container">  
-            
-        <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
-
-        </div>
-            
-          
-        <div className="detail-word-box">
-          { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
-                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}}></i> :
-                    <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}}></i>
-                }
-            <div className="details-top-word-box">
-              
-
-           
-                <span className="details-title">{movieDetails.title}</span>
-                { movieDetails.vote_count !== 0 ? 
-                    <div className="details-score-star-box">
-                        <i className="im im-star details-star"></i>
-                    <span className="details-score">{movieDetails.vote_average}</span>
-
-                    </div> : ''
-                }
-           
-
-                    
-            </div>
-            
-            
-            <div className="details-mid-word-box">
-                <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>
-                { movieDetails.runtime > 0 ? 
-                    <span className="details-runtime">Runtime {timeConverter(movieDetails.runtime)}</span> : ''
-                }
-                
-                 
-            </div>
-            <div className="details-tagline">
-                <h3>{movieDetails.tagline}</h3>
-            </div>
-            
-           
-            <p className="details-overview">{movieDetails.overview}</p>
-        </div>
-        </div>
-
-       
-        <div className="details-movie-details-container">
-            {movieDetailsTile}
-
-         { movieDetails.homepage && movieDetails.homepage.length > 0  ?   <span className="movie-detail-homepage-link-container"><a href={movieDetails.homepage} target="_blank" rel="noopener noreferrer" className="movie-detail-homepage-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 17c1.513-6.587 7-7.778 7-7.778v-2.222l5 4.425-5 4.464v-2.223c0 .001-3.78-.114-7 3.334z"/></svg></a></span> : ''}
-            
-        </div>
-            
-        
-
-
-
-
-        <div className="details-slider-video-watch-container">
-                { buy === undefined && rent === undefined && flatrate === undefined ? '' :
-                    <div className="details-watch-box">  {movieProviderTile}  </div> 
-                }
-                
-             
-
-
-
-                { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
-                    <div>
-                <span className="details-slider-title-video">Videos</span>
-                <div className="details-video-container" >
-                            {movieVideoTile}
-                        
+            <div className="detail-top-container">
+                <div className="poster-container">      
+                    <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
+                </div> 
+                <div className="detail-word-box">
+                    { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
+                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}}></i> :
+                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}}></i>
+                        }
+                    <div className="details-top-word-box">
+                        <span className="details-title">{movieDetails.title}</span>
+                        { movieDetails.vote_count !== 0 ? 
+                            <div className="details-score-star-box">
+                                <i className="im im-star details-star"></i>
+                            <span className="details-score">{movieDetails.vote_average}</span>
+                            </div> : ''
+                        }       
+                    </div>
+                    <div className="details-mid-word-box">
+                        <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>
+                        { movieDetails.runtime > 0 ? 
+                            <span className="details-runtime">Runtime {timeConverter(movieDetails.runtime)}</span> : ''
+                        }   
+                    </div>
+                    <div className="details-tagline">
+                        <h3>{movieDetails.tagline}</h3>
+                    </div>
+                    <p className="details-overview">{movieDetails.overview}</p>
                 </div>
-                </div> : '' 
+            </div>
+            <div className="details-movie-details-container">
+                {movieDetailsTile}
 
-                }  
+            { movieDetails.homepage && movieDetails.homepage.length > 0  ?   <span className="movie-detail-homepage-link-container"><a href={movieDetails.homepage} target="_blank" rel="noopener noreferrer" className="movie-detail-homepage-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 17c1.513-6.587 7-7.778 7-7.778v-2.222l5 4.425-5 4.464v-2.223c0 .001-3.78-.114-7 3.334z"/></svg></a></span> : ''}    
+            </div>
+            <div className="details-slider-video-watch-container">
+                    { buy === undefined && rent === undefined && flatrate === undefined ? '' :
+                        <div className="details-watch-box">  {movieProviderTile}  </div> 
+                    }
+                    
+                    { movieLoaded && movieVideoTile && movieVideoTile.length > 0 ?
+                        <div>
+                    <span className="details-slider-title-video">Videos</span>
+                    <div className="details-video-container" >
+                                {movieVideoTile}
+                            
+                    </div>
+                    </div> : '' 
 
-
-
-        </div>
+                    }  
+            </div>
           
-              
-
                 {  castMovieTile && castMovieTile.length > 0 ?
                 <div className="details-slider-container">
                         <span className="details-slider-title">Cast</span>
                         <div className="details-cast-slider">
                             {castMovieTile}
                         </div> 
-                        </div> : ''
+                </div> : ''
 
                 }
                 
-                
-
-        
-
-        { crewMovieTile && crewMovieTile.length > 0 ? 
-        <div className="details-slider-container">
-                <span className="details-slider-title">Crew</span>
-                <div className="details-cast-slider">
-                    {crewMovieTile}
-                </div> 
-                </div>
+                { crewMovieTile && crewMovieTile.length > 0 ? 
+            <div className="details-slider-container">
+                    <span className="details-slider-title">Crew</span>
+                    <div className="details-cast-slider">
+                        {crewMovieTile}
+                    </div> 
+            </div>
                 : '' }
 
 
-       { movieRecommendTile.length > 0 ? <div className="details-slider-container">
+        { movieRecommendTile.length > 0 ? <div className="details-slider-container">
             <span className="details-slider-title">Recommendations</span>
             <div className="details-cast-slider">
                     {movieRecommendTile}
@@ -170,20 +126,16 @@ function Movie() {
             </div> 
             </div> : ''  } 
                
-        
         { movieReviewTile.length > 0 ? 
-        <div>
-        <span className="details-slider-title">Reviews</span>
-           <div className="details-review-container">
-                    {movieReviewTile}
-                
-        </div>
-        </div> : '' 
+            <div>
+            <span className="details-slider-title">Reviews</span>
+            <div className="details-review-container">
+                        {movieReviewTile}
+                    
+            </div>
+            </div> : '' 
         }
                 
-        
-           
-
         </div>
     )
 }

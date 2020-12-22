@@ -4,9 +4,7 @@ import {Link} from 'react-router-dom'
 
 
 function TvEpisodesMain() {
-
     const {tvDetails, handleSeasonClick, tvSeason, setTvSeason}  = useContext(Context)
-
 
     const tvEpisodesTile =  tvDetails.seasons && tvDetails.seasons.map((show) => 
         <div className="detail-season-number-box" key={show.id}>
@@ -18,13 +16,8 @@ function TvEpisodesMain() {
                 </span>
            </Link> 
         </div>
-    
     )
-
-
-
     return {tvEpisodesTile}
-
 }
 
 export default TvEpisodesMain

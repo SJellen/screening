@@ -4,7 +4,6 @@ import blankSquare from '../../assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 
 
-
 function MovieRecommendations() {
 
     const {posterPath, handleMovieClick, movieRecommendationArr, ratingTruncate}  = useContext(Context)

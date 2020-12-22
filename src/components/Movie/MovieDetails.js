@@ -8,8 +8,6 @@ function MovieDetails() {
     const {movieDetails, posterPathSmall, dollarsWithCommas}  = useContext(Context)
     const {budget, id, genres, production_companies, production_countries, revenue} = movieDetails
    
-    
-
     const genrelist = genres && genres.map(genre => 
         <div key={genre.id}>
             <li className="movie-details-list-item">{genre.name}</li> 
@@ -26,13 +24,8 @@ function MovieDetails() {
         <li className="movie-details-list-item"><span>{company.logo_path !== null ? <img className="movie-details-list-logo" src={`${posterPathSmall}${company.logo_path}`} alt="company logo"/> : ''}</span>{company.name}</li> 
     </div>)       
         
-        
-    
-
    const movieDetailsTile = (
-   
     <div key={id} className="details-movie-details-tile">
-    
         <div className="movie-details-list-container">
           <span className="movie-details-list-title">Genres</span>
         <ul className="movie-details-list">
@@ -59,11 +52,8 @@ function MovieDetails() {
             <li className="movie-details-list-item">Profit/Loss: ${revenue && budget && dollarsWithCommas(revenue - budget)}</li>
         </ul>  
         </div>
-        
     </div>
    )
-
-
     return {movieDetailsTile}
 
 }

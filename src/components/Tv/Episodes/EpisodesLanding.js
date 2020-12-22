@@ -10,22 +10,21 @@ function EpisodesLanding() {
     const {lastEpisodeTile} = TvLastEpisodeTile()
     const {nextEpisodeTile} = TvNextEpisodeTile()
 
-
     return (
         <div>
-         <div className="details-last-next-episode-title">
-    {lastEpisode && <span>Last Episode</span>} 
-    </div>
-    <div className="details-last-next-episode-container">
-    {lastEpisodeTile}
-    </div> 
-    <div className="details-last-next-episode-title">
-     {nextEpisode && <span>Next Episode</span>}
-    </div>
-    <div className="details-last-next-episode-container">
-        {nextEpisodeTile}
-    </div>
-    </div>
+            <div className="details-last-next-episode-title">
+                {lastEpisode && <span>Last Episode</span>} 
+            </div>
+            <div className="details-last-next-episode-container">
+                {lastEpisodeTile}
+            </div> 
+            <div className="details-last-next-episode-title">
+                {nextEpisode && <span>Next Episode</span>}
+            </div>
+            <div className="details-last-next-episode-container">
+                {nextEpisodeTile}
+            </div>
+        </div>
     )
 }
 
