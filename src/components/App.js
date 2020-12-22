@@ -15,8 +15,6 @@ import MenuPage from './MenuPage'
 import MenuLinkPage from './MenuLinkPage'
 
 
-
-
 function Home() {
   return (
     <div>
@@ -29,33 +27,24 @@ function Home() {
 }
 
 
-
-
 function App() {
-  
-
-
   return (
     <Router>
       <div className="App">
       <Header />
-     <Switch>
-       <Route exact path="/" component={Home} />
-       <Route path="/moviePage/" component={MoviePage} />
-       <Route path="/tvPage/" component={TvPage} />
-       <Route path="/personPage/" component={PersonPage} />
-       <Route path="/searchPage/" component={SearchPage} />
-       <Route path="/watchList/" component={WatchList} />
-        <Route path="/menuPage/" component={MenuPage} />
-        <MenuLinkPage />
-       
-     </Switch>
-   
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/moviePage/" component={MoviePage} />
+          <Route path="/tvPage/" component={TvPage} />
+          <Route path="/personPage/" component={PersonPage} />
+          <Route path="/searchPage/" component={SearchPage} />
+          <Route path="/watchList/" component={WatchList} />
+          <Route path="/menuPage/" component={MenuPage} />
+          <MenuLinkPage />
+        </Switch>
       <Footer />
-      
     </div>
     </Router>
- 
   );
 }
 

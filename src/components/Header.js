@@ -4,9 +4,6 @@ import '../style/Header.css';
 import {Link, useHistory} from 'react-router-dom'
 
 
-
-
-
 function Header() {
 
     const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, isLoggedIn}  = useContext(Context)
