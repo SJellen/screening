@@ -10,6 +10,4 @@ function useMoviePopular() {
         return {popularMoviesTile}
 }
 
-
-
 export default useMoviePopular

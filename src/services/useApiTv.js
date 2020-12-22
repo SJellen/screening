@@ -32,11 +32,6 @@ function useApiTv() {
         }
 
 
-
-
-
-
-
     const fetchTopRatedTv = async () => {
         await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKEY}&language=en-US`)
         .then(res => res.json())
@@ -81,9 +76,6 @@ function useApiTv() {
         .catch(error => console.log(error))
         }  
         
-        
-    
-
 
     const fetchTvSimilar = async (x) => {
         await fetch(`https://api.themoviedb.org/3/tv/${x}}/similar?api_key=${apiKEY}&language=en-US&page=1`)
@@ -101,8 +93,6 @@ function useApiTv() {
             fetchPopularTv()
             fetchAirToday()
             fetchTrendingTv()
-            
-            
             // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])   
         
@@ -120,7 +110,6 @@ function useApiTv() {
         }  
         
         
-
     const fetchTvCredits = async (x) => {
 
         await fetch(`https://api.themoviedb.org/3/tv/${x}/credits?api_key=${apiKEY}&language=en-US`)
@@ -182,8 +171,7 @@ function useApiTv() {
             
             await fetch(`https://api.themoviedb.org/3/tv/${tvId}/season/${x}?api_key=${apiKEY}&language=en-US`)
             .then(res => res.json())
-            .then((data) => {
-                
+            .then((data) => { 
                     setTvSeasonArr(data.episodes)
                     
             }
@@ -192,11 +180,6 @@ function useApiTv() {
             .catch(error => console.log(error))
             }      
         
-        
-
-
-
-
 
     return {topRatedTv, popularTv, airingToday,  setTvId,   tvId,   fetchTvDetails,  tvDetails, fetchTvCredits, tvCredits,  setTvCredits,  tvRecommendationArr, fetchTvRecommend,  fetchTvSimilar, tvSimilarArr, fetchTvReviews, tvReviews, fetchTvVideos, tvVideos, tvLoaded, setTvLoaded, lastTvId, setLastTvId, tvTrending, fetchTrendingTv, fetchTvProviders, tvProviders, setTvDetails, setTvSimilarArr, setTvRecommendationArr, setTvReviews, setTvVideos, setTvProviders, tvSeason, setTvSeason, fetchTvSeasonArr, tvSeasonArr, setTvSeasonArr}
 }

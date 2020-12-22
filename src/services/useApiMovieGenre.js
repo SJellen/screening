@@ -16,8 +16,6 @@ function useApiMovieGenre() {
     const [genre, setGenre] = useState(28)
 
 
-    
-
     const fetchGenreMovies = async (num, genre) => {
         await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${num}&with_genres=${genre}`)
         .then(res => res.json())
@@ -113,15 +111,9 @@ function useApiMovieGenre() {
             str === "Thriller" ? 53 :
             str === "War" ? 10752 :
              "Western" 
-
-
         }
 
-
-        
-
         useEffect(() => {
-
             const path = window.location.pathname
             const splitPath = path.split('/')
             const cleanPath = splitPath.filter(item => item !== '')
@@ -137,16 +129,9 @@ function useApiMovieGenre() {
             fetchGenreMovies(8, numberGenre)
             fetchGenreMovies(9, numberGenre)
             fetchGenreMovies(10, numberGenre)
-             
-            
         }, [genre])
         
-        
-
-
-        
-
-
+    
         return {genreMovies1, genreMovies2, genreMovies3, genreMovies4, genreMovies5, genreMovies6, genreMovies7, genreMovies8, genreMovies9, genreMovies10, fetchGenreMovies, handleMovieGenreClick, genre, setGenre, handleMovieGenreHover, movieGenreToString}
 }
 

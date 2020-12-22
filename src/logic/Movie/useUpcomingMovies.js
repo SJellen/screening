@@ -9,6 +9,4 @@ function useUpcomingMovies() {
         return {upcomingMoviesTile}
 }
 
-
-
 export default useUpcomingMovies

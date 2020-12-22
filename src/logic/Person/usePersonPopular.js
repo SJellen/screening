@@ -10,6 +10,4 @@ function usePersonPopular() {
         return {popularPersonTile}
 }
 
-
-
 export default usePersonPopular

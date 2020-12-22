@@ -2,14 +2,8 @@ import {useContext} from 'react'
 import {Context} from '../../Context'
 
 function usePersonCrew() {
-
     const {personCredits, getYear}  = useContext(Context)
-
     const {crew} = personCredits
-
-    
-
-
     let directorArr = [], writingArr = [], productionArr = [], otherJobArr = []  
 
     function crewSorter() {
@@ -97,8 +91,6 @@ function usePersonCrew() {
         return parseInt(getYear(b.first_air_date)) - parseInt(getYear(a.first_air_date))
     })
 
-   
-    
     return {sortedMovieDirectorArr,  getYear, sortedTvDirectorArr, sortedMovieWritingArr, sortedTvWritingArr, sortedMovieProductionArr, sortedTvProductionArr, sortedMovieMiscArr, sortedTvMiscArr, directorArr, writingArr, productionArr, otherJobArr}
 }
 

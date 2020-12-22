@@ -58,7 +58,6 @@ function useMenuPersonApi() {
                 } else {
                     setMenuPopularPersonPage6(data.results)
                 }
-    
                 
             }
     

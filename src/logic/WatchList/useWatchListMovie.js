@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
 
-
 function useWatchListMovie() {
     const {watchListMovie, movieTileMaker}  = useContext(Context)
 
@@ -9,7 +8,5 @@ function useWatchListMovie() {
 
         return {watchListMovieTile}
 }
-
-
 
 export default useWatchListMovie

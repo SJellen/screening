@@ -228,12 +228,6 @@ function useMenuTvApi() {
 
 
 
-
-
-
-
-
-
     useEffect(() => {
         const path = window.location.pathname
         const splitPath = path.split('/')
@@ -283,9 +277,6 @@ function useMenuTvApi() {
         }
            // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])    
-
-
-
 
 
 

@@ -9,5 +9,4 @@ function useTopRatedMovies() {
         return {topRatedMoviesTile}
 }
 
-
 export default useTopRatedMovies

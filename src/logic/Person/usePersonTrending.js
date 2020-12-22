@@ -10,5 +10,4 @@ function usePersonTrending() {
         return {personTrendingTile}
 }
 
-
 export default usePersonTrending

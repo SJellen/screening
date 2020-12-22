@@ -10,6 +10,4 @@ function useSearchResultsMovie() {
         return {searchResultsMovieTile}
 }
 
-
-
 export default useSearchResultsMovie

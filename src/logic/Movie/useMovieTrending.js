@@ -1,8 +1,6 @@
 import { useContext } from 'react'
 import {Context} from '../../Context'
 
-
-
 function useMovieTrending() {
     const {movieTrending, movieTileMaker}  = useContext(Context)
 
@@ -10,7 +8,5 @@ function useMovieTrending() {
 
         return {movieTrendingTile}
 }
-
-
 
 export default useMovieTrending

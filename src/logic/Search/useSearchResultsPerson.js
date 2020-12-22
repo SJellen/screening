@@ -10,6 +10,4 @@ function useSearchResultsPerson() {
     return {searchResultsPersonTile}
 }
 
-
-
 export default useSearchResultsPerson

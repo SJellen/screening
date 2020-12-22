@@ -48,8 +48,6 @@ function useMenuMovieApi() {
     const [menuTrendingMoviesPage6, setMenuTrendingMoviesPage6] = useState([])
     
     
-
-
     const fetchPopularMenuMovies = async (num) => {
         await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKEY}&language=en-US&page=${num}`)
         .then(res => res.json())
@@ -68,8 +66,6 @@ function useMenuMovieApi() {
             } else {
                 setMenuPopularMoviesPage6(data.results)
             }
-
-            
         }
 
         )
@@ -94,7 +90,6 @@ function useMenuMovieApi() {
                 } else {
                     setMenuTopRatedMoviesPage6(data.results)
                 }
-    
                 
             }
     
@@ -120,7 +115,6 @@ function useMenuMovieApi() {
                 } else {
                     setMenuUpcomingMoviesPage6(data.results)
                 }
-    
                 
             }
     
@@ -147,7 +141,6 @@ function useMenuMovieApi() {
                 } else {
                     setMenuNowPlayingMoviesPage6(data.results)
                 }
-    
                 
             }
     
@@ -175,7 +168,6 @@ function useMenuMovieApi() {
                     setMenuMostMoneyMovies6(data.results)
                 }
     
-                
             }
     
             )
@@ -202,7 +194,6 @@ function useMenuMovieApi() {
                     setMenuTrendingMoviesPage6(data.results)
                 }
     
-                
             }
     
             )
@@ -272,8 +263,6 @@ function useMenuMovieApi() {
         }
 
 
-
-
         useEffect(() => {
             const path = window.location.pathname
             const splitPath = path.split('/')
@@ -331,9 +320,6 @@ function useMenuMovieApi() {
             }
                // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])    
-
-
-
 
 
 

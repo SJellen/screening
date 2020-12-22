@@ -8,5 +8,4 @@ function useTvPopular() {
         return {popularTvTile}
 }
 
-
 export default useTvPopular
