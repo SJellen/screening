@@ -20,10 +20,9 @@ import MenuTvGenre from './Menu/MenuTvGenre'
 function MenuLinkPage() {
     return (
       <div className="item-page-container">
-      <Link to='/' style={{ textDecoration: 'none', color: "white" }}>
-                 <i className="im im-x-mark item-page-close" ></i> 
-      </Link> 
-  
+        <Link to='/' style={{ textDecoration: 'none', color: "white" }}>
+                  <i className="im im-x-mark item-page-close" ></i> 
+        </Link> 
         <Route path="/menuLinkPage/popularMovies/" component={MenuPopularMovies} />
         <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />
         <Route path="/menuLinkPage/upcomingMovies/" component={MenuUpcomingMovies} />
@@ -39,8 +38,7 @@ function MenuLinkPage() {
         <Route path="/menuLinkPage/trendingPerson/" component={MenuTrendingPerson} />
         <Route path="/menuLinkPage/movieGenre/" component={MenuMovieGenre} />
         <Route path="/menuLinkPage/tvGenre/" component={MenuTvGenre} />
-      </div>
-      
+      </div> 
     )
   }
 
