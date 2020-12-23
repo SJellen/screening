@@ -1,6 +1,6 @@
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1050px) {
     .header {
         justify-content: space-around;
     }
@@ -76,7 +76,6 @@
     .details-slider-container-episode {
         min-width: 90vw;
         max-width: 90vw;
-        
     }
     .watchlist-page-container {
         min-width: 95.5%;
@@ -85,9 +84,79 @@
         min-width: 90vw;
     }
     .menu-list {
+        min-width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .input-container {
+        max-width: 25vw;
+    }
+    .search-button {
+        max-width: 4rem;
+    }
+    .input::placeholder {
+        visibility: hidden;
+    }
+    .menu-list-container {
+        min-width: 99vw;
+    }
+    .menu-list {
+        min-width: 35vw;
+        margin: 2rem auto;
+      }
+      
+    
+}
+
+@media only screen and (max-width: 550px) {
+    .title {
+        margin-right: 0;
+    }
+    .menu-list-container {
+        min-width: 99vw;
+    }
+    .menu-list {
+        min-width: 45vw;
+        margin: 2rem auto;
+      }
+}
+
+@media only screen and (max-width: 500px) {
+    .header-title-link {
+        display: none; 
+    }
+    .menu-box {
+        position: absolute;
+        max-width: 2.5rem;
+        left: 2rem;
+    }
+    .menu-span {
+        display: none;
+    }
+    .menu-media-list-link {
         min-width: 40vw;
     }
+    .menu-list {
+        min-width: 45vw;
+      }
+    .input-container {
+        max-width: 35vw;
+    }
+}
 
-     
-   
+@media only screen and (max-width: 425px) {
+    .menu-list-container {
+        min-width: 90vw;
+        margin-bottom: 1rem;
+    }
+    .menu-list {
+        min-width: 75vw;
+    }
+    .menu-media-list-link {
+        min-width: 60vw;
+    }
+    .menu-page-container {
+        padding: 0;
+    }
 }
