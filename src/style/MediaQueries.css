@@ -113,6 +113,28 @@
         min-width: 35vw;
         margin: 2rem auto;
       }
+
+    .detail-top-container {
+        flex-direction: column;
+        
+    } 
+    .poster-container {
+        margin: 0 auto 2rem auto;
+    } 
+    .detail-word-box {
+        border: 1px solid red;
+        min-width: 85%;
+        margin: 0 auto;
+    }
+    .im-bookmark-page {
+        right: 35%;
+        top: 17.05rem;
+    }
+    .details-tagline {
+        border: 1px solid red;
+        min-width: 50vw;
+        text-align: left;
+    }
       
     
 }
