@@ -81,6 +81,12 @@
     .watchlist-page-container {
         min-width: 95.5%;
     }
+    .menu-list-container {
+        min-width: 90vw;
+    }
+    .menu-list {
+        min-width: 40vw;
+    }
 
      
    

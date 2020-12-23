@@ -1,4 +1,5 @@
 import '../style/App.css';
+import '../style/MediaQueries.css'
 import Header from '../components/Header'
 import Trending from '../components/Trending'
 import Popular from '../components/Popular'
