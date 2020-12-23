@@ -14,7 +14,7 @@ function Trending() {
 
     return (
         <div>
-            <div className="slider-container">
+            <div className="slider-container-home">
                 <span className="slider-label">Trending: Movies<Link to={"/menuLinkPage/trendingMovies/"} style={{textDecoration: "none"}} onClick={handleMenuTrendingMoviesClick} ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="#E1B517" className="link-arrow"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg></Link></span>
                 <div className="slider-sub-container">
                     {movieTrendingTile}

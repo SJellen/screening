@@ -10,7 +10,7 @@ function useTvCast() {
     const castTvTile = cast && cast.map((person, index) => 
         <div className="slider-card" key={person.credit_id}> 
             <Link to={`/personPage/${person.id}`}>
-                <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, cast, prevState => prevState)}/> 
+                <img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, cast, prevState => prevState)} className="slider-card-image" /> 
             </Link>
             <span className="slider-name">{person.name}</span>
             <span className="slider-character">{person.character}</span>

@@ -29,7 +29,9 @@
         min-width: 95vw;
     }
     .item-page-container {
-        min-width: 95.5%;
+        min-width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
     .details-watch-box {
         width: 95vw;
@@ -78,7 +80,9 @@
         max-width: 90vw;
     }
     .watchlist-page-container {
-        min-width: 95.5%;
+        min-width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
     .menu-list-container {
         min-width: 90vw;
@@ -142,12 +146,13 @@
       }
 
     .item-page-container {
-        min-width: 92%;
+        min-width: 100vw;
+        max-width: 100vw;
     }  
     .input-container {
         max-width: 35vw;
     }
-    .slider-sub-container {
+    .slider-sub-container, .details-cast-slider {
         max-height: 30rem;
     }
     .slider-card {

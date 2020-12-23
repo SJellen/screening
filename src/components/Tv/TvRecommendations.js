@@ -10,7 +10,7 @@ function TvRecommendations() {
     const tvRecommendTile = tvRecommendationArr && tvRecommendationArr.map((show, index) => 
         <div className="slider-card" key={show.id}> 
             <Link to={`/tvPage/${show.id}`}>
-                <img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvRecommendationArr)}/>
+                <img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, tvRecommendationArr)} className="slider-card-image" />
             </Link>
                 {ratingTruncate(show)}
                 <span className="slider-title" >{show.name}</span>
