@@ -216,7 +216,7 @@ function ContextProvider({children}) {
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: ""}}></i>
        }
         </span>
-        <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, arr)}/></Link>
+        <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, arr)} className="slider-card-image" /></Link>
         {ratingTruncate(show)}
         <span className="slider-title">{show.name}</span>
         </div>
@@ -232,7 +232,7 @@ function ContextProvider({children}) {
          <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: ""}}></i>
        }
         </span>
-        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, arr)}/></Link>
+        <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, arr)} className="slider-card-image" /></Link>
         {ratingTruncate(movie)}
         <span className="slider-title" >{movie.title}</span>
         </div>
@@ -242,7 +242,7 @@ function ContextProvider({children}) {
     function personTileMaker(arr) {
         return arr.map((person, index) => 
         <div className="slider-card" key={person.id}> 
-        <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, arr)}/></Link>
+        <Link to={`/personPage/${person.id}`}><img  src={person.profile_path !== null ? `${posterPath}${person.profile_path}` : blankSquare} alt="poster" onClick={() => handlePersonClick(index, arr)} className="slider-card-image" /></Link>
         <span className="slider-name">{person.name}</span>
        </div> 
         )

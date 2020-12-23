@@ -15,7 +15,7 @@ function MenuMovieGenre() {
     }, [])
     
     return (
-       <div>
+       <div >
             <span className="slider-label-genre">{genrePath} Movies</span>
                  {menuMovieGenreTile1 && menuMovieGenreTile1.length > 0 ? <div className="slider-container">
                 <div className="slider-sub-container">
