@@ -1,0 +1,87 @@
+
+
+@media only screen and (max-width: 900px) {
+    .header {
+        justify-content: space-around;
+    }
+    .input-container {
+        max-width: 30vw;
+    }
+    .title {
+        margin-right: 2rem;
+    }
+    .details-container {
+        min-width: 95vw;
+    }
+    .detail-top-container {
+        min-width: 100%;
+    }
+    .details-poster {
+        min-width: 30vw;
+    }
+    .detail-word-box {
+        min-width: 50vw;
+    }
+    .details-movie-details-container {
+        min-width: 95vw;
+    }
+    .details-episode-container {
+        min-width: 95vw;
+    }
+    .item-page-container {
+        min-width: 95.5%;
+    }
+    .details-watch-box {
+        width: 95vw;
+    }
+    .details-slider-video-watch-container {
+        width: 95vw;
+    }
+    .details-video-container {
+        padding: 2rem 0;
+        min-width: 95vw;
+        max-width: 95vw;
+    }
+    .details-slider-title-video {
+        margin-left: 2rem;
+    }
+    .details-slider-container{
+        min-width: 95vw;
+    }
+    .details-review-container {
+        min-width: 92.5vw;
+    }
+    .im-bookmark-page {
+        right: 7.5%;
+    }
+    .details-images-container {
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+    .details-credit-container {
+        width: 85vw;
+        min-width: 85vw;
+        max-width: 85vw;
+    }
+    .person-part-tile {
+        width: 80vw; 
+        min-width: 80vw;
+    }
+    .slider-container {
+        max-width: 100vw;
+      }
+    .details-overview {
+          min-width: 100%;
+    }
+    .details-slider-container-episode {
+        min-width: 90vw;
+        max-width: 90vw;
+        
+    }
+    .watchlist-page-container {
+        min-width: 95.5%;
+    }
+
+     
+   
+}

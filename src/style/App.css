@@ -96,13 +96,7 @@ html {
 .slider-card > img:hover {
   cursor: pointer;
 }
-/* 
-.slider-poster {
-  display: block;
-  width: 200px;
-  height: auto;
-  
-} */
+
 
 .slider-score {
   padding-top: 1rem;
