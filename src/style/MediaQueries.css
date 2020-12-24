@@ -114,19 +114,17 @@
         margin: 2rem auto;
       }
       .item-page-container {
-        background-color: rgb(18, 18, 18);
-        max-width: 100vw;
+        min-width: 100vw;
         height: auto;
         padding: 0;
         margin: 0 auto;
-       
       }  
 
     .details-container {
-        box-sizing: border-box;
         border: 1px solid blue;
-        padding: 0;
-        margin: 0 auto;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-evenly;
     }  
 
     .detail-top-container {
@@ -182,12 +180,14 @@
         margin: 0;
     }
     .item-part-review {
-        justify-content: space-around;
+        min-width: 100%;
+        
+        margin: 0 auto;
     }
     .details-review-container {
+        border: 1px solid red;
+        
         margin: 0 auto;
-        max-width: 90vw;
-        box-sizing: border-box;
         overflow: hidden;
     }
     .details-episode-container {
