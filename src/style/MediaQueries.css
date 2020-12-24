@@ -15,6 +15,7 @@
     }
     .detail-top-container {
         min-width: 100%;
+        margin: 0 auto;
     }
     .details-poster {
         min-width: 30vw;
@@ -23,7 +24,8 @@
         min-width: 50vw;
     }
     .details-movie-details-container {
-        min-width: 95vw;
+        min-width: 95%;
+        margin: 0 auto;
     }
     .details-episode-container {
         min-width: 95vw;
@@ -146,7 +148,7 @@
     }
     .details-tagline {
         min-width: 50vw;
-        text-align: left;
+        text-align: center;
     }
     .details-title {
         font-size: 2rem;
@@ -168,9 +170,7 @@
     .details-watch-box {
         max-width: 95vw;
     }
-    .video-card {
-        max-width: 90vw;
-    }
+    
     .details-video-container {
         padding: 0 0;
         min-width: 90vw;
