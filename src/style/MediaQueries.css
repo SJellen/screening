@@ -113,10 +113,27 @@
         min-width: 35vw;
         margin: 2rem auto;
       }
+      .item-page-container {
+        background-color: rgb(18, 18, 18);
+        max-width: 100vw;
+        height: auto;
+        padding: 0;
+        margin: 0 auto;
+       
+      }  
+
+    .details-container {
+        box-sizing: border-box;
+        border: 1px solid blue;
+        padding: 0;
+        margin: 0 auto;
+    }  
 
     .detail-top-container {
         flex-direction: column;
-        
+        margin: 0 auto;
+        max-width: 90vw;
+        padding: 0;
     } 
     .poster-container {
         margin: 0 auto 2rem auto;
@@ -133,11 +150,6 @@
         min-width: 50vw;
         text-align: left;
     }
-
-    .details-top-word-box {
-        justify-content: space-between;
-    }
-
     .details-title {
         font-size: 2rem;
         min-width: 60vw;
@@ -158,6 +170,44 @@
     .details-watch-box {
         max-width: 95vw;
     }
+    .video-card {
+        max-width: 90vw;
+    }
+    .details-video-container {
+        padding: 0 0;
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+    .item-review-author {
+        margin: 0;
+    }
+    .item-part-review {
+        justify-content: space-around;
+    }
+    .details-review-container {
+        margin: 0 auto;
+        max-width: 90vw;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .details-episode-container {
+        min-width: 90vw; 
+    }
+    .details-slider-container-episode {
+        min-width: 80vw;
+    }
+    .details-episode-card-season-tile {
+        min-width: 85vw;
+    }
+    .details-episode-card-season {
+        min-width: 85vw;
+    }
+    .details-slider-container {
+        min-width: 90vw;
+        margin: 0 auto;
+    }
+    
+   
       
     
 }

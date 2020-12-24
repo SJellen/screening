@@ -30,7 +30,7 @@ function Person() {
                     </div>
                 <div className="detail-word-box">
                     <div className="details-top-word-box">
-                        <span className="details-title">{personDetails.name}</span>    
+                        <span className="details-title-person">{personDetails.name}</span>    
                     </div>
                     <div className="details-mid-word-box">
                         { personDetails.birthday && <span className="details-birth">Born {dateSplitter(personDetails.birthday)}</span>}

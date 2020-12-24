@@ -36,6 +36,7 @@
     text-align: left;
 }
 
+
 .details-overview {
     min-width: 90%;
 }
@@ -46,6 +47,14 @@
     font-weight: 500;
     max-width: 25vw;
     text-align: left;
+}
+
+.details-title-person {
+        font-size: 3rem;
+        font-weight: 500;
+        max-width: 75vw;
+        margin: 0 auto;
+        text-align: left;
 }
 
 .details-score {
@@ -480,6 +489,7 @@
     display: flex;
     justify-content: space-around;
     margin: 2rem auto;
+   
 }
 .details-review-tile {
     background-color: #1B1B1B;
@@ -490,8 +500,7 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(18, 18, 18);
-    width: 74vw;
+    width: 76vw;
     margin: 0 auto;
-    margin-left: 1rem;
     color: white;
 }
