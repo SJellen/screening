@@ -160,7 +160,9 @@
     .details-movie-details-container {
         min-width: 87.5vw;
         margin: 0 auto;
+        
     }
+    
     .details-video-container {
         min-width: 87.5vw;
     }
@@ -185,8 +187,6 @@
         margin: 0 auto;
     }
     .details-review-container {
-        border: 1px solid red;
-        
         margin: 0 auto;
         overflow: hidden;
     }
@@ -206,10 +206,33 @@
         min-width: 90vw;
         margin: 0 auto;
     }
-    
+    .movie-details-list-item {
+        margin: 0 auto;
+    }
    
       
     
+}
+
+@media only screen and (max-width: 650px) {
+    .details-movie-details-container {
+        min-width: 87.5vw;
+        margin: 0 auto;
+    }
+    .details-movie-details-tile {
+        display: flex;
+        flex-direction: column;
+    }
+    .movie-details-list-container { 
+        min-width: 70vw;
+    }
+    .movie-details-list {
+        text-align: center;
+    }
+    .movie-details-list-item {
+        margin: 0 auto;
+        width: 75%;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -247,7 +270,11 @@
     .item-page-container {
         min-width: 100vw;
         max-width: 100vw;
-    }  
+        
+    } 
+    
+    
+    
     .input-container {
         max-width: 35vw;
     }
@@ -300,6 +327,12 @@
         padding: 2rem 0;
         font-weight: 600;
       }
+
+    .footer {
+        margin-top: 0;
+        padding-top: 5rem;
+        
+    }  
    
 }
 
