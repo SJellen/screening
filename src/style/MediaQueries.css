@@ -162,6 +162,12 @@
         margin: 0 auto;
         
     }
+
+    .filmography-nav {
+        width: 90vw;
+        display: flex;
+        justify-content: space-evenly;  
+     }
     
     .details-video-container {
         min-width: 87.5vw;
@@ -182,8 +188,7 @@
         margin: 0;
     }
     .item-part-review {
-        min-width: 100%;
-        
+        min-width: 90%;
         margin: 0 auto;
     }
     .details-review-container {
@@ -270,10 +275,20 @@
     .item-page-container {
         min-width: 100vw;
         max-width: 100vw;
-        
     } 
-    
-    
+
+    .detail-word-box {
+        min-width: 75vw;
+        margin: 0 auto;
+    }
+
+    iframe {
+        
+        max-width: 85vw;
+        min-height: auto;
+        margin: 0;
+        padding: 0 0;
+    }
     
     .input-container {
         max-width: 35vw;
@@ -284,6 +299,7 @@
     .slider-card {
         padding: 1.5rem;
         margin: 0 .5rem;
+        max-width: 14rem;
       }
     .slider-card-image {
         max-height: 20rem;
@@ -330,9 +346,36 @@
 
     .footer {
         margin-top: 0;
-        padding-top: 5rem;
+        padding-bottom: 2.5rem;
+        padding-top: 2.5rem;
         
     }  
+    .item-part-review {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .details-review-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .item-part-review-left {
+        height: 5rem;
+        width: 100%;
+    }
+
+    .item-review-container {
+        margin-top: 5rem;
+        min-width: 90%;
+        margin-left: -25rem;
+        padding: 2rem;
+    }
+
    
 }
 
