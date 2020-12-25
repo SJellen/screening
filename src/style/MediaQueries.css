@@ -123,7 +123,6 @@
       }  
 
     .details-container {
-        border: 1px solid blue;
         min-width: 100%;
         display: flex;
         justify-content: space-evenly;
@@ -265,7 +264,7 @@
     }
     .slider-container-home {
         margin-top: 0;
-      } 
+      }   
     .menu-box {
         position: absolute;
         max-width: 2.5rem;
@@ -386,11 +385,15 @@
         margin-left: -25rem;
         padding: 2rem;
     }
-
-   
-
-   
 }
+
+@media only screen and (max-width: 499px) {
+    .im-bookmark-page {
+        top: 14rem;
+    }
+}
+
+
 
 @media only screen and (max-width: 425px) {
     .menu-list-container {
@@ -406,4 +409,11 @@
     .menu-page-container {
         padding: 0;
     }
+    
+}
+
+@media only screen and (max-width: 375px) {
+    .detail-word-box {
+            margin-left: -1%;
+        }
 }
