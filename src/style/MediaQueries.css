@@ -254,9 +254,18 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .App {
+        max-width: 100%;
+    }
     .header-title-link {
         display: none; 
     }
+    .header {
+        border-bottom: 2px solid  #1B1B1B;
+    }
+    .slider-container-home {
+        margin-top: 0;
+      } 
     .menu-box {
         position: absolute;
         max-width: 2.5rem;
@@ -275,7 +284,13 @@
     .item-page-container {
         min-width: 100vw;
         max-width: 100vw;
+        margin-top: 0rem !important;
+        margin-bottom: 0;
     } 
+    .watchlist-page-container {
+        margin-top: 0rem !important;
+        margin-bottom: 0;  
+    }
 
     .detail-word-box {
         min-width: 75vw;
@@ -283,7 +298,6 @@
     }
 
     iframe {
-        
         max-width: 85vw;
         min-height: auto;
         margin: 0;
@@ -345,10 +359,7 @@
       }
 
     .footer {
-        margin-top: 0;
-        padding-bottom: 2.5rem;
-        padding-top: 2.5rem;
-        
+        margin-top: 0rem !important;
     }  
     .item-part-review {
         height: auto;
@@ -375,6 +386,8 @@
         margin-left: -25rem;
         padding: 2rem;
     }
+
+   
 
    
 }
