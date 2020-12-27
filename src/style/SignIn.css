@@ -28,12 +28,13 @@
     /* border: 1px solid blue; */
     margin-right: 7.5rem;
     font-size: 1.25rem;
+    color: gold;
 }
 
 .signIn-toggle-label:hover {
     cursor: pointer;
-    color: gold;
-    transition: 2s ease;
+    color: rgba(255, 215, 0, .5);
+    transition: 1s ease-in;
 }
 
 .signIn-title {
