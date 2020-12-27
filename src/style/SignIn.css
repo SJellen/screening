@@ -1,6 +1,5 @@
 
 .signIn-container {
-    border: 1px solid red;
     width: 40vw;
     margin: 5rem auto 0 auto;
     padding: 5rem 0;
@@ -17,34 +16,32 @@
 }
 
 .signIn-toggle-container {
-    border: 1px solid red;
     display: flex;
     width: 40vw;
     justify-content: flex-end;
     padding: 2rem 0;
     margin-top: -4rem;
-    
 }
 
 .signIn-toggle-label {
-    border: 1px solid blue;
-    margin-right: 7rem;
+    /* border: 1px solid blue; */
+    margin-right: 7.5rem;
     font-size: 1.25rem;
 }
 
-.signIn-toggle-label {
+.signIn-toggle-label:hover {
     cursor: pointer;
+    color: gold;
+    transition: 2s ease;
 }
 
 .signIn-title {
     font-size: 2rem;
     margin: 4rem auto;
-    border: 1px solid orange;
     padding: 2rem;
 }
 
 .signUp-form {
-   border: 1px solid green;
    height: 100%;
    margin: 4rem auto;
    display: flex;
@@ -53,7 +50,6 @@
 
 
 .signIn-form {
-   border: 1px solid orange;
    height: 100%;
    margin: 4rem auto;
    display: flex;
@@ -61,20 +57,24 @@
 }
 
 .signIn-form-container {
-     border: 1px solid blue;
      width: 30vw;
-     height: 500px;
+     height: 400px;
+     padding: 4rem 0 0 0;
+     background-color: #1B1B1B;
 }
 
 .signUp-form-container {
-    border: 1px solid gold;
     width: 30vw;
     height: 500px;
+    padding: 4rem 0 0 0;
+    background-color: #1B1B1B;
 }
 
 .form-input {
-    border: 1px solid red;
     width: 90%;
+    padding: .5rem;
+    margin: 0 auto;
+    font-size: 1.25rem;
 }
 
 .input-label-container {
@@ -91,4 +91,6 @@
 .input-label {
     border: 1px solid red;
     display: flex;
+    padding: 1rem;
+    font-size: 1.25rem;
 }
