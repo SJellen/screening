@@ -14,7 +14,7 @@ import PersonPage from './PersonPage'
 import WatchList from './WatchList'
 import MenuPage from './MenuPage'
 import MenuLinkPage from './MenuLinkPage'
-
+import SignIn from './SignIn'
 
 function Home() {
   return (
@@ -40,6 +40,7 @@ function App() {
           <Route path="/personPage/" component={PersonPage} />
           <Route path="/searchPage/" component={SearchPage} />
           <Route path="/watchList/" component={WatchList} />
+          <Route path="/signIn/" component={SignIn} />
           <Route path="/menuPage/" component={MenuPage} />
           <MenuLinkPage />
         </Switch>

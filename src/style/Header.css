@@ -124,6 +124,12 @@ input:active {
     color: white;
 }
 
+.header-signIn:hover {
+    cursor: pointer;
+    color: #E1B517;
+    transition: 2.5s;
+}
+
 
 .header-right-container {
     min-width: 55px;

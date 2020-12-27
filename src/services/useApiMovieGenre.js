@@ -129,6 +129,7 @@ function useApiMovieGenre() {
             fetchGenreMovies(8, numberGenre)
             fetchGenreMovies(9, numberGenre)
             fetchGenreMovies(10, numberGenre)
+             // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [genre])
         
     

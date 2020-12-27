@@ -6,7 +6,7 @@ import {Link, useHistory} from 'react-router-dom'
 
 function Header() {
 
-    const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, isLoggedIn}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, isLoggedIn, setSignInMenu}  = useContext(Context)
     const history = useHistory()
 
     function handleSearch(event) {
@@ -19,6 +19,10 @@ function Header() {
         history.push("/searchPage")
         fetchSearchResults()
         document.getElementById('search-bar').value = ''
+    }
+
+    function handleSignIn() {
+        setSignInMenu(true)
     }
 
     let watchListTotal = watchListTv.length + watchListMovie.length
@@ -58,7 +62,9 @@ function Header() {
                     <Link to="/watchList/" style={{textDecoration: "none"}}>
                         <div className="header-right-container"><i className="im im-user-circle">{watchListTotal > 0 ? <span className="watchListCount">{watchListTotal}</span> : ''}</i></div>
                     </Link> : 
-                    <div className="header-right-container"><span className="header-signIn">Sign In</span></div>
+                    <Link to="/signIn/" style={{textDecoration: "none"}}>
+                    <div className="header-right-container"><span className="header-signIn" onClick={handleSignIn}>Sign In</span></div>
+                    </Link>
                 }  
             </div>
         )

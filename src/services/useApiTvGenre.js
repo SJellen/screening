@@ -118,7 +118,6 @@ function useApiMovieGenre() {
             const pathGenre = cleanPath[2]
             // console.log(pathGenre)
             let numberGenre = tvStringGenreToNum(pathGenre)
-             console.log(numberGenre, genreTv)
             fetchGenreTv(1, numberGenre)
             fetchGenreTv(2, numberGenre)
             fetchGenreTv(3, numberGenre)
@@ -128,7 +127,8 @@ function useApiMovieGenre() {
             fetchGenreTv(7, numberGenre)
             fetchGenreTv(8, numberGenre)
             fetchGenreTv(9, numberGenre)
-            fetchGenreTv(10, numberGenre)  
+            fetchGenreTv(10, numberGenre) 
+             // eslint-disable-next-line react-hooks/exhaustive-deps 
         }, [genreTv])
         
         
