@@ -1,0 +1,94 @@
+
+.signIn-container {
+    border: 1px solid red;
+    width: 40vw;
+    margin: 5rem auto 0 auto;
+    padding: 5rem 0;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signIn-page-title {
+    font-size: 2rem;
+    margin: 4rem auto;
+}
+
+.signIn-toggle-container {
+    border: 1px solid red;
+    display: flex;
+    width: 40vw;
+    justify-content: flex-end;
+    padding: 2rem 0;
+    margin-top: -4rem;
+    
+}
+
+.signIn-toggle-label {
+    border: 1px solid blue;
+    margin-right: 7rem;
+    font-size: 1.25rem;
+}
+
+.signIn-toggle-label {
+    cursor: pointer;
+}
+
+.signIn-title {
+    font-size: 2rem;
+    margin: 4rem auto;
+    border: 1px solid orange;
+    padding: 2rem;
+}
+
+.signUp-form {
+   border: 1px solid green;
+   height: 100%;
+   margin: 4rem auto;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.signIn-form {
+   border: 1px solid orange;
+   height: 100%;
+   margin: 4rem auto;
+   display: flex;
+   flex-direction: column;
+}
+
+.signIn-form-container {
+     border: 1px solid blue;
+     width: 30vw;
+     height: 500px;
+}
+
+.signUp-form-container {
+    border: 1px solid gold;
+    width: 30vw;
+    height: 500px;
+}
+
+.form-input {
+    border: 1px solid red;
+    width: 90%;
+}
+
+.input-label-container {
+    border: 1px solid gold;
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1rem auto;
+    padding: 2rem 0;
+}
+
+.input-label {
+    border: 1px solid red;
+    display: flex;
+}
