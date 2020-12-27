@@ -27,7 +27,7 @@ function useSignIn() {
          <div className="signIn-container">
 
         <div className="signIn-toggle-container">
-            <span className="signIn-toggle-label" onClick={handleToggleClick}>{toggleSignInForm ? "Create account" : "Sign In"}</span>
+            <span className="signIn-toggle-label" onClick={handleToggleClick}>{toggleSignInForm ? "Create Account" : "Sign In"}</span>
         </div>
 
             
@@ -38,7 +38,8 @@ function useSignIn() {
                 <div className="input-label-container">
                     <label className="input-label">Username</label>
                                         <input
-                                            className="form-input" 
+                                            className="form-input"
+                                            placeholder="ILuvMovies" 
 
 
                                         />
@@ -49,23 +50,26 @@ function useSignIn() {
                     <label className="input-label">Password</label>
                         <input 
                             className="form-input"
+                            placeholder="Not1234"
 
 
                         />
                 
                  </div>
-                
+                 
+                <input type="submit" value="Sign In" className="submit-form" />
             </form>
 
         </div> : 
         <div className="signUp-form-container">
-            <span className="signIn-title">Create an account</span>
+            <span className="signIn-title">Create an Account</span>
             <form className="signUp-form">
 
             <div className="input-label-container">
                 <label className="input-label">Email</label>
                                     <input 
                                         className="form-input"
+                                        placeholder="ILuvMovies@email.com"
 
 
                                     />
@@ -77,6 +81,7 @@ function useSignIn() {
                 <label className="input-label">Username</label>
                         <input 
                             className="form-input"
+                            placeholder="ILuvMovies" 
 
 
                         />
@@ -88,13 +93,14 @@ function useSignIn() {
                 <label className="input-label">Password</label>
                         <input 
                             className="form-input"
+                            placeholder="Not1234"
 
 
                         />
             
              </div>
                 
-
+             <input type="submit" value="Submit" className="submit-form" />
             </form>
         </div>
 
