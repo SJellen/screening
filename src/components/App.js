@@ -14,7 +14,7 @@ import PersonPage from './PersonPage'
 import WatchList from './WatchList'
 import MenuPage from './MenuPage'
 import MenuLinkPage from './MenuLinkPage'
-import SignIn from './SignIn'
+import SignIn from './SignIn/SignIn'
 
 function Home() {
   return (

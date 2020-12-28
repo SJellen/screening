@@ -1,13 +1,13 @@
 import React, {useContext} from 'react'
-import {Context} from '../Context'
-import useSignIn from '../logic/useSignIn'
+import {Context} from '../../Context'
+import SignForm from './SignForm'
 import {Link} from 'react-router-dom'
-import '../style/SignIn.css'
+import '../../style/SignIn.css'
 
 
 function SignIn() {
     const {signInMenu} = useContext(Context)
-    const {signInTile} = useSignIn()
+    const {signInTile} = SignForm()
     
    
     return (
