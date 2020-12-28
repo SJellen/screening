@@ -1,12 +1,20 @@
-import react, { useContext, useState } from 'react' 
+import react, { useContext, useState, useEffect } from 'react' 
 import {Context} from '../../Context'
 
 
 function SignInForm() {
 
-    const {username, setUserName, password, setPassword, email, setEmail}=  useContext(Context)
+    const {username, setUserName, password, setPassword, email, setEmail, users, setUsers}=  useContext(Context)
 
-    function onChangeUsername(e) {
+    useEffect(() => {
+        setUsers({
+            users: ['test user'],
+            username: "scott",
+            password: "1234"
+        })
+    }, [])
+
+     function onChangeUsername(e) {
         setUserName(e.target.value)
     }
 
@@ -14,9 +22,7 @@ function SignInForm() {
         setPassword(e.target.value)
     }
 
-    function onChangeEmail(e) {
-        setEmail(e.target.value)
-    }
+
 
     return (
         <div className="signIn-form-container">
@@ -27,7 +33,7 @@ function SignInForm() {
                                         <input
                                             className="form-input"
                                             placeholder="ILuvMovies" 
-
+                                            onChange={onChangeUsername}
 
                                         />
 
@@ -38,7 +44,7 @@ function SignInForm() {
                         <input 
                             className="form-input"
                             placeholder="Not1234"
-
+                            onChange={onChangePassword}
 
                         />
                 

@@ -1,4 +1,4 @@
-import react, { useContext, useState } from 'react' 
+import react, { useContext, useState, useEffect} from 'react' 
 import {Context} from '../../Context'
 
 
@@ -8,6 +8,7 @@ function SignUpForm() {
 
     function onChangeUsername(e) {
         setUserName(e.target.value)
+        console.log(username)
     }
 
     function onChangePassword(e) {
@@ -17,6 +18,18 @@ function SignUpForm() {
     function onChangeEmail(e) {
         setEmail(e.target.value)
     }
+
+    function onSubmit(e) {
+        e.preventDefault()
+        const user = {
+            username: username,
+            password: password,
+            email: email
+        }
+        
+        
+    }
+    
     
 
     return (
@@ -29,7 +42,7 @@ function SignUpForm() {
                                 <input 
                                     className="form-input"
                                     placeholder="ILuvMovies@email.com"
-
+                                    onChange={onChangeEmail}
 
                                 />
 
@@ -41,7 +54,7 @@ function SignUpForm() {
                     <input 
                         className="form-input"
                         placeholder="ILuvMovies" 
-
+                        onChange={onChangeUsername}
 
                     />
         
@@ -53,6 +66,7 @@ function SignUpForm() {
                     <input 
                         className="form-input"
                         placeholder="Not1234"
+                        onChange={onChangePassword}
 
 
                     />
