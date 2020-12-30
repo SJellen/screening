@@ -103,6 +103,7 @@ router.post("/tokenIsValid", async (req, res) => {
         const token = req.header("x-auth-token")
         if (!token)
                 return res.json(false)
+
         const verified = jwt.verify(token, process.env.JWT_SECRET)
         if (!verified)
                 return res.json(false)
@@ -117,6 +118,15 @@ router.post("/tokenIsValid", async (req, res) => {
     catch(err) {
         res.status(500).json({error: err.message})
     }
+})
+
+
+router.get("/", auth, async (req, res) => {
+    const user = await User.findById(req.user)
+    res.json({
+        displayName: user.displayName,
+        id: user._id
+    })
 })
 
 

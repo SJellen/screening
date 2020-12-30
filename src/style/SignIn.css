@@ -13,12 +13,11 @@
 .signIn-page-title {
     font-size: 2rem;
     margin-left: -15%;
-   
 }
 
 .signIn-toggle-container {
     display: flex;
-    width: 40vw;
+    width: 30vw;
     justify-content: flex-end;
     padding: 2rem 0;
     margin-top: -4rem;
@@ -110,6 +109,21 @@
 }
 
 .submit-form:hover {
+    cursor: pointer;
+    background-color: rgb(63, 66, 70);
+    transition: 1s ease-in;
+}
+
+.toggle-signIn-button {
+    margin-bottom: -2rem;
+    border: none;
+    background-color: rgb(73, 84, 100);
+    color: white;
+    border-radius: 2.5px;
+    padding: .5rem;
+}
+
+.toggle-signIn-button:hover {
     cursor: pointer;
     background-color: rgb(63, 66, 70);
     transition: 1s ease-in;
