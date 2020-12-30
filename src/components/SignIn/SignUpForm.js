@@ -4,29 +4,18 @@ import {Context} from '../../Context'
 
 function SignUpForm() {
 
-    const {username, setUserName, password, setPassword, email, setEmail, setUser, user}=  useContext(Context)
-
-
-    function onChangeUsername(e) {
-        setUserName(e.target.value)
-        
-    }
-
-    function onChangePassword(e) {
-        setPassword(e.target.value)
-    }
-
-    function onChangeEmail(e) {
-        setEmail(e.target.value)
-    }
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const [passwordCheck, setPasswordCheck] = useState()
+    const [displayName, setDisplayName] = useState()
 
     function onSubmit(e) {
         e.preventDefault()
-        setUser({
-            username: username,
-            password: password,
-            email: email
-        })
+        // setUser({
+        //     username: username,
+        //     password: password,
+        //     email: email
+        // })
        
 
        
@@ -34,7 +23,7 @@ function SignUpForm() {
         
     }
     
-      console.log(username, user, password, email)
+    
 
     return (
         <div className="signUp-form-container">
@@ -42,23 +31,26 @@ function SignUpForm() {
         <form className="signUp-form">
 
         <div className="input-label-container">
-            <label className="input-label">Email</label>
+            <label className="input-label" htmlFor="register-email">Email</label>
                                 <input 
                                     className="form-input"
+                                    id="register-email"
                                     placeholder="ILuvMovies@email.com"
-                                    onChange={onChangeEmail}
-
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="email"
                                 />
 
         </div>
             
 
         <div className="input-label-container">
-            <label className="input-label">Username</label>
+            <label className="input-label" htmlFor="register-displayName" >Display Name</label>
                     <input 
                         className="form-input"
+                        id="register-displayName"
                         placeholder="ILuvMovies" 
-                        onChange={onChangeUsername}
+                        onChange={(e) => setDisplayName(e.target.value)}
+                        type="text"
 
                     />
         
@@ -66,18 +58,31 @@ function SignUpForm() {
             
 
         <div className="input-label-container">
-            <label className="input-label">Password</label>
+            <label className="input-label" htmlFor="register-password">Password</label>
                     <input 
                         className="form-input"
+                        id="register-password"
                         placeholder="Not1234"
-                        onChange={onChangePassword}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+
+
+                    />
+
+                    <input 
+                        className="form-input"
+                        type="password"
+                        placeholder="Verify Password"
+                        onChange={(e) => setPasswordCheck(e.target.value)}
 
 
                     />
         
          </div>
+
+        
             
-         <input type="submit" value="Submit" className="submit-form" onSubmit={onSubmit}/>
+         <input type="submit" value="Register" className="submit-form" onSubmit={onSubmit}/>
         </form>
     </div>
     )

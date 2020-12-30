@@ -2,11 +2,13 @@ import React, {useContext} from 'react'
 import {Context} from '../Context'
 import '../style/Header.css';
 import {Link, useHistory} from 'react-router-dom'
+import UserContext from '../UserContext'
 
 
 function Header() {
 
     const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, isLoggedIn, setSignInMenu}  = useContext(Context)
+    const {userData, setUserData} = useContext(UserContext)
     const history = useHistory()
 
     function handleSearch(event) {
@@ -23,6 +25,15 @@ function Header() {
 
     function handleSignIn() {
         setSignInMenu(true)
+    }
+
+    function handleSignOut() {
+        setSignInMenu(false)
+        setUserData({
+            token: undefined,
+            user: undefined
+        })
+        localStorage.setItem("auth-token", "")
     }
 
     let watchListTotal = watchListTv.length + watchListMovie.length
@@ -58,9 +69,9 @@ function Header() {
                     <i className="im im-bookmark im-bookmark-header" style={{color: watchListTotal > 0 ?  "#E1B517" : ''}}></i><span className="header-watchlist" >Watchlist</span></div>
                     </Link> 
                 </div>
-                    { isLoggedIn ? 
-                    <Link to="/watchList/" style={{textDecoration: "none"}}>
-                        <div className="header-right-container"><i className="im im-user-circle">{watchListTotal > 0 ? <span className="watchListCount">{watchListTotal}</span> : ''}</i></div>
+                    { userData.user ? 
+                    <Link to="/" style={{textDecoration: "none"}}>
+                    <div className="header-right-container"><span className="header-signIn" onClick={handleSignOut}>Log Out</span></div>
                     </Link> : 
                     <Link to="/signIn/" style={{textDecoration: "none"}}>
                     <div className="header-right-container"><span className="header-signIn" onClick={handleSignIn}>Sign In</span></div>

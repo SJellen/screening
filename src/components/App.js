@@ -28,9 +28,10 @@ function App() {
   useEffect(() => {
     const checkedLoggedIn = async () => {
       let token = localStorage.getItem("auth-token")
-        if (token === null) 
-        localStorage.setItem("auth-token", "")
-        token = ""
+        if (token === null) {
+         localStorage.setItem("auth-token", "")
+        token = "" 
+        } 
       const tokenRes = await Axios.post(
         "http://localhost:5000/users/tokenIsValid",
         null, 

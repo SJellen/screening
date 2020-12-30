@@ -4,17 +4,11 @@ import {Context} from '../../Context'
 
 function SignInForm() {
 
-    const {username, setUserName, password, setPassword, email, setEmail, user, setUser}=  useContext(Context)
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
 
    
 
-     function onChangeEmail(e) {
-        setEmail(e.target.value)
-    }
-
-    function onChangePassword(e) {
-        setPassword(e.target.value)
-    }
 
 
 
@@ -23,23 +17,26 @@ function SignInForm() {
             <span className="signIn-title">Welcome Back</span>
             <form className="signIn-form">
                 <div className="input-label-container">
-                    <label className="input-label">Email</label>
+                    <label className="input-label" htmlFor="signIn-email" >Email</label>
                                         <input
                                             className="form-input"
+                                            id="sign-in-email"
                                             placeholder="ILuvMovies@moviePhone.com" 
-                                            onChange={onChangeEmail}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            type="email"
 
                                         />
 
                 </div>
                 
                 <div className="input-label-container">
-                    <label className="input-label">Password</label>
+                    <label className="input-label" htmlFor="sign-in-password">Password</label>
                         <input 
                             className="form-input"
+                            id="sign-in-password"
                             placeholder="Not1234"
-                            onChange={onChangePassword}
-
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
                         />
                 
                  </div>
