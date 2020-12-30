@@ -4,11 +4,12 @@ import {Context} from '../../Context'
 
 function SignUpForm() {
 
-    const {username, setUserName, password, setPassword, email, setEmail}=  useContext(Context)
+    const {username, setUserName, password, setPassword, email, setEmail, setUser, user}=  useContext(Context)
+
 
     function onChangeUsername(e) {
         setUserName(e.target.value)
-        console.log(username)
+        
     }
 
     function onChangePassword(e) {
@@ -21,16 +22,19 @@ function SignUpForm() {
 
     function onSubmit(e) {
         e.preventDefault()
-        const user = {
+        setUser({
             username: username,
             password: password,
             email: email
-        }
+        })
+       
+
+       
         
         
     }
     
-    
+      console.log(username, user, password, email)
 
     return (
         <div className="signUp-form-container">
@@ -73,7 +77,7 @@ function SignUpForm() {
         
          </div>
             
-         <input type="submit" value="Submit" className="submit-form" />
+         <input type="submit" value="Submit" className="submit-form" onSubmit={onSubmit}/>
         </form>
     </div>
     )

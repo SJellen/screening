@@ -4,18 +4,12 @@ import {Context} from '../../Context'
 
 function SignInForm() {
 
-    const {username, setUserName, password, setPassword, email, setEmail, users, setUsers}=  useContext(Context)
+    const {username, setUserName, password, setPassword, email, setEmail, user, setUser}=  useContext(Context)
 
-    useEffect(() => {
-        setUsers({
-            users: ['test user'],
-            username: "scott",
-            password: "1234"
-        })
-    }, [])
+   
 
-     function onChangeUsername(e) {
-        setUserName(e.target.value)
+     function onChangeEmail(e) {
+        setEmail(e.target.value)
     }
 
     function onChangePassword(e) {
@@ -29,11 +23,11 @@ function SignInForm() {
             <span className="signIn-title">Welcome Back</span>
             <form className="signIn-form">
                 <div className="input-label-container">
-                    <label className="input-label">Username</label>
+                    <label className="input-label">Email</label>
                                         <input
                                             className="form-input"
-                                            placeholder="ILuvMovies" 
-                                            onChange={onChangeUsername}
+                                            placeholder="ILuvMovies@moviePhone.com" 
+                                            onChange={onChangeEmail}
 
                                         />
 
