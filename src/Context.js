@@ -49,10 +49,6 @@ function ContextProvider({children}) {
     const [watchListTvIds, setWatchListTvIds] = useState([])
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [signInMenu, setSignInMenu] = useState(false)
-    // const [username, setUserName] = useState()
-    // const [password, setPassword] = useState()
-    // const [email, setEmail] = useState()
-    // const [users, setUser] = useState({})
     const [toggleSignInForm, setToggleSignInForm] = useState(true)
 
 
@@ -268,6 +264,9 @@ function ContextProvider({children}) {
         setWatchListMovieIds(movieIdArr)
         setWatchListTvIds(tvIdArr)
     }
+
+
+    
 
 
     useEffect(() => {

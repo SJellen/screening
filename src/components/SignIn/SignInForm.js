@@ -3,13 +3,14 @@ import {Context} from '../../Context'
 import Axios from 'axios'
 import UserContext from '../../UserContext'
 import { useHistory } from 'react-router-dom'
+import ErrorMessage from './ErrorMessage'
 
 
 function SignInForm() {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-
+    const [error, setError] = useState()
 
     const { setUserData } = useContext(UserContext)
 
@@ -17,7 +18,8 @@ function SignInForm() {
 
     const submit = async (e) => {
         e.preventDefault()
-        const loginUser = { email, password }
+        try {
+            const loginUser = { email, password }
         const loginRes = await Axios.post("http://localhost:5000/users/login", 
             loginUser
         )
@@ -27,6 +29,11 @@ function SignInForm() {
         })
         localStorage.setItem("auth-token", loginRes.data.token)
         history.push("/")
+        } 
+        catch (err) {
+            err.response.data.msg && setError(err.response.data.msg)
+        }
+        
     }
 
    
@@ -37,6 +44,7 @@ function SignInForm() {
     return (
         <div className="signIn-form-container">
             <span className="signIn-title">Welcome Back</span>
+            {error && <ErrorMessage message={error}  clearError={() => setError(undefined)} /> }
             <form className="signIn-form" onSubmit={submit}>
                 <div className="input-label-container">
                     <label className="input-label" htmlFor="signIn-email" >Email</label>

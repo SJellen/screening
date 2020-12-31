@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const auth = require("../middleware/auth")
 const { useReducer } = require('react')
-let User = require('../models/user.model')
+let User = require('../models/userModel')
 
 router.route('/').get((req, res) => {
     User.find()
@@ -71,7 +71,9 @@ router.post("/login", async (req, res) => {
             token,
             user: {
                 id: user._id,
-                displayName: user.displayName
+                displayName: user.displayName, 
+                watchList: user.watchlist
+
             }
         })
         
@@ -123,9 +125,13 @@ router.get("/", auth, async (req, res) => {
     const user = await User.findById(req.user)
     res.json({
         displayName: user.displayName,
-        id: user._id
+        id: user._id,
+        watchList: user.watchlist
+
     })
 })
+
+
 
 
 
