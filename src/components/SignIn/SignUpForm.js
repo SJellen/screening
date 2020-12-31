@@ -1,6 +1,7 @@
-import react, { useContext, useState, useEffect} from 'react' 
-import {Context} from '../../Context'
-
+import { useContext, useState} from 'react' 
+import Axios from 'axios'
+import UserContext from '../../UserContext'
+import { useHistory } from 'react-router-dom'
 
 function SignUpForm() {
 
@@ -9,26 +10,30 @@ function SignUpForm() {
     const [passwordCheck, setPasswordCheck] = useState()
     const [displayName, setDisplayName] = useState()
 
-    function onSubmit(e) {
-        e.preventDefault()
-        // setUser({
-        //     username: username,
-        //     password: password,
-        //     email: email
-        // })
-       
+    const { setUserData } = useContext(UserContext)
 
-       
-        
-        
+    const history = useHistory()
+
+    const submit = async (e) => {
+        e.preventDefault()
+        const newUser = { email, password, passwordCheck, displayName}
+         await Axios.post("http://localhost:5000/users/register", newUser ) 
+        const loginRes = await Axios.post("http://localhost:5000/users/login", {
+            email, password
+        })
+        setUserData({
+            token: loginRes.data.token,
+            user: loginRes.data.user
+        })
+        localStorage.setItem("auth-token", loginRes.data.token)
+        history.push("/")
     }
-    
     
 
     return (
         <div className="signUp-form-container">
         <span className="signIn-title">Create an Account</span>
-        <form className="signUp-form">
+        <form className="signUp-form" onSubmit={submit}>
 
         <div className="input-label-container">
             <label className="input-label" htmlFor="register-email">Email</label>
@@ -39,10 +44,8 @@ function SignUpForm() {
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                 />
-
         </div>
             
-
         <div className="input-label-container">
             <label className="input-label" htmlFor="register-displayName" >Display Name</label>
                     <input 
@@ -51,12 +54,8 @@ function SignUpForm() {
                         placeholder="ILuvMovies" 
                         onChange={(e) => setDisplayName(e.target.value)}
                         type="text"
-
                     />
-        
          </div>
-            
-
         <div className="input-label-container">
             <label className="input-label" htmlFor="register-password">Password</label>
                     <input 
@@ -65,36 +64,19 @@ function SignUpForm() {
                         placeholder="Not1234"
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
-
-
                     />
-
                     <input 
                         className="form-input"
                         type="password"
                         placeholder="Verify Password"
                         onChange={(e) => setPasswordCheck(e.target.value)}
-
-
-                    />
-        
-         </div>
-
-        
-            
-         <input type="submit" value="Register" className="submit-form" onSubmit={onSubmit}/>
+                    />  
+         </div> 
+         <input type="submit" value="Register" className="submit-form" />
         </form>
     </div>
     )
     
-    
-
-
-
-
-
-
-
 }
 
 export default SignUpForm
