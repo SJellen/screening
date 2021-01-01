@@ -403,6 +403,12 @@
     .im-bookmark-page {
         top: 14rem;
     }
+    .details-episode-season-img-overview-container {
+        flex-direction: column;
+    }
+    .details-episode-card-overview-season-container {
+        min-width: 80%;
+    }
 
 }
 
