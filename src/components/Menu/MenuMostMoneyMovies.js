@@ -8,7 +8,7 @@ function MenuMostMoneyMovies() {
     return (
         <div>
             <div className="slider-container">
-                <span className="slider-label">Movies Playing Now</span>
+                <span className="slider-label">Highest Grossing Movies</span>
                 <div className="slider-sub-container">
                     {menuMostMoneyMoviesPageTile1}
                 </div>
