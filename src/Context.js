@@ -12,6 +12,14 @@ import useApiMovieGenre from './services/useApiMovieGenre'
 import useApiTvGenre from './services/useApiTvGenre'
 
 
+let watchListStorageTv = localStorage.getItem('myWatchListTv')
+watchListStorageTv = JSON.parse(watchListStorageTv)
+
+let watchListStorageMovie = localStorage.getItem('myWatchListMovie')
+watchListStorageMovie = JSON.parse(watchListStorageMovie)
+
+// watchListStorageMovie = localStorage.clear()
+
 const Context = React.createContext()
 
 
@@ -42,8 +50,8 @@ function ContextProvider({children}) {
     const videoPath = 'https://www.youtube.com/embed/'
 
     const [mediaType, setMediaType] = useState(null)
-    const [watchListTv, setWatchListTv] = useState([])
-    const [watchListMovie, setWatchListMovie] = useState([])
+    const [watchListTv, setWatchListTv] = useState(watchListStorageTv ? watchListStorageTv : [])
+    const [watchListMovie, setWatchListMovie] = useState(watchListStorageMovie ? watchListStorageMovie : [])
     const [tempSeason, setTempSeason] = useState([])
     const [watchListMovieIds, setWatchListMovieIds] = useState([])
     const [watchListTvIds, setWatchListTvIds] = useState([])
@@ -199,6 +207,7 @@ function ContextProvider({children}) {
         } else {
             setWatchListTv([...watchListTv, selectionInfo])
         } 
+        
     }
 
     function handleRibbonMovie(e, arr) {
@@ -209,6 +218,7 @@ function ContextProvider({children}) {
         } else {
             setWatchListMovie([...watchListMovie, selectionInfo])
         } 
+        
     }
 
     function tvTileMaker(arr) {
@@ -270,6 +280,9 @@ function ContextProvider({children}) {
 
 
     useEffect(() => {
+
+       
+
        ribbonUpdater()
         const path = window.location.pathname
         const splitPath = path.split('/')
@@ -314,7 +327,9 @@ function ContextProvider({children}) {
             setSignInMenu(true)
         }
 
-           // eslint-disable-next-line react-hooks/exhaustive-deps
+        localStorage.setItem('myWatchListTv', JSON.stringify(watchListTv)) 
+        localStorage.setItem('myWatchListMovie', JSON.stringify(watchListMovie))
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [watchListMovie, watchListTv, genre])
 
 

@@ -13,7 +13,6 @@ function WatchList() {
 
     const { userData } = useContext(UserContext)
 
-    console.log(watchListTv, watchListMovie)
    
     return (
         <div className="watchlist-page-container">
