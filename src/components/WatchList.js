@@ -20,7 +20,7 @@ function WatchList() {
             <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
                 <i className="im im-x-mark item-page-close" ></i> 
             </Link>
-            <h1 className="results-title">{userData.user && userData.user.displayName !== undefined ? `${userData.user.displayName}'s` : ''} Watch list</h1>
+            <h1 className="results-title">{userData.user && userData.user.displayName !== undefined ? `${userData.user.displayName}'s` : ''} Watchlist</h1>
             { watchListMovie.length > 0 ? 
             <div>
                 <span className="slider-label">Movies</span>

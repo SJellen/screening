@@ -119,6 +119,7 @@ input:active {
 }
 
 .header-signIn {
+    visibility: hidden;
     margin-top: .25rem;
     font-size: 1.5rem;
     color: white;
