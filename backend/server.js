@@ -35,6 +35,8 @@ connection.once('open', () => {
 
 
 const usersRouter = require('./routes/users')
+const watchListRouter = require('./routes/watchList')
 
 app.use('/users', usersRouter)
+app.use('/watchList', watchListRouter)
 

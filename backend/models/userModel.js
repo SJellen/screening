@@ -15,13 +15,7 @@ const userSchema = new Schema({
     },
     displayName: {
         type: String
-    },
-    watchlist: {
-        type: Array
-        
-    }, 
-    
-   
+    }
 },  {timestamps: true,})
 
 const User = mongoose.model('User', userSchema)
