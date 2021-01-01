@@ -1,5 +1,4 @@
-import react, { useContext, useState, useEffect } from 'react' 
-import {Context} from '../../Context'
+import { useContext, useState } from 'react' 
 import Axios from 'axios'
 import UserContext from '../../UserContext'
 import { useHistory } from 'react-router-dom'
@@ -36,10 +35,7 @@ function SignInForm() {
         
     }
 
-   
-
-
-
+ 
 
     return (
         <div className="signIn-form-container">
@@ -77,12 +73,6 @@ function SignInForm() {
     )
     
     
-
-
-
-
-
-
 
 }
 

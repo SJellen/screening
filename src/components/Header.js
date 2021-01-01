@@ -7,7 +7,7 @@ import UserContext from '../UserContext'
 
 function Header() {
 
-    const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, isLoggedIn, setSignInMenu}  = useContext(Context)
+    const {fetchSearchResults, setSearchTerm, setMediaType, handleLogoClick, watchListTv, watchListMovie, setSignInMenu}  = useContext(Context)
     const {userData, setUserData} = useContext(UserContext)
     const history = useHistory()
 
