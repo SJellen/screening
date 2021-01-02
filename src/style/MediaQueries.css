@@ -237,6 +237,27 @@
         margin: 0 auto;
         width: 75%;
     }
+    .details-credit-container {
+        min-width: 80%;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .person-filmography-container {
+        margin: 0 auto;
+        min-width: 90%;
+    }
+    .person-part-tile {
+        min-width: 90%;
+    }
+    .filmography-nav {
+        flex-wrap: wrap;
+        width: 90vw;
+        margin: 0 auto;
+    }
+    .filmography-nav-type {
+        padding: 0 1rem;
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
