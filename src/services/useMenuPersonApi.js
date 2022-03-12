@@ -21,7 +21,6 @@ function useMenuPersonApi() {
         await fetch(`https://api.themoviedb.org/3/trending/person/day?api_key=${apiKEY}&page=${num}`)
         .then(res => res.json())
         .then((data) => {
-
             if (num === 1) {
                 setMenuTrendingPersonPage1(data.results)
             } else if (num === 2) {

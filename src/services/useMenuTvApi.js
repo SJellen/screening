@@ -40,12 +40,10 @@ function useMenuTvApi() {
     const [menuTrendingTvPage6, setMenuTrendingTvPage6] = useState([])
 
 
-
     const fetchPopularMenuTv = async (num) => {
         await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKEY}&language=en-US&page=${num}`)
         .then(res => res.json())
         .then((data) => {
-
             if (num === 1) {
                 setMenuPopularTvPage1(data.results)
             } else if (num === 2) {
@@ -58,21 +56,16 @@ function useMenuTvApi() {
                 setMenuPopularTvPage5(data.results)
             } else {
                 setMenuPopularTvPage6(data.results)
-            }
-
-            
+            } 
         }
-
         )
         .catch(error => console.log(error))
         } 
-
 
     const fetchTopRatedMenuTv = async (num) => {
         await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKEY}&language=en-US&page=${num}`)
         .then(res => res.json())
         .then((data) => {
-
             if (num === 1) {
                 setMenuTopRatedTvPage1(data.results)
             } else if (num === 2) {
@@ -86,14 +79,10 @@ function useMenuTvApi() {
             } else {
                 setMenuTopRatedTvPage6(data.results)
             }
-
-            
         }
-
         )
         .catch(error => console.log(error))
         }   
-
 
     const fetchOnAirMenuTv = async (num) => {
         await fetch(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${apiKEY}&language=en-US&page=${num}`)
@@ -112,11 +101,8 @@ function useMenuTvApi() {
                 setMenuOnAirTvPage5(data.results)
             } else {
                 setMenuOnAirTvPage6(data.results)
-            }
-
-            
+            }            
         }
-
         )
         .catch(error => console.log(error))
         }
@@ -126,7 +112,6 @@ function useMenuTvApi() {
         await fetch(`https://api.themoviedb.org/3/tv/airing_today?api_key=${apiKEY}&language=en-US&page=${num}`)
         .then(res => res.json())
         .then((data) => {
-
             if (num === 1) {
                 setMenuAiringTodayTvPage1(data.results)
             } else if (num === 2) {
@@ -140,10 +125,7 @@ function useMenuTvApi() {
             } else {
                 setMenuAiringTodayTvPage6(data.results)
             }
-
-            
         }
-
         )
         .catch(error => console.log(error))
         }  
@@ -153,7 +135,6 @@ function useMenuTvApi() {
         await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKEY}&page=${num}`)
         .then(res => res.json())
         .then((data) => {
-
             if (num === 1) {
                 setMenuTrendingTvPage1(data.results)
             } else if (num === 2) {
@@ -167,10 +148,7 @@ function useMenuTvApi() {
             } else {
                 setMenuTrendingTvPage6(data.results)
             }
-
-            
         }
-
         )
         .catch(error => console.log(error))
         }      
@@ -226,8 +204,6 @@ function useMenuTvApi() {
         window.scrollTo(0, 0)
     }
 
-
-
     useEffect(() => {
         const path = window.location.pathname
         const splitPath = path.split('/')
@@ -277,8 +253,6 @@ function useMenuTvApi() {
         }
            // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])    
-
-
 
     return {handleMenuPopularTvClick, menuPopularTvPage1, menuPopularTvPage2,menuPopularTvPage3,menuPopularTvPage4, menuPopularTvPage5, menuPopularTvPage6, handleMenuTopRatedTvClick, menuTopRatedTvPage1, menuTopRatedTvPage2, menuTopRatedTvPage3, menuTopRatedTvPage4, menuTopRatedTvPage5, menuTopRatedTvPage6, handleMenuOnAirTvClick, menuOnAirTvPage1, menuOnAirTvPage2, menuOnAirTvPage3, menuOnAirTvPage4, menuOnAirTvPage5, menuOnAirTvPage6, handleMenuAiringTodayTvClick, menuAiringTodayTvPage1, menuAiringTodayTvPage2, menuAiringTodayTvPage3, menuAiringTodayTvPage4, menuAiringTodayTvPage5, menuAiringTodayTvPage6, handleMenuTrendingTvClick, menuTrendingTvPage1, menuTrendingTvPage2, menuTrendingTvPage3, menuTrendingTvPage4, menuTrendingTvPage5, menuTrendingTvPage6  }
 

@@ -18,7 +18,6 @@ html {
   color: white;
 }
 
-
 .slider-container-home {
   background-color: rgb(18, 18, 18);
   max-width: 90vw;
@@ -62,8 +61,7 @@ html {
    display: none;
   }
 
-
-  .slider-sub-container-episode {
+.slider-sub-container-episode {
     display: flex;
     flex-direction: row;
     overflow:scroll;
@@ -106,7 +104,6 @@ html {
 .slider-card > img:hover {
   cursor: pointer;
 }
-
 
 .slider-score {
   padding-top: 1rem;
@@ -198,8 +195,3 @@ html {
 .im-bookmark-page:hover {
   cursor: pointer;
 }
-
-
-
-
-

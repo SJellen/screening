@@ -4,7 +4,6 @@
     height: 5.5rem;
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .header-left-container {
@@ -155,9 +154,3 @@ input:active {
     padding: 3.25px 5px;
     border-radius: 50%;  
 }
-
-
-
-
-
-

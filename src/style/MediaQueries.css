@@ -158,8 +158,7 @@
     }
     .details-movie-details-container {
         min-width: 87.5vw;
-        margin: 0 auto;
-        
+        margin: 0 auto; 
     }
 
     .filmography-nav {
@@ -212,10 +211,7 @@
     }
     .movie-details-list-item {
         margin: 0 auto;
-    }
-   
-      
-    
+    } 
 }
 
 @media only screen and (max-width: 650px) {
@@ -257,7 +253,6 @@
     .filmography-nav-type {
         padding: 0 1rem;
     }
-
 }
 
 @media only screen and (max-width: 550px) {
@@ -300,7 +295,6 @@
     .menu-list {
         min-width: 45vw;
       }
-
       .menu-page-container {
         margin-bottom: 0rem !important;
     }  
@@ -430,10 +424,7 @@
     .details-episode-card-overview-season-container {
         min-width: 80%;
     }
-
 }
-
-
 
 @media only screen and (max-width: 425px) {
     .menu-list-container {
@@ -448,8 +439,7 @@
     }
     .menu-page-container {
         padding: 0;
-    }
-    
+    } 
 }
 
 @media only screen and (max-width: 375px) {
