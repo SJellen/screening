@@ -127,7 +127,7 @@ function ContextProvider({children}) {
     }
 
     function ratingTruncate(arr) {
-        return arr.vote_average === null || arr.vote_average === undefined || arr.vote_average === 0 ? <span className="slider-score"></span> : <span className="slider-score"><i className="im im-star"></i>{arr.vote_average}</span>
+        return arr.vote_average === null || arr.vote_average === undefined || arr.vote_average === 0 ? <span className="slider-score"></span> : <span className="slider-score"><i className="im im-star"></i>{arr.vote_average.toFixed(1)}</span>
       }
 
     function dollarsWithCommas(num) {
