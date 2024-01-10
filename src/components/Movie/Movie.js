@@ -8,8 +8,11 @@ import MovieReview from './MovieReview'
 import MovieVideo from './MovieVideo'
 import MovieWatchBox from './MovieWatchBox'
 import MovieDetails from './MovieDetails'
+import StarIcon from '@mui/icons-material/Star';
 import '../../style/Item.css'
 import blankSquare from '../../assets/placeholder.jpg'
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 
 
 function Movie() {
@@ -45,16 +48,20 @@ function Movie() {
                     <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
                 </div> 
                 <div className="detail-word-box">
+                                            {/* need to fix */}
+                    <div style={{display: 'none'}} >
                     { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
-                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}}></i> :
-                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}}></i>
-                        }
+                            <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}} />
+                            :
+                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}} />
+                             }
+                    </div>
                     <div className="details-top-word-box">
                         <span className="details-title">{movieDetails.title}</span>
                         { movieDetails.vote_count !== 0 ? 
                             <div className="details-score-star-box">
-                                <i className="im im-star details-star"></i>
-                            <span className="details-score">{movieDetails.vote_average}</span>
+                                <StarIcon className="details-star" fontSize='large' />
+                            <span className="details-score">{movieDetails.vote_average?.toFixed(1)}</span>
                             </div> : ''
                         }       
                     </div>

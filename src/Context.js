@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
@@ -10,7 +11,6 @@ import blankSquare from './assets/placeholder.jpg'
 import {Link} from 'react-router-dom'
 import useApiMovieGenre from './services/useApiMovieGenre'
 import useApiTvGenre from './services/useApiTvGenre'
-
 
 let watchListStorageTv = localStorage.getItem('myWatchListTv')
 watchListStorageTv = JSON.parse(watchListStorageTv)
@@ -227,8 +227,9 @@ function ContextProvider({children}) {
         <div className="slider-card" key={show.id}> 
         <span className="watchlist-ribbon">
         { watchListTvIds.includes(show.id) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonTv(index, arr)} style={{color: ""}}></i>
+         <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonTv(index, arr)} style={{color: "#E1B517", marginTop: "-2rem"}} />
+         :
+         <BookmarkIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonTv(index, arr)} style={{color: "", marginTop: "-2rem"}} />
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, arr)} className="slider-card-image" /></Link>
@@ -243,8 +244,9 @@ function ContextProvider({children}) {
         <div className="slider-card" key={movie.id}> 
         <span className="watchlist-ribbon">
        { watchListMovieIds.includes(movie.id) ?
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: "#E1B517"}}></i> :
-         <i className="im im-bookmark im-bookmark-slider" onClick={() => handleRibbonMovie(index, arr)} style={{color: ""}}></i>
+         <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonMovie(index, arr)} style={{color: "#E1B517", marginTop: "-2rem"}} />
+         :
+         <BookmarkIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonMovie(index, arr)} style={{color: "", marginTop: "-2rem"}} />
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, arr)} className="slider-card-image" /></Link>

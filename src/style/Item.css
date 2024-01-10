@@ -63,7 +63,8 @@
 }
 
 .details-star {
-    font-size: 3rem;
+    height: 3rem;
+    width: auto;
     margin-top: .5rem;
 }
 

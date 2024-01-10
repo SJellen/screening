@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {Context} from '../../Context'
 import useTvCast from '../../logic/Tv/useTvCast'
 import useTvCrew from '../../logic/Tv/useTvCrew'
+import StarIcon from '@mui/icons-material/Star';
 import TvRecommendations from './TvRecommendations'
 import TvSimilar from './TvSimilar'
 import TvReview from './TvReview'
@@ -11,6 +12,8 @@ import TvEpisodes from './TvEpisodes'
 import '../../style/Item.css'
 import blankSquare from '../../assets/placeholder.jpg'
 import TvDetails from './TvDetails'
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 
 
 function Tv() {
@@ -46,15 +49,21 @@ function Tv() {
                     <img src={tvDetails.poster_path !== null ? `${posterPathLarge}${tvDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
                 </div>
                 <div className="detail-word-box">
-                    { watchListTvIds &&  watchListTvIds.includes(tvDetails.id) ?
-                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonTvPage(tvDetails)} style={{color: "#E1B517"}}></i> :
-                            <i className="im im-bookmark im-bookmark-page" onClick={() => handleRibbonTvPage(tvDetails)} style={{color: ""}}></i> }
+                    {/* need to fix */}
+                    <div style={{display: 'none'}}>
+                                 { watchListTvIds &&  watchListTvIds.includes(tvDetails.id) ?
+                            <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: "#E1B517"}} />
+                            :
+                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: ""}} />
+                             }
+                    </div>
+       
                     <div className="details-top-word-box">
                         <span className="details-title">{tvDetails.name}</span>
                         { tvDetails.vote_count !== 0 ?   
                         <div className="details-score-star-box">
-                                <i className="im im-star details-star"></i>
-                        <span className="details-score">{tvDetails.vote_average}</span>
+                                <StarIcon className="details-star" fontSize='large' />
+                        <span className="details-score">{tvDetails.vote_average?.toFixed(1)}</span>
                         </div> : ''}
                     </div>
                     <div className="details-mid-word-box">
@@ -105,7 +114,7 @@ function Tv() {
                 </div> 
             </div>
             : '' }
-            {  tvRecommendTile.length > 0 ?  
+            {  tvRecommendTile?.length > 0  ?  
             <div className="details-slider-container">
                 <span className="details-slider-title">Recommendations</span>
                 <div className="details-cast-slider">
