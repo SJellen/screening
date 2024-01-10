@@ -16,12 +16,14 @@ import MenuTrendingPerson from './Menu/MenuTrendingPerson'
 import MenuPopularPerson from './Menu/MenuPopularPerson'
 import MenuMovieGenre from './Menu/MenuMovieGenre'
 import MenuTvGenre from './Menu/MenuTvGenre'
+import CloseIcon from '@mui/icons-material/Close';
 
 function MenuLinkPage() {
+
     return (
       <div className="item-page-container">
         <Link to='/' style={{ textDecoration: 'none', color: "white" }}>
-                  <i className="im im-x-mark item-page-close" ></i> 
+                  <CloseIcon className="menu-page-close" />
         </Link> 
         <Route path="/menuLinkPage/popularMovies/" component={MenuPopularMovies} />
         <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />

@@ -3,6 +3,7 @@ import {Context} from '../Context'
 import '../style/ItemPage.css'
 import Menu from './Menu/Menu'
 import {Link} from 'react-router-dom'
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function MenuPage() {
@@ -17,7 +18,7 @@ function MenuPage() {
                     </div>
                     <div className="menu-close-container">
                         <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
-                            <i className="im im-x-mark menu-page-close" ></i> 
+                            <CloseIcon className="menu-page-close"  />
                         </Link> 
                     </div>  
                 </div>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import StarIcon from '@mui/icons-material/Star';
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
 import useApiMovie from './services/useApiMovie'
@@ -127,7 +128,7 @@ function ContextProvider({children}) {
     }
 
     function ratingTruncate(arr) {
-        return arr.vote_average === null || arr.vote_average === undefined || arr.vote_average === 0 ? <span className="slider-score"></span> : <span className="slider-score"><i className="im im-star"></i>{arr.vote_average.toFixed(1)}</span>
+        return arr.vote_average === null || arr.vote_average === undefined || arr.vote_average === 0 ? <span className="slider-score"></span> : <span className="slider-score"> <StarIcon className="im-star" fontSize='small' />{arr.vote_average.toFixed(1)}</span>
       }
 
     function dollarsWithCommas(num) {
