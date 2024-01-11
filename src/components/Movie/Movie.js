@@ -48,22 +48,21 @@ function Movie() {
                     <img src={movieDetails.poster_path !== null ? `${posterPathLarge}${movieDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
                 </div> 
                 <div className="detail-word-box">
-                                            {/* need to fix */}
-                    <div style={{display: 'none'}} >
-                    { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
-                            <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}} />
-                            :
-                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}} />
-                             }
-                    </div>
                     <div className="details-top-word-box">
+                    { watchListMovieIds && watchListMovieIds.includes(movieDetails.id) ?
+                            <BookmarkIcon className="im im-bookmark im-bookmark-slider-page"  fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: "#E1B517"}} />
+                            :
+                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider-page" fontSize='x-large' onClick={() => handleRibbonMoviePage(movieDetails)} style={{color: ""}} />
+                             }
+
                         <span className="details-title">{movieDetails.title}</span>
                         { movieDetails.vote_count !== 0 ? 
                             <div className="details-score-star-box">
                                 <StarIcon className="details-star" fontSize='large' />
                             <span className="details-score">{movieDetails.vote_average?.toFixed(1)}</span>
                             </div> : ''
-                        }       
+                        } 
+                            
                     </div>
                     <div className="details-mid-word-box">
                         <span className="details-release">{releaseStatus} {dateSplitter(movieDetails.release_date)}</span>

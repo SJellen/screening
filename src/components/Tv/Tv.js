@@ -49,22 +49,22 @@ function Tv() {
                     <img src={tvDetails.poster_path !== null ? `${posterPathLarge}${tvDetails.poster_path}` : blankSquare} alt="movie poster" className="details-poster" />
                 </div>
                 <div className="detail-word-box">
-                    {/* need to fix */}
-                    <div style={{display: 'none'}}>
-                                 { watchListTvIds &&  watchListTvIds.includes(tvDetails.id) ?
-                            <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: "#E1B517"}} />
-                            :
-                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: ""}} />
-                             }
-                    </div>
-       
                     <div className="details-top-word-box">
+
+                    { watchListTvIds &&  watchListTvIds.includes(tvDetails.id) ?
+                            <BookmarkIcon className="im im-bookmark im-bookmark-slider-page"  fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: "#E1B517"}} />
+                            :
+                            <BookmarkAddIcon className="im im-bookmark im-bookmark-slider-page" fontSize='x-large' onClick={() => handleRibbonTvPage(tvDetails)} style={{color: ""}} />
+                             }
                         <span className="details-title">{tvDetails.name}</span>
                         { tvDetails.vote_count !== 0 ?   
                         <div className="details-score-star-box">
                                 <StarIcon className="details-star" fontSize='large' />
                         <span className="details-score">{tvDetails.vote_average?.toFixed(1)}</span>
+                        
                         </div> : ''}
+                
+               
                     </div>
                     <div className="details-mid-word-box">
                         <span className="details-release">{`TV Series (${getYear(tvDetails.first_air_date)} - ${releaseStatus})`}</span>

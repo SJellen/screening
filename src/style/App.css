@@ -173,7 +173,15 @@ html {
   z-index: 3;
 }
 
-.im-bookmark-slider:hover {
+.im-bookmark-slider-page {
+  color: rgba(192, 192, 192, .75);
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.im-bookmark-slider:hover, .im-bookmark-slider-page:hover {
   cursor: pointer;
 }
 
