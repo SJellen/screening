@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import StarIcon from '@mui/icons-material/Star';
 import useApi from './services/useApi'
 import useApiPerson from './services/useApiPerson'
@@ -230,7 +231,7 @@ function ContextProvider({children}) {
         { watchListTvIds.includes(show.id) ?
          <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonTv(index, arr)} style={{color: "#E1B517", marginTop: "-2rem"}} />
          :
-         <BookmarkIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonTv(index, arr)} style={{color: "", marginTop: "-2rem"}} />
+         <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonTv(index, arr)} style={{color: "", marginTop: "-2rem"}} />
        }
         </span>
         <Link to={`/tvPage/${show.id}`}><img  src={show.poster_path !== null ? `${posterPath}${show.poster_path}` : blankSquare} alt="poster" onClick={() => handleTvClick(index, arr)} className="slider-card-image" /></Link>
@@ -247,7 +248,7 @@ function ContextProvider({children}) {
        { watchListMovieIds.includes(movie.id) ?
          <BookmarkIcon className="im im-bookmark im-bookmark-slider"  fontSize='x-large' onClick={() => handleRibbonMovie(index, arr)} style={{color: "#E1B517", marginTop: "-2rem"}} />
          :
-         <BookmarkIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonMovie(index, arr)} style={{color: "", marginTop: "-2rem"}} />
+         <BookmarkAddIcon className="im im-bookmark im-bookmark-slider" fontSize='x-large' onClick={() => handleRibbonMovie(index, arr)} style={{color: "", marginTop: "-2rem"}} />
        }
         </span>
         <Link to={`/moviePage/${movie.id}`}><img  src={movie.poster_path !== null ? `${posterPath}${movie.poster_path}` : blankSquare} alt="poster" onClick={() =>  handleMovieClick(index, arr)} className="slider-card-image" /></Link>
