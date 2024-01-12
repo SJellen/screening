@@ -4,6 +4,7 @@ import useWatchListMovie from '../logic/WatchList/useWatchListMovie'
 import useWatchListTv from '../logic/WatchList/useWatchListTv'
 import {Link} from 'react-router-dom'
 import UserContext from '../UserContext'
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function WatchList() {
@@ -17,7 +18,9 @@ function WatchList() {
     return (
         <div className="watchlist-page-container">
             <Link to="/" style={{ textDecoration: 'none', color: "white"  }}>
-                <i className="im im-x-mark item-page-close" ></i> 
+            <div className="item-page-close-container">
+                    <CloseIcon className="im im-x-mark item-page-close"  />
+                    </div>
             </Link>
             <h1 className="results-title">{userData.user && userData.user.displayName !== undefined ? `${userData.user.displayName}'s` : ''} Watchlist</h1>
             { watchListMovie.length > 0 ? 

@@ -3,6 +3,8 @@ import {Context} from '../Context'
 import '../style/Header.css';
 import {Link, useHistory} from 'react-router-dom'
 import UserContext from '../UserContext'
+import MenuIcon from '@mui/icons-material/Menu';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 
 function Header() {
@@ -44,7 +46,7 @@ function Header() {
                     <Link to='/'  className="header-title-link"><span className="title" onClick={handleLogoClick}>Screening</span></Link>   
                     <Link to="/menuPage/" style={{textDecoration: "none"}}>
                         <div className="menu-box">
-                                <i className="im im-menu"></i>
+                                <MenuIcon className="im im-menu" fontSize='large' />
                             <span className="menu-span">Menu</span> 
                         </div>
                     </Link> 
@@ -66,7 +68,7 @@ function Header() {
                 <div className="header-watchlist-box-container">
                    <Link to="/watchList/" style={{textDecoration: "none"}}>
                     <div className="header-right-container">
-                    <i className="im im-bookmark im-bookmark-header" style={{color: watchListTotal > 0 ?  "#E1B517" : ''}}></i><span className="header-watchlist" >Watchlist</span></div>
+                    <BookmarkIcon className="im im-bookmark im-bookmark-header" fontSize="large" style={{color: watchListTotal > 0 ?  "#E1B517" : ''}} /><span className="header-watchlist" >Watchlist</span></div>
                     </Link> 
                 </div>
                     { userData.user ? 

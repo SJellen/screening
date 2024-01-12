@@ -23,7 +23,12 @@ function MenuLinkPage() {
     return (
       <div className="item-page-container">
         <Link to='/' style={{ textDecoration: 'none', color: "white" }}>
-                  <CloseIcon className="menu-page-close" />
+        <div 
+        className="item-page-close-container"
+        >
+          <CloseIcon className="menu-page-close" />
+        </div>
+                  
         </Link> 
         <Route path="/menuLinkPage/popularMovies/" component={MenuPopularMovies} />
         <Route path="/menuLinkPage/topRatedMovies/" component={MenuTopRatedMovies} />
