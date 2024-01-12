@@ -165,7 +165,7 @@ html {
 
 .im-bookmark-slider {
   color: rgba(192, 192, 192, .75);
-  filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px 1px rgb(53, 52, 52));
   font-size: 3rem;
   position: relative;
   top: 3rem;
@@ -175,7 +175,7 @@ html {
 
 .im-bookmark-slider-page {
   color: rgba(192, 192, 192, .75);
-  filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px 1px rgb(53, 52, 52));
   font-size: 3rem;
   position: relative;
   z-index: 3;
@@ -192,7 +192,7 @@ html {
 
 .im-bookmark-page {
   color: rgba(192, 192, 192, .75);
-  filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px 1px rgb(53, 52, 52));
   font-size: 4rem;
   position: absolute;
   top: 17.5rem;
