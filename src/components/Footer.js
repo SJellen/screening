@@ -10,7 +10,8 @@ function Footer() {
 
     return (
         <div className="footer">
-            <div className="logo-box">
+            <div className='footer-link-container'>
+  <div className="logo-box">
                 <Link to='/'  className="footer-title-link"><span className="footer-title" onClick={handleLogoClick}>Screening</span></Link>
             </div>
             <a href="https://scottjellen.com/" target="_blank" rel="noopener noreferrer">
@@ -22,6 +23,8 @@ function Footer() {
             <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" className="api-link">
                 <img src={blueSquare} alt="TMDB logo" className="tmdb-logo"/>
             </a>  
+            </div>
+          
         </div>
     )
 }
