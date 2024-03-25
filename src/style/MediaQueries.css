@@ -73,11 +73,11 @@
     }
     .slider-container {
         max-width: 100vw;
-      }
+    }
 
     .slider-container-home {
         max-width: 100vw;
-      }  
+    }  
     .details-overview {
           min-width: 100%;
     }
@@ -114,13 +114,13 @@
     .menu-list {
         min-width: 35vw;
         margin: 2rem auto;
-      }
-      .item-page-container {
+    }
+    .item-page-container {
         min-width: 100vw;
         height: auto;
         padding: 0;
         margin: 0 auto;
-      }  
+    }  
 
     .details-container {
         min-width: 100%;
@@ -265,7 +265,7 @@
     .menu-list {
         min-width: 45vw;
         margin: 2rem auto;
-      }
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -280,7 +280,7 @@
     }
     .slider-container-home {
         margin-top: 0;
-      }   
+    }   
     .menu-box {
         position: absolute;
         max-width: 2.5rem;
@@ -294,8 +294,8 @@
     }
     .menu-list {
         min-width: 45vw;
-      }
-      .menu-page-container {
+    }
+    .menu-page-container {
         margin-bottom: 0rem !important;
     }  
 
@@ -339,16 +339,16 @@
         padding: 1.5rem;
         margin: 0 .5rem;
         max-width: 14rem;
-      }
+    }
     .slider-card-image {
         max-height: 20rem;
-      }
+    }
     .slider-name {
         padding-top: 0rem;
         text-align: left;
         font-size: 1.25rem;
         margin-top: 1.5rem;
-      }
+    }
       
     .slider-character {
         padding-top: 0;
@@ -452,8 +452,8 @@
 
 @media only screen and (max-width: 375px) {
     .detail-word-box {
-            margin-left: -1%;
-        }
+        margin-left: -1%;
+    }
 }
 
 @media only screen and (max-width: 350px) {
