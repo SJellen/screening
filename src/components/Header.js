@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 import "../style/Header.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../UserContext";
 import MenuIcon from "@mui/icons-material/Menu";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -17,7 +17,7 @@ function Header() {
     setSignInMenu,
   } = useContext(Context);
   const { userData, setUserData } = useContext(UserContext);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function handleSearch(event) {
     let searchWord = event.target.value;
@@ -26,7 +26,7 @@ function Header() {
   }
 
   function handleEnter() {
-    history.push("/searchPage");
+    navigate("/searchPage");
     fetchSearchResults();
     document.getElementById("search-bar").value = "";
   }

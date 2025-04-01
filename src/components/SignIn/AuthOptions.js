@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../../Context";
 
 function AuthOptions() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { toggleSignInForm, setToggleSignInForm } = useContext(Context);
 
   function register() {
-    history.push("/signIn/register");
+    navigate("/signIn/register");
     setToggleSignInForm(false);
   }
 
   function logIn() {
-    history.push("/signIn/logIn");
+    navigate("/signIn/logIn");
     setToggleSignInForm(true);
   }
 

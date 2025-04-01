@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/ItemPage.css";
-import { Link, Route } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import MenuPopularMovies from "./Menu/MenuPopularMovies";
 import MenuTopRatedMovies from "./Menu/MenuTopRatedMovies";
 import MenuUpcomingMovies from "./Menu/MenuUpcomingMovies";
@@ -26,48 +26,23 @@ function MenuLinkPage() {
           <CloseIcon className="menu-page-close" />
         </div>
       </Link>
-      <Route
-        path="/menuLinkPage/popularMovies/"
-        component={MenuPopularMovies}
-      />
-      <Route
-        path="/menuLinkPage/topRatedMovies/"
-        component={MenuTopRatedMovies}
-      />
-      <Route
-        path="/menuLinkPage/upcomingMovies/"
-        component={MenuUpcomingMovies}
-      />
-      <Route
-        path="/menuLinkPage/nowPlayingMovies/"
-        component={MenuNowPlayingMovies}
-      />
-      <Route
-        path="/menuLinkPage/mostMoneyMovies/"
-        component={MenuMostMoneyMovies}
-      />
-      <Route path="/menuLinkPage/popularTv/" component={MenuPopularTv} />
-      <Route path="/menuLinkPage/topRatedTv/" component={MenuTopRatedTv} />
-      <Route path="/menuLinkPage/onAirTv/" component={MenuOnAirTv} />
-      <Route
-        path="/menuLinkPage/airingTodayTv/"
-        component={MenuAiringTodayTv}
-      />
-      <Route
-        path="/menuLinkPage/trendingMovies/"
-        component={MenuTrendingMovies}
-      />
-      <Route path="/menuLinkPage/trendingTv/" component={MenuTrendingTv} />
-      <Route
-        path="/menuLinkPage/popularPerson/"
-        component={MenuPopularPerson}
-      />
-      <Route
-        path="/menuLinkPage/trendingPerson/"
-        component={MenuTrendingPerson}
-      />
-      <Route path="/menuLinkPage/movieGenre/" component={MenuMovieGenre} />
-      <Route path="/menuLinkPage/tvGenre/" component={MenuTvGenre} />
+      <Routes>
+        <Route path="/popularMovies" element={<MenuPopularMovies />} />
+        <Route path="/topRatedMovies" element={<MenuTopRatedMovies />} />
+        <Route path="/upcomingMovies" element={<MenuUpcomingMovies />} />
+        <Route path="/nowPlayingMovies" element={<MenuNowPlayingMovies />} />
+        <Route path="/mostMoneyMovies" element={<MenuMostMoneyMovies />} />
+        <Route path="/popularTv" element={<MenuPopularTv />} />
+        <Route path="/topRatedTv" element={<MenuTopRatedTv />} />
+        <Route path="/onAirTv" element={<MenuOnAirTv />} />
+        <Route path="/airingTodayTv" element={<MenuAiringTodayTv />} />
+        <Route path="/trendingMovies" element={<MenuTrendingMovies />} />
+        <Route path="/trendingTv" element={<MenuTrendingTv />} />
+        <Route path="/popularPerson" element={<MenuPopularPerson />} />
+        <Route path="/trendingPerson" element={<MenuTrendingPerson />} />
+        <Route path="/movieGenre/*" element={<MenuMovieGenre />} />
+        <Route path="/tvGenre/*" element={<MenuTvGenre />} />
+      </Routes>
     </div>
   );
 }

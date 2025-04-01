@@ -3,7 +3,7 @@ import { Context } from "../../Context";
 import TvEpisodesMain from "../Tv/Episodes/TvEpisodesMain";
 import EpisodesLanding from "../Tv/Episodes/EpisodesLanding";
 import TvEpisodesSeason from "../Tv/Episodes/TvEpisodesSeason";
-import { Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function TvEpisodes() {
   const { tvDetails, tvSeason } = useContext(Context);
@@ -22,17 +22,10 @@ function TvEpisodes() {
         </div>
       </div>
       <div className="details-season-switch">
-        <Switch>
-          <Route
-            exact
-            path={`/tvPage/${tvDetails.id}/`}
-            component={EpisodesLanding}
-          />
-          <Route
-            path={`/tvPage/${tvDetails.id}/${tvSeason}`}
-            component={TvEpisodesSeason}
-          />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<EpisodesLanding />} />
+          <Route path={`/${tvSeason}`} element={<TvEpisodesSeason />} />
+        </Routes>
       </div>
     </div>
   );
