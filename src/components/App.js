@@ -7,7 +7,7 @@ import "../style/MediaQueries.css";
 import Header from "../components/Header";
 import Footer from "./Footer";
 import MoviePage from "./MoviePage";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TvPage from "./TvPage";
 import SearchPage from "./SearchPage";
 import PersonPage from "./PersonPage";
@@ -56,17 +56,17 @@ function App() {
       <UserContext.Provider value={{ userData, setUserData }}>
         <div className="App">
           <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/moviePage/" component={MoviePage} />
-            <Route path="/tvPage/" component={TvPage} />
-            <Route path="/personPage/" component={PersonPage} />
-            <Route path="/searchPage/" component={SearchPage} />
-            <Route path="/watchList/" component={WatchList} />
-            <Route path="/signIn/" component={SignIn} />
-            <Route path="/menuPage/" component={MenuPage} />
-            <MenuLinkPage />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/moviePage/*" element={<MoviePage />} />
+            <Route path="/tvPage/*" element={<TvPage />} />
+            <Route path="/personPage/*" element={<PersonPage />} />
+            <Route path="/searchPage/*" element={<SearchPage />} />
+            <Route path="/watchList/*" element={<WatchList />} />
+            <Route path="/signIn/*" element={<SignIn />} />
+            <Route path="/menuPage/*" element={<MenuPage />} />
+            <Route path="/menuLinkPage/*" element={<MenuLinkPage />} />
+          </Routes>
           <Footer />
         </div>
       </UserContext.Provider>

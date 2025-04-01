@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Axios from "axios";
 import UserContext from "../../UserContext";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ErrorMessage from "./ErrorMessage";
 
 function SignInForm() {
@@ -11,7 +11,7 @@ function SignInForm() {
 
   const { setUserData } = useContext(UserContext);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const submit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ function SignInForm() {
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/");
+      navigate("/");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }

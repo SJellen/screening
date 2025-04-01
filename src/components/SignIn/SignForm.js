@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
-import { Switch } from "react-router-dom";
 import AuthOptions from "./AuthOptions";
 import { Context } from "../../Context";
 
@@ -13,7 +12,7 @@ function SignForm() {
       <div className="signIn-toggle-container">
         <AuthOptions />
       </div>
-      <Switch>{toggleSignInForm ? <SignInForm /> : <SignUpForm />}</Switch>
+      {toggleSignInForm ? <SignInForm /> : <SignUpForm />}
     </div>
   );
 
