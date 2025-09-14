@@ -14,9 +14,10 @@ function MovieVideo() {
           height="315"
           src={`${videoPath}${movie.key}`}
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           title={movie.name}
+          loading="lazy"
         ></iframe>
       </div>
     ));
