@@ -8,9 +8,7 @@
 
 > An IMDB clone using the TMDB API. Browse movies and tv from different genre and catagories and create a watchlist.
 
-### 🏠 [Homepage](https://affectionate-tesla-9555b9.netlify.app/)
 
-### ✨ [Demo](https://affectionate-tesla-9555b9.netlify.app/)
 
 ## Install
 
@@ -30,13 +28,16 @@ npm run start
 npm run test
 ```
 
-## Author
+## Status
 
-👤 **Scott Jellen**
+This project is no longer actively maintained.
 
+It is preserved here as a historical artifact and learning reference.  
+Dependencies may be outdated, and the codebase should not be used in production.
 
-* Website: [ScottJellen.com](https:ScottJellen.com)
-* Github: [@SJellen](https://github.com/SJellen)
+For current work, see:
+- https://github.com/SJellen/protocols
+- https://scottjellen.com
 
 ## Show your support
 
